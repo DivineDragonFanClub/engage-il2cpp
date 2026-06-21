@@ -2,62 +2,93 @@
 
 #[cfg(feature = "unity_engine-switch-operation-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/operation/Operation_OperationMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Operation_OperationMode {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for Operation_OperationMode {
+        const NAME: &'static str = "Operation.OperationMode";
+        const NAMESPACE: &'static str = "UnityEngine.Switch";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for Operation_OperationMode {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl Operation_OperationMode {
+        pub fn handheld() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/operation/Operation_OperationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Operation_OperationMode{pub value:i32,}
-impl::unity2::ClassIdentity for Operation_OperationMode{const NAMESPACE: &'static str="UnityEngine.Switch";
-const NAME: &'static str="Operation.OperationMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Operation_OperationMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Operation_OperationMode{pub fn handheld()->Self{Self{value:0}
-}
-pub fn console()->Self{Self{value:1}
-}
-}
+        pub fn console() -> Self {
+            Self { value: 1 }
+        }
+    }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/operation/Operation.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Operation")]#[parent(crate::system::object::Object)]pub struct Operation{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/operation/Operation.md"))]
+    #[::unity::class(namespace = "UnityEngine.Switch", name = "Operation")]
+    #[parent(crate::system::object::Object)]
+    pub struct Operation {}
 }
 
 #[cfg(feature = "unity_engine-switch-operation-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-switch-operation")]impl Operation{#[doc="`get_mode()` overload"]pub fn get_mode()->crate::unity_engine::switch::operation::Operation_OperationMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f41840usize)as*mut u8,crate::unity_engine::switch::operation::Operation_OperationMode;
-)}
-}
-#[doc="`GetMode_Internal()` overload"]pub fn get_mode_internal()->crate::unity_engine::switch::operation::Operation_OperationMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f41880usize)as*mut u8,crate::unity_engine::switch::operation::Operation_OperationMode;
-)}
-}
+#[cfg(feature = "unity_engine-switch-operation")]
+impl Operation {
+    #[doc = "`get_mode()` overload"]
+    pub fn get_mode() -> crate::unity_engine::switch::operation::Operation_OperationMode {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f41840usize)as*mut u8,crate::unity_engine::switch::operation::Operation_OperationMode;
+            )
+        }
+    }
+
+    #[doc = "`GetMode_Internal()` overload"]
+    pub fn get_mode_internal() -> crate::unity_engine::switch::operation::Operation_OperationMode {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f41880usize)as*mut u8,crate::unity_engine::switch::operation::Operation_OperationMode;
+            )
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-switch-operation")]impl Operation{pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_mode_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "unity_engine-switch-operation")]
+impl Operation {
+    pub fn get_mode_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_mode_internal_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "unity_engine-switch-operation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Operation_OperationMode;
-    pub use super::Operation;
-    pub use super::IOperation;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{IOperation, Operation, Operation_OperationMode};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

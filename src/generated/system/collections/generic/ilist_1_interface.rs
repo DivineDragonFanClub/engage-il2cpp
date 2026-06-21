@@ -2,29 +2,44 @@
 
 #[cfg(feature = "system-collections-generic-ilist_1_interface-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/ilist_1_interface/IList_1_Interface.md"))]#[::unity2::class(namespace="System.Collections.Generic",name="IList`1")]pub struct IList_1_Interface<T0: ::unity2::ClassIdentity>{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/generic/ilist_1_interface/IList_1_Interface.md"))]
+    #[::unity::class(namespace = "System.Collections.Generic", name = "IList`1")]
+    pub struct IList_1_Interface<T0: ::unity::ClassIdentity> {}
 }
 
 #[cfg(feature = "system-collections-generic-ilist_1_interface-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-generic-ilist_1_interface")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>IList_1_Interface<T0>{#[doc="`get_Item(i32)` overload"]#[method(name="get_Item",args=1,abstract_dispatch)]pub fn get_item(self,index:i32)->T0;
- #[doc="`set_Item(i32, T0)` overload"]#[method(name="set_Item",args=2,abstract_dispatch)]pub fn set_item(self,index:i32,value:T0)->();
- #[doc="`IndexOf(T0)` overload"]#[method(name="IndexOf",args=1,abstract_dispatch)]pub fn index_of(self,item:T0)->i32;
- #[doc="`Insert(i32, T0)` overload"]#[method(name="Insert",args=2,abstract_dispatch)]pub fn insert(self,index:i32,item:T0)->();
- #[doc="`RemoveAt(i32)` overload"]#[method(name="RemoveAt",args=1,abstract_dispatch)]pub fn remove_at(self,index:i32)->();
+#[cfg(feature = "system-collections-generic-ilist_1_interface")]
+#[::unity::methods]
+impl<T0: ::unity::ClassIdentity> IList_1_Interface<T0> {
+    #[doc = "`get_Item(i32)` overload"]
+    #[method(name = "get_Item", args = 1, abstract_dispatch)]
+    pub fn get_item(self, index: i32) -> T0;
+
+    #[doc = "`set_Item(i32, T0)` overload"]
+    #[method(name = "set_Item", args = 2, abstract_dispatch)]
+    pub fn set_item(self, index: i32, value: T0) -> ();
+
+    #[doc = "`IndexOf(T0)` overload"]
+    #[method(name = "IndexOf", args = 1, abstract_dispatch)]
+    pub fn index_of(self, item: T0) -> i32;
+
+    #[doc = "`Insert(i32, T0)` overload"]
+    #[method(name = "Insert", args = 2, abstract_dispatch)]
+    pub fn insert(self, index: i32, item: T0) -> ();
+
+    #[doc = "`RemoveAt(i32)` overload"]
+    #[method(name = "RemoveAt", args = 1, abstract_dispatch)]
+    pub fn remove_at(self, index: i32) -> ();
 }
 
 #[cfg(feature = "system-collections-generic-ilist_1_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IList_1_Interface;
-    pub use super::IIList_1_Interface;
-    pub use super::IIList_1_InterfaceMethods;
+    pub use super::{IIList_1_Interface, IIList_1_InterfaceMethods, IList_1_Interface};
 }

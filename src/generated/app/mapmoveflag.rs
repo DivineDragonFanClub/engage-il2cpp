@@ -2,54 +2,88 @@
 
 #[cfg(feature = "app-mapmoveflag-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmoveflag/MapMoveFlag.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MapMoveFlag {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for MapMoveFlag {
+        const NAME: &'static str = "MapMoveFlag";
+        const NAMESPACE: &'static str = "App";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for MapMoveFlag {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl MapMoveFlag {
+        pub fn focus() -> Self {
+            Self { value: 1 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmoveflag/MapMoveFlag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMoveFlag{pub value:i32,}
-impl::unity2::ClassIdentity for MapMoveFlag{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapMoveFlag";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapMoveFlag{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapMoveFlag{pub fn focus()->Self{Self{value:1}
-}
-pub fn escape()->Self{Self{value:2}
-}
-pub fn arrival()->Self{Self{value:4}
-}
-pub fn fixed_dir()->Self{Self{value:8}
-}
-pub fn fixed_speed()->Self{Self{value:16}
-}
-pub fn skip_invisible()->Self{Self{value:32}
-}
-pub fn ai()->Self{Self{value:64}
-}
-pub fn event()->Self{Self{value:128}
-}
-pub fn dispos()->Self{Self{value:256}
-}
-pub fn tracking()->Self{Self{value:512}
-}
-pub fn double_on_off()->Self{Self{value:1024}
-}
-pub fn parent()->Self{Self{value:2048}
-}
-pub fn child()->Self{Self{value:4096}
-}
-}
+        pub fn escape() -> Self {
+            Self { value: 2 }
+        }
 
+        pub fn arrival() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn fixed_dir() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn fixed_speed() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn skip_invisible() -> Self {
+            Self { value: 32 }
+        }
+
+        pub fn ai() -> Self {
+            Self { value: 64 }
+        }
+
+        pub fn event() -> Self {
+            Self { value: 128 }
+        }
+
+        pub fn dispos() -> Self {
+            Self { value: 256 }
+        }
+
+        pub fn tracking() -> Self {
+            Self { value: 512 }
+        }
+
+        pub fn double_on_off() -> Self {
+            Self { value: 1024 }
+        }
+
+        pub fn parent() -> Self {
+            Self { value: 2048 }
+        }
+
+        pub fn child() -> Self {
+            Self { value: 4096 }
+        }
+    }
 }
 
 #[cfg(feature = "app-mapmoveflag-types")]
@@ -59,10 +93,11 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapMoveFlag;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

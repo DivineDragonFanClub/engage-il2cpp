@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-ianimationclipsource-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ianimationclipsource/IAnimationClipSource.md"))]#[::unity2::class(namespace="UnityEngine",name="IAnimationClipSource")]pub struct IAnimationClipSource{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ianimationclipsource/IAnimationClipSource.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "IAnimationClipSource")]
+    pub struct IAnimationClipSource {}
 }
 
 #[cfg(feature = "unity_engine-ianimationclipsource-types")]
@@ -17,6 +17,5 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-ianimationclipsource")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IAnimationClipSource;
-    pub use super::IIAnimationClipSource;
+    pub use super::{IAnimationClipSource, IIAnimationClipSource};
 }

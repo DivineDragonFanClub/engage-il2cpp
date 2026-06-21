@@ -2,48 +2,74 @@
 
 #[cfg(feature = "unity_engine-waitforseconds-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::yieldinstruction::{IYieldInstruction, YieldInstruction},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/waitforseconds/WaitForSeconds.md"))]#[::unity2::class(namespace="UnityEngine",name="WaitForSeconds")]#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]pub struct WaitForSeconds{#[offset(16)]#[rename(name="m_Seconds")]pub m_seconds:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/waitforseconds/WaitForSeconds.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "WaitForSeconds")]
+    #[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
+    pub struct WaitForSeconds {
+        #[offset(16)]
+        #[rename(name = "m_Seconds")]
+        pub m_seconds: f32,
+    }
 }
 
 #[cfg(feature = "unity_engine-waitforseconds-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-waitforseconds")]pub trait IWaitForSecondsMethods:IWaitForSeconds{#[doc="`.ctor(f32)` overload"]fn ctor(self,seconds:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <WaitForSeconds as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379ab50usize)as*mut u8,();
-(WaitForSeconds)__receiver,(f32)::core::convert::Into::into(seconds))}
-}
+#[cfg(feature = "unity_engine-waitforseconds")]
+pub trait IWaitForSecondsMethods: IWaitForSeconds {
+    #[doc = "`.ctor(f32)` overload"]
+    fn ctor(self, seconds: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <WaitForSeconds as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x379ab50usize)as*mut u8,();
+(WaitForSeconds)__receiver,(f32)::core::convert::Into::into(seconds))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-waitforseconds")]impl<__T:IWaitForSeconds>IWaitForSecondsMethods for __T{}
+#[cfg(feature = "unity_engine-waitforseconds")]
+impl<__T: IWaitForSeconds> IWaitForSecondsMethods for __T {}
 
-#[cfg(feature="unity_engine-waitforseconds")]impl WaitForSeconds{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-waitforseconds")]
+impl WaitForSeconds {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-waitforseconds")]impl WaitForSeconds{#[doc="`.ctor(f32)` — overload selector"]pub fn new(seconds:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-waitforseconds")]
+impl WaitForSeconds {
+    #[doc = "`.ctor(f32)` — overload selector"]
+    pub fn new(seconds: f32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(WaitForSeconds), ::core::stringify!(new),));
- <Self as IWaitForSecondsMethods> ::ctor(this,seconds);
-this}
+ failed to instantiate",
+                ::core::stringify!(WaitForSeconds),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWaitForSecondsMethods>::ctor(this, seconds);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-waitforseconds")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WaitForSeconds;
-    pub use super::IWaitForSeconds;
-    pub use super::IWaitForSecondsMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::yieldinstruction::IYieldInstruction;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-yieldinstruction")] pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
+    pub use super::{IWaitForSeconds, IWaitForSecondsMethods, WaitForSeconds};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-yieldinstruction")]
+    pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
+    pub use crate::{system::object::IObject, unity_engine::yieldinstruction::IYieldInstruction};
 }

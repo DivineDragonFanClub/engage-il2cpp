@@ -2,46 +2,78 @@
 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/inotificationoptionprovider/INotificationOptionProvider.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="INotificationOptionProvider")]pub struct INotificationOptionProvider{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/inotificationoptionprovider/INotificationOptionProvider.md"))]
+    #[::unity::class(namespace = "UnityEngine.Timeline", name = "INotificationOptionProvider")]
+    pub struct INotificationOptionProvider {}
 }
 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]pub trait IINotificationOptionProviderMethods:IINotificationOptionProvider{#[doc="`get_flags()` overload"]fn get_flags(self,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{unsafe{let __receiver= <INotificationOptionProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
+pub trait IINotificationOptionProviderMethods: IINotificationOptionProvider {
+    #[doc = "`get_flags()` overload"]
+    fn get_flags(self) -> crate::unity_engine::timeline::notificationflags::NotificationFlags {
+        unsafe {
+            let __receiver =
+                <INotificationOptionProvider as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <INotificationOptionProvider as::unity2::ClassIdentity> ::NAME,"get_flags",));
-let __inner:extern "C" fn(INotificationOptionProvider, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <INotificationOptionProvider as ::unity::ClassIdentity>::NAME,
+                        "get_flags",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    INotificationOptionProvider,
+                    ::unity::OptionalMethod,
+                ) -> crate::unity_engine::timeline::notificationflags::NotificationFlags = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]impl<__T:IINotificationOptionProvider>IINotificationOptionProviderMethods for __T{}
+#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
+impl<__T: IINotificationOptionProvider> IINotificationOptionProviderMethods for __T {}
 
-#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]impl INotificationOptionProvider{pub fn get_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
+impl INotificationOptionProvider {
+    pub fn get_flags_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-timeline-inotificationoptionprovider")]impl INotificationOptionProvider{#[doc="Direct (non-virtual) call to `INotificationOptionProvider`'s own `get_flags`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_flags(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::timeline::notificationflags::NotificationFlags{let __mi=Self::get_flags_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::notificationflags::NotificationFlags= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
+impl INotificationOptionProvider {
+    #[doc = "Direct (non-virtual) call to `INotificationOptionProvider`'s own `get_flags`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_flags(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+    ) -> crate::unity_engine::timeline::notificationflags::NotificationFlags {
+        let __mi = Self::get_flags_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::OptionalMethod,
+        ) -> crate::unity_engine::timeline::notificationflags::NotificationFlags = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-inotificationoptionprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INotificationOptionProvider;
-    pub use super::IINotificationOptionProvider;
-    pub use super::IINotificationOptionProviderMethods;
+    pub use super::{IINotificationOptionProvider, IINotificationOptionProviderMethods, INotificationOptionProvider};
 }

@@ -2,107 +2,211 @@
 
 #[cfg(feature = "root_motion-final_ik-rotationlimitangle-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        root_motion::final_ik::rotationlimit::{IRotationLimit, RotationLimit},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::root_motion::final_ik::rotationlimit::{IRotationLimit,RotationLimit}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/rotationlimitangle/RotationLimitAngle.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RotationLimitAngle")]#[parent(crate::root_motion::final_ik::rotationlimit::RotationLimit)]pub struct RotationLimitAngle{#[offset(56)]#[rename(name="limit")]pub limit:f32, #[offset(60)]#[rename(name="twistLimit")]pub twist_limit:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/rotationlimitangle/RotationLimitAngle.md"))]
+    #[::unity::class(namespace = "RootMotion.FinalIK", name = "RotationLimitAngle")]
+    #[parent(crate::root_motion::final_ik::rotationlimit::RotationLimit)]
+    pub struct RotationLimitAngle {
+        #[offset(56)]
+        #[rename(name = "limit")]
+        pub limit: f32,
+        #[offset(60)]
+        #[rename(name = "twistLimit")]
+        pub twist_limit: f32,
+    }
 }
 
 #[cfg(feature = "root_motion-final_ik-rotationlimitangle-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-rotationlimitangle")]pub trait IRotationLimitAngleMethods:IRotationLimitAngle{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <RotationLimitAngle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec0dc0usize)as*mut u8,();
-(RotationLimitAngle)__receiver)}
-}
-#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <RotationLimitAngle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec0e10usize)as*mut u8,();
-(RotationLimitAngle)__receiver)}
-}
-#[doc="`SupportGroup()` overload"]fn support_group(self,)->(){unsafe{let __receiver= <RotationLimitAngle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec0e60usize)as*mut u8,();
-(RotationLimitAngle)__receiver)}
-}
-#[doc="`ASThread()` overload"]fn as_thread(self,)->(){unsafe{let __receiver= <RotationLimitAngle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec0eb0usize)as*mut u8,();
-(RotationLimitAngle)__receiver)}
-}
-#[doc="`LimitRotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_rotation(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitAngle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root_motion-final_ik-rotationlimitangle")]
+pub trait IRotationLimitAngleMethods: IRotationLimitAngle {
+    #[doc = "`OpenUserManual()` overload"]
+    fn open_user_manual(self) -> () {
+        unsafe {
+            let __receiver = <RotationLimitAngle as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ec0dc0usize)as*mut u8,();
+(RotationLimitAngle)__receiver)
+        }
+    }
+    #[doc = "`OpenScriptReference()` overload"]
+    fn open_script_reference(self) -> () {
+        unsafe {
+            let __receiver = <RotationLimitAngle as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ec0e10usize)as*mut u8,();
+(RotationLimitAngle)__receiver)
+        }
+    }
+    #[doc = "`SupportGroup()` overload"]
+    fn support_group(self) -> () {
+        unsafe {
+            let __receiver = <RotationLimitAngle as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ec0e60usize)as*mut u8,();
+(RotationLimitAngle)__receiver)
+        }
+    }
+    #[doc = "`ASThread()` overload"]
+    fn as_thread(self) -> () {
+        unsafe {
+            let __receiver = <RotationLimitAngle as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ec0eb0usize)as*mut u8,();
+(RotationLimitAngle)__receiver)
+        }
+    }
+    #[doc = "`LimitRotation(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn limit_rotation(
+        self,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <RotationLimitAngle as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <RotationLimitAngle as::unity2::ClassIdentity> ::NAME,"LimitRotation",));
-let __inner:extern "C" fn(RotationLimitAngle,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(rotation),__mi)}
-}
-}
-#[doc="`LimitSwing(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_swing(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitAngle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec0f50usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(RotationLimitAngle)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(rotation))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RotationLimitAngle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec1100usize)as*mut u8,();
-(RotationLimitAngle)__receiver)}
-}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <RotationLimitAngle as ::unity::ClassIdentity>::NAME,
+                        "LimitRotation",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    RotationLimitAngle,
+                    crate::unity_engine::quaternion::Quaternion,
+                    ::unity::OptionalMethod,
+                ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(rotation), __mi)
+            }
+        }
+    }
+    #[doc = "`LimitSwing(crate::unity_engine::quaternion::Quaternion)` overload"]
+    fn limit_swing(
+        self,
+        rotation: impl ::core::convert::Into<crate::unity_engine::quaternion::Quaternion>,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        unsafe {
+            let __receiver = <RotationLimitAngle as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ec0f50usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(RotationLimitAngle)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(rotation))
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RotationLimitAngle as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ec1100usize)as*mut u8,();
+(RotationLimitAngle)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root_motion-final_ik-rotationlimitangle")]impl<__T:IRotationLimitAngle>IRotationLimitAngleMethods for __T{}
+#[cfg(feature = "root_motion-final_ik-rotationlimitangle")]
+impl<__T: IRotationLimitAngle> IRotationLimitAngleMethods for __T {}
 
-#[cfg(feature="root_motion-final_ik-rotationlimitangle")]impl RotationLimitAngle{pub fn open_user_manual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn open_script_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn support_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn as_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn limit_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn limit_swing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature = "root_motion-final_ik-rotationlimitangle")]
+impl RotationLimitAngle {
+    pub fn open_user_manual_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn open_script_reference_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn support_group_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn as_thread_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn limit_rotation_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn limit_swing_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
 }
 
-#[cfg(feature="root_motion-final_ik-rotationlimitangle")]impl RotationLimitAngle{#[doc="Direct (non-virtual) call to `RotationLimitAngle`'s own `LimitRotation`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn limit_rotation(this:impl::core::convert::Into< ::unity2::IlInstance> ,rotation:crate::unity_engine::quaternion::Quaternion,)->crate::unity_engine::quaternion::Quaternion{let __mi=Self::limit_rotation_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),rotation, ::core::option::Option::None)}
+#[cfg(feature = "root_motion-final_ik-rotationlimitangle")]
+impl RotationLimitAngle {
+    #[doc = "Direct (non-virtual) call to `RotationLimitAngle`'s own `LimitRotation`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn limit_rotation(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        rotation: crate::unity_engine::quaternion::Quaternion,
+    ) -> crate::unity_engine::quaternion::Quaternion {
+        let __mi = Self::limit_rotation_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::quaternion::Quaternion,
+            ::unity::OptionalMethod,
+        ) -> crate::unity_engine::quaternion::Quaternion = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), rotation, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="root_motion-final_ik-rotationlimitangle")]impl RotationLimitAngle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root_motion-final_ik-rotationlimitangle")]
+impl RotationLimitAngle {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(RotationLimitAngle), ::core::stringify!(new),));
- <Self as IRotationLimitAngleMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(RotationLimitAngle),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRotationLimitAngleMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root_motion-final_ik-rotationlimitangle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RotationLimitAngle;
-    pub use super::IRotationLimitAngle;
-    pub use super::IRotationLimitAngleMethods;
-    pub use crate::root_motion::final_ik::rotationlimit::IRotationLimit;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "root_motion-final_ik-rotationlimit")] pub use crate::root_motion::final_ik::rotationlimit::IRotationLimitMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{IRotationLimitAngle, IRotationLimitAngleMethods, RotationLimitAngle};
+    #[cfg(feature = "root_motion-final_ik-rotationlimit")]
+    pub use crate::root_motion::final_ik::rotationlimit::IRotationLimitMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        root_motion::final_ik::rotationlimit::IRotationLimit,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

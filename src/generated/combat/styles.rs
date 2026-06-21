@@ -2,37 +2,55 @@
 
 #[cfg(feature = "combat-styles-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/styles/Styles.md"))]#[::unity2::class(namespace="Combat",name="Styles")]#[parent(crate::system::object::Object)]pub struct Styles{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/styles/Styles.md"))]
+    #[::unity::class(namespace = "Combat", name = "Styles")]
+    #[parent(crate::system::object::Object)]
+    pub struct Styles {}
 }
 
 #[cfg(feature = "combat-styles-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-styles")]impl Styles{#[doc="`get_Scale()` overload"]pub fn get_scale()->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ac310usize)as*mut u8,f32;
-)}
-}
-#[doc="`FitToScreen(crate::unity_engine::guistyle::GUIStyle)` overload"]pub fn fit_to_screen(style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20ac350usize)as*mut u8,();
-(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
-}
+#[cfg(feature = "combat-styles")]
+impl Styles {
+    #[doc = "`get_Scale()` overload"]
+    pub fn get_scale() -> f32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x20ac310usize)as*mut u8,f32;
+            )
+        }
+    }
+
+    #[doc = "`FitToScreen(crate::unity_engine::guistyle::GUIStyle)` overload"]
+    pub fn fit_to_screen(style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x20ac350usize)as*mut u8,();
+(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))
+        }
+    }
 }
 
-#[cfg(feature="combat-styles")]impl Styles{pub fn get_scale_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn fit_to_screen_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "combat-styles")]
+impl Styles {
+    pub fn get_scale_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn fit_to_screen_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "combat-styles")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Styles;
-    pub use super::IStyles;
+    pub use super::{IStyles, Styles};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

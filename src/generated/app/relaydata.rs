@@ -2,205 +2,441 @@
 
 #[cfg(feature = "app-relaydata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdata_1::{IStructData_1, StructData_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::structbase::{IStructBase,StructBase}
-;
-use crate::app::structdata_1::{IStructData_1,StructData_1}
-;
-use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaydata/RelayData.md"))]#[::unity2::class(namespace="App",name="RelayData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::relaydata::RelayData>)]pub struct RelayData{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaydata/RelayData.md"))]
+    #[::unity::class(namespace = "App", name = "RelayData")]
+    #[parent(crate::app::structdata_1::StructData_1<crate::app::relaydata::RelayData>)]
+    pub struct RelayData {}
 }
 
 #[cfg(feature = "app-relaydata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-relaydata")]impl RelayData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcd40usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "app-relaydata")]
+impl RelayData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcd40usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-relaydata")]pub trait IRelayDataMethods:IRelayData{#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcdf0usize)as*mut u8, ::unity2::Il2CppString;
-(RelayData)__receiver)}
-}
-#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce00usize)as*mut u8,();
-(RelayData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Difficulty()` overload"]fn get_difficulty(self,)->crate::app::difficulty::Difficulty{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce10usize)as*mut u8,crate::app::difficulty::Difficulty;
-(RelayData)__receiver)}
-}
-#[doc="`set_Difficulty(crate::app::difficulty::Difficulty)` overload"]fn set_difficulty(self,value:impl::core::convert::Into<crate::app::difficulty::Difficulty>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce20usize)as*mut u8,();
-(RelayData)__receiver,(crate::app::difficulty::Difficulty)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaxTurn()` overload"]fn get_max_turn(self,)->i32{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce30usize)as*mut u8,i32;
-(RelayData)__receiver)}
-}
-#[doc="`set_MaxTurn(i32)` overload"]fn set_max_turn(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce40usize)as*mut u8,();
-(RelayData)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MaxUnit()` overload"]fn get_max_unit(self,)->i32{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce50usize)as*mut u8,i32;
-(RelayData)__receiver)}
-}
-#[doc="`set_MaxUnit(i32)` overload"]fn set_max_unit(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce60usize)as*mut u8,();
-(RelayData)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_NewTurn()` overload"]fn get_new_turn(self,)->i32{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce70usize)as*mut u8,i32;
-(RelayData)__receiver)}
-}
-#[doc="`set_NewTurn(i32)` overload"]fn set_new_turn(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce80usize)as*mut u8,();
-(RelayData)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_TakeOverTurn()` overload"]fn get_take_over_turn(self,)->i32{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffce90usize)as*mut u8,i32;
-(RelayData)__receiver)}
-}
-#[doc="`set_TakeOverTurn(i32)` overload"]fn set_take_over_turn(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcea0usize)as*mut u8,();
-(RelayData)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_TakeOverUnit()` overload"]fn get_take_over_unit(self,)->i32{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffceb0usize)as*mut u8,i32;
-(RelayData)__receiver)}
-}
-#[doc="`set_TakeOverUnit(i32)` overload"]fn set_take_over_unit(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcec0usize)as*mut u8,();
-(RelayData)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_CompletionAwardMain()` overload"]fn get_completion_award_main(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffced0usize)as*mut u8, ::unity2::Il2CppString;
-(RelayData)__receiver)}
-}
-#[doc="`set_CompletionAwardMain(::unity2::Il2CppString)` overload"]fn set_completion_award_main(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcee0usize)as*mut u8,();
-(RelayData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_CompletionAwardSub()` overload"]fn get_completion_award_sub(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcef0usize)as*mut u8, ::unity2::Il2CppString;
-(RelayData)__receiver)}
-}
-#[doc="`set_CompletionAwardSub(::unity2::Il2CppString)` overload"]fn set_completion_award_sub(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf00usize)as*mut u8,();
-(RelayData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_GameOverAward()` overload"]fn get_game_over_award(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf10usize)as*mut u8, ::unity2::Il2CppString;
-(RelayData)__receiver)}
-}
-#[doc="`set_GameOverAward(::unity2::Il2CppString)` overload"]fn set_game_over_award(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf20usize)as*mut u8,();
-(RelayData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_UnlockCid()` overload"]fn get_unlock_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf30usize)as*mut u8, ::unity2::Il2CppString;
-(RelayData)__receiver)}
-}
-#[doc="`set_UnlockCid(::unity2::Il2CppString)` overload"]fn set_unlock_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf40usize)as*mut u8,();
-(RelayData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-relaydata")]
+pub trait IRelayDataMethods: IRelayData {
+    #[doc = "`get_Cid()` overload"]
+    fn get_cid(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcdf0usize)as*mut u8, ::unity::Il2CppString;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_Cid(::unity::Il2CppString)` overload"]
+    fn set_cid(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce00usize)as*mut u8,();
+(RelayData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Difficulty()` overload"]
+    fn get_difficulty(self) -> crate::app::difficulty::Difficulty {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce10usize)as*mut u8,crate::app::difficulty::Difficulty;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_Difficulty(crate::app::difficulty::Difficulty)` overload"]
+    fn set_difficulty(self, value: impl ::core::convert::Into<crate::app::difficulty::Difficulty>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce20usize)as*mut u8,();
+(RelayData)__receiver,(crate::app::difficulty::Difficulty)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_MaxTurn()` overload"]
+    fn get_max_turn(self) -> i32 {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce30usize)as*mut u8,i32;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_MaxTurn(i32)` overload"]
+    fn set_max_turn(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce40usize)as*mut u8,();
+(RelayData)__receiver,(i32)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_MaxUnit()` overload"]
+    fn get_max_unit(self) -> i32 {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce50usize)as*mut u8,i32;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_MaxUnit(i32)` overload"]
+    fn set_max_unit(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce60usize)as*mut u8,();
+(RelayData)__receiver,(i32)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_NewTurn()` overload"]
+    fn get_new_turn(self) -> i32 {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce70usize)as*mut u8,i32;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_NewTurn(i32)` overload"]
+    fn set_new_turn(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce80usize)as*mut u8,();
+(RelayData)__receiver,(i32)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_TakeOverTurn()` overload"]
+    fn get_take_over_turn(self) -> i32 {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffce90usize)as*mut u8,i32;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_TakeOverTurn(i32)` overload"]
+    fn set_take_over_turn(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcea0usize)as*mut u8,();
+(RelayData)__receiver,(i32)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_TakeOverUnit()` overload"]
+    fn get_take_over_unit(self) -> i32 {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffceb0usize)as*mut u8,i32;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_TakeOverUnit(i32)` overload"]
+    fn set_take_over_unit(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcec0usize)as*mut u8,();
+(RelayData)__receiver,(i32)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_CompletionAwardMain()` overload"]
+    fn get_completion_award_main(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffced0usize)as*mut u8, ::unity::Il2CppString;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_CompletionAwardMain(::unity::Il2CppString)` overload"]
+    fn set_completion_award_main(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcee0usize)as*mut u8,();
+(RelayData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_CompletionAwardSub()` overload"]
+    fn get_completion_award_sub(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcef0usize)as*mut u8, ::unity::Il2CppString;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_CompletionAwardSub(::unity::Il2CppString)` overload"]
+    fn set_completion_award_sub(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcf00usize)as*mut u8,();
+(RelayData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_GameOverAward()` overload"]
+    fn get_game_over_award(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcf10usize)as*mut u8, ::unity::Il2CppString;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_GameOverAward(::unity::Il2CppString)` overload"]
+    fn set_game_over_award(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcf20usize)as*mut u8,();
+(RelayData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_UnlockCid()` overload"]
+    fn get_unlock_cid(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcf30usize)as*mut u8, ::unity::Il2CppString;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`set_UnlockCid(::unity::Il2CppString)` overload"]
+    fn set_unlock_cid(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcf40usize)as*mut u8,();
+(RelayData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`GetDebugName()` overload"]
+    fn get_debug_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <RelayData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let __inner:extern "C" fn(RelayData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetCompletionAwardsForShow(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]fn get_completion_awards_for_show(self,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf60usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ;
-(RelayData)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(results))}
-}
-#[doc="`CalcCompletionAwards(crate::app::random_2::Random_2)` overload"]fn calc_completion_awards(self,random:impl::core::convert::Into<crate::app::random_2::Random_2>)->crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcfe0usize)as*mut u8,crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult;
-(RelayData)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))}
-}
-#[doc="`CanSelect()` overload"]fn can_select(self,)->bool{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffd060usize)as*mut u8,bool;
-(RelayData)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffd1d0usize)as*mut u8,();
-(RelayData)__receiver)}
-}
-}
-
-#[cfg(feature="app-relaydata")]impl<__T:IRelayData>IRelayDataMethods for __T{}
-
-#[cfg(feature="app-relaydata")]impl RelayData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_difficulty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_difficulty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_max_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_max_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_max_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_max_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_new_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_new_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_take_over_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_take_over_turn_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_take_over_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn set_take_over_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_completion_award_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_completion_award_main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn get_completion_award_sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn set_completion_award_sub_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_game_over_award_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn set_game_over_award_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn get_unlock_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn set_unlock_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn get_completion_awards_for_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn calc_completion_awards_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn can_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <RelayData as ::unity::ClassIdentity>::NAME,
+                        "GetDebugName",
+                    )
+                });
+                let __inner: extern "C" fn(RelayData, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetCompletionAwardsForShow(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]
+    fn get_completion_awards_for_show(
+        self,
+        results: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>>,
+    ) -> crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcf60usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ;
+(RelayData)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(results))
+        }
+    }
+    #[doc = "`CalcCompletionAwards(crate::app::random_2::Random_2)` overload"]
+    fn calc_completion_awards(
+        self,
+        random: impl ::core::convert::Into<crate::app::random_2::Random_2>,
+    ) -> crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffcfe0usize)as*mut u8,crate::app::relaycompletionawarddata::RelayCompletionAwardData_CalcResult;
+(RelayData)__receiver,(crate::app::random_2::Random_2)::core::convert::Into::into(random))
+        }
+    }
+    #[doc = "`CanSelect()` overload"]
+    fn can_select(self) -> bool {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffd060usize)as*mut u8,bool;
+(RelayData)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <RelayData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffd1d0usize)as*mut u8,();
+(RelayData)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-relaydata")]impl RelayData{#[doc="Direct (non-virtual) call to `RelayData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-relaydata")]
+impl<__T: IRelayData> IRelayDataMethods for __T {}
+
+#[cfg(feature = "app-relaydata")]
+impl RelayData {
+    pub fn load_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_cid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn set_cid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_difficulty_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn set_difficulty_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn get_max_turn_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn set_max_turn_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn get_max_unit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn set_max_unit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn get_new_turn_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
+
+    pub fn set_new_turn_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[10]
+    }
+
+    pub fn get_take_over_turn_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[11]
+    }
+
+    pub fn set_take_over_turn_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[12]
+    }
+
+    pub fn get_take_over_unit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[13]
+    }
+
+    pub fn set_take_over_unit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[14]
+    }
+
+    pub fn get_completion_award_main_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[15]
+    }
+
+    pub fn set_completion_award_main_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[16]
+    }
+
+    pub fn get_completion_award_sub_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[17]
+    }
+
+    pub fn set_completion_award_sub_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[18]
+    }
+
+    pub fn get_game_over_award_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[19]
+    }
+
+    pub fn set_game_over_award_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[20]
+    }
+
+    pub fn get_unlock_cid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[21]
+    }
+
+    pub fn set_unlock_cid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[22]
+    }
+
+    pub fn get_debug_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[23]
+    }
+
+    pub fn get_completion_awards_for_show_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[24]
+    }
+
+    pub fn calc_completion_awards_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[25]
+    }
+
+    pub fn can_select_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[26]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[27]
+    }
 }
 
-#[cfg(feature="app-relaydata")]impl RelayData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-relaydata")]
+impl RelayData {
+    #[doc = "Direct (non-virtual) call to `RelayData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_debug_name(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_debug_name_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-relaydata")]
+impl RelayData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(RelayData), ::core::stringify!(new),));
- <Self as IRelayDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(RelayData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-relaydata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayData;
-    pub use super::IRelayData;
-    pub use super::IRelayDataMethods;
-    pub use crate::app::structbase::IStructBase;
-    pub use crate::app::structdata_1::IStructData_1;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IRelayData, IRelayDataMethods, RelayData};
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")]
+    pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

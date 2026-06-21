@@ -2,44 +2,69 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shadowslicedata/ShadowSliceData.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct ShadowSliceData {
+        pub view_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        pub projection_matrix: crate::unity_engine::matrix4x4::Matrix4x4,
+        pub shadow_transform: crate::unity_engine::matrix4x4::Matrix4x4,
+        pub offset_x: i32,
+        pub offset_y: i32,
+        pub resolution: i32,
+    }
+    impl ::unity::ClassIdentity for ShadowSliceData {
+        const NAME: &'static str = "ShadowSliceData";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering.Universal";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shadowslicedata/ShadowSliceData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ShadowSliceData{pub view_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub projection_matrix:crate::unity_engine::matrix4x4::Matrix4x4,pub shadow_transform:crate::unity_engine::matrix4x4::Matrix4x4,pub offset_x:i32,pub offset_y:i32,pub resolution:i32,}
-impl::unity2::ClassIdentity for ShadowSliceData{const NAMESPACE: &'static str="UnityEngine.Rendering.Universal";
-const NAME: &'static str="ShadowSliceData";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ShadowSliceData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for ShadowSliceData {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-shadowslicedata")]impl ShadowSliceData{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2edb510usize)as*mut u8,();
-(*mut ShadowSliceData)self as*mut ShadowSliceData)}
-}
+#[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
+impl ShadowSliceData {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(&mut self) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2edb510usize)as*mut u8,();
+(*mut ShadowSliceData)self as*mut ShadowSliceData)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-universal-shadowslicedata")]impl ShadowSliceData{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
+impl ShadowSliceData {
+    pub fn clear_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shadowslicedata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ShadowSliceData;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

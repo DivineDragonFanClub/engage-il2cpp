@@ -2,44 +2,69 @@
 
 #[cfg(feature = "system-reflection-pointer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/pointer/Pointer.md"))]#[::unity2::class(namespace="System.Reflection",name="Pointer")]#[parent(crate::system::object::Object)]pub struct Pointer{#[offset(24)]#[rename(name="_ptrType")]pub ptr_type:crate::system::runtimetype::RuntimeType,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/pointer/Pointer.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "Pointer")]
+    #[parent(crate::system::object::Object)]
+    pub struct Pointer {
+        #[offset(24)]
+        #[rename(name = "_ptrType")]
+        pub ptr_type: crate::system::runtimetype::RuntimeType,
+    }
 }
 
 #[cfg(feature = "system-reflection-pointer-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-pointer")]pub trait IPointerMethods:IPointer{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Pointer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376a530usize)as*mut u8,();
-(Pointer)__receiver)}
-}
+#[cfg(feature = "system-reflection-pointer")]
+pub trait IPointerMethods: IPointer {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Pointer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x376a530usize)as*mut u8,();
+(Pointer)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-pointer")]impl<__T:IPointer>IPointerMethods for __T{}
+#[cfg(feature = "system-reflection-pointer")]
+impl<__T: IPointer> IPointerMethods for __T {}
 
-#[cfg(feature="system-reflection-pointer")]impl Pointer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "system-reflection-pointer")]
+impl Pointer {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="system-reflection-pointer")]impl Pointer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-reflection-pointer")]
+impl Pointer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(Pointer), ::core::stringify!(new),));
- <Self as IPointerMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(Pointer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPointerMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "system-reflection-pointer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Pointer;
-    pub use super::IPointer;
-    pub use super::IPointerMethods;
+    pub use super::{IPointer, IPointerMethods, Pointer};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

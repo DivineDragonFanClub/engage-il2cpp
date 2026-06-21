@@ -2,46 +2,83 @@
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/imaterialmodifier/IMaterialModifier.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="IMaterialModifier")]pub struct IMaterialModifier{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/imaterialmodifier/IMaterialModifier.md"))]
+    #[::unity::class(namespace = "UnityEngine.UI", name = "IMaterialModifier")]
+    pub struct IMaterialModifier {}
 }
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-imaterialmodifier")]pub trait IIMaterialModifierMethods:IIMaterialModifier{#[doc="`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]fn get_modified_material(self,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <IMaterialModifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+pub trait IIMaterialModifierMethods: IIMaterialModifier {
+    #[doc = "`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]
+    fn get_modified_material(
+        self,
+        base_material: impl ::core::convert::Into<crate::unity_engine::material::Material>,
+    ) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <IMaterialModifier as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <IMaterialModifier as::unity2::ClassIdentity> ::NAME,"GetModifiedMaterial",));
-let __inner:extern "C" fn(IMaterialModifier,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(base_material),__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <IMaterialModifier as ::unity::ClassIdentity>::NAME,
+                        "GetModifiedMaterial",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    IMaterialModifier,
+                    crate::unity_engine::material::Material,
+                    ::unity::OptionalMethod,
+                ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(base_material), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-ui-imaterialmodifier")]impl<__T:IIMaterialModifier>IIMaterialModifierMethods for __T{}
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+impl<__T: IIMaterialModifier> IIMaterialModifierMethods for __T {}
 
-#[cfg(feature="unity_engine-ui-imaterialmodifier")]impl IMaterialModifier{pub fn get_modified_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+impl IMaterialModifier {
+    pub fn get_modified_material_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-ui-imaterialmodifier")]impl IMaterialModifier{#[doc="Direct (non-virtual) call to `IMaterialModifier`'s own `GetModifiedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_modified_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,base_material:crate::unity_engine::material::Material,)->crate::unity_engine::material::Material{let __mi=Self::get_modified_material_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),base_material, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-ui-imaterialmodifier")]
+impl IMaterialModifier {
+    #[doc = "Direct (non-virtual) call to `IMaterialModifier`'s own `GetModifiedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_modified_material(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        base_material: crate::unity_engine::material::Material,
+    ) -> crate::unity_engine::material::Material {
+        let __mi = Self::get_modified_material_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::material::Material,
+            ::unity::OptionalMethod,
+        ) -> crate::unity_engine::material::Material = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), base_material, ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-ui-imaterialmodifier")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IMaterialModifier;
-    pub use super::IIMaterialModifier;
-    pub use super::IIMaterialModifierMethods;
+    pub use super::{IIMaterialModifier, IIMaterialModifierMethods, IMaterialModifier};
 }

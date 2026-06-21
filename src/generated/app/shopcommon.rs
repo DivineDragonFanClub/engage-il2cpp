@@ -2,33 +2,43 @@
 
 #[cfg(feature = "app-shopcommon-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopcommon/ShopCommon.md"))]#[::unity2::class(namespace="App",name="ShopCommon")]#[parent(crate::system::object::Object)]pub struct ShopCommon{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopcommon/ShopCommon.md"))]
+    #[::unity::class(namespace = "App", name = "ShopCommon")]
+    #[parent(crate::system::object::Object)]
+    pub struct ShopCommon {}
 }
 
 #[cfg(feature = "app-shopcommon-types")]
 pub use __types::*;
 
-#[cfg(feature="app-shopcommon")]impl ShopCommon{#[doc="`IsSatisfied(::unity2::Il2CppString)` overload"]pub fn is_satisfied(conditions:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ae400usize)as*mut u8,bool;
-(::unity2::Il2CppString)::core::convert::Into::into(conditions))}
-}
+#[cfg(feature = "app-shopcommon")]
+impl ShopCommon {
+    #[doc = "`IsSatisfied(::unity::Il2CppString)` overload"]
+    pub fn is_satisfied(conditions: impl ::core::convert::Into<::unity::Il2CppString>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ae400usize)as*mut u8,bool;
+(::unity::Il2CppString)::core::convert::Into::into(conditions))
+        }
+    }
 }
 
-#[cfg(feature="app-shopcommon")]impl ShopCommon{pub fn is_satisfied_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-shopcommon")]
+impl ShopCommon {
+    pub fn is_satisfied_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "app-shopcommon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShopCommon;
-    pub use super::IShopCommon;
+    pub use super::{IShopCommon, ShopCommon};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

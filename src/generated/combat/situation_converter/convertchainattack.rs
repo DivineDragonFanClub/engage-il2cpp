@@ -2,76 +2,167 @@
 
 #[cfg(feature = "combat-situation_converter-convertchainattack-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertchainattack/ConvertChainAttack.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertChainAttack")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertChainAttack{#[offset(24)]#[rename(name="m_LastChainAttackID")]pub m_last_chain_attack_id:i32, #[offset(28)]#[rename(name="m_IsEnemyEngageAttack")]pub m_is_enemy_engage_attack:bool, #[offset(29)]#[rename(name="m_IsChainBegun")]pub m_is_chain_begun:bool, #[offset(30)]#[rename(name="m_IsAttacking")]pub m_is_attacking:bool, #[offset(31)]#[rename(name="m_IsChainFinished")]pub m_is_chain_finished:bool,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertchainattack/ConvertChainAttack.md"))]
+    #[::unity::class(namespace = "Combat.SituationConverter", name = "ConvertChainAttack")]
+    #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
+    pub struct ConvertChainAttack {
+        #[offset(24)]
+        #[rename(name = "m_LastChainAttackID")]
+        pub m_last_chain_attack_id: i32,
+        #[offset(28)]
+        #[rename(name = "m_IsEnemyEngageAttack")]
+        pub m_is_enemy_engage_attack: bool,
+        #[offset(29)]
+        #[rename(name = "m_IsChainBegun")]
+        pub m_is_chain_begun: bool,
+        #[offset(30)]
+        #[rename(name = "m_IsAttacking")]
+        pub m_is_attacking: bool,
+        #[offset(31)]
+        #[rename(name = "m_IsChainFinished")]
+        pub m_is_chain_finished: bool,
+    }
 }
 
 #[cfg(feature = "combat-situation_converter-convertchainattack-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertchainattack")]pub trait IConvertChainAttackMethods:IConvertChainAttack{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertChainAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x253ff70usize)as*mut u8,();
-(ConvertChainAttack)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
-}
-#[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertChainAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-situation_converter-convertchainattack")]
+pub trait IConvertChainAttackMethods: IConvertChainAttack {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
+    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
+        unsafe {
+            let __receiver = <ConvertChainAttack as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x253ff70usize)as*mut u8,();
+(ConvertChainAttack)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))
+        }
+    }
+    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity::Il2CppString)` overload"]
+    fn convert(
+        self,
+        situation: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
+        arg: impl ::core::convert::Into<::unity::Il2CppString>,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertChainAttack as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <ConvertChainAttack as::unity2::ClassIdentity> ::NAME,"Convert",));
-let __inner:extern "C" fn(ConvertChainAttack,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg),__mi)}
-}
-}
-#[doc="`AttackCam()` overload"]fn attack_cam(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertChainAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2540550usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConvertChainAttack)__receiver)}
-}
-#[doc="`DamageCam()` overload"]fn damage_cam(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertChainAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25402c0usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConvertChainAttack)__receiver)}
-}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <ConvertChainAttack as ::unity::ClassIdentity>::NAME,
+                        "Convert",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    ConvertChainAttack,
+                    crate::combat::camerasituation::CameraSituation,
+                    ::unity::Il2CppString,
+                    ::unity::OptionalMethod,
+                ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg), __mi)
+            }
+        }
+    }
+    #[doc = "`AttackCam()` overload"]
+    fn attack_cam(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertChainAttack as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2540550usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertChainAttack)__receiver)
+        }
+    }
+    #[doc = "`DamageCam()` overload"]
+    fn damage_cam(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertChainAttack as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25402c0usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
+(ConvertChainAttack)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertchainattack")]impl<__T:IConvertChainAttack>IConvertChainAttackMethods for __T{}
+#[cfg(feature = "combat-situation_converter-convertchainattack")]
+impl<__T: IConvertChainAttack> IConvertChainAttackMethods for __T {}
 
-#[cfg(feature="combat-situation_converter-convertchainattack")]impl ConvertChainAttack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn attack_cam_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn damage_cam_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature = "combat-situation_converter-convertchainattack")]
+impl ConvertChainAttack {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn convert_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn attack_cam_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn damage_cam_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertchainattack")]impl ConvertChainAttack{#[doc="Direct (non-virtual) call to `ConvertChainAttack`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn convert(this:impl::core::convert::Into< ::unity2::IlInstance> ,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::convert_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),situation,arg, ::core::option::Option::None)}
+#[cfg(feature = "combat-situation_converter-convertchainattack")]
+impl ConvertChainAttack {
+    #[doc = "Direct (non-virtual) call to `ConvertChainAttack`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn convert(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        situation: crate::combat::camerasituation::CameraSituation,
+        arg: ::unity::Il2CppString,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        let __mi = Self::convert_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::combat::camerasituation::CameraSituation,
+            ::unity::Il2CppString,
+            ::unity::OptionalMethod,
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), situation, arg, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertchainattack")]impl ConvertChainAttack{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-situation_converter-convertchainattack")]
+impl ConvertChainAttack {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
+    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ConvertChainAttack), ::core::stringify!(new),));
- <Self as IConvertChainAttackMethods> ::ctor(this,data);
-this}
+ failed to instantiate",
+                ::core::stringify!(ConvertChainAttack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConvertChainAttackMethods>::ctor(this, data);
+        this
+    }
 }
 
 #[cfg(feature = "combat-situation_converter-convertchainattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertChainAttack;
-    pub use super::IConvertChainAttack;
-    pub use super::IConvertChainAttackMethods;
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ConvertChainAttack, IConvertChainAttack, IConvertChainAttackMethods};
+    #[cfg(feature = "combat-situation_converter-baseconverter")]
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::situation_converter::baseconverter::IBaseConverter, system::object::IObject};
 }

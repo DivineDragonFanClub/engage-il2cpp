@@ -2,60 +2,89 @@
 
 #[cfg(feature = "app-skinqualitylodadjuster-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skinqualitylodadjuster/SkinQualityLodAdjuster.md"))]#[::unity2::class(namespace="App",name="SkinQualityLodAdjuster")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct SkinQualityLodAdjuster{#[offset(24)]#[rename(name="quality")]pub quality:crate::unity_engine::skinquality::SkinQuality,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skinqualitylodadjuster/SkinQualityLodAdjuster.md"))]
+    #[::unity::class(namespace = "App", name = "SkinQualityLodAdjuster")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct SkinQualityLodAdjuster {
+        #[offset(24)]
+        #[rename(name = "quality")]
+        pub quality: crate::unity_engine::skinquality::SkinQuality,
+    }
 }
 
 #[cfg(feature = "app-skinqualitylodadjuster-types")]
 pub use __types::*;
 
-#[cfg(feature="app-skinqualitylodadjuster")]pub trait ISkinQualityLodAdjusterMethods:ISkinQualityLodAdjuster{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkinQualityLodAdjuster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdb1b0usize)as*mut u8,();
-(SkinQualityLodAdjuster)__receiver)}
-}
+#[cfg(feature = "app-skinqualitylodadjuster")]
+pub trait ISkinQualityLodAdjusterMethods: ISkinQualityLodAdjuster {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SkinQualityLodAdjuster as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1fdb1b0usize)as*mut u8,();
+(SkinQualityLodAdjuster)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-skinqualitylodadjuster")]impl<__T:ISkinQualityLodAdjuster>ISkinQualityLodAdjusterMethods for __T{}
+#[cfg(feature = "app-skinqualitylodadjuster")]
+impl<__T: ISkinQualityLodAdjuster> ISkinQualityLodAdjusterMethods for __T {}
 
-#[cfg(feature="app-skinqualitylodadjuster")]impl SkinQualityLodAdjuster{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-skinqualitylodadjuster")]
+impl SkinQualityLodAdjuster {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-skinqualitylodadjuster")]impl SkinQualityLodAdjuster{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-skinqualitylodadjuster")]
+impl SkinQualityLodAdjuster {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(SkinQualityLodAdjuster), ::core::stringify!(new),));
- <Self as ISkinQualityLodAdjusterMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(SkinQualityLodAdjuster),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISkinQualityLodAdjusterMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-skinqualitylodadjuster")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkinQualityLodAdjuster;
-    pub use super::ISkinQualityLodAdjuster;
-    pub use super::ISkinQualityLodAdjusterMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{ISkinQualityLodAdjuster, ISkinQualityLodAdjusterMethods, SkinQualityLodAdjuster};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

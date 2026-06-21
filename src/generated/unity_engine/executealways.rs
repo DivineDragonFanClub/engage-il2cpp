@@ -2,40 +2,60 @@
 
 #[cfg(feature = "unity_engine-executealways-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/executealways/ExecuteAlways.md"))]#[::unity2::class(namespace="UnityEngine",name="ExecuteAlways")]pub struct ExecuteAlways{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/executealways/ExecuteAlways.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "ExecuteAlways")]
+    pub struct ExecuteAlways {}
 }
 
 #[cfg(feature = "unity_engine-executealways-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-executealways")]pub trait IExecuteAlwaysMethods:IExecuteAlways{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExecuteAlways as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d550usize)as*mut u8,();
-(ExecuteAlways)__receiver)}
-}
+#[cfg(feature = "unity_engine-executealways")]
+pub trait IExecuteAlwaysMethods: IExecuteAlways {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ExecuteAlways as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c4d550usize)as*mut u8,();
+(ExecuteAlways)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-executealways")]impl<__T:IExecuteAlways>IExecuteAlwaysMethods for __T{}
+#[cfg(feature = "unity_engine-executealways")]
+impl<__T: IExecuteAlways> IExecuteAlwaysMethods for __T {}
 
-#[cfg(feature="unity_engine-executealways")]impl ExecuteAlways{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-executealways")]
+impl ExecuteAlways {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-executealways")]impl ExecuteAlways{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-executealways")]
+impl ExecuteAlways {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ExecuteAlways), ::core::stringify!(new),));
- <Self as IExecuteAlwaysMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ExecuteAlways),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExecuteAlwaysMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-executealways")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExecuteAlways;
-    pub use super::IExecuteAlways;
-    pub use super::IExecuteAlwaysMethods;
+    pub use super::{ExecuteAlways, IExecuteAlways, IExecuteAlwaysMethods};
 }

@@ -2,70 +2,114 @@
 
 #[cfg(feature = "root-minimapbigmenuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        root::mapnavigationminimapbasicmenuitem::{IMapNavigationMiniMapBasicMenuItem, MapNavigationMiniMapBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::root::mapnavigationminimapbasicmenuitem::{IMapNavigationMiniMapBasicMenuItem,MapNavigationMiniMapBasicMenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/minimapbigmenuitem/MiniMapBigMenuItem.md"))]#[::unity2::class(namespace="",name="MiniMapBigMenuItem")]#[parent(crate::root::mapnavigationminimapbasicmenuitem::MapNavigationMiniMapBasicMenuItem)]pub struct MiniMapBigMenuItem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/minimapbigmenuitem/MiniMapBigMenuItem.md"))]
+    #[::unity::class(namespace = "", name = "MiniMapBigMenuItem")]
+    #[parent(crate::root::mapnavigationminimapbasicmenuitem::MapNavigationMiniMapBasicMenuItem)]
+    pub struct MiniMapBigMenuItem {}
 }
 
 #[cfg(feature = "root-minimapbigmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="root-minimapbigmenuitem")]pub trait IMiniMapBigMenuItemMethods:IMiniMapBigMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MiniMapBigMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db870usize)as*mut u8,();
-(MiniMapBigMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MiniMapBigMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-minimapbigmenuitem")]
+pub trait IMiniMapBigMenuItemMethods: IMiniMapBigMenuItem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapBigMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25db870usize)as*mut u8,();
+(MiniMapBigMenuItem)__receiver)
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = <MiniMapBigMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(12usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <MiniMapBigMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let __inner:extern "C" fn(MiniMapBigMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="root-minimapbigmenuitem")]impl<__T:IMiniMapBigMenuItem>IMiniMapBigMenuItemMethods for __T{}
-
-#[cfg(feature="root-minimapbigmenuitem")]impl MiniMapBigMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root-minimapbigmenuitem")]impl MiniMapBigMenuItem{#[doc="Direct (non-virtual) call to `MiniMapBigMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        12usize,
+                        __vt.len(),
+                        <MiniMapBigMenuItem as ::unity::ClassIdentity>::NAME,
+                        "OnSelect",
+                    )
+                });
+                let __inner: extern "C" fn(MiniMapBigMenuItem, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="root-minimapbigmenuitem")]impl MiniMapBigMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-minimapbigmenuitem")]
+impl<__T: IMiniMapBigMenuItem> IMiniMapBigMenuItemMethods for __T {}
+
+#[cfg(feature = "root-minimapbigmenuitem")]
+impl MiniMapBigMenuItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn on_select_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "root-minimapbigmenuitem")]
+impl MiniMapBigMenuItem {
+    #[doc = "Direct (non-virtual) call to `MiniMapBigMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_select(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_select_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "root-minimapbigmenuitem")]
+impl MiniMapBigMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MiniMapBigMenuItem), ::core::stringify!(new),));
- <Self as IMiniMapBigMenuItemMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MiniMapBigMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapBigMenuItemMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-minimapbigmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MiniMapBigMenuItem;
-    pub use super::IMiniMapBigMenuItem;
-    pub use super::IMiniMapBigMenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::root::mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")] pub use crate::root::mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IMiniMapBigMenuItem, IMiniMapBigMenuItemMethods, MiniMapBigMenuItem};
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "root-mapnavigationminimapbasicmenuitem")]
+    pub use crate::root::mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::basicmenuitem::IBasicMenuItem, root::mapnavigationminimapbasicmenuitem::IMapNavigationMiniMapBasicMenuItem, system::object::IObject,
+    };
 }

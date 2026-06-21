@@ -2,153 +2,276 @@
 
 #[cfg(feature = "app-sortieconfirmbattledialog-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            basicdialog::{BasicDialog, IBasicDialog},
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemyes::{BasicDialogItemYes, IBasicDialogItemYes},
+            basicmenu::{BasicMenu, IBasicMenu},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+            procinst::{IProcInst, ProcInst},
+            yesnodialog::{IYesNoDialog, YesNoDialog},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicdialog::{BasicDialog,IBasicDialog}
-;
-use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
-;
-use crate::app::basicdialogitemyes::{BasicDialogItemYes,IBasicDialogItemYes}
-;
-use crate::app::basicmenu::{BasicMenu,IBasicMenu}
-;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::app::procinst::{IProcInst,ProcInst}
-;
-use crate::app::yesnodialog::{IYesNoDialog,YesNoDialog}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_ConfirmYesDialogItem.md"))]
+    #[::unity::class(namespace = "App", name = "SortieConfirmBattleDialog.ConfirmYesDialogItem")]
+    #[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]
+    pub struct SortieConfirmBattleDialog_ConfirmYesDialogItem {}
 
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md"))]
+    #[::unity::class(namespace = "App", name = "SortieConfirmBattleDialog")]
+    #[parent(crate::app::yesnodialog::YesNoDialog)]
+    pub struct SortieConfirmBattleDialog {
+        #[static_field]
+        #[rename(name = "m_from")]
+        pub m_from: crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From,
+    }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_ConfirmYesDialogItem.md"))]#[::unity2::class(namespace="App",name="SortieConfirmBattleDialog.ConfirmYesDialogItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct SortieConfirmBattleDialog_ConfirmYesDialogItem{}
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_From.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct SortieConfirmBattleDialog_From {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for SortieConfirmBattleDialog_From {
+        const NAME: &'static str = "SortieConfirmBattleDialog.From";
+        const NAMESPACE: &'static str = "App";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for SortieConfirmBattleDialog_From {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl SortieConfirmBattleDialog_From {
+        pub fn top() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog_From.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieConfirmBattleDialog_From{pub value:i32,}
-impl::unity2::ClassIdentity for SortieConfirmBattleDialog_From{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SortieConfirmBattleDialog.From";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SortieConfirmBattleDialog_From{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SortieConfirmBattleDialog_From{pub fn top()->Self{Self{value:0}
-}
-pub fn unit_select()->Self{Self{value:1}
-}
-pub fn troop_list()->Self{Self{value:2}
-}
-pub fn num()->Self{Self{value:3}
-}
-}
+        pub fn unit_select() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn troop_list() -> Self {
+            Self { value: 2 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieconfirmbattledialog/SortieConfirmBattleDialog.md"))]#[::unity2::class(namespace="App",name="SortieConfirmBattleDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct SortieConfirmBattleDialog{#[static_field]#[rename(name="m_from")]pub m_from:crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From,}
-
+        pub fn num() -> Self {
+            Self { value: 3 }
+        }
+    }
 }
 
 #[cfg(feature = "app-sortieconfirmbattledialog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-sortieconfirmbattledialog")]pub trait ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods:ISortieConfirmBattleDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SortieConfirmBattleDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d729a0usize)as*mut u8,();
-(SortieConfirmBattleDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieConfirmBattleDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+pub trait ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods: ISortieConfirmBattleDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, text: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <SortieConfirmBattleDialog_ConfirmYesDialogItem as ::unity::FromIlInstance>::from_il_instance(
+                <Self as ::unity::SystemObject>::as_instance(self),
+            );
+            ::unity::il2cpp_call!((::unity::module_base()+0x1d729a0usize)as*mut u8,();
+(SortieConfirmBattleDialog_ConfirmYesDialogItem)__receiver,(::unity::Il2CppString)::core::convert::Into::into(text))
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <SortieConfirmBattleDialog_ConfirmYesDialogItem as ::unity::FromIlInstance>::from_il_instance(
+                <Self as ::unity::SystemObject>::as_instance(self),
+            );
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(18usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <SortieConfirmBattleDialog_ConfirmYesDialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let __inner:extern "C" fn(SortieConfirmBattleDialog_ConfirmYesDialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        18usize,
+                        __vt.len(),
+                        <SortieConfirmBattleDialog_ConfirmYesDialogItem as ::unity::ClassIdentity>::NAME,
+                        "ACall",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    SortieConfirmBattleDialog_ConfirmYesDialogItem,
+                    ::unity::OptionalMethod,
+                ) -> crate::app::basicmenu::BasicMenu_Result = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl<__T:ISortieConfirmBattleDialog_ConfirmYesDialogItem>ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods for __T{}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl<__T: ISortieConfirmBattleDialog_ConfirmYesDialogItem> ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods for __T {}
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl SortieConfirmBattleDialog_ConfirmYesDialogItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn a_call_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl SortieConfirmBattleDialog_ConfirmYesDialogItem{#[doc="Direct (non-virtual) call to `SortieConfirmBattleDialog_ConfirmYesDialogItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
+    #[doc = "Direct (non-virtual) call to `SortieConfirmBattleDialog_ConfirmYesDialogItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn a_call(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenu::BasicMenu_Result {
+        let __mi = Self::a_call_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl SortieConfirmBattleDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(text: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl SortieConfirmBattleDialog_ConfirmYesDialogItem {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(text: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieConfirmBattleDialog_ConfirmYesDialogItem), ::core::stringify!(new),));
- <Self as ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods> ::ctor(this,text);
-this}
+ failed to instantiate",
+                ::core::stringify!(SortieConfirmBattleDialog_ConfirmYesDialogItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods>::ctor(this, text);
+        this
+    }
 }
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl SortieConfirmBattleDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,from:impl::core::convert::Into<crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe54a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From)::core::convert::Into::into(from))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe5920usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl SortieConfirmBattleDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        from: impl ::core::convert::Into<crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1fe54a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::sortieconfirmbattledialog::SortieConfirmBattleDialog_From)::core::convert::Into::into(from))
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1fe5920usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-sortieconfirmbattledialog")]pub trait ISortieConfirmBattleDialogMethods:ISortieConfirmBattleDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <SortieConfirmBattleDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe58a0usize)as*mut u8,();
-(SortieConfirmBattleDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
-}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+pub trait ISortieConfirmBattleDialogMethods: ISortieConfirmBattleDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <SortieConfirmBattleDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1fe58a0usize)as*mut u8,();
+(SortieConfirmBattleDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))
+        }
+    }
 }
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl<__T:ISortieConfirmBattleDialog>ISortieConfirmBattleDialogMethods for __T{}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl<__T: ISortieConfirmBattleDialog> ISortieConfirmBattleDialogMethods for __T {}
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl SortieConfirmBattleDialog{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl SortieConfirmBattleDialog {
+    pub fn create_bind_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn cctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="app-sortieconfirmbattledialog")]impl SortieConfirmBattleDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-sortieconfirmbattledialog")]
+impl SortieConfirmBattleDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` — overload selector"]
+    pub fn new(menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(SortieConfirmBattleDialog), ::core::stringify!(new),));
- <Self as ISortieConfirmBattleDialogMethods> ::ctor(this,menu_item_list);
-this}
+ failed to instantiate",
+                ::core::stringify!(SortieConfirmBattleDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortieConfirmBattleDialogMethods>::ctor(this, menu_item_list);
+        this
+    }
 }
 
 #[cfg(feature = "app-sortieconfirmbattledialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieConfirmBattleDialog_ConfirmYesDialogItem;
-    pub use super::ISortieConfirmBattleDialog_ConfirmYesDialogItem;
-    pub use super::ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods;
-    pub use super::SortieConfirmBattleDialog_From;
-    pub use super::SortieConfirmBattleDialog;
-    pub use super::ISortieConfirmBattleDialog;
-    pub use super::ISortieConfirmBattleDialogMethods;
-    pub use crate::app::basicdialog::IBasicDialog;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
-    pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
-    pub use crate::app::basicmenu::IBasicMenu;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::app::procinst::IProcInst;
-    pub use crate::app::yesnodialog::IYesNoDialog;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "app-basicdialog")] pub use crate::app::basicdialog::IBasicDialogMethods;
-    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemyes")] pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
-    #[cfg(feature = "app-basicmenu")] pub use crate::app::basicmenu::IBasicMenuMethods;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-yesnodialog")] pub use crate::app::yesnodialog::IYesNoDialogMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{
+        ISortieConfirmBattleDialog, ISortieConfirmBattleDialogMethods, ISortieConfirmBattleDialog_ConfirmYesDialogItem,
+        ISortieConfirmBattleDialog_ConfirmYesDialogItemMethods, SortieConfirmBattleDialog, SortieConfirmBattleDialog_ConfirmYesDialogItem,
+        SortieConfirmBattleDialog_From,
+    };
+    #[cfg(feature = "app-basicdialog")]
+    pub use crate::app::basicdialog::IBasicDialogMethods;
+    #[cfg(feature = "app-basicdialogitem")]
+    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemyes")]
+    pub use crate::app::basicdialogitemyes::IBasicDialogItemYesMethods;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-yesnodialog")]
+    pub use crate::app::yesnodialog::IYesNoDialogMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{
+            basicdialog::IBasicDialog, basicdialogitem::IBasicDialogItem, basicdialogitemyes::IBasicDialogItemYes, basicmenu::IBasicMenu,
+            basicmenuitem::IBasicMenuItem, procinst::IProcInst, yesnodialog::IYesNoDialog,
+        },
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

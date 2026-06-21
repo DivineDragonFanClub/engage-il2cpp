@@ -2,62 +2,107 @@
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/subsystems_implementation/subsystemdescriptorwithprovider/SubsystemDescriptorWithProvider.md"))]#[::unity2::class(namespace="UnityEngine.SubsystemsImplementation",name="SubsystemDescriptorWithProvider")]#[parent(crate::system::object::Object)]pub struct SubsystemDescriptorWithProvider{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/subsystems_implementation/subsystemdescriptorwithprovider/SubsystemDescriptorWithProvider.md"))]
+    #[::unity::class(namespace = "UnityEngine.SubsystemsImplementation", name = "SubsystemDescriptorWithProvider")]
+    #[parent(crate::system::object::Object)]
+    pub struct SubsystemDescriptorWithProvider {}
 }
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]pub trait ISubsystemDescriptorWithProviderMethods:ISubsystemDescriptorWithProvider{#[doc="`get_id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SubsystemDescriptorWithProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+pub trait ISubsystemDescriptorWithProviderMethods: ISubsystemDescriptorWithProvider {
+    #[doc = "`get_id()` overload"]
+    fn get_id(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver =
+                <SubsystemDescriptorWithProvider as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SubsystemDescriptorWithProvider as::unity2::ClassIdentity> ::NAME,"get_id",));
-let __inner:extern "C" fn(SubsystemDescriptorWithProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SubsystemDescriptorWithProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ae60usize)as*mut u8,();
-(SubsystemDescriptorWithProvider)__receiver)}
-}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <SubsystemDescriptorWithProvider as ::unity::ClassIdentity>::NAME,
+                        "get_id",
+                    )
+                });
+                let __inner: extern "C" fn(SubsystemDescriptorWithProvider, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <SubsystemDescriptorWithProvider as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f3ae60usize)as*mut u8,();
+(SubsystemDescriptorWithProvider)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl<__T:ISubsystemDescriptorWithProvider>ISubsystemDescriptorWithProviderMethods for __T{}
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+impl<__T: ISubsystemDescriptorWithProvider> ISubsystemDescriptorWithProviderMethods for __T {}
 
-#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+impl SubsystemDescriptorWithProvider {
+    pub fn get_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{#[doc="Direct (non-virtual) call to `SubsystemDescriptorWithProvider`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_id_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+impl SubsystemDescriptorWithProvider {
+    #[doc = "Direct (non-virtual) call to `SubsystemDescriptorWithProvider`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_id(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_id_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]impl SubsystemDescriptorWithProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
+impl SubsystemDescriptorWithProvider {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(SubsystemDescriptorWithProvider), ::core::stringify!(new),));
- <Self as ISubsystemDescriptorWithProviderMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(SubsystemDescriptorWithProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISubsystemDescriptorWithProviderMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-subsystems_implementation-subsystemdescriptorwithprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SubsystemDescriptorWithProvider;
-    pub use super::ISubsystemDescriptorWithProvider;
-    pub use super::ISubsystemDescriptorWithProviderMethods;
+    pub use super::{ISubsystemDescriptorWithProvider, ISubsystemDescriptorWithProviderMethods, SubsystemDescriptorWithProvider};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

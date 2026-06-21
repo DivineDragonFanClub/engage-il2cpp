@@ -2,70 +2,119 @@
 
 #[cfg(feature = "combat-situation_converter-convertsky-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::situation_converter::{
+            baseconverter::{BaseConverter, IBaseConverter},
+            converterwithut::{ConverterWithUt, IConverterWithUt},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
-;
-use crate::combat::situation_converter::converterwithut::{ConverterWithUt,IConverterWithUt}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertsky/ConvertSky.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertSky")]#[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]pub struct ConvertSky{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertsky/ConvertSky.md"))]
+    #[::unity::class(namespace = "Combat.SituationConverter", name = "ConvertSky")]
+    #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
+    pub struct ConvertSky {}
 }
 
 #[cfg(feature = "combat-situation_converter-convertsky-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertsky")]pub trait IConvertSkyMethods:IConvertSky{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertSky as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25435f0usize)as*mut u8,();
-(ConvertSky)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
-}
-#[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertSky as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-situation_converter-convertsky")]
+pub trait IConvertSkyMethods: IConvertSky {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
+    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
+        unsafe {
+            let __receiver = <ConvertSky as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25435f0usize)as*mut u8,();
+(ConvertSky)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))
+        }
+    }
+    #[doc = "`OnDamage()` overload"]
+    fn on_damage(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertSky as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <ConvertSky as::unity2::ClassIdentity> ::NAME,"OnDamage",));
-let __inner:extern "C" fn(ConvertSky, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="combat-situation_converter-convertsky")]impl<__T:IConvertSky>IConvertSkyMethods for __T{}
-
-#[cfg(feature="combat-situation_converter-convertsky")]impl ConvertSky{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="combat-situation_converter-convertsky")]impl ConvertSky{#[doc="Direct (non-virtual) call to `ConvertSky`'s own `OnDamage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_damage(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_damage_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <ConvertSky as ::unity::ClassIdentity>::NAME,
+                        "OnDamage",
+                    )
+                });
+                let __inner: extern "C" fn(ConvertSky, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertsky")]impl ConvertSky{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-situation_converter-convertsky")]
+impl<__T: IConvertSky> IConvertSkyMethods for __T {}
+
+#[cfg(feature = "combat-situation_converter-convertsky")]
+impl ConvertSky {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn on_damage_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "combat-situation_converter-convertsky")]
+impl ConvertSky {
+    #[doc = "Direct (non-virtual) call to `ConvertSky`'s own `OnDamage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_damage(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::combat::cameraposition::CameraPosition {
+        let __mi = Self::on_damage_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "combat-situation_converter-convertsky")]
+impl ConvertSky {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
+    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ConvertSky), ::core::stringify!(new),));
- <Self as IConvertSkyMethods> ::ctor(this,data);
-this}
+ failed to instantiate",
+                ::core::stringify!(ConvertSky),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConvertSkyMethods>::ctor(this, data);
+        this
+    }
 }
 
 #[cfg(feature = "combat-situation_converter-convertsky")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertSky;
-    pub use super::IConvertSky;
-    pub use super::IConvertSkyMethods;
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
-    pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "combat-situation_converter-converterwithut")] pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ConvertSky, IConvertSky, IConvertSkyMethods};
+    #[cfg(feature = "combat-situation_converter-baseconverter")]
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "combat-situation_converter-converterwithut")]
+    pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::situation_converter::{baseconverter::IBaseConverter, converterwithut::IConverterWithUt},
+        system::object::IObject,
+    };
 }

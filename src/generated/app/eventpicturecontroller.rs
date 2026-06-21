@@ -2,85 +2,168 @@
 
 #[cfg(feature = "app-eventpicturecontroller-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventpicturecontroller/EventPictureController.md"))]#[::unity2::class(namespace="App",name="EventPictureController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EventPictureController{#[static_field]#[rename(name="AssetRootPath")]pub asset_root_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::rawimage::RawImage, #[offset(32)]#[rename(name="m_Animation")]pub m_animation:crate::unity_engine::animation::Animation, #[offset(40)]#[rename(name="m_PictureTextureHandle")]pub m_picture_texture_handle:crate::app::resourcehandle_2::ResourceHandle_2,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/eventpicturecontroller/EventPictureController.md"))]
+    #[::unity::class(namespace = "App", name = "EventPictureController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EventPictureController {
+        #[static_field]
+        #[rename(name = "AssetRootPath")]
+        pub asset_root_path: ::unity::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "m_Image")]
+        pub m_image: crate::unity_engine::ui::rawimage::RawImage,
+        #[offset(32)]
+        #[rename(name = "m_Animation")]
+        pub m_animation: crate::unity_engine::animation::Animation,
+        #[offset(40)]
+        #[rename(name = "m_PictureTextureHandle")]
+        pub m_picture_texture_handle: crate::app::resourcehandle_2::ResourceHandle_2,
+    }
 }
 
 #[cfg(feature = "app-eventpicturecontroller-types")]
 pub use __types::*;
 
-#[cfg(feature="app-eventpicturecontroller")]pub trait IEventPictureControllerMethods:IEventPictureController{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventPictureController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1b80usize)as*mut u8,();
-(EventPictureController)__receiver)}
-}
-#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <EventPictureController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1b90usize)as*mut u8,();
-(EventPictureController)__receiver)}
-}
-#[doc="`IsSkip()` overload"]fn is_skip(self,)->bool{unsafe{let __receiver= <EventPictureController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24e1c80usize)as*mut u8,bool;
-(EventPictureController)__receiver)}
-}
-#[doc="`IsLoadingTexture()` overload"]fn is_loading_texture(self,)->bool{unsafe{let __receiver= <EventPictureController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24e0070usize)as*mut u8,bool;
-(EventPictureController)__receiver)}
-}
-#[doc="`Show(::unity2::Il2CppString, ::unity2::Il2CppString, bool)` overload"]fn show(self,texture_name:impl::core::convert::Into< ::unity2::Il2CppString> ,anim_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_female:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventPictureController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ddd10usize)as*mut u8,();
-(EventPictureController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(texture_name),(::unity2::Il2CppString)::core::convert::Into::into(anim_name),(bool)::core::convert::Into::into(is_female))}
-}
-#[doc="`Hide(::unity2::Il2CppString)` overload"]fn hide(self,anim_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EventPictureController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ddfb0usize)as*mut u8,();
-(EventPictureController)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_name))}
-}
+#[cfg(feature = "app-eventpicturecontroller")]
+pub trait IEventPictureControllerMethods: IEventPictureController {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventPictureController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x24e1b80usize)as*mut u8,();
+(EventPictureController)__receiver)
+        }
+    }
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver =
+                <EventPictureController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x24e1b90usize)as*mut u8,();
+(EventPictureController)__receiver)
+        }
+    }
+    #[doc = "`IsSkip()` overload"]
+    fn is_skip(self) -> bool {
+        unsafe {
+            let __receiver =
+                <EventPictureController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x24e1c80usize)as*mut u8,bool;
+(EventPictureController)__receiver)
+        }
+    }
+    #[doc = "`IsLoadingTexture()` overload"]
+    fn is_loading_texture(self) -> bool {
+        unsafe {
+            let __receiver =
+                <EventPictureController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x24e0070usize)as*mut u8,bool;
+(EventPictureController)__receiver)
+        }
+    }
+    #[doc = "`Show(::unity::Il2CppString, ::unity::Il2CppString, bool)` overload"]
+    fn show(
+        self,
+        texture_name: impl ::core::convert::Into<::unity::Il2CppString>,
+        anim_name: impl ::core::convert::Into<::unity::Il2CppString>,
+        is_female: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <EventPictureController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x24ddd10usize)as*mut u8,();
+(EventPictureController)__receiver,(::unity::Il2CppString)::core::convert::Into::into(texture_name),(::unity::Il2CppString)::core::convert::Into::into(anim_name),(bool)::core::convert::Into::into(is_female))
+        }
+    }
+    #[doc = "`Hide(::unity::Il2CppString)` overload"]
+    fn hide(self, anim_name: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <EventPictureController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x24ddfb0usize)as*mut u8,();
+(EventPictureController)__receiver,(::unity::Il2CppString)::core::convert::Into::into(anim_name))
+        }
+    }
 }
 
-#[cfg(feature="app-eventpicturecontroller")]impl<__T:IEventPictureController>IEventPictureControllerMethods for __T{}
+#[cfg(feature = "app-eventpicturecontroller")]
+impl<__T: IEventPictureController> IEventPictureControllerMethods for __T {}
 
-#[cfg(feature="app-eventpicturecontroller")]impl EventPictureController{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_skip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_loading_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature = "app-eventpicturecontroller")]
+impl EventPictureController {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn awake_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_skip_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn is_loading_texture_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn show_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn hide_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
 }
 
-#[cfg(feature="app-eventpicturecontroller")]impl EventPictureController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-eventpicturecontroller")]
+impl EventPictureController {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(EventPictureController), ::core::stringify!(new),));
- <Self as IEventPictureControllerMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(EventPictureController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventPictureControllerMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-eventpicturecontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventPictureController;
-    pub use super::IEventPictureController;
-    pub use super::IEventPictureControllerMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{EventPictureController, IEventPictureController, IEventPictureControllerMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

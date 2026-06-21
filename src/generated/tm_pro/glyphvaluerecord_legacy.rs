@@ -2,50 +2,88 @@
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/glyphvaluerecord_legacy/GlyphValueRecord_Legacy.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct GlyphValueRecord_Legacy {
+        pub x_placement: f32,
+        pub y_placement: f32,
+        pub x_advance: f32,
+        pub y_advance: f32,
+    }
+    impl ::unity::ClassIdentity for GlyphValueRecord_Legacy {
+        const NAME: &'static str = "GlyphValueRecord_Legacy";
+        const NAMESPACE: &'static str = "TMPro";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/glyphvaluerecord_legacy/GlyphValueRecord_Legacy.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct GlyphValueRecord_Legacy{pub x_placement:f32,pub y_placement:f32,pub x_advance:f32,pub y_advance:f32,}
-impl::unity2::ClassIdentity for GlyphValueRecord_Legacy{const NAMESPACE: &'static str="TMPro";
-const NAME: &'static str="GlyphValueRecord_Legacy";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GlyphValueRecord_Legacy{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for GlyphValueRecord_Legacy {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-glyphvaluerecord_legacy")]impl GlyphValueRecord_Legacy{#[doc="`op_Addition(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]pub fn op_addition(a:impl::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy> ,b:impl::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>)->crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c0c0usize)as*mut u8,crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy;
-(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)::core::convert::Into::into(a),(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)::core::convert::Into::into(b))}
-}
+#[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
+impl GlyphValueRecord_Legacy {
+    #[doc = "`op_Addition(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy, crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)` overload"]
+    pub fn op_addition(
+        a: impl ::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>,
+        b: impl ::core::convert::Into<crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy>,
+    ) -> crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2d8c0c0usize)as*mut u8,crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy;
+(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)::core::convert::Into::into(a),(crate::tm_pro::glyphvaluerecord_legacy::GlyphValueRecord_Legacy)::core::convert::Into::into(b))
+        }
+    }
 }
 
-#[cfg(feature="tm_pro-glyphvaluerecord_legacy")]impl GlyphValueRecord_Legacy{#[doc="`.ctor(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"]pub fn ctor(&mut self,value_record:impl::core::convert::Into<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d8c050usize)as*mut u8,();
-(*mut GlyphValueRecord_Legacy)self as*mut GlyphValueRecord_Legacy,(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)::core::convert::Into::into(value_record))}
-}
+#[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
+impl GlyphValueRecord_Legacy {
+    #[doc = "`.ctor(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)` overload"]
+    pub fn ctor(
+        &mut self,
+        value_record: impl ::core::convert::Into<crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2d8c050usize)as*mut u8,();
+(*mut GlyphValueRecord_Legacy)self as*mut GlyphValueRecord_Legacy,(crate::unity_engine::text_core::low_level::glyphvaluerecord::GlyphValueRecord)::core::convert::Into::into(value_record))
+        }
+    }
 }
 
-#[cfg(feature="tm_pro-glyphvaluerecord_legacy")]impl GlyphValueRecord_Legacy{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn op_addition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
+impl GlyphValueRecord_Legacy {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn op_addition_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "tm_pro-glyphvaluerecord_legacy")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::GlyphValueRecord_Legacy;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

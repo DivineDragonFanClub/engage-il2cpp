@@ -2,58 +2,101 @@
 
 #[cfg(feature = "unity_engine-bindings-nativeheaderattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/nativeheaderattribute/NativeHeaderAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Bindings",name="NativeHeaderAttribute")]pub struct NativeHeaderAttribute{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/bindings/nativeheaderattribute/NativeHeaderAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine.Bindings", name = "NativeHeaderAttribute")]
+    pub struct NativeHeaderAttribute {}
 }
 
 #[cfg(feature = "unity_engine-bindings-nativeheaderattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-bindings-nativeheaderattribute")]pub trait INativeHeaderAttributeMethods:INativeHeaderAttribute{#[doc="`set_Header(::unity2::Il2CppString)` overload"]fn set_header(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeHeaderAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-bindings-nativeheaderattribute")]
+pub trait INativeHeaderAttributeMethods: INativeHeaderAttribute {
+    #[doc = "`set_Header(::unity::Il2CppString)` overload"]
+    fn set_header(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <NativeHeaderAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <NativeHeaderAttribute as::unity2::ClassIdentity> ::NAME,"set_Header",));
-let __inner:extern "C" fn(NativeHeaderAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(value),__mi)}
-}
-}
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeHeaderAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37e30usize)as*mut u8,();
-(NativeHeaderAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(header))}
-}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <NativeHeaderAttribute as ::unity::ClassIdentity>::NAME,
+                        "set_Header",
+                    )
+                });
+                let __inner: extern "C" fn(NativeHeaderAttribute, ::unity::Il2CppString, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(value), __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, header: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <NativeHeaderAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f37e30usize)as*mut u8,();
+(NativeHeaderAttribute)__receiver,(::unity::Il2CppString)::core::convert::Into::into(header))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-bindings-nativeheaderattribute")]impl<__T:INativeHeaderAttribute>INativeHeaderAttributeMethods for __T{}
+#[cfg(feature = "unity_engine-bindings-nativeheaderattribute")]
+impl<__T: INativeHeaderAttribute> INativeHeaderAttributeMethods for __T {}
 
-#[cfg(feature="unity_engine-bindings-nativeheaderattribute")]impl NativeHeaderAttribute{pub fn set_header_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "unity_engine-bindings-nativeheaderattribute")]
+impl NativeHeaderAttribute {
+    pub fn set_header_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="unity_engine-bindings-nativeheaderattribute")]impl NativeHeaderAttribute{#[doc="Direct (non-virtual) call to `NativeHeaderAttribute`'s own `set_Header`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_header(this:impl::core::convert::Into< ::unity2::IlInstance> ,value: ::unity2::Il2CppString,)->(){let __mi=Self::set_header_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),value, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-bindings-nativeheaderattribute")]
+impl NativeHeaderAttribute {
+    #[doc = "Direct (non-virtual) call to `NativeHeaderAttribute`'s own `set_Header`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn set_header(this: impl ::core::convert::Into<::unity::IlInstance>, value: ::unity::Il2CppString) -> () {
+        let __mi = Self::set_header_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Il2CppString, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), value, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="unity_engine-bindings-nativeheaderattribute")]impl NativeHeaderAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(header: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-bindings-nativeheaderattribute")]
+impl NativeHeaderAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(header: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(NativeHeaderAttribute), ::core::stringify!(new),));
- <Self as INativeHeaderAttributeMethods> ::ctor(this,header);
-this}
+ failed to instantiate",
+                ::core::stringify!(NativeHeaderAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INativeHeaderAttributeMethods>::ctor(this, header);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-bindings-nativeheaderattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NativeHeaderAttribute;
-    pub use super::INativeHeaderAttribute;
-    pub use super::INativeHeaderAttributeMethods;
+    pub use super::{INativeHeaderAttribute, INativeHeaderAttributeMethods, NativeHeaderAttribute};
 }

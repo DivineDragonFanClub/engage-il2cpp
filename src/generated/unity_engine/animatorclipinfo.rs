@@ -2,54 +2,92 @@
 
 #[cfg(feature = "unity_engine-animatorclipinfo-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animatorclipinfo/AnimatorClipInfo.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct AnimatorClipInfo {
+        pub m_clip_instance_id: i32,
+        pub m_weight: f32,
+    }
+    impl ::unity::ClassIdentity for AnimatorClipInfo {
+        const NAME: &'static str = "AnimatorClipInfo";
+        const NAMESPACE: &'static str = "UnityEngine";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/animatorclipinfo/AnimatorClipInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AnimatorClipInfo{pub m_clip_instance_id:i32,pub m_weight:f32,}
-impl::unity2::ClassIdentity for AnimatorClipInfo{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="AnimatorClipInfo";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AnimatorClipInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for AnimatorClipInfo {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-animatorclipinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-animatorclipinfo")]impl AnimatorClipInfo{#[doc="`InstanceIDToAnimationClipPPtr(i32)` overload"]pub fn instance_id_to_animation_clip_p_ptr(instance_id:impl::core::convert::Into<i32>)->crate::unity_engine::animationclip::AnimationClip{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6d10usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
-(i32)::core::convert::Into::into(instance_id))}
-}
-}
-
-#[cfg(feature="unity_engine-animatorclipinfo")]impl AnimatorClipInfo{#[doc="`get_clip()` overload"]pub fn get_clip(&mut self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6ca0usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
-(*mut AnimatorClipInfo)self as*mut AnimatorClipInfo)}
-}
-#[doc="`get_weight()` overload"]pub fn get_weight(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb6d60usize)as*mut u8,f32;
-(*mut AnimatorClipInfo)self as*mut AnimatorClipInfo)}
-}
+#[cfg(feature = "unity_engine-animatorclipinfo")]
+impl AnimatorClipInfo {
+    #[doc = "`InstanceIDToAnimationClipPPtr(i32)` overload"]
+    pub fn instance_id_to_animation_clip_p_ptr(instance_id: impl ::core::convert::Into<i32>) -> crate::unity_engine::animationclip::AnimationClip {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3eb6d10usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(i32)::core::convert::Into::into(instance_id))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-animatorclipinfo")]impl AnimatorClipInfo{pub fn get_clip_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn instance_id_to_animation_clip_p_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "unity_engine-animatorclipinfo")]
+impl AnimatorClipInfo {
+    #[doc = "`get_clip()` overload"]
+    pub fn get_clip(&mut self) -> crate::unity_engine::animationclip::AnimationClip {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3eb6ca0usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
+(*mut AnimatorClipInfo)self as*mut AnimatorClipInfo)
+        }
+    }
+
+    #[doc = "`get_weight()` overload"]
+    pub fn get_weight(&mut self) -> f32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3eb6d60usize)as*mut u8,f32;
+(*mut AnimatorClipInfo)self as*mut AnimatorClipInfo)
+        }
+    }
+}
+
+#[cfg(feature = "unity_engine-animatorclipinfo")]
+impl AnimatorClipInfo {
+    pub fn get_clip_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_weight_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn instance_id_to_animation_clip_p_ptr_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
 #[cfg(feature = "unity_engine-animatorclipinfo")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimatorClipInfo;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

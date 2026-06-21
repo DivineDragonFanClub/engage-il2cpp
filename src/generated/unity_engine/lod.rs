@@ -2,44 +2,70 @@
 
 #[cfg(feature = "unity_engine-lod-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/lod/LOD.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct LOD {
+        pub screen_relative_transition_height: f32,
+        pub fade_transition_width: f32,
+        pub renderers: ::unity::Array<crate::unity_engine::renderer::Renderer>,
+    }
+    impl ::unity::ClassIdentity for LOD {
+        const NAME: &'static str = "LOD";
+        const NAMESPACE: &'static str = "UnityEngine";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/lod/LOD.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LOD{pub screen_relative_transition_height:f32,pub fade_transition_width:f32,pub renderers: ::unity2::Array<crate::unity_engine::renderer::Renderer>,}
-impl::unity2::ClassIdentity for LOD{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="LOD";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for LOD{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for LOD {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-lod-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-lod")]impl LOD{#[doc="`.ctor(f32, ::unity2::Array<crate::unity_engine::renderer::Renderer>)` overload"]pub fn ctor(&mut self,screen_relative_transition_height:impl::core::convert::Into<f32> ,renderers:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::renderer::Renderer> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c52850usize)as*mut u8,();
-(*mut LOD)self as*mut LOD,(f32)::core::convert::Into::into(screen_relative_transition_height),(::unity2::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(renderers))}
-}
+#[cfg(feature = "unity_engine-lod")]
+impl LOD {
+    #[doc = "`.ctor(f32, ::unity::Array<crate::unity_engine::renderer::Renderer>)` overload"]
+    pub fn ctor(
+        &mut self,
+        screen_relative_transition_height: impl ::core::convert::Into<f32>,
+        renderers: impl ::core::convert::Into<::unity::Array<crate::unity_engine::renderer::Renderer>>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c52850usize)as*mut u8,();
+(*mut LOD)self as*mut LOD,(f32)::core::convert::Into::into(screen_relative_transition_height),(::unity::Array<crate::unity_engine::renderer::Renderer>)::core::convert::Into::into(renderers))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-lod")]impl LOD{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-lod")]
+impl LOD {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-lod")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::LOD;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

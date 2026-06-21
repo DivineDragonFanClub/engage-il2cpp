@@ -2,91 +2,162 @@
 
 #[cfg(feature = "root-volumebgmmenuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        root::configbasicmenuitem::{ConfigBasicMenuItem, IConfigBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::root::configbasicmenuitem::{ConfigBasicMenuItem,IConfigBasicMenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/volumebgmmenuitem/VolumeBgmMenuItem.md"))]#[::unity2::class(namespace="",name="VolumeBgmMenuItem")]#[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]pub struct VolumeBgmMenuItem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/volumebgmmenuitem/VolumeBgmMenuItem.md"))]
+    #[::unity::class(namespace = "", name = "VolumeBgmMenuItem")]
+    #[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]
+    pub struct VolumeBgmMenuItem {}
 }
 
 #[cfg(feature = "root-volumebgmmenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="root-volumebgmmenuitem")]pub trait IVolumeBgmMenuItemMethods:IVolumeBgmMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VolumeBgmMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21c3a00usize)as*mut u8,();
-(VolumeBgmMenuItem)__receiver)}
-}
-#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <VolumeBgmMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-volumebgmmenuitem")]
+pub trait IVolumeBgmMenuItemMethods: IVolumeBgmMenuItem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <VolumeBgmMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x21c3a00usize)as*mut u8,();
+(VolumeBgmMenuItem)__receiver)
+        }
+    }
+    #[doc = "`CustomCall()` overload"]
+    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <VolumeBgmMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(26usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",26usize,__vt.len(), <VolumeBgmMenuItem as::unity2::ClassIdentity> ::NAME,"CustomCall",));
-let __inner:extern "C" fn(VolumeBgmMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`InitContent()` overload"]fn init_content(self,)->(){unsafe{let __receiver= <VolumeBgmMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        26usize,
+                        __vt.len(),
+                        <VolumeBgmMenuItem as ::unity::ClassIdentity>::NAME,
+                        "CustomCall",
+                    )
+                });
+                let __inner: extern "C" fn(VolumeBgmMenuItem, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`InitContent()` overload"]
+    fn init_content(self) -> () {
+        unsafe {
+            let __receiver = <VolumeBgmMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(27usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <VolumeBgmMenuItem as::unity2::ClassIdentity> ::NAME,"InitContent",));
-let __inner:extern "C" fn(VolumeBgmMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`SetHelpText()` overload"]fn set_help_text(self,)->(){unsafe{let __receiver= <VolumeBgmMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21c3b70usize)as*mut u8,();
-(VolumeBgmMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="root-volumebgmmenuitem")]impl<__T:IVolumeBgmMenuItem>IVolumeBgmMenuItemMethods for __T{}
-
-#[cfg(feature="root-volumebgmmenuitem")]impl VolumeBgmMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn init_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="root-volumebgmmenuitem")]impl VolumeBgmMenuItem{#[doc="Direct (non-virtual) call to `VolumeBgmMenuItem`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn custom_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::custom_call_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `VolumeBgmMenuItem`'s own `InitContent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn init_content(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::init_content_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        27usize,
+                        __vt.len(),
+                        <VolumeBgmMenuItem as ::unity::ClassIdentity>::NAME,
+                        "InitContent",
+                    )
+                });
+                let __inner: extern "C" fn(VolumeBgmMenuItem, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`SetHelpText()` overload"]
+    fn set_help_text(self) -> () {
+        unsafe {
+            let __receiver = <VolumeBgmMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x21c3b70usize)as*mut u8,();
+(VolumeBgmMenuItem)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-volumebgmmenuitem")]impl VolumeBgmMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-volumebgmmenuitem")]
+impl<__T: IVolumeBgmMenuItem> IVolumeBgmMenuItemMethods for __T {}
+
+#[cfg(feature = "root-volumebgmmenuitem")]
+impl VolumeBgmMenuItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn custom_call_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn init_content_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn set_help_text_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+}
+
+#[cfg(feature = "root-volumebgmmenuitem")]
+impl VolumeBgmMenuItem {
+    #[doc = "Direct (non-virtual) call to `VolumeBgmMenuItem`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn custom_call(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenu::BasicMenu_Result {
+        let __mi = Self::custom_call_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `VolumeBgmMenuItem`'s own `InitContent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn init_content(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::init_content_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "root-volumebgmmenuitem")]
+impl VolumeBgmMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(VolumeBgmMenuItem), ::core::stringify!(new),));
- <Self as IVolumeBgmMenuItemMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(VolumeBgmMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVolumeBgmMenuItemMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-volumebgmmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VolumeBgmMenuItem;
-    pub use super::IVolumeBgmMenuItem;
-    pub use super::IVolumeBgmMenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::root::configbasicmenuitem::IConfigBasicMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "root-configbasicmenuitem")] pub use crate::root::configbasicmenuitem::IConfigBasicMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IVolumeBgmMenuItem, IVolumeBgmMenuItemMethods, VolumeBgmMenuItem};
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "root-configbasicmenuitem")]
+    pub use crate::root::configbasicmenuitem::IConfigBasicMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, root::configbasicmenuitem::IConfigBasicMenuItem, system::object::IObject};
 }

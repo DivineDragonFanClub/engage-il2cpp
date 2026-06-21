@@ -2,119 +2,287 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1, IAsyncOperationBase_1},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::{AsyncOperationBase_1,IAsyncOperationBase_1}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/checkcatalogsoperation/CheckCatalogsOperation.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="CheckCatalogsOperation")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> >)]pub struct CheckCatalogsOperation{#[offset(136)]#[rename(name="m_Addressables")]pub m_addressables:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, #[offset(144)]#[rename(name="m_LocalHashes")]pub m_local_hashes:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(152)]#[rename(name="m_LocatorInfos")]pub m_locator_infos:crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo> , #[offset(160)]#[rename(name="m_DepOp")]pub m_dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/checkcatalogsoperation/CheckCatalogsOperation.md"))]
+    #[::unity::class(namespace = "UnityEngine.AddressableAssets", name = "CheckCatalogsOperation")]
+    #[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::system::collections::generic::list_1::List_1< ::unity::Il2CppString> >)]
+    pub struct CheckCatalogsOperation {
+        #[offset(136)]
+        #[rename(name = "m_Addressables")]
+        pub m_addressables: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl,
+        #[offset(144)]
+        #[rename(name = "m_LocalHashes")]
+        pub m_local_hashes: crate::system::collections::generic::list_1::List_1<::unity::Il2CppString>,
+        #[offset(152)]
+        #[rename(name = "m_LocatorInfos")]
+        pub m_locator_infos: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo,
+        >,
+        #[offset(160)]
+        #[rename(name = "m_DepOp")]
+        pub m_dep_op: crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+            crate::system::collections::generic::ilist_1_interface::IList_1_Interface<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
+    }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-addressable_assets-checkcatalogsoperation")]pub trait ICheckCatalogsOperationMethods:ICheckCatalogsOperation{#[doc="`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]fn ctor(self,aa:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>)->(){unsafe{let __receiver= <CheckCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dafb80usize)as*mut u8,();
-(CheckCatalogsOperation)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa))}
-}
-#[doc="`Start(crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo>)` overload"]fn start(self,locator_infos:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo> >)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> >{unsafe{let __receiver= <CheckCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dafbf0usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > ;
-(CheckCatalogsOperation)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo>)::core::convert::Into::into(locator_infos))}
-}
-#[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <CheckCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+pub trait ICheckCatalogsOperationMethods: ICheckCatalogsOperation {
+    #[doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` overload"]
+    fn ctor(self, aa: impl ::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl>) -> () {
+        unsafe {
+            let __receiver =
+                <CheckCatalogsOperation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2dafb80usize)as*mut u8,();
+(CheckCatalogsOperation)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa))
+        }
+    }
+    #[doc = "`Start(crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo>)` overload"]
+    fn start(
+        self,
+        locator_infos: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo,
+            >,
+        >,
+    ) -> crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<
+        crate::system::collections::generic::list_1::List_1<::unity::Il2CppString>,
+    > {
+        unsafe {
+            let __receiver =
+                <CheckCatalogsOperation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2dafbf0usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::list_1::List_1< ::unity::Il2CppString> > ;
+(CheckCatalogsOperation)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo>)::core::convert::Into::into(locator_infos))
+        }
+    }
+    #[doc = "`InvokeWaitForCompletion()` overload"]
+    fn invoke_wait_for_completion(self) -> bool {
+        unsafe {
+            let __receiver =
+                <CheckCatalogsOperation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(33usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",33usize,__vt.len(), <CheckCatalogsOperation as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
-let __inner:extern "C" fn(CheckCatalogsOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <CheckCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        33usize,
+                        __vt.len(),
+                        <CheckCatalogsOperation as ::unity::ClassIdentity>::NAME,
+                        "InvokeWaitForCompletion",
+                    )
+                });
+                let __inner: extern "C" fn(CheckCatalogsOperation, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Destroy()` overload"]
+    fn destroy(self) -> () {
+        unsafe {
+            let __receiver =
+                <CheckCatalogsOperation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(29usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",29usize,__vt.len(), <CheckCatalogsOperation as::unity2::ClassIdentity> ::NAME,"Destroy",));
-let __inner:extern "C" fn(CheckCatalogsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]fn get_dependencies(self,dependencies:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{let __receiver= <CheckCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        29usize,
+                        __vt.len(),
+                        <CheckCatalogsOperation as ::unity::ClassIdentity>::NAME,
+                        "Destroy",
+                    )
+                });
+                let __inner: extern "C" fn(CheckCatalogsOperation, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]
+    fn get_dependencies(
+        self,
+        dependencies: impl ::core::convert::Into<
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+        >,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <CheckCatalogsOperation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(32usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",32usize,__vt.len(), <CheckCatalogsOperation as::unity2::ClassIdentity> ::NAME,"GetDependencies",));
-let __inner:extern "C" fn(CheckCatalogsOperation,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(dependencies),__mi)}
-}
-}
-#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <CheckCatalogsOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        32usize,
+                        __vt.len(),
+                        <CheckCatalogsOperation as ::unity::ClassIdentity>::NAME,
+                        "GetDependencies",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    CheckCatalogsOperation,
+                    crate::system::collections::generic::list_1::List_1<
+                        crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+                    >,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(dependencies), __mi)
+            }
+        }
+    }
+    #[doc = "`Execute()` overload"]
+    fn execute(self) -> () {
+        unsafe {
+            let __receiver =
+                <CheckCatalogsOperation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(28usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <CheckCatalogsOperation as::unity2::ClassIdentity> ::NAME,"Execute",));
-let __inner:extern "C" fn(CheckCatalogsOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="unity_engine-addressable_assets-checkcatalogsoperation")]impl<__T:ICheckCatalogsOperation>ICheckCatalogsOperationMethods for __T{}
-
-#[cfg(feature="unity_engine-addressable_assets-checkcatalogsoperation")]impl CheckCatalogsOperation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_dependencies_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+`)",
+                        28usize,
+                        __vt.len(),
+                        <CheckCatalogsOperation as ::unity::ClassIdentity>::NAME,
+                        "Execute",
+                    )
+                });
+                let __inner: extern "C" fn(CheckCatalogsOperation, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-addressable_assets-checkcatalogsoperation")]impl CheckCatalogsOperation{#[doc="Direct (non-virtual) call to `CheckCatalogsOperation`'s own `InvokeWaitForCompletion`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke_wait_for_completion(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::invoke_wait_for_completion_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `CheckCatalogsOperation`'s own `Destroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::destroy_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `CheckCatalogsOperation`'s own `GetDependencies`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_dependencies(this:impl::core::convert::Into< ::unity2::IlInstance> ,dependencies:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,)->(){let __mi=Self::get_dependencies_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),dependencies, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `CheckCatalogsOperation`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::execute_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+impl<__T: ICheckCatalogsOperation> ICheckCatalogsOperationMethods for __T {}
+
+#[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+impl CheckCatalogsOperation {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn start_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn invoke_wait_for_completion_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn destroy_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn get_dependencies_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn execute_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
 }
 
-#[cfg(feature="unity_engine-addressable_assets-checkcatalogsoperation")]impl CheckCatalogsOperation{#[doc="`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` — overload selector"]pub fn new(aa:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+impl CheckCatalogsOperation {
+    #[doc = "Direct (non-virtual) call to `CheckCatalogsOperation`'s own `InvokeWaitForCompletion`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn invoke_wait_for_completion(this: impl ::core::convert::Into<::unity::IlInstance>) -> bool {
+        let __mi = Self::invoke_wait_for_completion_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `CheckCatalogsOperation`'s own `Destroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn destroy(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::destroy_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `CheckCatalogsOperation`'s own `GetDependencies`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_dependencies(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        dependencies: crate::system::collections::generic::list_1::List_1<
+            crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+        >,
+    ) -> () {
+        let __mi = Self::get_dependencies_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::system::collections::generic::list_1::List_1<
+                crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,
+            >,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), dependencies, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `CheckCatalogsOperation`'s own `Execute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn execute(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::execute_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
+impl CheckCatalogsOperation {
+    #[doc = "`.ctor(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)` — overload selector"]
+    pub fn new(aa: crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(CheckCatalogsOperation), ::core::stringify!(new),));
- <Self as ICheckCatalogsOperationMethods> ::ctor(this,aa);
-this}
+ failed to instantiate",
+                ::core::stringify!(CheckCatalogsOperation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICheckCatalogsOperationMethods>::ctor(this, aa);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-checkcatalogsoperation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CheckCatalogsOperation;
-    pub use super::ICheckCatalogsOperation;
-    pub use super::ICheckCatalogsOperationMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")] pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use super::{CheckCatalogsOperation, ICheckCatalogsOperation, ICheckCatalogsOperationMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-resource_management-async_operations-asyncoperationbase_1")]
+    pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1Methods;
+    pub use crate::{system::object::IObject, unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1};
 }

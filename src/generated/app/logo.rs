@@ -2,78 +2,127 @@
 
 #[cfg(feature = "app-logo-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1, SingletonMonoBehaviour_1},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::singletonmonobehaviour_1::{ISingletonMonoBehaviour_1,SingletonMonoBehaviour_1}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/logo/Logo.md"))]#[::unity2::class(namespace="App",name="Logo")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::logo::Logo>)]pub struct Logo{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/logo/Logo.md"))]
+    #[::unity::class(namespace = "App", name = "Logo")]
+    #[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::logo::Logo>)]
+    pub struct Logo {}
 }
 
 #[cfg(feature = "app-logo-types")]
 pub use __types::*;
 
-#[cfg(feature="app-logo")]impl Logo{#[doc="`ShowImage(bool, ::unity2::Il2CppString)` overload"]pub fn show_image(enable:impl::core::convert::Into<bool> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bef870usize)as*mut u8,();
-(bool)::core::convert::Into::into(enable),(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`ShowLogo(bool)` overload"]pub fn show_logo(enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1befa20usize)as*mut u8,();
-(bool)::core::convert::Into::into(enable))}
-}
-#[doc="`ShowIcon(bool)` overload"]pub fn show_icon(enable:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1befa80usize)as*mut u8,();
-(bool)::core::convert::Into::into(enable))}
-}
+#[cfg(feature = "app-logo")]
+impl Logo {
+    #[doc = "`ShowImage(bool, ::unity::Il2CppString)` overload"]
+    pub fn show_image(enable: impl ::core::convert::Into<bool>, name: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bef870usize)as*mut u8,();
+(bool)::core::convert::Into::into(enable),(::unity::Il2CppString)::core::convert::Into::into(name))
+        }
+    }
+
+    #[doc = "`ShowLogo(bool)` overload"]
+    pub fn show_logo(enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1befa20usize)as*mut u8,();
+(bool)::core::convert::Into::into(enable))
+        }
+    }
+
+    #[doc = "`ShowIcon(bool)` overload"]
+    pub fn show_icon(enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1befa80usize)as*mut u8,();
+(bool)::core::convert::Into::into(enable))
+        }
+    }
 }
 
-#[cfg(feature="app-logo")]pub trait ILogoMethods:ILogo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Logo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1befae0usize)as*mut u8,();
-(Logo)__receiver)}
-}
-}
-
-#[cfg(feature="app-logo")]impl<__T:ILogo>ILogoMethods for __T{}
-
-#[cfg(feature="app-logo")]impl Logo{pub fn show_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_logo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn show_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature = "app-logo")]
+pub trait ILogoMethods: ILogo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Logo as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1befae0usize)as*mut u8,();
+(Logo)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-logo")]impl Logo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-logo")]
+impl<__T: ILogo> ILogoMethods for __T {}
+
+#[cfg(feature = "app-logo")]
+impl Logo {
+    pub fn show_image_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn show_logo_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn show_icon_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+}
+
+#[cfg(feature = "app-logo")]
+impl Logo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(Logo), ::core::stringify!(new),));
- <Self as ILogoMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(Logo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILogoMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-logo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Logo;
-    pub use super::ILogo;
-    pub use super::ILogoMethods;
-    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "app-singletonmonobehaviour_1")] pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{ILogo, ILogoMethods, Logo};
+    #[cfg(feature = "app-singletonmonobehaviour_1")]
+    pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

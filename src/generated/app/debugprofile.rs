@@ -2,48 +2,70 @@
 
 #[cfg(feature = "app-debugprofile-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::singletonclass_1::{ISingletonClass_1, SingletonClass_1},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::singletonclass_1::{ISingletonClass_1,SingletonClass_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugprofile/DebugProfile.md"))]#[::unity2::class(namespace="App",name="DebugProfile")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::debugprofile::DebugProfile>)]pub struct DebugProfile{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugprofile/DebugProfile.md"))]
+    #[::unity::class(namespace = "App", name = "DebugProfile")]
+    #[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::debugprofile::DebugProfile>)]
+    pub struct DebugProfile {}
 }
 
 #[cfg(feature = "app-debugprofile-types")]
 pub use __types::*;
 
-#[cfg(feature="app-debugprofile")]pub trait IDebugProfileMethods:IDebugProfile{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugProfile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a0ffd0usize)as*mut u8,();
-(DebugProfile)__receiver)}
-}
+#[cfg(feature = "app-debugprofile")]
+pub trait IDebugProfileMethods: IDebugProfile {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DebugProfile as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2a0ffd0usize)as*mut u8,();
+(DebugProfile)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-debugprofile")]impl<__T:IDebugProfile>IDebugProfileMethods for __T{}
+#[cfg(feature = "app-debugprofile")]
+impl<__T: IDebugProfile> IDebugProfileMethods for __T {}
 
-#[cfg(feature="app-debugprofile")]impl DebugProfile{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-debugprofile")]
+impl DebugProfile {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-debugprofile")]impl DebugProfile{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-debugprofile")]
+impl DebugProfile {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugProfile), ::core::stringify!(new),));
- <Self as IDebugProfileMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(DebugProfile),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugProfileMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-debugprofile")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugProfile;
-    pub use super::IDebugProfile;
-    pub use super::IDebugProfileMethods;
-    pub use crate::app::singletonclass_1::ISingletonClass_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{DebugProfile, IDebugProfile, IDebugProfileMethods};
+    #[cfg(feature = "app-singletonclass_1")]
+    pub use crate::app::singletonclass_1::ISingletonClass_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::singletonclass_1::ISingletonClass_1, system::object::IObject};
 }

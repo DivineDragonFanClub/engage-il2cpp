@@ -2,66 +2,105 @@
 
 #[cfg(feature = "app-mapimagecost-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapimagecore_1::{IMapImageCore_1, MapImageCore_1},
+            mapimagecorebyte::{IMapImageCoreByte, MapImageCoreByte},
+            mapimageindex::{IMapImageIndex, MapImageIndex},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapimagecore_1::{IMapImageCore_1,MapImageCore_1}
-;
-use crate::app::mapimagecorebyte::{IMapImageCoreByte,MapImageCoreByte}
-;
-use crate::app::mapimageindex::{IMapImageIndex,MapImageIndex}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagecost/MapImageCost.md"))]#[::unity2::class(namespace="App",name="MapImageCost")]#[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]pub struct MapImageCost{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagecost/MapImageCost.md"))]
+    #[::unity::class(namespace = "App", name = "MapImageCost")]
+    #[parent(crate::app::mapimagecorebyte::MapImageCoreByte)]
+    pub struct MapImageCost {}
 }
 
 #[cfg(feature = "app-mapimagecost-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapimagecost")]pub trait IMapImageCostMethods:IMapImageCost{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapImageCost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x205fb50usize)as*mut u8,();
-(MapImageCost)__receiver)}
-}
-#[doc="`Update(i32, i32)` overload"]fn update_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImageCost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x205fe80usize)as*mut u8,();
-(MapImageCost)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageCost as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2060010usize)as*mut u8,();
-(MapImageCost)__receiver)}
-}
+#[cfg(feature = "app-mapimagecost")]
+pub trait IMapImageCostMethods: IMapImageCost {
+    #[doc = "`Update()` overload"]
+    fn update(self) -> () {
+        unsafe {
+            let __receiver = <MapImageCost as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x205fb50usize)as*mut u8,();
+(MapImageCost)__receiver)
+        }
+    }
+    #[doc = "`Update(i32, i32)` overload"]
+    fn update_2(self, x: impl ::core::convert::Into<i32>, z: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <MapImageCost as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x205fe80usize)as*mut u8,();
+(MapImageCost)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapImageCost as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2060010usize)as*mut u8,();
+(MapImageCost)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-mapimagecost")]impl<__T:IMapImageCost>IMapImageCostMethods for __T{}
+#[cfg(feature = "app-mapimagecost")]
+impl<__T: IMapImageCost> IMapImageCostMethods for __T {}
 
-#[cfg(feature="app-mapimagecost")]impl MapImageCost{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn update_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "app-mapimagecost")]
+impl MapImageCost {
+    pub fn update_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn update_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="app-mapimagecost")]impl MapImageCost{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-mapimagecost")]
+impl MapImageCost {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MapImageCost), ::core::stringify!(new),));
- <Self as IMapImageCostMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MapImageCost),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapImageCostMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-mapimagecost")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapImageCost;
-    pub use super::IMapImageCost;
-    pub use super::IMapImageCostMethods;
-    pub use crate::app::mapimagecore_1::IMapImageCore_1;
-    pub use crate::app::mapimagecorebyte::IMapImageCoreByte;
-    pub use crate::app::mapimageindex::IMapImageIndex;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapimagecore_1")] pub use crate::app::mapimagecore_1::IMapImageCore_1Methods;
-    #[cfg(feature = "app-mapimagecorebyte")] pub use crate::app::mapimagecorebyte::IMapImageCoreByteMethods;
-    #[cfg(feature = "app-mapimageindex")] pub use crate::app::mapimageindex::IMapImageIndexMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IMapImageCost, IMapImageCostMethods, MapImageCost};
+    #[cfg(feature = "app-mapimagecore_1")]
+    pub use crate::app::mapimagecore_1::IMapImageCore_1Methods;
+    #[cfg(feature = "app-mapimagecorebyte")]
+    pub use crate::app::mapimagecorebyte::IMapImageCoreByteMethods;
+    #[cfg(feature = "app-mapimageindex")]
+    pub use crate::app::mapimageindex::IMapImageIndexMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapimagecore_1::IMapImageCore_1, mapimagecorebyte::IMapImageCoreByte, mapimageindex::IMapImageIndex},
+        system::object::IObject,
+    };
 }

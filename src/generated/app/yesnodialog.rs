@@ -2,62 +2,108 @@
 
 #[cfg(feature = "app-yesnodialog-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            basicdialog::{BasicDialog, IBasicDialog},
+            basicmenu::{BasicMenu, IBasicMenu},
+            procinst::{IProcInst, ProcInst},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicdialog::{BasicDialog,IBasicDialog}
-;
-use crate::app::basicmenu::{BasicMenu,IBasicMenu}
-;
-use crate::app::procinst::{IProcInst,ProcInst}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/yesnodialog/YesNoDialog.md"))]#[::unity2::class(namespace="App",name="YesNoDialog")]#[parent(crate::app::basicdialog::BasicDialog)]pub struct YesNoDialog{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/yesnodialog/YesNoDialog.md"))]
+    #[::unity::class(namespace = "App", name = "YesNoDialog")]
+    #[parent(crate::app::basicdialog::BasicDialog)]
+    pub struct YesNoDialog {}
 }
 
 #[cfg(feature = "app-yesnodialog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-yesnodialog")]impl YesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_item:impl::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes> ,no_item:impl::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>)->crate::app::yesnodialog::YesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29403d0usize)as*mut u8,crate::app::yesnodialog::YesNoDialog;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::basicdialogitemyes::BasicDialogItemYes)::core::convert::Into::into(yes_item),(crate::app::basicdialogitemno::BasicDialogItemNo)::core::convert::Into::into(no_item))}
-}
+#[cfg(feature = "app-yesnodialog")]
+impl YesNoDialog {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, ::unity::Il2CppString, crate::app::basicdialogitemyes::BasicDialogItemYes, crate::app::basicdialogitemno::BasicDialogItemNo)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        message: impl ::core::convert::Into<::unity::Il2CppString>,
+        yes_item: impl ::core::convert::Into<crate::app::basicdialogitemyes::BasicDialogItemYes>,
+        no_item: impl ::core::convert::Into<crate::app::basicdialogitemno::BasicDialogItemNo>,
+    ) -> crate::app::yesnodialog::YesNoDialog {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x29403d0usize)as*mut u8,crate::app::yesnodialog::YesNoDialog;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity::Il2CppString)::core::convert::Into::into(message),(crate::app::basicdialogitemyes::BasicDialogItemYes)::core::convert::Into::into(yes_item),(crate::app::basicdialogitemno::BasicDialogItemNo)::core::convert::Into::into(no_item))
+        }
+    }
 }
 
-#[cfg(feature="app-yesnodialog")]pub trait IYesNoDialogMethods:IYesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <YesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29403c0usize)as*mut u8,();
-(YesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
-}
+#[cfg(feature = "app-yesnodialog")]
+pub trait IYesNoDialogMethods: IYesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]
+    fn ctor(
+        self,
+        menu_item_list: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>>,
+        menu_content: impl ::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>,
+    ) -> () {
+        unsafe {
+            let __receiver = <YesNoDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x29403c0usize)as*mut u8,();
+(YesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))
+        }
+    }
 }
 
-#[cfg(feature="app-yesnodialog")]impl<__T:IYesNoDialog>IYesNoDialogMethods for __T{}
+#[cfg(feature = "app-yesnodialog")]
+impl<__T: IYesNoDialog> IYesNoDialogMethods for __T {}
 
-#[cfg(feature="app-yesnodialog")]impl YesNoDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-yesnodialog")]
+impl YesNoDialog {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn create_bind_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-yesnodialog")]impl YesNoDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-yesnodialog")]
+impl YesNoDialog {
+    #[doc = "`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]
+    pub fn new(
+        menu_item_list: crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>,
+        menu_content: crate::app::basicdialogcontent::BasicDialogContent,
+    ) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(YesNoDialog), ::core::stringify!(new),));
- <Self as IYesNoDialogMethods> ::ctor(this,menu_item_list,menu_content);
-this}
+ failed to instantiate",
+                ::core::stringify!(YesNoDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IYesNoDialogMethods>::ctor(this, menu_item_list, menu_content);
+        this
+    }
 }
 
 #[cfg(feature = "app-yesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::YesNoDialog;
-    pub use super::IYesNoDialog;
-    pub use super::IYesNoDialogMethods;
-    pub use crate::app::basicdialog::IBasicDialog;
-    pub use crate::app::basicmenu::IBasicMenu;
-    pub use crate::app::procinst::IProcInst;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicdialog")] pub use crate::app::basicdialog::IBasicDialogMethods;
-    #[cfg(feature = "app-basicmenu")] pub use crate::app::basicmenu::IBasicMenuMethods;
-    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IYesNoDialog, IYesNoDialogMethods, YesNoDialog};
+    #[cfg(feature = "app-basicdialog")]
+    pub use crate::app::basicdialog::IBasicDialogMethods;
+    #[cfg(feature = "app-basicmenu")]
+    pub use crate::app::basicmenu::IBasicMenuMethods;
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicdialog::IBasicDialog, basicmenu::IBasicMenu, procinst::IProcInst},
+        system::object::IObject,
+    };
 }

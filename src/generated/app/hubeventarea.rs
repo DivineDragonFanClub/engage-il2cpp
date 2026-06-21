@@ -2,105 +2,196 @@
 
 #[cfg(feature = "app-hubeventarea-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubeventarea/HubEventArea.md"))]#[::unity2::class(namespace="App",name="HubEventArea")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubEventArea{#[offset(24)]#[rename(name="m_Data")]pub m_data:crate::app::hubdemodata::HubDemoData,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubeventarea/HubEventArea.md"))]
+    #[::unity::class(namespace = "App", name = "HubEventArea")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct HubEventArea {
+        #[offset(24)]
+        #[rename(name = "m_Data")]
+        pub m_data: crate::app::hubdemodata::HubDemoData,
+    }
 }
 
 #[cfg(feature = "app-hubeventarea-types")]
 pub use __types::*;
 
-#[cfg(feature="app-hubeventarea")]pub trait IHubEventAreaMethods:IHubEventArea{#[doc="`get_IsComplete()` overload"]fn get_is_complete(self,)->bool{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a6ca0usize)as*mut u8,bool;
-(HubEventArea)__receiver)}
-}
-#[doc="`get_FlagName()` overload"]fn get_flag_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a6e10usize)as*mut u8, ::unity2::Il2CppString;
-(HubEventArea)__receiver)}
-}
-#[doc="`IsEnabled()` overload"]fn is_enabled(self,)->bool{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a6e80usize)as*mut u8,bool;
-(HubEventArea)__receiver)}
-}
-#[doc="`IsExecuted()` overload"]fn is_executed(self,)->bool{unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a70d0usize)as*mut u8,bool;
-(HubEventArea)__receiver)}
-}
-#[doc="`SetExecute()` overload"]fn set_execute(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7270usize)as*mut u8,();
-(HubEventArea)__receiver)}
-}
-#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a74f0usize)as*mut u8,();
-(HubEventArea)__receiver)}
-}
-#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7590usize)as*mut u8,();
-(HubEventArea)__receiver)}
-}
-#[doc="`Enter()` overload"]fn enter(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a76f0usize)as*mut u8,();
-(HubEventArea)__receiver)}
-}
-#[doc="`Leave()` overload"]fn leave(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7810usize)as*mut u8,();
-(HubEventArea)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubEventArea as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28a7820usize)as*mut u8,();
-(HubEventArea)__receiver)}
-}
+#[cfg(feature = "app-hubeventarea")]
+pub trait IHubEventAreaMethods: IHubEventArea {
+    #[doc = "`get_IsComplete()` overload"]
+    fn get_is_complete(self) -> bool {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a6ca0usize)as*mut u8,bool;
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`get_FlagName()` overload"]
+    fn get_flag_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a6e10usize)as*mut u8, ::unity::Il2CppString;
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`IsEnabled()` overload"]
+    fn is_enabled(self) -> bool {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a6e80usize)as*mut u8,bool;
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`IsExecuted()` overload"]
+    fn is_executed(self) -> bool {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a70d0usize)as*mut u8,bool;
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`SetExecute()` overload"]
+    fn set_execute(self) -> () {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a7270usize)as*mut u8,();
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`Awake()` overload"]
+    fn awake(self) -> () {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a74f0usize)as*mut u8,();
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a7590usize)as*mut u8,();
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`Enter()` overload"]
+    fn enter(self) -> () {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a76f0usize)as*mut u8,();
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`Leave()` overload"]
+    fn leave(self) -> () {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a7810usize)as*mut u8,();
+(HubEventArea)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HubEventArea as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28a7820usize)as*mut u8,();
+(HubEventArea)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-hubeventarea")]impl<__T:IHubEventArea>IHubEventAreaMethods for __T{}
+#[cfg(feature = "app-hubeventarea")]
+impl<__T: IHubEventArea> IHubEventAreaMethods for __T {}
 
-#[cfg(feature="app-hubeventarea")]impl HubEventArea{pub fn get_is_complete_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_flag_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_executed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn leave_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+#[cfg(feature = "app-hubeventarea")]
+impl HubEventArea {
+    pub fn get_is_complete_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_flag_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_enabled_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn is_executed_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn set_execute_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn awake_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn start_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn enter_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn leave_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
 }
 
-#[cfg(feature="app-hubeventarea")]impl HubEventArea{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-hubeventarea")]
+impl HubEventArea {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(HubEventArea), ::core::stringify!(new),));
- <Self as IHubEventAreaMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(HubEventArea),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHubEventAreaMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-hubeventarea")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubEventArea;
-    pub use super::IHubEventArea;
-    pub use super::IHubEventAreaMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{HubEventArea, IHubEventArea, IHubEventAreaMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

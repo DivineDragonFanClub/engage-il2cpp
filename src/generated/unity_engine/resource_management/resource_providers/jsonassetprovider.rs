@@ -2,83 +2,173 @@
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::resource_management::resource_providers::{
+            resourceproviderbase::{IResourceProviderBase, ResourceProviderBase},
+            textdataprovider::{ITextDataProvider, TextDataProvider},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::{IResourceProviderBase,ResourceProviderBase}
-;
-use crate::unity_engine::resource_management::resource_providers::textdataprovider::{ITextDataProvider,TextDataProvider}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/jsonassetprovider/JsonAssetProvider.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="JsonAssetProvider")]#[parent(crate::unity_engine::resource_management::resource_providers::textdataprovider::TextDataProvider)]pub struct JsonAssetProvider{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/jsonassetprovider/JsonAssetProvider.md"))]
+    #[::unity::class(namespace = "UnityEngine.ResourceManagement.ResourceProviders", name = "JsonAssetProvider")]
+    #[parent(crate::unity_engine::resource_management::resource_providers::textdataprovider::TextDataProvider)]
+    pub struct JsonAssetProvider {}
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __JsonAssetProvider_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<JsonAssetProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __JsonAssetProvider_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <JsonAssetProvider as ::unity::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <JsonAssetProvider as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
+",
+                        <JsonAssetProvider as ::unity::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]pub trait IJsonAssetProviderMethods:IJsonAssetProvider{#[doc="`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn convert(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::object::Object{unsafe{let __receiver= <JsonAssetProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
+pub trait IJsonAssetProviderMethods: IJsonAssetProvider {
+    #[doc = "`Convert(::unity::SystemType, ::unity::Il2CppString)` overload"]
+    fn convert(
+        self,
+        r#type: impl ::core::convert::Into<::unity::SystemType>,
+        text: impl ::core::convert::Into<::unity::Il2CppString>,
+    ) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <JsonAssetProvider as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(19usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <JsonAssetProvider as::unity2::ClassIdentity> ::NAME,"Convert",));
-let __inner:extern "C" fn(JsonAssetProvider, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(text),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JsonAssetProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__JsonAssetProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(JsonAssetProvider)__receiver)}
-}
+`)",
+                        19usize,
+                        __vt.len(),
+                        <JsonAssetProvider as ::unity::ClassIdentity>::NAME,
+                        "Convert",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    JsonAssetProvider,
+                    ::unity::SystemType,
+                    ::unity::Il2CppString,
+                    ::unity::OptionalMethod,
+                ) -> crate::system::object::Object = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(text), __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <JsonAssetProvider as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__JsonAssetProvider_unity_raw::__lookup_ctor::get_method_info().method_ptr,();
+(JsonAssetProvider)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]impl<__T:IJsonAssetProvider>IJsonAssetProviderMethods for __T{}
+#[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
+impl<__T: IJsonAssetProvider> IJsonAssetProviderMethods for __T {}
 
-#[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]impl JsonAssetProvider{pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
+impl JsonAssetProvider {
+    pub fn convert_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]impl JsonAssetProvider{#[doc="Direct (non-virtual) call to `JsonAssetProvider`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn convert(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,text: ::unity2::Il2CppString,)->crate::system::object::Object{let __mi=Self::convert_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),r#type,text, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
+impl JsonAssetProvider {
+    #[doc = "Direct (non-virtual) call to `JsonAssetProvider`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn convert(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        r#type: ::unity::SystemType,
+        text: ::unity::Il2CppString,
+    ) -> crate::system::object::Object {
+        let __mi = Self::convert_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::SystemType,
+            ::unity::Il2CppString,
+            ::unity::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), r#type, text, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]impl JsonAssetProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
+impl JsonAssetProvider {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(JsonAssetProvider), ::core::stringify!(new),));
- <Self as IJsonAssetProviderMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(JsonAssetProvider),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IJsonAssetProviderMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-jsonassetprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::JsonAssetProvider;
-    pub use super::IJsonAssetProvider;
-    pub use super::IJsonAssetProviderMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBase;
-    pub use crate::unity_engine::resource_management::resource_providers::textdataprovider::ITextDataProvider;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")] pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBaseMethods;
-    #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")] pub use crate::unity_engine::resource_management::resource_providers::textdataprovider::ITextDataProviderMethods;
+    pub use super::{IJsonAssetProvider, IJsonAssetProviderMethods, JsonAssetProvider};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-resource_management-resource_providers-resourceproviderbase")]
+    pub use crate::unity_engine::resource_management::resource_providers::resourceproviderbase::IResourceProviderBaseMethods;
+    #[cfg(feature = "unity_engine-resource_management-resource_providers-textdataprovider")]
+    pub use crate::unity_engine::resource_management::resource_providers::textdataprovider::ITextDataProviderMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::resource_management::resource_providers::{resourceproviderbase::IResourceProviderBase, textdataprovider::ITextDataProvider},
+    };
 }

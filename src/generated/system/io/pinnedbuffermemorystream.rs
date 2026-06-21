@@ -2,86 +2,160 @@
 
 #[cfg(feature = "system-io-pinnedbuffermemorystream-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        io::{
+            stream::{IStream, Stream},
+            unmanagedmemorystream::{IUnmanagedMemoryStream, UnmanagedMemoryStream},
+        },
+        object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::io::stream::{IStream,Stream}
-;
-use crate::system::io::unmanagedmemorystream::{IUnmanagedMemoryStream,UnmanagedMemoryStream}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/pinnedbuffermemorystream/PinnedBufferMemoryStream.md"))]#[::unity2::class(namespace="System.IO",name="PinnedBufferMemoryStream")]#[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]pub struct PinnedBufferMemoryStream{#[offset(104)]#[rename(name="_array")]pub array: ::unity2::Array<u8> ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/pinnedbuffermemorystream/PinnedBufferMemoryStream.md"))]
+    #[::unity::class(namespace = "System.IO", name = "PinnedBufferMemoryStream")]
+    #[parent(crate::system::io::unmanagedmemorystream::UnmanagedMemoryStream)]
+    pub struct PinnedBufferMemoryStream {
+        #[offset(104)]
+        #[rename(name = "_array")]
+        pub array: ::unity::Array<u8>,
+    }
 }
 
 #[cfg(feature = "system-io-pinnedbuffermemorystream-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-pinnedbuffermemorystream")]pub trait IPinnedBufferMemoryStreamMethods:IPinnedBufferMemoryStream{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,array:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376a1c0usize)as*mut u8,();
-(PinnedBufferMemoryStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array))}
-}
-#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "system-io-pinnedbuffermemorystream")]
+pub trait IPinnedBufferMemoryStreamMethods: IPinnedBufferMemoryStream {
+    #[doc = "`.ctor(::unity::Array<u8>)` overload"]
+    fn ctor(self, array: impl ::core::convert::Into<::unity::Array<u8>>) -> () {
+        unsafe {
+            let __receiver =
+                <PinnedBufferMemoryStream as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x376a1c0usize)as*mut u8,();
+(PinnedBufferMemoryStream)__receiver,(::unity::Array<u8>)::core::convert::Into::into(array))
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver =
+                <PinnedBufferMemoryStream as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(1usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",1usize,__vt.len(), <PinnedBufferMemoryStream as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let __inner:extern "C" fn(PinnedBufferMemoryStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        1usize,
+                        __vt.len(),
+                        <PinnedBufferMemoryStream as ::unity::ClassIdentity>::NAME,
+                        "Finalize",
+                    )
+                });
+                let __inner: extern "C" fn(PinnedBufferMemoryStream, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Dispose(bool)` overload"]
+    fn dispose(self, disposing: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <PinnedBufferMemoryStream as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(19usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <PinnedBufferMemoryStream as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let __inner:extern "C" fn(PinnedBufferMemoryStream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(disposing),__mi)}
-}
-}
-}
-
-#[cfg(feature="system-io-pinnedbuffermemorystream")]impl<__T:IPinnedBufferMemoryStream>IPinnedBufferMemoryStreamMethods for __T{}
-
-#[cfg(feature="system-io-pinnedbuffermemorystream")]impl PinnedBufferMemoryStream{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="system-io-pinnedbuffermemorystream")]impl PinnedBufferMemoryStream{#[doc="Direct (non-virtual) call to `PinnedBufferMemoryStream`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `PinnedBufferMemoryStream`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,disposing:bool,)->(){let __mi=Self::dispose_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),disposing, ::core::option::Option::None)}
+`)",
+                        19usize,
+                        __vt.len(),
+                        <PinnedBufferMemoryStream as ::unity::ClassIdentity>::NAME,
+                        "Dispose",
+                    )
+                });
+                let __inner: extern "C" fn(PinnedBufferMemoryStream, bool, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(disposing), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="system-io-pinnedbuffermemorystream")]impl PinnedBufferMemoryStream{#[doc="`.ctor(::unity2::Array<u8>)` — overload selector"]pub fn new(array: ::unity2::Array<u8>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-io-pinnedbuffermemorystream")]
+impl<__T: IPinnedBufferMemoryStream> IPinnedBufferMemoryStreamMethods for __T {}
+
+#[cfg(feature = "system-io-pinnedbuffermemorystream")]
+impl PinnedBufferMemoryStream {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn finalize_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn dispose_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "system-io-pinnedbuffermemorystream")]
+impl PinnedBufferMemoryStream {
+    #[doc = "Direct (non-virtual) call to `PinnedBufferMemoryStream`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn finalize(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::finalize_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `PinnedBufferMemoryStream`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn dispose(this: impl ::core::convert::Into<::unity::IlInstance>, disposing: bool) -> () {
+        let __mi = Self::dispose_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, bool, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), disposing, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "system-io-pinnedbuffermemorystream")]
+impl PinnedBufferMemoryStream {
+    #[doc = "`.ctor(::unity::Array<u8>)` — overload selector"]
+    pub fn new(array: ::unity::Array<u8>) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(PinnedBufferMemoryStream), ::core::stringify!(new),));
- <Self as IPinnedBufferMemoryStreamMethods> ::ctor(this,array);
-this}
+ failed to instantiate",
+                ::core::stringify!(PinnedBufferMemoryStream),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPinnedBufferMemoryStreamMethods>::ctor(this, array);
+        this
+    }
 }
 
 #[cfg(feature = "system-io-pinnedbuffermemorystream")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PinnedBufferMemoryStream;
-    pub use super::IPinnedBufferMemoryStream;
-    pub use super::IPinnedBufferMemoryStreamMethods;
-    pub use crate::system::io::stream::IStream;
-    pub use crate::system::io::unmanagedmemorystream::IUnmanagedMemoryStream;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "system-io-stream")] pub use crate::system::io::stream::IStreamMethods;
-    #[cfg(feature = "system-io-unmanagedmemorystream")] pub use crate::system::io::unmanagedmemorystream::IUnmanagedMemoryStreamMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IPinnedBufferMemoryStream, IPinnedBufferMemoryStreamMethods, PinnedBufferMemoryStream};
+    #[cfg(feature = "system-io-stream")]
+    pub use crate::system::io::stream::IStreamMethods;
+    #[cfg(feature = "system-io-unmanagedmemorystream")]
+    pub use crate::system::io::unmanagedmemorystream::IUnmanagedMemoryStreamMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{
+        io::{stream::IStream, unmanagedmemorystream::IUnmanagedMemoryStream},
+        object::IObject,
+    };
 }

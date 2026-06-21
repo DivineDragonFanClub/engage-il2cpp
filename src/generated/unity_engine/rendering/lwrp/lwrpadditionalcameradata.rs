@@ -2,44 +2,66 @@
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/lwrp/lwrpadditionalcameradata/LWRPAdditionalCameraData.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.LWRP",name="LWRPAdditionalCameraData")]#[parent(crate::system::object::Object)]pub struct LWRPAdditionalCameraData{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/lwrp/lwrpadditionalcameradata/LWRPAdditionalCameraData.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering.LWRP", name = "LWRPAdditionalCameraData")]
+    #[parent(crate::system::object::Object)]
+    pub struct LWRPAdditionalCameraData {}
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionalcameradata")]pub trait ILWRPAdditionalCameraDataMethods:ILWRPAdditionalCameraData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LWRPAdditionalCameraData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef17a0usize)as*mut u8,();
-(LWRPAdditionalCameraData)__receiver)}
-}
+#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
+pub trait ILWRPAdditionalCameraDataMethods: ILWRPAdditionalCameraData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <LWRPAdditionalCameraData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2ef17a0usize)as*mut u8,();
+(LWRPAdditionalCameraData)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionalcameradata")]impl<__T:ILWRPAdditionalCameraData>ILWRPAdditionalCameraDataMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
+impl<__T: ILWRPAdditionalCameraData> ILWRPAdditionalCameraDataMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionalcameradata")]impl LWRPAdditionalCameraData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
+impl LWRPAdditionalCameraData {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-lwrp-lwrpadditionalcameradata")]impl LWRPAdditionalCameraData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
+impl LWRPAdditionalCameraData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(LWRPAdditionalCameraData), ::core::stringify!(new),));
- <Self as ILWRPAdditionalCameraDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(LWRPAdditionalCameraData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILWRPAdditionalCameraDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-lwrp-lwrpadditionalcameradata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LWRPAdditionalCameraData;
-    pub use super::ILWRPAdditionalCameraData;
-    pub use super::ILWRPAdditionalCameraDataMethods;
+    pub use super::{ILWRPAdditionalCameraData, ILWRPAdditionalCameraDataMethods, LWRPAdditionalCameraData};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

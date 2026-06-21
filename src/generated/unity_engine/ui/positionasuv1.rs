@@ -2,86 +2,134 @@
 
 #[cfg(feature = "unity_engine-ui-positionasuv1-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::basemesheffect::{BaseMeshEffect, IBaseMeshEffect},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect,IBaseMeshEffect}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/positionasuv1/PositionAsUV1.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="PositionAsUV1")]#[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]pub struct PositionAsUV1{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/positionasuv1/PositionAsUV1.md"))]
+    #[::unity::class(namespace = "UnityEngine.UI", name = "PositionAsUV1")]
+    #[parent(crate::unity_engine::ui::basemesheffect::BaseMeshEffect)]
+    pub struct PositionAsUV1 {}
 }
 
 #[cfg(feature = "unity_engine-ui-positionasuv1-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-positionasuv1")]pub trait IPositionAsUV1Methods:IPositionAsUV1{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PositionAsUV1 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3721850usize)as*mut u8,();
-(PositionAsUV1)__receiver)}
-}
-#[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <PositionAsUV1 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-ui-positionasuv1")]
+pub trait IPositionAsUV1Methods: IPositionAsUV1 {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PositionAsUV1 as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3721850usize)as*mut u8,();
+(PositionAsUV1)__receiver)
+        }
+    }
+    #[doc = "`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]
+    fn modify_mesh(self, vh: impl ::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>) -> () {
+        unsafe {
+            let __receiver = <PositionAsUV1 as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(20usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",20usize,__vt.len(), <PositionAsUV1 as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
-let __inner:extern "C" fn(PositionAsUV1,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(vh),__mi)}
-}
-}
-}
-
-#[cfg(feature="unity_engine-ui-positionasuv1")]impl<__T:IPositionAsUV1>IPositionAsUV1Methods for __T{}
-
-#[cfg(feature="unity_engine-ui-positionasuv1")]impl PositionAsUV1{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn modify_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-ui-positionasuv1")]impl PositionAsUV1{#[doc="Direct (non-virtual) call to `PositionAsUV1`'s own `ModifyMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn modify_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,)->(){let __mi=Self::modify_mesh_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),vh, ::core::option::Option::None)}
+`)",
+                        20usize,
+                        __vt.len(),
+                        <PositionAsUV1 as ::unity::ClassIdentity>::NAME,
+                        "ModifyMesh",
+                    )
+                });
+                let __inner: extern "C" fn(PositionAsUV1, crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(vh), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-ui-positionasuv1")]impl PositionAsUV1{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-ui-positionasuv1")]
+impl<__T: IPositionAsUV1> IPositionAsUV1Methods for __T {}
+
+#[cfg(feature = "unity_engine-ui-positionasuv1")]
+impl PositionAsUV1 {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn modify_mesh_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-positionasuv1")]
+impl PositionAsUV1 {
+    #[doc = "Direct (non-virtual) call to `PositionAsUV1`'s own `ModifyMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn modify_mesh(this: impl ::core::convert::Into<::unity::IlInstance>, vh: crate::unity_engine::ui::vertexhelper::VertexHelper) -> () {
+        let __mi = Self::modify_mesh_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), vh, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "unity_engine-ui-positionasuv1")]
+impl PositionAsUV1 {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(PositionAsUV1), ::core::stringify!(new),));
- <Self as IPositionAsUV1Methods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(PositionAsUV1),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPositionAsUV1Methods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-ui-positionasuv1")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PositionAsUV1;
-    pub use super::IPositionAsUV1;
-    pub use super::IPositionAsUV1Methods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffect;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-basemesheffect")] pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffectMethods;
+    pub use super::{IPositionAsUV1, IPositionAsUV1Methods, PositionAsUV1};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-basemesheffect")]
+    pub use crate::unity_engine::ui::basemesheffect::IBaseMeshEffectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour, component::IComponent, event_systems::uibehaviour::IUIBehaviour, monobehaviour::IMonoBehaviour,
+            object_2::IObject_2, ui::basemesheffect::IBaseMeshEffect,
+        },
+    };
 }

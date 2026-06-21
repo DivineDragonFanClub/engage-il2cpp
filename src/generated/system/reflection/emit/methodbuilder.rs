@@ -2,190 +2,433 @@
 
 #[cfg(feature = "system-reflection-emit-methodbuilder-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        reflection::{
+            memberinfo::{IMemberInfo, MemberInfo},
+            methodbase::{IMethodBase, MethodBase},
+            methodinfo::{IMethodInfo, MethodInfo},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
-;
-use crate::system::reflection::methodbase::{IMethodBase,MethodBase}
-;
-use crate::system::reflection::methodinfo::{IMethodInfo,MethodInfo}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/emit/methodbuilder/MethodBuilder.md"))]#[::unity2::class(namespace="System.Reflection.Emit",name="MethodBuilder")]#[parent(crate::system::reflection::methodinfo::MethodInfo)]pub struct MethodBuilder{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/emit/methodbuilder/MethodBuilder.md"))]
+    #[::unity::class(namespace = "System.Reflection.Emit", name = "MethodBuilder")]
+    #[parent(crate::system::reflection::methodinfo::MethodInfo)]
+    pub struct MethodBuilder {}
 }
 
 #[cfg(feature = "system-reflection-emit-methodbuilder-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-emit-methodbuilder")]pub trait IMethodBuilderMethods:IMethodBuilder{#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::methodattributes::MethodAttributes{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "system-reflection-emit-methodbuilder")]
+pub trait IMethodBuilderMethods: IMethodBuilder {
+    #[doc = "`get_Attributes()` overload"]
+    fn get_attributes(self) -> crate::system::reflection::methodattributes::MethodAttributes {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(20usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",20usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"get_Attributes",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::methodattributes::MethodAttributes= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        20usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "get_Attributes",
+                    )
+                });
+                let __inner: extern "C" fn(MethodBuilder, ::unity::OptionalMethod) -> crate::system::reflection::methodattributes::MethodAttributes =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`get_DeclaringType()` overload"]
+    fn get_declaring_type(self) -> ::unity::SystemType {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"get_DeclaringType",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "get_DeclaringType",
+                    )
+                });
+                let __inner: extern "C" fn(MethodBuilder, ::unity::OptionalMethod) -> ::unity::SystemType = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(7usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetParameters()` overload"]fn get_parameters(self,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        7usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "get_Name",
+                    )
+                });
+                let __inner: extern "C" fn(MethodBuilder, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetParameters()` overload"]
+    fn get_parameters(self) -> ::unity::Array<crate::system::reflection::parameterinfo::ParameterInfo> {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(17usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",17usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"GetParameters",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        17usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "GetParameters",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    MethodBuilder,
+                    ::unity::OptionalMethod,
+                ) -> ::unity::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`get_ReflectedType()` overload"]
+    fn get_reflected_type(self) -> ::unity::SystemType {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"get_ReflectedType",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "get_ReflectedType",
+                    )
+                });
+                let __inner: extern "C" fn(MethodBuilder, ::unity::OptionalMethod) -> ::unity::SystemType = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetCustomAttributes(bool)` overload"]
+    fn get_custom_attributes(self, inherit: impl ::core::convert::Into<bool>) -> ::unity::Array<crate::system::object::Object> {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(10usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
-let __inner:extern "C" fn(MethodBuilder,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(inherit),__mi)}
-}
-}
-#[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        10usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                    )
+                });
+                let __inner: extern "C" fn(MethodBuilder, bool, ::unity::OptionalMethod) -> ::unity::Array<crate::system::object::Object> =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(inherit), __mi)
+            }
+        }
+    }
+    #[doc = "`GetCustomAttributes(::unity::SystemType, bool)` overload"]
+    fn get_custom_attributes_2(
+        self,
+        attribute_type: impl ::core::convert::Into<::unity::SystemType>,
+        inherit: impl ::core::convert::Into<bool>,
+    ) -> ::unity::Array<crate::system::object::Object> {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(11usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",11usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
-}
-}
-#[doc="`GetMethodImplementationFlags()` overload"]fn get_method_implementation_flags(self,)->crate::system::reflection::methodimplattributes::MethodImplAttributes{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        11usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "GetCustomAttributes",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    MethodBuilder,
+                    ::unity::SystemType,
+                    bool,
+                    ::unity::OptionalMethod,
+                ) -> ::unity::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(attribute_type),
+                    ::core::convert::Into::into(inherit),
+                    __mi,
+                )
+            }
+        }
+    }
+    #[doc = "`GetMethodImplementationFlags()` overload"]
+    fn get_method_implementation_flags(self) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(18usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"GetMethodImplementationFlags",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::methodimplattributes::MethodImplAttributes= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MethodBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        18usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "GetMethodImplementationFlags",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    MethodBuilder,
+                    ::unity::OptionalMethod,
+                ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`IsDefined(::unity::SystemType, bool)` overload"]
+    fn is_defined(self, attribute_type: impl ::core::convert::Into<::unity::SystemType>, inherit: impl ::core::convert::Into<bool>) -> bool {
+        unsafe {
+            let __receiver = <MethodBuilder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(12usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <MethodBuilder as::unity2::ClassIdentity> ::NAME,"IsDefined",));
-let __inner:extern "C" fn(MethodBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit),__mi)}
-}
-}
+`)",
+                        12usize,
+                        __vt.len(),
+                        <MethodBuilder as ::unity::ClassIdentity>::NAME,
+                        "IsDefined",
+                    )
+                });
+                let __inner: extern "C" fn(MethodBuilder, ::unity::SystemType, bool, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(attribute_type),
+                    ::core::convert::Into::into(inherit),
+                    __mi,
+                )
+            }
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-emit-methodbuilder")]impl<__T:IMethodBuilder>IMethodBuilderMethods for __T{}
+#[cfg(feature = "system-reflection-emit-methodbuilder")]
+impl<__T: IMethodBuilder> IMethodBuilderMethods for __T {}
 
-#[cfg(feature="system-reflection-emit-methodbuilder")]impl MethodBuilder{pub fn get_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_declaring_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_parameters_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_reflected_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_custom_attributes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_custom_attributes_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_method_implementation_flags_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn is_defined_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+#[cfg(feature = "system-reflection-emit-methodbuilder")]
+impl MethodBuilder {
+    pub fn get_attributes_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_declaring_type_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_parameters_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn get_reflected_type_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn get_custom_attributes_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn get_custom_attributes_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn get_method_implementation_flags_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn is_defined_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[10]
+    }
 }
 
-#[cfg(feature="system-reflection-emit-methodbuilder")]impl MethodBuilder{#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `get_Attributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_attributes(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::methodattributes::MethodAttributes{let __mi=Self::get_attributes_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::methodattributes::MethodAttributes= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `get_DeclaringType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_declaring_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_declaring_type_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `GetParameters`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_parameters(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{let __mi=Self::get_parameters_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `get_ReflectedType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_reflected_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_reflected_type_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes(this:impl::core::convert::Into< ::unity2::IlInstance> ,inherit:bool,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::get_custom_attributes_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),inherit, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_custom_attributes_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)-> ::unity2::Array<crate::system::object::Object>{let __mi=Self::get_custom_attributes_2_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `GetMethodImplementationFlags`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_method_implementation_flags(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::methodimplattributes::MethodImplAttributes{let __mi=Self::get_method_implementation_flags_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::methodimplattributes::MethodImplAttributes= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MethodBuilder`'s own `IsDefined`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_defined(this:impl::core::convert::Into< ::unity2::IlInstance> ,attribute_type: ::unity2::SystemType,inherit:bool,)->bool{let __mi=Self::is_defined_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),attribute_type,inherit, ::core::option::Option::None)}
+#[cfg(feature = "system-reflection-emit-methodbuilder")]
+impl MethodBuilder {
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `get_Attributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_attributes(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+    ) -> crate::system::reflection::methodattributes::MethodAttributes {
+        let __mi = Self::get_attributes_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::system::reflection::methodattributes::MethodAttributes =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `get_DeclaringType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_declaring_type(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::SystemType {
+        let __mi = Self::get_declaring_type_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::SystemType = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_name(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_name_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `GetParameters`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_parameters(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+    ) -> ::unity::Array<crate::system::reflection::parameterinfo::ParameterInfo> {
+        let __mi = Self::get_parameters_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::OptionalMethod,
+        ) -> ::unity::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `get_ReflectedType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_reflected_type(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::SystemType {
+        let __mi = Self::get_reflected_type_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::SystemType = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_custom_attributes(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        inherit: bool,
+    ) -> ::unity::Array<crate::system::object::Object> {
+        let __mi = Self::get_custom_attributes_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, bool, ::unity::OptionalMethod) -> ::unity::Array<crate::system::object::Object> =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), inherit, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `GetCustomAttributes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_custom_attributes_2(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        attribute_type: ::unity::SystemType,
+        inherit: bool,
+    ) -> ::unity::Array<crate::system::object::Object> {
+        let __mi = Self::get_custom_attributes_2_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::SystemType,
+            bool,
+            ::unity::OptionalMethod,
+        ) -> ::unity::Array<crate::system::object::Object> = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), attribute_type, inherit, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `GetMethodImplementationFlags`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_method_implementation_flags(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+    ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes {
+        let __mi = Self::get_method_implementation_flags_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::OptionalMethod,
+        ) -> crate::system::reflection::methodimplattributes::MethodImplAttributes = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MethodBuilder`'s own `IsDefined`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_defined(this: impl ::core::convert::Into<::unity::IlInstance>, attribute_type: ::unity::SystemType, inherit: bool) -> bool {
+        let __mi = Self::is_defined_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::SystemType, bool, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), attribute_type, inherit, ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "system-reflection-emit-methodbuilder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MethodBuilder;
-    pub use super::IMethodBuilder;
-    pub use super::IMethodBuilderMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::system::reflection::memberinfo::IMemberInfo;
-    pub use crate::system::reflection::methodbase::IMethodBase;
-    pub use crate::system::reflection::methodinfo::IMethodInfo;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
-    #[cfg(feature = "system-reflection-methodbase")] pub use crate::system::reflection::methodbase::IMethodBaseMethods;
-    #[cfg(feature = "system-reflection-methodinfo")] pub use crate::system::reflection::methodinfo::IMethodInfoMethods;
+    pub use super::{IMethodBuilder, IMethodBuilderMethods, MethodBuilder};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-memberinfo")]
+    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    #[cfg(feature = "system-reflection-methodbase")]
+    pub use crate::system::reflection::methodbase::IMethodBaseMethods;
+    #[cfg(feature = "system-reflection-methodinfo")]
+    pub use crate::system::reflection::methodinfo::IMethodInfoMethods;
+    pub use crate::system::{
+        object::IObject,
+        reflection::{memberinfo::IMemberInfo, methodbase::IMethodBase, methodinfo::IMethodInfo},
+    };
 }

@@ -2,48 +2,85 @@
 
 #[cfg(feature = "tm_pro-vertexgradient-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/vertexgradient/VertexGradient.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct VertexGradient {
+        pub top_left: crate::unity_engine::color::Color,
+        pub top_right: crate::unity_engine::color::Color,
+        pub bottom_left: crate::unity_engine::color::Color,
+        pub bottom_right: crate::unity_engine::color::Color,
+    }
+    impl ::unity::ClassIdentity for VertexGradient {
+        const NAME: &'static str = "VertexGradient";
+        const NAMESPACE: &'static str = "TMPro";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/vertexgradient/VertexGradient.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VertexGradient{pub top_left:crate::unity_engine::color::Color,pub top_right:crate::unity_engine::color::Color,pub bottom_left:crate::unity_engine::color::Color,pub bottom_right:crate::unity_engine::color::Color,}
-impl::unity2::ClassIdentity for VertexGradient{const NAMESPACE: &'static str="TMPro";
-const NAME: &'static str="VertexGradient";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VertexGradient{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for VertexGradient {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "tm_pro-vertexgradient-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-vertexgradient")]impl VertexGradient{#[doc="`.ctor(crate::unity_engine::color::Color)` overload"]pub fn ctor(&mut self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8130usize)as*mut u8,();
-(*mut VertexGradient)self as*mut VertexGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
-}
-#[doc="`.ctor(crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]pub fn ctor_2(&mut self,color0:impl::core::convert::Into<crate::unity_engine::color::Color> ,color1:impl::core::convert::Into<crate::unity_engine::color::Color> ,color2:impl::core::convert::Into<crate::unity_engine::color::Color> ,color3:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8180usize)as*mut u8,();
-(*mut VertexGradient)self as*mut VertexGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color0),(crate::unity_engine::color::Color)::core::convert::Into::into(color1),(crate::unity_engine::color::Color)::core::convert::Into::into(color2),(crate::unity_engine::color::Color)::core::convert::Into::into(color3))}
-}
+#[cfg(feature = "tm_pro-vertexgradient")]
+impl VertexGradient {
+    #[doc = "`.ctor(crate::unity_engine::color::Color)` overload"]
+    pub fn ctor(&mut self, color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3ea8130usize)as*mut u8,();
+(*mut VertexGradient)self as*mut VertexGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color))
+        }
+    }
+
+    #[doc = "`.ctor(crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]
+    pub fn ctor_2(
+        &mut self,
+        color0: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color1: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color2: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        color3: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3ea8180usize)as*mut u8,();
+(*mut VertexGradient)self as*mut VertexGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color0),(crate::unity_engine::color::Color)::core::convert::Into::into(color1),(crate::unity_engine::color::Color)::core::convert::Into::into(color2),(crate::unity_engine::color::Color)::core::convert::Into::into(color3))
+        }
+    }
 }
 
-#[cfg(feature="tm_pro-vertexgradient")]impl VertexGradient{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "tm_pro-vertexgradient")]
+impl VertexGradient {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "tm_pro-vertexgradient")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::VertexGradient;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,52 +2,79 @@
 
 #[cfg(feature = "app-mapdeploysupportforunitimage-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapdeploybitimage::{IMapDeployBitImage, MapDeployBitImage},
+            mapimagecorebit::{IMapImageCoreBit, MapImageCoreBit},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapdeploybitimage::{IMapDeployBitImage,MapDeployBitImage}
-;
-use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploysupportforunitimage/MapDeploySupportForUnitImage.md"))]#[::unity2::class(namespace="App",name="MapDeploySupportForUnitImage")]#[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]pub struct MapDeploySupportForUnitImage{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploysupportforunitimage/MapDeploySupportForUnitImage.md"))]
+    #[::unity::class(namespace = "App", name = "MapDeploySupportForUnitImage")]
+    #[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]
+    pub struct MapDeploySupportForUnitImage {}
 }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapdeploysupportforunitimage")]pub trait IMapDeploySupportForUnitImageMethods:IMapDeploySupportForUnitImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeploySupportForUnitImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29c3f60usize)as*mut u8,();
-(MapDeploySupportForUnitImage)__receiver)}
-}
+#[cfg(feature = "app-mapdeploysupportforunitimage")]
+pub trait IMapDeploySupportForUnitImageMethods: IMapDeploySupportForUnitImage {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MapDeploySupportForUnitImage as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x29c3f60usize)as*mut u8,();
+(MapDeploySupportForUnitImage)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-mapdeploysupportforunitimage")]impl<__T:IMapDeploySupportForUnitImage>IMapDeploySupportForUnitImageMethods for __T{}
+#[cfg(feature = "app-mapdeploysupportforunitimage")]
+impl<__T: IMapDeploySupportForUnitImage> IMapDeploySupportForUnitImageMethods for __T {}
 
-#[cfg(feature="app-mapdeploysupportforunitimage")]impl MapDeploySupportForUnitImage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-mapdeploysupportforunitimage")]
+impl MapDeploySupportForUnitImage {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-mapdeploysupportforunitimage")]impl MapDeploySupportForUnitImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-mapdeploysupportforunitimage")]
+impl MapDeploySupportForUnitImage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MapDeploySupportForUnitImage), ::core::stringify!(new),));
- <Self as IMapDeploySupportForUnitImageMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MapDeploySupportForUnitImage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDeploySupportForUnitImageMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-mapdeploysupportforunitimage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapDeploySupportForUnitImage;
-    pub use super::IMapDeploySupportForUnitImage;
-    pub use super::IMapDeploySupportForUnitImageMethods;
-    pub use crate::app::mapdeploybitimage::IMapDeployBitImage;
-    pub use crate::app::mapimagecorebit::IMapImageCoreBit;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapdeploybitimage")] pub use crate::app::mapdeploybitimage::IMapDeployBitImageMethods;
-    #[cfg(feature = "app-mapimagecorebit")] pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IMapDeploySupportForUnitImage, IMapDeploySupportForUnitImageMethods, MapDeploySupportForUnitImage};
+    #[cfg(feature = "app-mapdeploybitimage")]
+    pub use crate::app::mapdeploybitimage::IMapDeployBitImageMethods;
+    #[cfg(feature = "app-mapimagecorebit")]
+    pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapdeploybitimage::IMapDeployBitImage, mapimagecorebit::IMapImageCoreBit},
+        system::object::IObject,
+    };
 }

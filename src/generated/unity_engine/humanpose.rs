@@ -2,44 +2,66 @@
 
 #[cfg(feature = "unity_engine-humanpose-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/humanpose/HumanPose.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct HumanPose {
+        pub body_position: crate::unity_engine::vector3::Vector3,
+        pub body_rotation: crate::unity_engine::quaternion::Quaternion,
+        pub muscles: ::unity::Array<f32>,
+    }
+    impl ::unity::ClassIdentity for HumanPose {
+        const NAME: &'static str = "HumanPose";
+        const NAMESPACE: &'static str = "UnityEngine";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/humanpose/HumanPose.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct HumanPose{pub body_position:crate::unity_engine::vector3::Vector3,pub body_rotation:crate::unity_engine::quaternion::Quaternion,pub muscles: ::unity2::Array<f32>,}
-impl::unity2::ClassIdentity for HumanPose{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="HumanPose";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for HumanPose{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for HumanPose {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-humanpose-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-humanpose")]impl HumanPose{#[doc="`Init()` overload"]pub fn init(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eb9280usize)as*mut u8,();
-(*mut HumanPose)self as*mut HumanPose)}
-}
+#[cfg(feature = "unity_engine-humanpose")]
+impl HumanPose {
+    #[doc = "`Init()` overload"]
+    pub fn init(&mut self) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3eb9280usize)as*mut u8,();
+(*mut HumanPose)self as*mut HumanPose)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-humanpose")]impl HumanPose{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-humanpose")]
+impl HumanPose {
+    pub fn init_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-humanpose")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::HumanPose;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

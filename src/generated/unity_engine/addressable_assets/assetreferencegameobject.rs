@@ -2,52 +2,79 @@
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::addressable_assets::{
+            assetreference::{AssetReference, IAssetReference},
+            assetreferencet_1::{AssetReferenceT_1, IAssetReferenceT_1},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::addressable_assets::assetreference::{AssetReference,IAssetReference}
-;
-use crate::unity_engine::addressable_assets::assetreferencet_1::{AssetReferenceT_1,IAssetReferenceT_1}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/assetreferencegameobject/AssetReferenceGameObject.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AssetReferenceGameObject")]#[parent(crate::unity_engine::addressable_assets::assetreferencet_1::AssetReferenceT_1<crate::unity_engine::gameobject::GameObject>)]pub struct AssetReferenceGameObject{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/assetreferencegameobject/AssetReferenceGameObject.md"))]
+    #[::unity::class(namespace = "UnityEngine.AddressableAssets", name = "AssetReferenceGameObject")]
+    #[parent(crate::unity_engine::addressable_assets::assetreferencet_1::AssetReferenceT_1<crate::unity_engine::gameobject::GameObject>)]
+    pub struct AssetReferenceGameObject {}
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-addressable_assets-assetreferencegameobject")]pub trait IAssetReferenceGameObjectMethods:IAssetReferenceGameObject{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,guid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetReferenceGameObject as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2f40usize)as*mut u8,();
-(AssetReferenceGameObject)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(guid))}
-}
+#[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject")]
+pub trait IAssetReferenceGameObjectMethods: IAssetReferenceGameObject {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, guid: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <AssetReferenceGameObject as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2db2f40usize)as*mut u8,();
+(AssetReferenceGameObject)__receiver,(::unity::Il2CppString)::core::convert::Into::into(guid))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-addressable_assets-assetreferencegameobject")]impl<__T:IAssetReferenceGameObject>IAssetReferenceGameObjectMethods for __T{}
+#[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject")]
+impl<__T: IAssetReferenceGameObject> IAssetReferenceGameObjectMethods for __T {}
 
-#[cfg(feature="unity_engine-addressable_assets-assetreferencegameobject")]impl AssetReferenceGameObject{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject")]
+impl AssetReferenceGameObject {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-addressable_assets-assetreferencegameobject")]impl AssetReferenceGameObject{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(guid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject")]
+impl AssetReferenceGameObject {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(guid: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AssetReferenceGameObject), ::core::stringify!(new),));
- <Self as IAssetReferenceGameObjectMethods> ::ctor(this,guid);
-this}
+ failed to instantiate",
+                ::core::stringify!(AssetReferenceGameObject),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetReferenceGameObjectMethods>::ctor(this, guid);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencegameobject")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetReferenceGameObject;
-    pub use super::IAssetReferenceGameObject;
-    pub use super::IAssetReferenceGameObjectMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::addressable_assets::assetreference::IAssetReference;
-    pub use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-addressable_assets-assetreference")] pub use crate::unity_engine::addressable_assets::assetreference::IAssetReferenceMethods;
-    #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")] pub use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1Methods;
+    pub use super::{AssetReferenceGameObject, IAssetReferenceGameObject, IAssetReferenceGameObjectMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-addressable_assets-assetreference")]
+    pub use crate::unity_engine::addressable_assets::assetreference::IAssetReferenceMethods;
+    #[cfg(feature = "unity_engine-addressable_assets-assetreferencet_1")]
+    pub use crate::unity_engine::addressable_assets::assetreferencet_1::IAssetReferenceT_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::addressable_assets::{assetreference::IAssetReference, assetreferencet_1::IAssetReferenceT_1},
+    };
 }

@@ -2,104 +2,198 @@
 
 #[cfg(feature = "app-versusviolationtypemenucontent-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusviolationtypemenucontent/VersusViolationTypeMenuContent.md"))]#[::unity2::class(namespace="App",name="VersusViolationTypeMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct VersusViolationTypeMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versusviolationtypemenucontent/VersusViolationTypeMenuContent.md"))]
+    #[::unity::class(namespace = "App", name = "VersusViolationTypeMenuContent")]
+    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
+    pub struct VersusViolationTypeMenuContent {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "app-versusviolationtypemenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-versusviolationtypemenucontent")]impl VersusViolationTypeMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bd9c0usize)as*mut u8,();
-)}
-}
-#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bda60usize)as*mut u8,bool;
-)}
-}
-#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bdae0usize)as*mut u8,();
-)}
-}
-#[doc="`Create(crate::unity_engine::gameobject::GameObject)` overload"]pub fn create(parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bdb60usize)as*mut u8,crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent;
-(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
-}
-#[doc="`Destroy(crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent)` overload"]pub fn destroy(content:impl::core::convert::Into<crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21bdca0usize)as*mut u8,();
-(crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent)::core::convert::Into::into(content))}
-}
+#[cfg(feature = "app-versusviolationtypemenucontent")]
+impl VersusViolationTypeMenuContent {
+    #[doc = "`LoadPrefabAsync()` overload"]
+    pub fn load_prefab_async() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21bd9c0usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`IsLoadingPrefab()` overload"]
+    pub fn is_loading_prefab() -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21bda60usize)as*mut u8,bool;
+            )
+        }
+    }
+
+    #[doc = "`UnloadPrefab()` overload"]
+    pub fn unload_prefab() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21bdae0usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`Create(crate::unity_engine::gameobject::GameObject)` overload"]
+    pub fn create(
+        parent: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21bdb60usize)as*mut u8,crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent;
+(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))
+        }
+    }
+
+    #[doc = "`Destroy(crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent)` overload"]
+    pub fn destroy(content: impl ::core::convert::Into<crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21bdca0usize)as*mut u8,();
+(crate::app::versusviolationtypemenucontent::VersusViolationTypeMenuContent)::core::convert::Into::into(content))
+        }
+    }
 }
 
-#[cfg(feature="app-versusviolationtypemenucontent")]pub trait IVersusViolationTypeMenuContentMethods:IVersusViolationTypeMenuContent{#[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <VersusViolationTypeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-versusviolationtypemenucontent")]
+pub trait IVersusViolationTypeMenuContentMethods: IVersusViolationTypeMenuContent {
+    #[doc = "`OnDestroy()` overload"]
+    fn on_destroy(self) -> () {
+        unsafe {
+            let __receiver =
+                <VersusViolationTypeMenuContent as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(33usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",33usize,__vt.len(), <VersusViolationTypeMenuContent as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
-let __inner:extern "C" fn(VersusViolationTypeMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusViolationTypeMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21bddc0usize)as*mut u8,();
-(VersusViolationTypeMenuContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-versusviolationtypemenucontent")]impl<__T:IVersusViolationTypeMenuContent>IVersusViolationTypeMenuContentMethods for __T{}
-
-#[cfg(feature="app-versusviolationtypemenucontent")]impl VersusViolationTypeMenuContent{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-versusviolationtypemenucontent")]impl VersusViolationTypeMenuContent{#[doc="Direct (non-virtual) call to `VersusViolationTypeMenuContent`'s own `OnDestroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_destroy(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_destroy_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        33usize,
+                        __vt.len(),
+                        <VersusViolationTypeMenuContent as ::unity::ClassIdentity>::NAME,
+                        "OnDestroy",
+                    )
+                });
+                let __inner: extern "C" fn(VersusViolationTypeMenuContent, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <VersusViolationTypeMenuContent as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x21bddc0usize)as*mut u8,();
+(VersusViolationTypeMenuContent)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-versusviolationtypemenucontent")]impl VersusViolationTypeMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-versusviolationtypemenucontent")]
+impl<__T: IVersusViolationTypeMenuContent> IVersusViolationTypeMenuContentMethods for __T {}
+
+#[cfg(feature = "app-versusviolationtypemenucontent")]
+impl VersusViolationTypeMenuContent {
+    pub fn load_prefab_async_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn is_loading_prefab_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn unload_prefab_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn create_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn destroy_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn on_destroy_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+}
+
+#[cfg(feature = "app-versusviolationtypemenucontent")]
+impl VersusViolationTypeMenuContent {
+    #[doc = "Direct (non-virtual) call to `VersusViolationTypeMenuContent`'s own `OnDestroy`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_destroy(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_destroy_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-versusviolationtypemenucontent")]
+impl VersusViolationTypeMenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(VersusViolationTypeMenuContent), ::core::stringify!(new),));
- <Self as IVersusViolationTypeMenuContentMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(VersusViolationTypeMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVersusViolationTypeMenuContentMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-versusviolationtypemenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VersusViolationTypeMenuContent;
-    pub use super::IVersusViolationTypeMenuContent;
-    pub use super::IVersusViolationTypeMenuContentMethods;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{IVersusViolationTypeMenuContent, IVersusViolationTypeMenuContentMethods, VersusViolationTypeMenuContent};
+    #[cfg(feature = "app-basicmenucontent")]
+    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenucontent::IBasicMenuContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

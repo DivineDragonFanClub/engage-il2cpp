@@ -2,33 +2,43 @@
 
 #[cfg(feature = "unity_engine-unhandledexceptionhandler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/unhandledexceptionhandler/UnhandledExceptionHandler.md"))]#[::unity2::class(namespace="UnityEngine",name="UnhandledExceptionHandler")]#[parent(crate::system::object::Object)]pub struct UnhandledExceptionHandler{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/unhandledexceptionhandler/UnhandledExceptionHandler.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "UnhandledExceptionHandler")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnhandledExceptionHandler {}
 }
 
 #[cfg(feature = "unity_engine-unhandledexceptionhandler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-unhandledexceptionhandler")]impl UnhandledExceptionHandler{#[doc="`RegisterUECatcher()` overload"]pub fn register_ue_catcher()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3793700usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "unity_engine-unhandledexceptionhandler")]
+impl UnhandledExceptionHandler {
+    #[doc = "`RegisterUECatcher()` overload"]
+    pub fn register_ue_catcher() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3793700usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-unhandledexceptionhandler")]impl UnhandledExceptionHandler{pub fn register_ue_catcher_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-unhandledexceptionhandler")]
+impl UnhandledExceptionHandler {
+    pub fn register_ue_catcher_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-unhandledexceptionhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnhandledExceptionHandler;
-    pub use super::IUnhandledExceptionHandler;
+    pub use super::{IUnhandledExceptionHandler, UnhandledExceptionHandler};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

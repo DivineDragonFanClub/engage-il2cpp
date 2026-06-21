@@ -2,52 +2,78 @@
 
 #[cfg(feature = "app-mapimagesightfield-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapimagecorebit::{IMapImageCoreBit, MapImageCoreBit},
+            mapimagesightcore::{IMapImageSightCore, MapImageSightCore},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
-;
-use crate::app::mapimagesightcore::{IMapImageSightCore,MapImageSightCore}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagesightfield/MapImageSightField.md"))]#[::unity2::class(namespace="App",name="MapImageSightField")]#[parent(crate::app::mapimagesightcore::MapImageSightCore)]pub struct MapImageSightField{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapimagesightfield/MapImageSightField.md"))]
+    #[::unity::class(namespace = "App", name = "MapImageSightField")]
+    #[parent(crate::app::mapimagesightcore::MapImageSightCore)]
+    pub struct MapImageSightField {}
 }
 
 #[cfg(feature = "app-mapimagesightfield-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapimagesightfield")]pub trait IMapImageSightFieldMethods:IMapImageSightField{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageSightField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20629e0usize)as*mut u8,();
-(MapImageSightField)__receiver)}
-}
+#[cfg(feature = "app-mapimagesightfield")]
+pub trait IMapImageSightFieldMethods: IMapImageSightField {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapImageSightField as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x20629e0usize)as*mut u8,();
+(MapImageSightField)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-mapimagesightfield")]impl<__T:IMapImageSightField>IMapImageSightFieldMethods for __T{}
+#[cfg(feature = "app-mapimagesightfield")]
+impl<__T: IMapImageSightField> IMapImageSightFieldMethods for __T {}
 
-#[cfg(feature="app-mapimagesightfield")]impl MapImageSightField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-mapimagesightfield")]
+impl MapImageSightField {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-mapimagesightfield")]impl MapImageSightField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-mapimagesightfield")]
+impl MapImageSightField {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MapImageSightField), ::core::stringify!(new),));
- <Self as IMapImageSightFieldMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MapImageSightField),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapImageSightFieldMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-mapimagesightfield")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapImageSightField;
-    pub use super::IMapImageSightField;
-    pub use super::IMapImageSightFieldMethods;
-    pub use crate::app::mapimagecorebit::IMapImageCoreBit;
-    pub use crate::app::mapimagesightcore::IMapImageSightCore;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapimagecorebit")] pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
-    #[cfg(feature = "app-mapimagesightcore")] pub use crate::app::mapimagesightcore::IMapImageSightCoreMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IMapImageSightField, IMapImageSightFieldMethods, MapImageSightField};
+    #[cfg(feature = "app-mapimagecorebit")]
+    pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
+    #[cfg(feature = "app-mapimagesightcore")]
+    pub use crate::app::mapimagesightcore::IMapImageSightCoreMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapimagecorebit::IMapImageCoreBit, mapimagesightcore::IMapImageSightCore},
+        system::object::IObject,
+    };
 }

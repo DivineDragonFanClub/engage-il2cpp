@@ -2,90 +2,163 @@
 
 #[cfg(feature = "app-shopsellyesnodialognomenuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            basicdialogitem::{BasicDialogItem, IBasicDialogItem},
+            basicdialogitemno::{BasicDialogItemNo, IBasicDialogItemNo},
+            basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicdialogitem::{BasicDialogItem,IBasicDialogItem}
-;
-use crate::app::basicdialogitemno::{BasicDialogItemNo,IBasicDialogItemNo}
-;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellyesnodialognomenuitem/ShopSellYesNoDialogNoMenuItem.md"))]#[::unity2::class(namespace="App",name="ShopSellYesNoDialogNoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct ShopSellYesNoDialogNoMenuItem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellyesnodialognomenuitem/ShopSellYesNoDialogNoMenuItem.md"))]
+    #[::unity::class(namespace = "App", name = "ShopSellYesNoDialogNoMenuItem")]
+    #[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]
+    pub struct ShopSellYesNoDialogNoMenuItem {}
 }
 
 #[cfg(feature = "app-shopsellyesnodialognomenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-shopsellyesnodialognomenuitem")]pub trait IShopSellYesNoDialogNoMenuItemMethods:IShopSellYesNoDialogNoMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSellYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ba7d0usize)as*mut u8,();
-(ShopSellYesNoDialogNoMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopSellYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
+pub trait IShopSellYesNoDialogNoMenuItemMethods: IShopSellYesNoDialogNoMenuItem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ShopSellYesNoDialogNoMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ba7d0usize)as*mut u8,();
+(ShopSellYesNoDialogNoMenuItem)__receiver)
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <ShopSellYesNoDialogNoMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(18usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <ShopSellYesNoDialogNoMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let __inner:extern "C" fn(ShopSellYesNoDialogNoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ShopSellYesNoDialogNoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        18usize,
+                        __vt.len(),
+                        <ShopSellYesNoDialogNoMenuItem as ::unity::ClassIdentity>::NAME,
+                        "ACall",
+                    )
+                });
+                let __inner: extern "C" fn(ShopSellYesNoDialogNoMenuItem, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`BCall()` overload"]
+    fn b_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <ShopSellYesNoDialogNoMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(19usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",19usize,__vt.len(), <ShopSellYesNoDialogNoMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
-let __inner:extern "C" fn(ShopSellYesNoDialogNoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="app-shopsellyesnodialognomenuitem")]impl<__T:IShopSellYesNoDialogNoMenuItem>IShopSellYesNoDialogNoMenuItemMethods for __T{}
-
-#[cfg(feature="app-shopsellyesnodialognomenuitem")]impl ShopSellYesNoDialogNoMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-shopsellyesnodialognomenuitem")]impl ShopSellYesNoDialogNoMenuItem{#[doc="Direct (non-virtual) call to `ShopSellYesNoDialogNoMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ShopSellYesNoDialogNoMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn b_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::b_call_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        19usize,
+                        __vt.len(),
+                        <ShopSellYesNoDialogNoMenuItem as ::unity::ClassIdentity>::NAME,
+                        "BCall",
+                    )
+                });
+                let __inner: extern "C" fn(ShopSellYesNoDialogNoMenuItem, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-shopsellyesnodialognomenuitem")]impl ShopSellYesNoDialogNoMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
+impl<__T: IShopSellYesNoDialogNoMenuItem> IShopSellYesNoDialogNoMenuItemMethods for __T {}
+
+#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
+impl ShopSellYesNoDialogNoMenuItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn a_call_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn b_call_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
+impl ShopSellYesNoDialogNoMenuItem {
+    #[doc = "Direct (non-virtual) call to `ShopSellYesNoDialogNoMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn a_call(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenu::BasicMenu_Result {
+        let __mi = Self::a_call_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ShopSellYesNoDialogNoMenuItem`'s own `BCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn b_call(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenu::BasicMenu_Result {
+        let __mi = Self::b_call_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-shopsellyesnodialognomenuitem")]
+impl ShopSellYesNoDialogNoMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ShopSellYesNoDialogNoMenuItem), ::core::stringify!(new),));
- <Self as IShopSellYesNoDialogNoMenuItemMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ShopSellYesNoDialogNoMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShopSellYesNoDialogNoMenuItemMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-shopsellyesnodialognomenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShopSellYesNoDialogNoMenuItem;
-    pub use super::IShopSellYesNoDialogNoMenuItem;
-    pub use super::IShopSellYesNoDialogNoMenuItemMethods;
-    pub use crate::app::basicdialogitem::IBasicDialogItem;
-    pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicdialogitem")] pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
-    #[cfg(feature = "app-basicdialogitemno")] pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IShopSellYesNoDialogNoMenuItem, IShopSellYesNoDialogNoMenuItemMethods, ShopSellYesNoDialogNoMenuItem};
+    #[cfg(feature = "app-basicdialogitem")]
+    pub use crate::app::basicdialogitem::IBasicDialogItemMethods;
+    #[cfg(feature = "app-basicdialogitemno")]
+    pub use crate::app::basicdialogitemno::IBasicDialogItemNoMethods;
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{basicdialogitem::IBasicDialogItem, basicdialogitemno::IBasicDialogItemNo, basicmenuitem::IBasicMenuItem},
+        system::object::IObject,
+    };
 }

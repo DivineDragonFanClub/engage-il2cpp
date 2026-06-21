@@ -2,36 +2,46 @@
 
 #[cfg(feature = "unity_engine-hashutilities-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/hashutilities/HashUtilities.md"))]#[::unity2::class(namespace="UnityEngine",name="HashUtilities")]#[parent(crate::system::object::Object)]pub struct HashUtilities{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/hashutilities/HashUtilities.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "HashUtilities")]
+    #[parent(crate::system::object::Object)]
+    pub struct HashUtilities {}
 }
 
 #[cfg(feature = "unity_engine-hashutilities-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-hashutilities")]impl HashUtilities{#[doc="`AppendHash(*mutcrate::unity_engine::hash128::Hash128, *mutcrate::unity_engine::hash128::Hash128)` overload"]pub fn append_hash()->(crate::unity_engine::hash128::Hash128,crate::unity_engine::hash128::Hash128){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::hash128::Hash128> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::hash128::Hash128> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c513c0usize)as*mut u8,();
+#[cfg(feature = "unity_engine-hashutilities")]
+impl HashUtilities {
+    #[doc = "`AppendHash(*mutcrate::unity_engine::hash128::Hash128, *mutcrate::unity_engine::hash128::Hash128)` overload"]
+    pub fn append_hash() -> (crate::unity_engine::hash128::Hash128, crate::unity_engine::hash128::Hash128) {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
+            let mut __out_1 = ::core::mem::MaybeUninit::<crate::unity_engine::hash128::Hash128>::uninit();
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c513c0usize)as*mut u8,();
 (*mut crate::unity_engine::hash128::Hash128)__out_0.as_mut_ptr(),(*mut crate::unity_engine::hash128::Hash128)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
+            (__out_0.assume_init(), __out_1.assume_init())
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-hashutilities")]impl HashUtilities{pub fn append_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-hashutilities")]
+impl HashUtilities {
+    pub fn append_hash_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-hashutilities")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HashUtilities;
-    pub use super::IHashUtilities;
+    pub use super::{HashUtilities, IHashUtilities};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,228 +2,489 @@
 
 #[cfg(feature = "app-account-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            delegate::{Delegate, IDelegate},
+            multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::procinst::{IProcInst,ProcInst}
-;
-use crate::system::delegate::{Delegate,IDelegate}
-;
-use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account.md"))]
+    #[::unity::class(namespace = "App", name = "Account")]
+    #[parent(crate::system::object::Object)]
+    pub struct Account {
+        #[static_field]
+        #[rename(name = "s_IsNsaValid")]
+        pub s_is_nsa_valid: bool,
+        #[static_field]
+        #[rename(name = "s_NsaIdTokenCache")]
+        pub s_nsa_id_token_cache: ::unity::Array<u8>,
+    }
 
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaSequence.md"))]
+    #[::unity::class(namespace = "App", name = "Account.SetupNsaSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct Account_SetupNsaSequence {
+        #[offset(112)]
+        #[rename(name = "m_IsShowError")]
+        pub m_is_show_error: bool,
+        #[offset(120)]
+        #[rename(name = "m_ResultFunc")]
+        pub m_result_func: crate::app::account::Account_SetupNsaResultFunction,
+    }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Account_SetupNsaResult{pub value:i32,}
-impl::unity2::ClassIdentity for Account_SetupNsaResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Account.SetupNsaResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Account_SetupNsaResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Account_SetupNsaResult{pub fn failed()->Self{Self{value:0}
-}
-pub fn cancelled()->Self{Self{value:1}
-}
-pub fn succeeded()->Self{Self{value:2}
-}
-}
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaResult.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Account_SetupNsaResult {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for Account_SetupNsaResult {
+        const NAME: &'static str = "Account.SetupNsaResult";
+        const NAMESPACE: &'static str = "App";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for Account_SetupNsaResult {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl Account_SetupNsaResult {
+        pub fn failed() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaResultFunction.md"))]#[::unity2::class(namespace="App",name="Account.SetupNsaResultFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Account_SetupNsaResultFunction{}
+        pub fn cancelled() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn succeeded() -> Self {
+            Self { value: 2 }
+        }
+    }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Account_SetupNsaSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for Account_SetupNsaSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Account.SetupNsaSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Account_SetupNsaSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Account_SetupNsaSequence_Label{pub fn ensure()->Self{Self{value:0}
-}
-pub fn ensure_id_token_cache()->Self{Self{value:1}
-}
-pub fn error()->Self{Self{value:2}
-}
-pub fn show_error()->Self{Self{value:3}
-}
-pub fn cancel()->Self{Self{value:4}
-}
-pub fn end()->Self{Self{value:5}
-}
-}
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Account_SetupNsaSequence_Label {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for Account_SetupNsaSequence_Label {
+        const NAME: &'static str = "Account.SetupNsaSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for Account_SetupNsaSequence_Label {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl Account_SetupNsaSequence_Label {
+        pub fn ensure() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaSequence.md"))]#[::unity2::class(namespace="App",name="Account.SetupNsaSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct Account_SetupNsaSequence{#[offset(112)]#[rename(name="m_IsShowError")]pub m_is_show_error:bool, #[offset(120)]#[rename(name="m_ResultFunc")]pub m_result_func:crate::app::account::Account_SetupNsaResultFunction,}
+        pub fn ensure_id_token_cache() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn error() -> Self {
+            Self { value: 2 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account.md"))]#[::unity2::class(namespace="App",name="Account")]#[parent(crate::system::object::Object)]pub struct Account{#[static_field]#[rename(name="s_IsNsaValid")]pub s_is_nsa_valid:bool, #[static_field]#[rename(name="s_NsaIdTokenCache")]pub s_nsa_id_token_cache: ::unity2::Array<u8> ,}
+        pub fn show_error() -> Self {
+            Self { value: 3 }
+        }
 
+        pub fn cancel() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn end() -> Self {
+            Self { value: 5 }
+        }
+    }
+
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/account/Account_SetupNsaResultFunction.md"))]
+    #[::unity::class(namespace = "App", name = "Account.SetupNsaResultFunction")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct Account_SetupNsaResultFunction {}
 }
 
 #[cfg(feature = "app-account-types")]
 pub use __types::*;
 
-#[cfg(feature="app-account")]pub trait IAccount_SetupNsaResultFunctionMethods:IAccount_SetupNsaResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Account_SetupNsaResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906460usize)as*mut u8,();
-(Account_SetupNsaResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature = "app-account")]
+impl Account {
+    #[doc = "`Initialize()` overload"]
+    pub fn initialize() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x27c5ad0usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`SetupNsa(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
+    pub fn setup_nsa(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        is_show_error: impl ::core::convert::Into<bool>,
+        result_func: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x27c5be0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_show_error),(crate::app::account::Account_SetupNsaResultFunction)::core::convert::Into::into(result_func))
+        }
+    }
+
+    #[doc = "`IsUserValid()` overload"]
+    pub fn is_user_valid() -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x27c5bf0usize)as*mut u8,bool;
+            )
+        }
+    }
+
+    #[doc = "`IsNsaValid()` overload"]
+    pub fn is_nsa_valid() -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x27c5c60usize)as*mut u8,bool;
+            )
+        }
+    }
+
+    #[doc = "`GetNickname()` overload"]
+    pub fn get_nickname() -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x27c5cd0usize)as*mut u8, ::unity::Il2CppString;
+            )
+        }
+    }
+
+    #[doc = "`get_NsaIdTokenCache()` overload"]
+    pub fn get_nsa_id_token_cache() -> ::unity::Array<u8> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x27c60b0usize)as*mut u8, ::unity::Array<u8> ;
+            )
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x27c6120usize)as*mut u8,();
+            )
+        }
+    }
 }
-#[doc="`Invoke(crate::app::account::Account_SetupNsaResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::account::Account_SetupNsaResult>)->(){unsafe{let __receiver= <Account_SetupNsaResultFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+
+#[cfg(feature = "app-account")]
+impl Account {
+    pub fn initialize_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn setup_nsa_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_user_valid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn is_nsa_valid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn get_nickname_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn get_nsa_id_token_cache_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn cctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
+}
+
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        is_show_error: impl ::core::convert::Into<bool>,
+        result_func: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906f30usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_show_error),(crate::app::account::Account_SetupNsaResultFunction)::core::convert::Into::into(result_func))
+        }
+    }
+}
+
+#[cfg(feature = "app-account")]
+pub trait IAccount_SetupNsaSequenceMethods: IAccount_SetupNsaSequence {
+    #[doc = "`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]
+    fn ctor(
+        self,
+        is_show_error: impl ::core::convert::Into<bool>,
+        result_func: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906780usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver,(bool)::core::convert::Into::into(is_show_error),(crate::app::account::Account_SetupNsaResultFunction)::core::convert::Into::into(result_func))
+        }
+    }
+    #[doc = "`Ensure()` overload"]
+    fn ensure(self) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906840usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver)
+        }
+    }
+    #[doc = "`EnsureIdTokenCache()` overload"]
+    fn ensure_id_token_cache(self) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906a20usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver)
+        }
+    }
+    #[doc = "`EnsureIdTokenCacheTick()` overload"]
+    fn ensure_id_token_cache_tick(self) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906b50usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver)
+        }
+    }
+    #[doc = "`Success()` overload"]
+    fn success(self) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906d30usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver)
+        }
+    }
+    #[doc = "`CheckError()` overload"]
+    fn check_error(self) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906db0usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver)
+        }
+    }
+    #[doc = "`ShowError()` overload"]
+    fn show_error(self) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906ee0usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver)
+        }
+    }
+    #[doc = "`Cancel()` overload"]
+    fn cancel(self) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906f20usize)as*mut u8,();
+(Account_SetupNsaSequence)__receiver)
+        }
+    }
+}
+
+#[cfg(feature = "app-account")]
+impl<__T: IAccount_SetupNsaSequence> IAccount_SetupNsaSequenceMethods for __T {}
+
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaSequence {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ensure_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ensure_id_token_cache_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn ensure_id_token_cache_tick_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn success_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn check_error_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn show_error_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn cancel_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn create_bind_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+}
+
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaSequence {
+    #[doc = "`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` — overload selector"]
+    pub fn new(is_show_error: bool, result_func: crate::app::account::Account_SetupNsaResultFunction) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
+::{}
+ failed to instantiate",
+                ::core::stringify!(Account_SetupNsaSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccount_SetupNsaSequenceMethods>::ctor(this, is_show_error, result_func);
+        this
+    }
+}
+
+#[cfg(feature = "app-account")]
+pub trait IAccount_SetupNsaResultFunctionMethods: IAccount_SetupNsaResultFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaResultFunction as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2906460usize)as*mut u8,();
+(Account_SetupNsaResultFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity::IntPtr)::core::convert::Into::into(method))
+        }
+    }
+    #[doc = "`Invoke(crate::app::account::Account_SetupNsaResult)` overload"]
+    fn invoke(self, result: impl ::core::convert::Into<crate::app::account::Account_SetupNsaResult>) -> () {
+        unsafe {
+            let __receiver =
+                <Account_SetupNsaResultFunction as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(13usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <Account_SetupNsaResultFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let __inner:extern "C" fn(Account_SetupNsaResultFunction,crate::app::account::Account_SetupNsaResult, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(result),__mi)}
-}
-}
+`)",
+                        13usize,
+                        __vt.len(),
+                        <Account_SetupNsaResultFunction as ::unity::ClassIdentity>::NAME,
+                        "Invoke",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    Account_SetupNsaResultFunction,
+                    crate::app::account::Account_SetupNsaResult,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(result), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-account")]impl<__T:IAccount_SetupNsaResultFunction>IAccount_SetupNsaResultFunctionMethods for __T{}
+#[cfg(feature = "app-account")]
+impl<__T: IAccount_SetupNsaResultFunction> IAccount_SetupNsaResultFunctionMethods for __T {}
 
-#[cfg(feature="app-account")]impl Account_SetupNsaResultFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaResultFunction {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn invoke_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-account")]impl Account_SetupNsaResultFunction{#[doc="Direct (non-virtual) call to `Account_SetupNsaResultFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::app::account::Account_SetupNsaResult,)->(){let __mi=Self::invoke_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::app::account::Account_SetupNsaResult, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),result, ::core::option::Option::None)}
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaResultFunction {
+    #[doc = "Direct (non-virtual) call to `Account_SetupNsaResultFunction`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn invoke(this: impl ::core::convert::Into<::unity::IlInstance>, result: crate::app::account::Account_SetupNsaResult) -> () {
+        let __mi = Self::invoke_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::app::account::Account_SetupNsaResult, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), result, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-account")]impl Account_SetupNsaResultFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-account")]
+impl Account_SetupNsaResultFunction {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity::IntPtr) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(Account_SetupNsaResultFunction), ::core::stringify!(new),));
- <Self as IAccount_SetupNsaResultFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-account")]impl Account_SetupNsaSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_show_error:impl::core::convert::Into<bool> ,result_func:impl::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2906f30usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_show_error),(crate::app::account::Account_SetupNsaResultFunction)::core::convert::Into::into(result_func))}
-}
-}
-
-#[cfg(feature="app-account")]pub trait IAccount_SetupNsaSequenceMethods:IAccount_SetupNsaSequence{#[doc="`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]fn ctor(self,is_show_error:impl::core::convert::Into<bool> ,result_func:impl::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906780usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver,(bool)::core::convert::Into::into(is_show_error),(crate::app::account::Account_SetupNsaResultFunction)::core::convert::Into::into(result_func))}
-}
-#[doc="`Ensure()` overload"]fn ensure(self,)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906840usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver)}
-}
-#[doc="`EnsureIdTokenCache()` overload"]fn ensure_id_token_cache(self,)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906a20usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver)}
-}
-#[doc="`EnsureIdTokenCacheTick()` overload"]fn ensure_id_token_cache_tick(self,)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906b50usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver)}
-}
-#[doc="`Success()` overload"]fn success(self,)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906d30usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver)}
-}
-#[doc="`CheckError()` overload"]fn check_error(self,)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906db0usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver)}
-}
-#[doc="`ShowError()` overload"]fn show_error(self,)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906ee0usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver)}
-}
-#[doc="`Cancel()` overload"]fn cancel(self,)->(){unsafe{let __receiver= <Account_SetupNsaSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2906f20usize)as*mut u8,();
-(Account_SetupNsaSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-account")]impl<__T:IAccount_SetupNsaSequence>IAccount_SetupNsaSequenceMethods for __T{}
-
-#[cfg(feature="app-account")]impl Account_SetupNsaSequence{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ensure_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ensure_id_token_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ensure_id_token_cache_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn check_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn show_error_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-account")]impl Account_SetupNsaSequence{#[doc="`.ctor(bool, crate::app::account::Account_SetupNsaResultFunction)` — overload selector"]pub fn new(is_show_error:bool,result_func:crate::app::account::Account_SetupNsaResultFunction)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Account_SetupNsaSequence), ::core::stringify!(new),));
- <Self as IAccount_SetupNsaSequenceMethods> ::ctor(this,is_show_error,result_func);
-this}
-}
-
-#[cfg(feature="app-account")]impl Account{#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5ad0usize)as*mut u8,();
-)}
-}
-#[doc="`SetupNsa(crate::app::procinst::ProcInst, bool, crate::app::account::Account_SetupNsaResultFunction)` overload"]pub fn setup_nsa(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_show_error:impl::core::convert::Into<bool> ,result_func:impl::core::convert::Into<crate::app::account::Account_SetupNsaResultFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5be0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_show_error),(crate::app::account::Account_SetupNsaResultFunction)::core::convert::Into::into(result_func))}
-}
-#[doc="`IsUserValid()` overload"]pub fn is_user_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5bf0usize)as*mut u8,bool;
-)}
-}
-#[doc="`IsNsaValid()` overload"]pub fn is_nsa_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5c60usize)as*mut u8,bool;
-)}
-}
-#[doc="`GetNickname()` overload"]pub fn get_nickname()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c5cd0usize)as*mut u8, ::unity2::Il2CppString;
-)}
-}
-#[doc="`get_NsaIdTokenCache()` overload"]pub fn get_nsa_id_token_cache()-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c60b0usize)as*mut u8, ::unity2::Array<u8> ;
-)}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27c6120usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-account")]impl Account{pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn setup_nsa_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_user_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_nsa_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_nickname_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_nsa_id_token_cache_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+ failed to instantiate",
+                ::core::stringify!(Account_SetupNsaResultFunction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAccount_SetupNsaResultFunctionMethods>::ctor(this, object, method);
+        this
+    }
 }
 
 #[cfg(feature = "app-account")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Account_SetupNsaResult;
-    pub use super::Account_SetupNsaResultFunction;
-    pub use super::IAccount_SetupNsaResultFunction;
-    pub use super::IAccount_SetupNsaResultFunctionMethods;
-    pub use super::Account_SetupNsaSequence_Label;
-    pub use super::Account_SetupNsaSequence;
-    pub use super::IAccount_SetupNsaSequence;
-    pub use super::IAccount_SetupNsaSequenceMethods;
-    pub use super::Account;
-    pub use super::IAccount;
-    pub use crate::app::procinst::IProcInst;
-    pub use crate::system::delegate::IDelegate;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{
+        Account, Account_SetupNsaResult, Account_SetupNsaResultFunction, Account_SetupNsaSequence, Account_SetupNsaSequence_Label, IAccount,
+        IAccount_SetupNsaResultFunction, IAccount_SetupNsaResultFunctionMethods, IAccount_SetupNsaSequence, IAccount_SetupNsaSequenceMethods,
+    };
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

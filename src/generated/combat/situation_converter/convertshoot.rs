@@ -2,118 +2,240 @@
 
 #[cfg(feature = "combat-situation_converter-convertshoot-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::situation_converter::{
+            baseconverter::{BaseConverter, IBaseConverter},
+            converterwithut::{ConverterWithUt, IConverterWithUt},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
-;
-use crate::combat::situation_converter::converterwithut::{ConverterWithUt,IConverterWithUt}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertshoot/ConvertShoot.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertShoot")]#[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]pub struct ConvertShoot{#[offset(48)]#[rename(name="CameraList")]pub camera_list: ::unity2::Array<crate::combat::cameraposition::CameraPosition> , #[offset(56)]#[rename(name="m_LastUnused")]pub m_last_unused:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertshoot/ConvertShoot.md"))]
+    #[::unity::class(namespace = "Combat.SituationConverter", name = "ConvertShoot")]
+    #[parent(crate::combat::situation_converter::converterwithut::ConverterWithUt)]
+    pub struct ConvertShoot {
+        #[offset(48)]
+        #[rename(name = "CameraList")]
+        pub camera_list: ::unity::Array<crate::combat::cameraposition::CameraPosition>,
+        #[offset(56)]
+        #[rename(name = "m_LastUnused")]
+        pub m_last_unused: i32,
+    }
 }
 
 #[cfg(feature = "combat-situation_converter-convertshoot-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertshoot")]pub trait IConvertShootMethods:IConvertShoot{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2542dd0usize)as*mut u8,();
-(ConvertShoot)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
-}
-#[doc="`OnBegin()` overload"]fn on_begin(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-situation_converter-convertshoot")]
+pub trait IConvertShootMethods: IConvertShoot {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
+    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
+        unsafe {
+            let __receiver = <ConvertShoot as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2542dd0usize)as*mut u8,();
+(ConvertShoot)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))
+        }
+    }
+    #[doc = "`OnBegin()` overload"]
+    fn on_begin(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertShoot as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <ConvertShoot as::unity2::ClassIdentity> ::NAME,"OnBegin",));
-let __inner:extern "C" fn(ConvertShoot, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`OnApproach()` overload"]fn on_approach(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <ConvertShoot as ::unity::ClassIdentity>::NAME,
+                        "OnBegin",
+                    )
+                });
+                let __inner: extern "C" fn(ConvertShoot, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`OnApproach()` overload"]
+    fn on_approach(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertShoot as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <ConvertShoot as::unity2::ClassIdentity> ::NAME,"OnApproach",));
-let __inner:extern "C" fn(ConvertShoot, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <ConvertShoot as ::unity::ClassIdentity>::NAME,
+                        "OnApproach",
+                    )
+                });
+                let __inner: extern "C" fn(ConvertShoot, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`OnDamage()` overload"]
+    fn on_damage(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertShoot as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <ConvertShoot as::unity2::ClassIdentity> ::NAME,"OnDamage",));
-let __inner:extern "C" fn(ConvertShoot, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`OnUnusable()` overload"]fn on_unusable(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertShoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <ConvertShoot as ::unity::ClassIdentity>::NAME,
+                        "OnDamage",
+                    )
+                });
+                let __inner: extern "C" fn(ConvertShoot, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`OnUnusable()` overload"]
+    fn on_unusable(self) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertShoot as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <ConvertShoot as::unity2::ClassIdentity> ::NAME,"OnUnusable",));
-let __inner:extern "C" fn(ConvertShoot, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="combat-situation_converter-convertshoot")]impl<__T:IConvertShoot>IConvertShootMethods for __T{}
-
-#[cfg(feature="combat-situation_converter-convertshoot")]impl ConvertShoot{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_approach_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn on_unusable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="combat-situation_converter-convertshoot")]impl ConvertShoot{#[doc="Direct (non-virtual) call to `ConvertShoot`'s own `OnBegin`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_begin(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_begin_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ConvertShoot`'s own `OnApproach`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_approach(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_approach_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ConvertShoot`'s own `OnDamage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_damage(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_damage_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ConvertShoot`'s own `OnUnusable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_unusable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::on_unusable_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <ConvertShoot as ::unity::ClassIdentity>::NAME,
+                        "OnUnusable",
+                    )
+                });
+                let __inner: extern "C" fn(ConvertShoot, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertshoot")]impl ConvertShoot{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-situation_converter-convertshoot")]
+impl<__T: IConvertShoot> IConvertShootMethods for __T {}
+
+#[cfg(feature = "combat-situation_converter-convertshoot")]
+impl ConvertShoot {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn on_begin_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn on_approach_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn on_damage_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn on_unusable_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+}
+
+#[cfg(feature = "combat-situation_converter-convertshoot")]
+impl ConvertShoot {
+    #[doc = "Direct (non-virtual) call to `ConvertShoot`'s own `OnBegin`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_begin(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::combat::cameraposition::CameraPosition {
+        let __mi = Self::on_begin_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ConvertShoot`'s own `OnApproach`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_approach(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::combat::cameraposition::CameraPosition {
+        let __mi = Self::on_approach_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ConvertShoot`'s own `OnDamage`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_damage(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::combat::cameraposition::CameraPosition {
+        let __mi = Self::on_damage_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ConvertShoot`'s own `OnUnusable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_unusable(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::combat::cameraposition::CameraPosition {
+        let __mi = Self::on_unusable_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::combat::cameraposition::CameraPosition =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "combat-situation_converter-convertshoot")]
+impl ConvertShoot {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
+    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ConvertShoot), ::core::stringify!(new),));
- <Self as IConvertShootMethods> ::ctor(this,data);
-this}
+ failed to instantiate",
+                ::core::stringify!(ConvertShoot),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConvertShootMethods>::ctor(this, data);
+        this
+    }
 }
 
 #[cfg(feature = "combat-situation_converter-convertshoot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertShoot;
-    pub use super::IConvertShoot;
-    pub use super::IConvertShootMethods;
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
-    pub use crate::combat::situation_converter::converterwithut::IConverterWithUt;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "combat-situation_converter-converterwithut")] pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ConvertShoot, IConvertShoot, IConvertShootMethods};
+    #[cfg(feature = "combat-situation_converter-baseconverter")]
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "combat-situation_converter-converterwithut")]
+    pub use crate::combat::situation_converter::converterwithut::IConverterWithUtMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::situation_converter::{baseconverter::IBaseConverter, converterwithut::IConverterWithUt},
+        system::object::IObject,
+    };
 }

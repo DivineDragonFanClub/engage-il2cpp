@@ -2,82 +2,146 @@
 
 #[cfg(feature = "combat-actionenableskip-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::state::{IState, State},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::state::{IState,State}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionenableskip/ActionEnableSkip.md"))]#[::unity2::class(namespace="Combat",name="ActionEnableSkip")]#[parent(crate::combat::state::State)]pub struct ActionEnableSkip{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actionenableskip/ActionEnableSkip.md"))]
+    #[::unity::class(namespace = "Combat", name = "ActionEnableSkip")]
+    #[parent(crate::combat::state::State)]
+    pub struct ActionEnableSkip {}
 }
 
 #[cfg(feature = "combat-actionenableskip-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-actionenableskip")]pub trait IActionEnableSkipMethods:IActionEnableSkip{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionEnableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-actionenableskip")]
+pub trait IActionEnableSkipMethods: IActionEnableSkip {
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <ActionEnableSkip as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <ActionEnableSkip as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let __inner:extern "C" fn(ActionEnableSkip, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionEnableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <ActionEnableSkip as ::unity::ClassIdentity>::NAME,
+                        "get_Name",
+                    )
+                });
+                let __inner: extern "C" fn(ActionEnableSkip, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`OnEnter()` overload"]
+    fn on_enter(self) -> () {
+        unsafe {
+            let __receiver = <ActionEnableSkip as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <ActionEnableSkip as::unity2::ClassIdentity> ::NAME,"OnEnter",));
-let __inner:extern "C" fn(ActionEnableSkip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ActionEnableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5650usize)as*mut u8,();
-(ActionEnableSkip)__receiver)}
-}
-}
-
-#[cfg(feature="combat-actionenableskip")]impl<__T:IActionEnableSkip>IActionEnableSkipMethods for __T{}
-
-#[cfg(feature="combat-actionenableskip")]impl ActionEnableSkip{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="combat-actionenableskip")]impl ActionEnableSkip{#[doc="Direct (non-virtual) call to `ActionEnableSkip`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ActionEnableSkip`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <ActionEnableSkip as ::unity::ClassIdentity>::NAME,
+                        "OnEnter",
+                    )
+                });
+                let __inner: extern "C" fn(ActionEnableSkip, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ActionEnableSkip as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2bc5650usize)as*mut u8,();
+(ActionEnableSkip)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="combat-actionenableskip")]impl ActionEnableSkip{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-actionenableskip")]
+impl<__T: IActionEnableSkip> IActionEnableSkipMethods for __T {}
+
+#[cfg(feature = "combat-actionenableskip")]
+impl ActionEnableSkip {
+    pub fn get_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn on_enter_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "combat-actionenableskip")]
+impl ActionEnableSkip {
+    #[doc = "Direct (non-virtual) call to `ActionEnableSkip`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_name(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_name_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ActionEnableSkip`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_enter(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_enter_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "combat-actionenableskip")]
+impl ActionEnableSkip {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ActionEnableSkip), ::core::stringify!(new),));
- <Self as IActionEnableSkipMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ActionEnableSkip),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionEnableSkipMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "combat-actionenableskip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionEnableSkip;
-    pub use super::IActionEnableSkip;
-    pub use super::IActionEnableSkipMethods;
-    pub use crate::combat::state::IState;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "combat-state")] pub use crate::combat::state::IStateMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ActionEnableSkip, IActionEnableSkip, IActionEnableSkipMethods};
+    #[cfg(feature = "combat-state")]
+    pub use crate::combat::state::IStateMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::state::IState, system::object::IObject};
 }

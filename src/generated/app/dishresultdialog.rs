@@ -2,118 +2,250 @@
 
 #[cfg(feature = "app-dishresultdialog-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::procinst::{IProcInst,ProcInst}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialog/DishResultDialog.md"))]
+    #[::unity::class(namespace = "App", name = "DishResultDialog")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct DishResultDialog {
+        #[static_field]
+        #[rename(name = "PrefabPath")]
+        pub prefab_path: ::unity::Il2CppString,
+        #[offset(112)]
+        #[rename(name = "m_DishResultRoot")]
+        pub m_dish_result_root: crate::unity_engine::gameobject::GameObject,
+        #[offset(120)]
+        #[rename(name = "m_ResultContent")]
+        pub m_result_content: crate::app::dishresultdialogcontent::DishResultDialogContent,
+        #[offset(128)]
+        #[rename(name = "m_Dish")]
+        pub m_dish: crate::app::dish::Dish,
+        #[offset(136)]
+        #[rename(name = "m_SelectedUnits")]
+        pub m_selected_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,
+    }
 
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialog/DishResultDialog_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct DishResultDialog_Label {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for DishResultDialog_Label {
+        const NAME: &'static str = "DishResultDialog.Label";
+        const NAMESPACE: &'static str = "App";
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialog/DishResultDialog_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DishResultDialog_Label{pub value:i32,}
-impl::unity2::ClassIdentity for DishResultDialog_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="DishResultDialog.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for DishResultDialog_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl DishResultDialog_Label{pub fn init()->Self{Self{value:0}
-}
-pub fn tick()->Self{Self{value:1}
-}
-pub fn exit()->Self{Self{value:2}
-}
-}
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for DishResultDialog_Label {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl DishResultDialog_Label {
+        pub fn init() -> Self {
+            Self { value: 0 }
+        }
 
+        pub fn tick() -> Self {
+            Self { value: 1 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialog/DishResultDialog.md"))]#[::unity2::class(namespace="App",name="DishResultDialog")]#[parent(crate::app::procinst::ProcInst)]pub struct DishResultDialog{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_DishResultRoot")]pub m_dish_result_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_ResultContent")]pub m_result_content:crate::app::dishresultdialogcontent::DishResultDialogContent, #[offset(128)]#[rename(name="m_Dish")]pub m_dish:crate::app::dish::Dish, #[offset(136)]#[rename(name="m_SelectedUnits")]pub m_selected_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ,}
-
+        pub fn exit() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "app-dishresultdialog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-dishresultdialog")]impl DishResultDialog{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cf40d0usize)as*mut u8,();
-)}
-}
-#[doc="`IsLoadingPrefab()` overload"]pub fn is_loading_prefab()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4170usize)as*mut u8,bool;
-)}
-}
-#[doc="`UnloadPrefab()` overload"]pub fn unload_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cf41f0usize)as*mut u8,();
-)}
-}
-#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::dish::Dish, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,dish:impl::core::convert::Into<crate::app::dish::Dish> ,selected_units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cf5110usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::dish::Dish)::core::convert::Into::into(dish),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_units))}
-}
+#[cfg(feature = "app-dishresultdialog")]
+impl DishResultDialog {
+    #[doc = "`LoadPrefabAsync()` overload"]
+    pub fn load_prefab_async() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf40d0usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`IsLoadingPrefab()` overload"]
+    pub fn is_loading_prefab() -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf4170usize)as*mut u8,bool;
+            )
+        }
+    }
+
+    #[doc = "`UnloadPrefab()` overload"]
+    pub fn unload_prefab() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf41f0usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst, crate::app::dish::Dish, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
+    pub fn create_bind(
+        super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>,
+        dish: impl ::core::convert::Into<crate::app::dish::Dish>,
+        selected_units: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf5110usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::dish::Dish)::core::convert::Into::into(dish),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_units))
+        }
+    }
 }
 
-#[cfg(feature="app-dishresultdialog")]pub trait IDishResultDialogMethods:IDishResultDialog{#[doc="`.ctor(crate::app::dish::Dish, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]fn ctor(self,dish:impl::core::convert::Into<crate::app::dish::Dish> ,selected_units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> >)->(){unsafe{let __receiver= <DishResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4270usize)as*mut u8,();
-(DishResultDialog)__receiver,(crate::app::dish::Dish)::core::convert::Into::into(dish),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_units))}
-}
-#[doc="`CreateWindow()` overload"]fn create_window(self,)->(){unsafe{let __receiver= <DishResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf42c0usize)as*mut u8,();
-(DishResultDialog)__receiver)}
-}
-#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <DishResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4bc0usize)as*mut u8,bool;
-(DishResultDialog)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DishResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4c80usize)as*mut u8,();
-(DishResultDialog)__receiver)}
-}
-#[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <DishResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf4fe0usize)as*mut u8,bool;
-(DishResultDialog)__receiver)}
-}
-#[doc="`DeleteWindow()` overload"]fn delete_window(self,)->(){unsafe{let __receiver= <DishResultDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf50a0usize)as*mut u8,();
-(DishResultDialog)__receiver)}
-}
+#[cfg(feature = "app-dishresultdialog")]
+pub trait IDishResultDialogMethods: IDishResultDialog {
+    #[doc = "`.ctor(crate::app::dish::Dish, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` overload"]
+    fn ctor(
+        self,
+        dish: impl ::core::convert::Into<crate::app::dish::Dish>,
+        selected_units: impl ::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <DishResultDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf4270usize)as*mut u8,();
+(DishResultDialog)__receiver,(crate::app::dish::Dish)::core::convert::Into::into(dish),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(selected_units))
+        }
+    }
+    #[doc = "`CreateWindow()` overload"]
+    fn create_window(self) -> () {
+        unsafe {
+            let __receiver = <DishResultDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf42c0usize)as*mut u8,();
+(DishResultDialog)__receiver)
+        }
+    }
+    #[doc = "`IsOpening()` overload"]
+    fn is_opening(self) -> bool {
+        unsafe {
+            let __receiver = <DishResultDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf4bc0usize)as*mut u8,bool;
+(DishResultDialog)__receiver)
+        }
+    }
+    #[doc = "`Tick()` overload"]
+    fn tick(self) -> () {
+        unsafe {
+            let __receiver = <DishResultDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf4c80usize)as*mut u8,();
+(DishResultDialog)__receiver)
+        }
+    }
+    #[doc = "`IsClosing()` overload"]
+    fn is_closing(self) -> bool {
+        unsafe {
+            let __receiver = <DishResultDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf4fe0usize)as*mut u8,bool;
+(DishResultDialog)__receiver)
+        }
+    }
+    #[doc = "`DeleteWindow()` overload"]
+    fn delete_window(self) -> () {
+        unsafe {
+            let __receiver = <DishResultDialog as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cf50a0usize)as*mut u8,();
+(DishResultDialog)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-dishresultdialog")]impl<__T:IDishResultDialog>IDishResultDialogMethods for __T{}
+#[cfg(feature = "app-dishresultdialog")]
+impl<__T: IDishResultDialog> IDishResultDialogMethods for __T {}
 
-#[cfg(feature="app-dishresultdialog")]impl DishResultDialog{pub fn load_prefab_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_loading_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn unload_prefab_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn create_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_opening_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_closing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn delete_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+#[cfg(feature = "app-dishresultdialog")]
+impl DishResultDialog {
+    pub fn load_prefab_async_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn is_loading_prefab_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn unload_prefab_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn create_window_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn is_opening_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn tick_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn is_closing_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn delete_window_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn create_bind_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
 }
 
-#[cfg(feature="app-dishresultdialog")]impl DishResultDialog{#[doc="`.ctor(crate::app::dish::Dish, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` — overload selector"]pub fn new(dish:crate::app::dish::Dish,selected_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-dishresultdialog")]
+impl DishResultDialog {
+    #[doc = "`.ctor(crate::app::dish::Dish, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)` — overload selector"]
+    pub fn new(dish: crate::app::dish::Dish, selected_units: crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DishResultDialog), ::core::stringify!(new),));
- <Self as IDishResultDialogMethods> ::ctor(this,dish,selected_units);
-this}
+ failed to instantiate",
+                ::core::stringify!(DishResultDialog),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDishResultDialogMethods>::ctor(this, dish, selected_units);
+        this
+    }
 }
 
 #[cfg(feature = "app-dishresultdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DishResultDialog_Label;
-    pub use super::DishResultDialog;
-    pub use super::IDishResultDialog;
-    pub use super::IDishResultDialogMethods;
-    pub use crate::app::procinst::IProcInst;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{DishResultDialog, DishResultDialog_Label, IDishResultDialog, IDishResultDialogMethods};
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

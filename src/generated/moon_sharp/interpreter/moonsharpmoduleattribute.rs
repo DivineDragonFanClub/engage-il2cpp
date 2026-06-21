@@ -2,83 +2,187 @@
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/moonsharpmoduleattribute/MoonSharpModuleAttribute.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="MoonSharpModuleAttribute")]pub struct MoonSharpModuleAttribute{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/moonsharpmoduleattribute/MoonSharpModuleAttribute.md"))]
+    #[::unity::class(namespace = "MoonSharp.Interpreter", name = "MoonSharpModuleAttribute")]
+    pub struct MoonSharpModuleAttribute {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-moonsharpmoduleattribute")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MoonSharpModuleAttribute_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_namespace{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<MoonSharpModuleAttribute as::unity2::ClassIdentity> ::class(),"get_Namespace",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __MoonSharpModuleAttribute_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_namespace {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <MoonSharpModuleAttribute as ::unity::ClassIdentity>::class(),
+                "get_Namespace",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <MoonSharpModuleAttribute as::unity2::ClassIdentity> ::NAME,"get_Namespace",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_namespace{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<MoonSharpModuleAttribute as::unity2::ClassIdentity> ::class(),"set_Namespace",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <MoonSharpModuleAttribute as ::unity::ClassIdentity>::NAME,
+                        "get_Namespace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_namespace {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[<::unity::Il2CppString as ::unity::IlType>::il_type()];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <MoonSharpModuleAttribute as ::unity::ClassIdentity>::class(),
+                "set_Namespace",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <MoonSharpModuleAttribute as::unity2::ClassIdentity> ::NAME,"set_Namespace",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<MoonSharpModuleAttribute as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <MoonSharpModuleAttribute as ::unity::ClassIdentity>::NAME,
+                        "set_Namespace",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <MoonSharpModuleAttribute as ::unity::ClassIdentity>::class(),
+                ".ctor",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <MoonSharpModuleAttribute as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-moonsharpmoduleattribute")]pub trait IMoonSharpModuleAttributeMethods:IMoonSharpModuleAttribute{#[doc="`get_Namespace()` overload"]fn get_namespace(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MoonSharpModuleAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__MoonSharpModuleAttribute_unity2_raw::__lookup_get_namespace::get_method_info().method_ptr, ::unity2::Il2CppString;
-(MoonSharpModuleAttribute)__receiver)}
-}
-#[doc="`set_Namespace(::unity2::Il2CppString)` overload"]fn set_namespace(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MoonSharpModuleAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__MoonSharpModuleAttribute_unity2_raw::__lookup_set_namespace::get_method_info().method_ptr,();
-(MoonSharpModuleAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MoonSharpModuleAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__MoonSharpModuleAttribute_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(MoonSharpModuleAttribute)__receiver)}
-}
+",
+                        <MoonSharpModuleAttribute as ::unity::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-moonsharpmoduleattribute")]impl<__T:IMoonSharpModuleAttribute>IMoonSharpModuleAttributeMethods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-moonsharpmoduleattribute")]impl MoonSharpModuleAttribute{pub fn get_namespace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_namespace_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
+pub trait IMoonSharpModuleAttributeMethods: IMoonSharpModuleAttribute {
+    #[doc = "`get_Namespace()` overload"]
+    fn get_namespace(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver =
+                <MoonSharpModuleAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__MoonSharpModuleAttribute_unity_raw::__lookup_get_namespace::get_method_info().method_ptr, ::unity::Il2CppString;
+(MoonSharpModuleAttribute)__receiver)
+        }
+    }
+    #[doc = "`set_Namespace(::unity::Il2CppString)` overload"]
+    fn set_namespace(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <MoonSharpModuleAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__MoonSharpModuleAttribute_unity_raw::__lookup_set_namespace::get_method_info().method_ptr,();
+(MoonSharpModuleAttribute)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MoonSharpModuleAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__MoonSharpModuleAttribute_unity_raw::__lookup_ctor::get_method_info().method_ptr,();
+(MoonSharpModuleAttribute)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-moonsharpmoduleattribute")]impl MoonSharpModuleAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
+impl<__T: IMoonSharpModuleAttribute> IMoonSharpModuleAttributeMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
+impl MoonSharpModuleAttribute {
+    pub fn get_namespace_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn set_namespace_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
+impl MoonSharpModuleAttribute {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MoonSharpModuleAttribute), ::core::stringify!(new),));
- <Self as IMoonSharpModuleAttributeMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MoonSharpModuleAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMoonSharpModuleAttributeMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-moonsharpmoduleattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MoonSharpModuleAttribute;
-    pub use super::IMoonSharpModuleAttribute;
-    pub use super::IMoonSharpModuleAttributeMethods;
+    pub use super::{IMoonSharpModuleAttribute, IMoonSharpModuleAttributeMethods, MoonSharpModuleAttribute};
 }

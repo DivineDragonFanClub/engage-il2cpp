@@ -2,60 +2,117 @@
 
 #[cfg(feature = "nn-hid-npadstate-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/npadstate/NpadState.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct NpadState {
+        pub sampling_number: i64,
+        pub buttons: crate::nn::hid::npadbutton::NpadButton,
+        pub analog_stick_l: crate::nn::hid::analogstickstate::AnalogStickState,
+        pub analog_stick_r: crate::nn::hid::analogstickstate::AnalogStickState,
+        pub attributes: crate::nn::hid::npadattribute::NpadAttribute,
+        pub pre_buttons: crate::nn::hid::npadbutton::NpadButton,
+    }
+    impl ::unity::ClassIdentity for NpadState {
+        const NAME: &'static str = "NpadState";
+        const NAMESPACE: &'static str = "nn.hid";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nn/hid/npadstate/NpadState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NpadState{pub sampling_number:i64,pub buttons:crate::nn::hid::npadbutton::NpadButton,pub analog_stick_l:crate::nn::hid::analogstickstate::AnalogStickState,pub analog_stick_r:crate::nn::hid::analogstickstate::AnalogStickState,pub attributes:crate::nn::hid::npadattribute::NpadAttribute,pub pre_buttons:crate::nn::hid::npadbutton::NpadButton,}
-impl::unity2::ClassIdentity for NpadState{const NAMESPACE: &'static str="nn.hid";
-const NAME: &'static str="NpadState";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NpadState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for NpadState {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "nn-hid-npadstate-types")]
 pub use __types::*;
 
-#[cfg(feature="nn-hid-npadstate")]impl NpadState{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1fe50usize)as*mut u8,();
-(*mut NpadState)self as*mut NpadState)}
-}
-#[doc="`GetButton(crate::nn::hid::npadbutton::NpadButton)` overload"]pub fn get_button(&mut self,button:impl::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1fe90usize)as*mut u8,bool;
-(*mut NpadState)self as*mut NpadState,(crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(button))}
-}
-#[doc="`GetButtonDown(crate::nn::hid::npadbutton::NpadButton)` overload"]pub fn get_button_down(&mut self,button:impl::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1fea0usize)as*mut u8,bool;
-(*mut NpadState)self as*mut NpadState,(crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(button))}
-}
-#[doc="`GetButtonUp(crate::nn::hid::npadbutton::NpadButton)` overload"]pub fn get_button_up(&mut self,button:impl::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1fed0usize)as*mut u8,bool;
-(*mut NpadState)self as*mut NpadState,(crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(button))}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f1ff00usize)as*mut u8, ::unity2::Il2CppString;
-(*mut NpadState)self as*mut NpadState)}
-}
+#[cfg(feature = "nn-hid-npadstate")]
+impl NpadState {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(&mut self) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f1fe50usize)as*mut u8,();
+(*mut NpadState)self as*mut NpadState)
+        }
+    }
+
+    #[doc = "`GetButton(crate::nn::hid::npadbutton::NpadButton)` overload"]
+    pub fn get_button(&mut self, button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f1fe90usize)as*mut u8,bool;
+(*mut NpadState)self as*mut NpadState,(crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(button))
+        }
+    }
+
+    #[doc = "`GetButtonDown(crate::nn::hid::npadbutton::NpadButton)` overload"]
+    pub fn get_button_down(&mut self, button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f1fea0usize)as*mut u8,bool;
+(*mut NpadState)self as*mut NpadState,(crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(button))
+        }
+    }
+
+    #[doc = "`GetButtonUp(crate::nn::hid::npadbutton::NpadButton)` overload"]
+    pub fn get_button_up(&mut self, button: impl ::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f1fed0usize)as*mut u8,bool;
+(*mut NpadState)self as*mut NpadState,(crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(button))
+        }
+    }
+
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(&mut self) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f1ff00usize)as*mut u8, ::unity::Il2CppString;
+(*mut NpadState)self as*mut NpadState)
+        }
+    }
 }
 
-#[cfg(feature="nn-hid-npadstate")]impl NpadState{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_button_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_button_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_button_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature = "nn-hid-npadstate")]
+impl NpadState {
+    pub fn clear_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_button_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_button_down_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_button_up_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn to_string_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
 }
 
 #[cfg(feature = "nn-hid-npadstate")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::NpadState;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

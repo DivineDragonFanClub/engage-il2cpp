@@ -2,48 +2,77 @@
 
 #[cfg(feature = "unity_engine-textareaattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textareaattribute/TextAreaAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="TextAreaAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct TextAreaAttribute{#[offset(16)]#[rename(name="minLines")]pub min_lines:i32, #[offset(20)]#[rename(name="maxLines")]pub max_lines:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textareaattribute/TextAreaAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "TextAreaAttribute")]
+    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+    pub struct TextAreaAttribute {
+        #[offset(16)]
+        #[rename(name = "minLines")]
+        pub min_lines: i32,
+        #[offset(20)]
+        #[rename(name = "maxLines")]
+        pub max_lines: i32,
+    }
 }
 
 #[cfg(feature = "unity_engine-textareaattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-textareaattribute")]pub trait ITextAreaAttributeMethods:ITextAreaAttribute{#[doc="`.ctor(i32, i32)` overload"]fn ctor(self,min_lines:impl::core::convert::Into<i32> ,max_lines:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TextAreaAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3788c10usize)as*mut u8,();
-(TextAreaAttribute)__receiver,(i32)::core::convert::Into::into(min_lines),(i32)::core::convert::Into::into(max_lines))}
-}
+#[cfg(feature = "unity_engine-textareaattribute")]
+pub trait ITextAreaAttributeMethods: ITextAreaAttribute {
+    #[doc = "`.ctor(i32, i32)` overload"]
+    fn ctor(self, min_lines: impl ::core::convert::Into<i32>, max_lines: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <TextAreaAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3788c10usize)as*mut u8,();
+(TextAreaAttribute)__receiver,(i32)::core::convert::Into::into(min_lines),(i32)::core::convert::Into::into(max_lines))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-textareaattribute")]impl<__T:ITextAreaAttribute>ITextAreaAttributeMethods for __T{}
+#[cfg(feature = "unity_engine-textareaattribute")]
+impl<__T: ITextAreaAttribute> ITextAreaAttributeMethods for __T {}
 
-#[cfg(feature="unity_engine-textareaattribute")]impl TextAreaAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-textareaattribute")]
+impl TextAreaAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-textareaattribute")]impl TextAreaAttribute{#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new(min_lines:i32,max_lines:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-textareaattribute")]
+impl TextAreaAttribute {
+    #[doc = "`.ctor(i32, i32)` — overload selector"]
+    pub fn new(min_lines: i32, max_lines: i32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TextAreaAttribute), ::core::stringify!(new),));
- <Self as ITextAreaAttributeMethods> ::ctor(this,min_lines,max_lines);
-this}
+ failed to instantiate",
+                ::core::stringify!(TextAreaAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITextAreaAttributeMethods>::ctor(this, min_lines, max_lines);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-textareaattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TextAreaAttribute;
-    pub use super::ITextAreaAttribute;
-    pub use super::ITextAreaAttributeMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-propertyattribute")] pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use super::{ITextAreaAttribute, ITextAreaAttributeMethods, TextAreaAttribute};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-propertyattribute")]
+    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
 }

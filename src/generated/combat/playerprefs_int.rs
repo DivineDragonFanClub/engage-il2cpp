@@ -2,54 +2,93 @@
 
 #[cfg(feature = "combat-playerprefs_int-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/playerprefs_int/PlayerPrefs_Int.md"))]#[::unity2::class(namespace="Combat",name="PlayerPrefs_Int")]#[parent(crate::system::object::Object)]pub struct PlayerPrefs_Int{#[offset(16)]#[rename(name="key")]pub key: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/playerprefs_int/PlayerPrefs_Int.md"))]
+    #[::unity::class(namespace = "Combat", name = "PlayerPrefs_Int")]
+    #[parent(crate::system::object::Object)]
+    pub struct PlayerPrefs_Int {
+        #[offset(16)]
+        #[rename(name = "key")]
+        pub key: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "combat-playerprefs_int-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-playerprefs_int")]pub trait IPlayerPrefs_IntMethods:IPlayerPrefs_Int{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <PlayerPrefs_Int as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28144d0usize)as*mut u8,();
-(PlayerPrefs_Int)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <PlayerPrefs_Int as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2814510usize)as*mut u8,i32;
-(PlayerPrefs_Int)__receiver)}
-}
-#[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PlayerPrefs_Int as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2814520usize)as*mut u8,();
-(PlayerPrefs_Int)__receiver,(i32)::core::convert::Into::into(value))}
-}
+#[cfg(feature = "combat-playerprefs_int")]
+pub trait IPlayerPrefs_IntMethods: IPlayerPrefs_Int {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, name: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <PlayerPrefs_Int as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x28144d0usize)as*mut u8,();
+(PlayerPrefs_Int)__receiver,(::unity::Il2CppString)::core::convert::Into::into(name))
+        }
+    }
+    #[doc = "`get_Value()` overload"]
+    fn get_value(self) -> i32 {
+        unsafe {
+            let __receiver = <PlayerPrefs_Int as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2814510usize)as*mut u8,i32;
+(PlayerPrefs_Int)__receiver)
+        }
+    }
+    #[doc = "`set_Value(i32)` overload"]
+    fn set_value(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <PlayerPrefs_Int as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2814520usize)as*mut u8,();
+(PlayerPrefs_Int)__receiver,(i32)::core::convert::Into::into(value))
+        }
+    }
 }
 
-#[cfg(feature="combat-playerprefs_int")]impl<__T:IPlayerPrefs_Int>IPlayerPrefs_IntMethods for __T{}
+#[cfg(feature = "combat-playerprefs_int")]
+impl<__T: IPlayerPrefs_Int> IPlayerPrefs_IntMethods for __T {}
 
-#[cfg(feature="combat-playerprefs_int")]impl PlayerPrefs_Int{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "combat-playerprefs_int")]
+impl PlayerPrefs_Int {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn set_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="combat-playerprefs_int")]impl PlayerPrefs_Int{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-playerprefs_int")]
+impl PlayerPrefs_Int {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(name: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(PlayerPrefs_Int), ::core::stringify!(new),));
- <Self as IPlayerPrefs_IntMethods> ::ctor(this,name);
-this}
+ failed to instantiate",
+                ::core::stringify!(PlayerPrefs_Int),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPlayerPrefs_IntMethods>::ctor(this, name);
+        this
+    }
 }
 
 #[cfg(feature = "combat-playerprefs_int")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PlayerPrefs_Int;
-    pub use super::IPlayerPrefs_Int;
-    pub use super::IPlayerPrefs_IntMethods;
+    pub use super::{IPlayerPrefs_Int, IPlayerPrefs_IntMethods, PlayerPrefs_Int};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

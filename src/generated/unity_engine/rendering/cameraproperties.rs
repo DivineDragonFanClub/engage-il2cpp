@@ -2,60 +2,110 @@
 
 #[cfg(feature = "unity_engine-rendering-cameraproperties-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/cameraproperties/CameraProperties.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct CameraProperties {}
+    impl ::unity::ClassIdentity for CameraProperties {
+        const NAME: &'static str = "CameraProperties";
+        const NAMESPACE: &'static str = "UnityEngine.Rendering";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/cameraproperties/CameraProperties.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CameraProperties{}
-impl::unity2::ClassIdentity for CameraProperties{const NAMESPACE: &'static str="UnityEngine.Rendering";
-const NAME: &'static str="CameraProperties";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for CameraProperties{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for CameraProperties {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraproperties-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-cameraproperties")]impl CameraProperties{#[doc="`GetShadowCullingPlane(i32)` overload"]pub fn get_shadow_culling_plane(&mut self,index:impl::core::convert::Into<i32>)->crate::unity_engine::plane::Plane{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c3f1b0usize)as*mut u8,crate::unity_engine::plane::Plane;
-(*mut CameraProperties)self as*mut CameraProperties,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetCameraCullingPlane(i32)` overload"]pub fn get_camera_culling_plane(&mut self,index:impl::core::convert::Into<i32>)->crate::unity_engine::plane::Plane{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c3f2a0usize)as*mut u8,crate::unity_engine::plane::Plane;
-(*mut CameraProperties)self as*mut CameraProperties,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`Equals(crate::unity_engine::rendering::cameraproperties::CameraProperties)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::unity_engine::rendering::cameraproperties::CameraProperties>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c3f390usize)as*mut u8,bool;
-(*mut CameraProperties)self as*mut CameraProperties,(crate::unity_engine::rendering::cameraproperties::CameraProperties)::core::convert::Into::into(other))}
-}
-#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals_2(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c400d0usize)as*mut u8,bool;
-(*mut CameraProperties)self as*mut CameraProperties,(crate::system::object::Object)::core::convert::Into::into(obj))}
-}
-#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c40170usize)as*mut u8,i32;
-(*mut CameraProperties)self as*mut CameraProperties)}
-}
+#[cfg(feature = "unity_engine-rendering-cameraproperties")]
+impl CameraProperties {
+    #[doc = "`GetShadowCullingPlane(i32)` overload"]
+    pub fn get_shadow_culling_plane(&mut self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::plane::Plane {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c3f1b0usize)as*mut u8,crate::unity_engine::plane::Plane;
+(*mut CameraProperties)self as*mut CameraProperties,(i32)::core::convert::Into::into(index))
+        }
+    }
+
+    #[doc = "`GetCameraCullingPlane(i32)` overload"]
+    pub fn get_camera_culling_plane(&mut self, index: impl ::core::convert::Into<i32>) -> crate::unity_engine::plane::Plane {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c3f2a0usize)as*mut u8,crate::unity_engine::plane::Plane;
+(*mut CameraProperties)self as*mut CameraProperties,(i32)::core::convert::Into::into(index))
+        }
+    }
+
+    #[doc = "`Equals(crate::unity_engine::rendering::cameraproperties::CameraProperties)` overload"]
+    pub fn equals(&mut self, other: impl ::core::convert::Into<crate::unity_engine::rendering::cameraproperties::CameraProperties>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c3f390usize)as*mut u8,bool;
+(*mut CameraProperties)self as*mut CameraProperties,(crate::unity_engine::rendering::cameraproperties::CameraProperties)::core::convert::Into::into(other))
+        }
+    }
+
+    #[doc = "`Equals(crate::system::object::Object)` overload"]
+    pub fn equals_2(&mut self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c400d0usize)as*mut u8,bool;
+(*mut CameraProperties)self as*mut CameraProperties,(crate::system::object::Object)::core::convert::Into::into(obj))
+        }
+    }
+
+    #[doc = "`GetHashCode()` overload"]
+    pub fn get_hash_code(&mut self) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c40170usize)as*mut u8,i32;
+(*mut CameraProperties)self as*mut CameraProperties)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-cameraproperties")]impl CameraProperties{pub fn get_shadow_culling_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_camera_culling_plane_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature = "unity_engine-rendering-cameraproperties")]
+impl CameraProperties {
+    pub fn get_shadow_culling_plane_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_camera_culling_plane_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn equals_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn equals_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn get_hash_code_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-cameraproperties")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CameraProperties;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

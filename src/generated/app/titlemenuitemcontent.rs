@@ -2,68 +2,93 @@
 
 #[cfg(feature = "app-titlemenuitemcontent-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+            mainmenusequence::{IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent, MainMenuSequence_TopMenuSequence_Menu_MenuItemContent},
+        },
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
-;
-use crate::app::mainmenusequence::{IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent,MainMenuSequence_TopMenuSequence_Menu_MenuItemContent}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlemenuitemcontent/TitleMenuItemContent.md"))]#[::unity2::class(namespace="App",name="TitleMenuItemContent")]#[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)]pub struct TitleMenuItemContent{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlemenuitemcontent/TitleMenuItemContent.md"))]
+    #[::unity::class(namespace = "App", name = "TitleMenuItemContent")]
+    #[parent(crate::app::mainmenusequence::MainMenuSequence_TopMenuSequence_Menu_MenuItemContent)]
+    pub struct TitleMenuItemContent {}
 }
 
 #[cfg(feature = "app-titlemenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-titlemenuitemcontent")]pub trait ITitleMenuItemContentMethods:ITitleMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TitleMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22971d0usize)as*mut u8,();
-(TitleMenuItemContent)__receiver)}
-}
+#[cfg(feature = "app-titlemenuitemcontent")]
+pub trait ITitleMenuItemContentMethods: ITitleMenuItemContent {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TitleMenuItemContent as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22971d0usize)as*mut u8,();
+(TitleMenuItemContent)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-titlemenuitemcontent")]impl<__T:ITitleMenuItemContent>ITitleMenuItemContentMethods for __T{}
+#[cfg(feature = "app-titlemenuitemcontent")]
+impl<__T: ITitleMenuItemContent> ITitleMenuItemContentMethods for __T {}
 
-#[cfg(feature="app-titlemenuitemcontent")]impl TitleMenuItemContent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-titlemenuitemcontent")]
+impl TitleMenuItemContent {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-titlemenuitemcontent")]impl TitleMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-titlemenuitemcontent")]
+impl TitleMenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TitleMenuItemContent), ::core::stringify!(new),));
- <Self as ITitleMenuItemContentMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(TitleMenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITitleMenuItemContentMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-titlemenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TitleMenuItemContent;
-    pub use super::ITitleMenuItemContent;
-    pub use super::ITitleMenuItemContentMethods;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
-    pub use crate::app::mainmenusequence::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "app-mainmenusequence")] pub use crate::app::mainmenusequence::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{ITitleMenuItemContent, ITitleMenuItemContentMethods, TitleMenuItemContent};
+    #[cfg(feature = "app-basicmenuitemcontent")]
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "app-mainmenusequence")]
+    pub use crate::app::mainmenusequence::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContentMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::{basicmenuitemcontent::IBasicMenuItemContent, mainmenusequence::IMainMenuSequence_TopMenuSequence_Menu_MenuItemContent},
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

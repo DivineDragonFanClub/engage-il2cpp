@@ -2,33 +2,43 @@
 
 #[cfg(feature = "combat-playerprefsutility-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/playerprefsutility/PlayerPrefsUtility.md"))]#[::unity2::class(namespace="Combat",name="PlayerPrefsUtility")]#[parent(crate::system::object::Object)]pub struct PlayerPrefsUtility{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/playerprefsutility/PlayerPrefsUtility.md"))]
+    #[::unity::class(namespace = "Combat", name = "PlayerPrefsUtility")]
+    #[parent(crate::system::object::Object)]
+    pub struct PlayerPrefsUtility {}
 }
 
 #[cfg(feature = "combat-playerprefsutility-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-playerprefsutility")]impl PlayerPrefsUtility{#[doc="`GetKeys()` overload"]pub fn get_keys()->crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2814460usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ;
-)}
-}
+#[cfg(feature = "combat-playerprefsutility")]
+impl PlayerPrefsUtility {
+    #[doc = "`GetKeys()` overload"]
+    pub fn get_keys() -> crate::system::collections::generic::list_1::List_1<::unity::Il2CppString> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2814460usize)as*mut u8,crate::system::collections::generic::list_1::List_1< ::unity::Il2CppString> ;
+            )
+        }
+    }
 }
 
-#[cfg(feature="combat-playerprefsutility")]impl PlayerPrefsUtility{pub fn get_keys_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "combat-playerprefsutility")]
+impl PlayerPrefsUtility {
+    pub fn get_keys_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "combat-playerprefsutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PlayerPrefsUtility;
-    pub use super::IPlayerPrefsUtility;
+    pub use super::{IPlayerPrefsUtility, PlayerPrefsUtility};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

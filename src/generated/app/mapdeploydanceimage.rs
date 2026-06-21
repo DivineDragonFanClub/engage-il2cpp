@@ -2,52 +2,78 @@
 
 #[cfg(feature = "app-mapdeploydanceimage-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapdeploybitimage::{IMapDeployBitImage, MapDeployBitImage},
+            mapimagecorebit::{IMapImageCoreBit, MapImageCoreBit},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapdeploybitimage::{IMapDeployBitImage,MapDeployBitImage}
-;
-use crate::app::mapimagecorebit::{IMapImageCoreBit,MapImageCoreBit}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploydanceimage/MapDeployDanceImage.md"))]#[::unity2::class(namespace="App",name="MapDeployDanceImage")]#[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]pub struct MapDeployDanceImage{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapdeploydanceimage/MapDeployDanceImage.md"))]
+    #[::unity::class(namespace = "App", name = "MapDeployDanceImage")]
+    #[parent(crate::app::mapdeploybitimage::MapDeployBitImage)]
+    pub struct MapDeployDanceImage {}
 }
 
 #[cfg(feature = "app-mapdeploydanceimage-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapdeploydanceimage")]pub trait IMapDeployDanceImageMethods:IMapDeployDanceImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapDeployDanceImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29c39c0usize)as*mut u8,();
-(MapDeployDanceImage)__receiver)}
-}
+#[cfg(feature = "app-mapdeploydanceimage")]
+pub trait IMapDeployDanceImageMethods: IMapDeployDanceImage {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapDeployDanceImage as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x29c39c0usize)as*mut u8,();
+(MapDeployDanceImage)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-mapdeploydanceimage")]impl<__T:IMapDeployDanceImage>IMapDeployDanceImageMethods for __T{}
+#[cfg(feature = "app-mapdeploydanceimage")]
+impl<__T: IMapDeployDanceImage> IMapDeployDanceImageMethods for __T {}
 
-#[cfg(feature="app-mapdeploydanceimage")]impl MapDeployDanceImage{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-mapdeploydanceimage")]
+impl MapDeployDanceImage {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-mapdeploydanceimage")]impl MapDeployDanceImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-mapdeploydanceimage")]
+impl MapDeployDanceImage {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MapDeployDanceImage), ::core::stringify!(new),));
- <Self as IMapDeployDanceImageMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MapDeployDanceImage),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapDeployDanceImageMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-mapdeploydanceimage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapDeployDanceImage;
-    pub use super::IMapDeployDanceImage;
-    pub use super::IMapDeployDanceImageMethods;
-    pub use crate::app::mapdeploybitimage::IMapDeployBitImage;
-    pub use crate::app::mapimagecorebit::IMapImageCoreBit;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapdeploybitimage")] pub use crate::app::mapdeploybitimage::IMapDeployBitImageMethods;
-    #[cfg(feature = "app-mapimagecorebit")] pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IMapDeployDanceImage, IMapDeployDanceImageMethods, MapDeployDanceImage};
+    #[cfg(feature = "app-mapdeploybitimage")]
+    pub use crate::app::mapdeploybitimage::IMapDeployBitImageMethods;
+    #[cfg(feature = "app-mapimagecorebit")]
+    pub use crate::app::mapimagecorebit::IMapImageCoreBitMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapdeploybitimage::IMapDeployBitImage, mapimagecorebit::IMapImageCoreBit},
+        system::object::IObject,
+    };
 }

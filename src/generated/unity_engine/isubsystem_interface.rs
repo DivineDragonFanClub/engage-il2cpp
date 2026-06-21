@@ -2,13 +2,13 @@
 
 #[cfg(feature = "unity_engine-isubsystem_interface-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/isubsystem_interface/ISubsystem_Interface.md"))]#[::unity2::class(namespace="UnityEngine",name="ISubsystem")]pub struct ISubsystem_Interface{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/isubsystem_interface/ISubsystem_Interface.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "ISubsystem")]
+    pub struct ISubsystem_Interface {}
 }
 
 #[cfg(feature = "unity_engine-isubsystem_interface-types")]
@@ -17,6 +17,5 @@ pub use __types::*;
 #[cfg(feature = "unity_engine-isubsystem_interface")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISubsystem_Interface;
-    pub use super::IISubsystem_Interface;
+    pub use super::{IISubsystem_Interface, ISubsystem_Interface};
 }

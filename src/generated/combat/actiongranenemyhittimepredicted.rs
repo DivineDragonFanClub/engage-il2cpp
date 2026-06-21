@@ -2,94 +2,167 @@
 
 #[cfg(feature = "combat-actiongranenemyhittimepredicted-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::{
+            actionbase::{ActionBase, IActionBase},
+            actiondisposerholder::{ActionDisposerHolder, IActionDisposerHolder},
+            actiongranbase::{ActionGranBase, IActionGranBase},
+            state::{IState, State},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::actionbase::{ActionBase,IActionBase}
-;
-use crate::combat::actiondisposerholder::{ActionDisposerHolder,IActionDisposerHolder}
-;
-use crate::combat::actiongranbase::{ActionGranBase,IActionGranBase}
-;
-use crate::combat::state::{IState,State}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiongranenemyhittimepredicted/ActionGranEnemyHitTimePredicted.md"))]#[::unity2::class(namespace="Combat",name="ActionGranEnemyHitTimePredicted")]#[parent(crate::combat::actiongranbase::ActionGranBase)]pub struct ActionGranEnemyHitTimePredicted{#[offset(64)]#[rename(name="m_WorldHitTime")]pub m_world_hit_time:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiongranenemyhittimepredicted/ActionGranEnemyHitTimePredicted.md"))]
+    #[::unity::class(namespace = "Combat", name = "ActionGranEnemyHitTimePredicted")]
+    #[parent(crate::combat::actiongranbase::ActionGranBase)]
+    pub struct ActionGranEnemyHitTimePredicted {
+        #[offset(64)]
+        #[rename(name = "m_WorldHitTime")]
+        pub m_world_hit_time: f32,
+    }
 }
 
 #[cfg(feature = "combat-actiongranenemyhittimepredicted-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-actiongranenemyhittimepredicted")]pub trait IActionGranEnemyHitTimePredictedMethods:IActionGranEnemyHitTimePredicted{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionGranEnemyHitTimePredicted as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-actiongranenemyhittimepredicted")]
+pub trait IActionGranEnemyHitTimePredictedMethods: IActionGranEnemyHitTimePredicted {
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ActionGranEnemyHitTimePredicted as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <ActionGranEnemyHitTimePredicted as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let __inner:extern "C" fn(ActionGranEnemyHitTimePredicted, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor(crate::combat::character::Character, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionGranEnemyHitTimePredicted as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7400usize)as*mut u8,();
-(ActionGranEnemyHitTimePredicted)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(world_hit_time))}
-}
-#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionGranEnemyHitTimePredicted as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <ActionGranEnemyHitTimePredicted as ::unity::ClassIdentity>::NAME,
+                        "get_Name",
+                    )
+                });
+                let __inner: extern "C" fn(ActionGranEnemyHitTimePredicted, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor(crate::combat::character::Character, f32)` overload"]
+    fn ctor(self, chr: impl ::core::convert::Into<crate::combat::character::Character>, world_hit_time: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver =
+                <ActionGranEnemyHitTimePredicted as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2bc7400usize)as*mut u8,();
+(ActionGranEnemyHitTimePredicted)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(world_hit_time))
+        }
+    }
+    #[doc = "`OnEnter()` overload"]
+    fn on_enter(self) -> () {
+        unsafe {
+            let __receiver =
+                <ActionGranEnemyHitTimePredicted as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <ActionGranEnemyHitTimePredicted as::unity2::ClassIdentity> ::NAME,"OnEnter",));
-let __inner:extern "C" fn(ActionGranEnemyHitTimePredicted, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="combat-actiongranenemyhittimepredicted")]impl<__T:IActionGranEnemyHitTimePredicted>IActionGranEnemyHitTimePredictedMethods for __T{}
-
-#[cfg(feature="combat-actiongranenemyhittimepredicted")]impl ActionGranEnemyHitTimePredicted{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="combat-actiongranenemyhittimepredicted")]impl ActionGranEnemyHitTimePredicted{#[doc="Direct (non-virtual) call to `ActionGranEnemyHitTimePredicted`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ActionGranEnemyHitTimePredicted`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_enter_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <ActionGranEnemyHitTimePredicted as ::unity::ClassIdentity>::NAME,
+                        "OnEnter",
+                    )
+                });
+                let __inner: extern "C" fn(ActionGranEnemyHitTimePredicted, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="combat-actiongranenemyhittimepredicted")]impl ActionGranEnemyHitTimePredicted{#[doc="`.ctor(crate::combat::character::Character, f32)` — overload selector"]pub fn new(chr:crate::combat::character::Character,world_hit_time:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-actiongranenemyhittimepredicted")]
+impl<__T: IActionGranEnemyHitTimePredicted> IActionGranEnemyHitTimePredictedMethods for __T {}
+
+#[cfg(feature = "combat-actiongranenemyhittimepredicted")]
+impl ActionGranEnemyHitTimePredicted {
+    pub fn get_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn on_enter_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "combat-actiongranenemyhittimepredicted")]
+impl ActionGranEnemyHitTimePredicted {
+    #[doc = "Direct (non-virtual) call to `ActionGranEnemyHitTimePredicted`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_name(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_name_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ActionGranEnemyHitTimePredicted`'s own `OnEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_enter(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_enter_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "combat-actiongranenemyhittimepredicted")]
+impl ActionGranEnemyHitTimePredicted {
+    #[doc = "`.ctor(crate::combat::character::Character, f32)` — overload selector"]
+    pub fn new(chr: crate::combat::character::Character, world_hit_time: f32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ActionGranEnemyHitTimePredicted), ::core::stringify!(new),));
- <Self as IActionGranEnemyHitTimePredictedMethods> ::ctor(this,chr,world_hit_time);
-this}
+ failed to instantiate",
+                ::core::stringify!(ActionGranEnemyHitTimePredicted),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionGranEnemyHitTimePredictedMethods>::ctor(this, chr, world_hit_time);
+        this
+    }
 }
 
 #[cfg(feature = "combat-actiongranenemyhittimepredicted")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionGranEnemyHitTimePredicted;
-    pub use super::IActionGranEnemyHitTimePredicted;
-    pub use super::IActionGranEnemyHitTimePredictedMethods;
-    pub use crate::combat::actionbase::IActionBase;
-    pub use crate::combat::actiondisposerholder::IActionDisposerHolder;
-    pub use crate::combat::actiongranbase::IActionGranBase;
-    pub use crate::combat::state::IState;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "combat-actionbase")] pub use crate::combat::actionbase::IActionBaseMethods;
-    #[cfg(feature = "combat-actiondisposerholder")] pub use crate::combat::actiondisposerholder::IActionDisposerHolderMethods;
-    #[cfg(feature = "combat-actiongranbase")] pub use crate::combat::actiongranbase::IActionGranBaseMethods;
-    #[cfg(feature = "combat-state")] pub use crate::combat::state::IStateMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ActionGranEnemyHitTimePredicted, IActionGranEnemyHitTimePredicted, IActionGranEnemyHitTimePredictedMethods};
+    #[cfg(feature = "combat-actionbase")]
+    pub use crate::combat::actionbase::IActionBaseMethods;
+    #[cfg(feature = "combat-actiondisposerholder")]
+    pub use crate::combat::actiondisposerholder::IActionDisposerHolderMethods;
+    #[cfg(feature = "combat-actiongranbase")]
+    pub use crate::combat::actiongranbase::IActionGranBaseMethods;
+    #[cfg(feature = "combat-state")]
+    pub use crate::combat::state::IStateMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::{actionbase::IActionBase, actiondisposerholder::IActionDisposerHolder, actiongranbase::IActionGranBase, state::IState},
+        system::object::IObject,
+    };
 }

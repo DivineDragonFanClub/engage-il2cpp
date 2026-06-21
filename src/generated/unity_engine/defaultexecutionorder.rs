@@ -2,45 +2,76 @@
 
 #[cfg(feature = "unity_engine-defaultexecutionorder-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/defaultexecutionorder/DefaultExecutionOrder.md"))]#[::unity2::class(namespace="UnityEngine",name="DefaultExecutionOrder")]pub struct DefaultExecutionOrder{#[offset(16)]#[rename(name="m_Order")]pub m_order:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/defaultexecutionorder/DefaultExecutionOrder.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "DefaultExecutionOrder")]
+    pub struct DefaultExecutionOrder {
+        #[offset(16)]
+        #[rename(name = "m_Order")]
+        pub m_order: i32,
+    }
 }
 
 #[cfg(feature = "unity_engine-defaultexecutionorder-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-defaultexecutionorder")]pub trait IDefaultExecutionOrderMethods:IDefaultExecutionOrder{#[doc="`.ctor(i32)` overload"]fn ctor(self,order:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DefaultExecutionOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4be90usize)as*mut u8,();
-(DefaultExecutionOrder)__receiver,(i32)::core::convert::Into::into(order))}
-}
-#[doc="`get_order()` overload"]fn get_order(self,)->i32{unsafe{let __receiver= <DefaultExecutionOrder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36fe0usize)as*mut u8,i32;
-(DefaultExecutionOrder)__receiver)}
-}
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+pub trait IDefaultExecutionOrderMethods: IDefaultExecutionOrder {
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, order: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <DefaultExecutionOrder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c4be90usize)as*mut u8,();
+(DefaultExecutionOrder)__receiver,(i32)::core::convert::Into::into(order))
+        }
+    }
+    #[doc = "`get_order()` overload"]
+    fn get_order(self) -> i32 {
+        unsafe {
+            let __receiver = <DefaultExecutionOrder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c36fe0usize)as*mut u8,i32;
+(DefaultExecutionOrder)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-defaultexecutionorder")]impl<__T:IDefaultExecutionOrder>IDefaultExecutionOrderMethods for __T{}
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+impl<__T: IDefaultExecutionOrder> IDefaultExecutionOrderMethods for __T {}
 
-#[cfg(feature="unity_engine-defaultexecutionorder")]impl DefaultExecutionOrder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+impl DefaultExecutionOrder {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_order_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="unity_engine-defaultexecutionorder")]impl DefaultExecutionOrder{#[doc="`.ctor(i32)` — overload selector"]pub fn new(order:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-defaultexecutionorder")]
+impl DefaultExecutionOrder {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(order: i32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DefaultExecutionOrder), ::core::stringify!(new),));
- <Self as IDefaultExecutionOrderMethods> ::ctor(this,order);
-this}
+ failed to instantiate",
+                ::core::stringify!(DefaultExecutionOrder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDefaultExecutionOrderMethods>::ctor(this, order);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-defaultexecutionorder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DefaultExecutionOrder;
-    pub use super::IDefaultExecutionOrder;
-    pub use super::IDefaultExecutionOrderMethods;
+    pub use super::{DefaultExecutionOrder, IDefaultExecutionOrder, IDefaultExecutionOrderMethods};
 }

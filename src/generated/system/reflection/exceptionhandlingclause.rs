@@ -2,62 +2,129 @@
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/exceptionhandlingclause/ExceptionHandlingClause.md"))]#[::unity2::class(namespace="System.Reflection",name="ExceptionHandlingClause")]#[parent(crate::system::object::Object)]pub struct ExceptionHandlingClause{#[offset(16)]#[rename(name="catch_type")]pub catch_type: ::unity2::SystemType, #[offset(24)]#[rename(name="filter_offset")]pub filter_offset:i32, #[offset(28)]#[rename(name="flags")]pub flags:crate::system::reflection::exceptionhandlingclauseoptions::ExceptionHandlingClauseOptions, #[offset(32)]#[rename(name="try_offset")]pub try_offset:i32, #[offset(36)]#[rename(name="try_length")]pub try_length:i32, #[offset(40)]#[rename(name="handler_offset")]pub handler_offset:i32, #[offset(44)]#[rename(name="handler_length")]pub handler_length:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/exceptionhandlingclause/ExceptionHandlingClause.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "ExceptionHandlingClause")]
+    #[parent(crate::system::object::Object)]
+    pub struct ExceptionHandlingClause {
+        #[offset(16)]
+        #[rename(name = "catch_type")]
+        pub catch_type: ::unity::SystemType,
+        #[offset(24)]
+        #[rename(name = "filter_offset")]
+        pub filter_offset: i32,
+        #[offset(28)]
+        #[rename(name = "flags")]
+        pub flags: crate::system::reflection::exceptionhandlingclauseoptions::ExceptionHandlingClauseOptions,
+        #[offset(32)]
+        #[rename(name = "try_offset")]
+        pub try_offset: i32,
+        #[offset(36)]
+        #[rename(name = "try_length")]
+        pub try_length: i32,
+        #[offset(40)]
+        #[rename(name = "handler_offset")]
+        pub handler_offset: i32,
+        #[offset(44)]
+        #[rename(name = "handler_length")]
+        pub handler_length: i32,
+    }
 }
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-exceptionhandlingclause")]pub trait IExceptionHandlingClauseMethods:IExceptionHandlingClause{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExceptionHandlingClause as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad62a0usize)as*mut u8,();
-(ExceptionHandlingClause)__receiver)}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ExceptionHandlingClause as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "system-reflection-exceptionhandlingclause")]
+pub trait IExceptionHandlingClauseMethods: IExceptionHandlingClause {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ExceptionHandlingClause as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3ad62a0usize)as*mut u8,();
+(ExceptionHandlingClause)__receiver)
+        }
+    }
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver =
+                <ExceptionHandlingClause as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(3usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",3usize,__vt.len(), <ExceptionHandlingClause as::unity2::ClassIdentity> ::NAME,"ToString",));
-let __inner:extern "C" fn(ExceptionHandlingClause, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="system-reflection-exceptionhandlingclause")]impl<__T:IExceptionHandlingClause>IExceptionHandlingClauseMethods for __T{}
-
-#[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{#[doc="Direct (non-virtual) call to `ExceptionHandlingClause`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        3usize,
+                        __vt.len(),
+                        <ExceptionHandlingClause as ::unity::ClassIdentity>::NAME,
+                        "ToString",
+                    )
+                });
+                let __inner: extern "C" fn(ExceptionHandlingClause, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-exceptionhandlingclause")]impl ExceptionHandlingClause{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-reflection-exceptionhandlingclause")]
+impl<__T: IExceptionHandlingClause> IExceptionHandlingClauseMethods for __T {}
+
+#[cfg(feature = "system-reflection-exceptionhandlingclause")]
+impl ExceptionHandlingClause {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn to_string_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "system-reflection-exceptionhandlingclause")]
+impl ExceptionHandlingClause {
+    #[doc = "Direct (non-virtual) call to `ExceptionHandlingClause`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn to_string(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::to_string_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "system-reflection-exceptionhandlingclause")]
+impl ExceptionHandlingClause {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ExceptionHandlingClause), ::core::stringify!(new),));
- <Self as IExceptionHandlingClauseMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ExceptionHandlingClause),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExceptionHandlingClauseMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "system-reflection-exceptionhandlingclause")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExceptionHandlingClause;
-    pub use super::IExceptionHandlingClause;
-    pub use super::IExceptionHandlingClauseMethods;
+    pub use super::{ExceptionHandlingClause, IExceptionHandlingClause, IExceptionHandlingClauseMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,82 +2,146 @@
 
 #[cfg(feature = "app-difficultycommand-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::calculatorcommand::{CalculatorCommand, ICalculatorCommand},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::calculatorcommand::{CalculatorCommand,ICalculatorCommand}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/difficultycommand/DifficultyCommand.md"))]#[::unity2::class(namespace="App",name="DifficultyCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct DifficultyCommand{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/difficultycommand/DifficultyCommand.md"))]
+    #[::unity::class(namespace = "App", name = "DifficultyCommand")]
+    #[parent(crate::app::calculatorcommand::CalculatorCommand)]
+    pub struct DifficultyCommand {}
 }
 
 #[cfg(feature = "app-difficultycommand-types")]
 pub use __types::*;
 
-#[cfg(feature="app-difficultycommand")]pub trait IDifficultyCommandMethods:IDifficultyCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DifficultyCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-difficultycommand")]
+pub trait IDifficultyCommandMethods: IDifficultyCommand {
+    #[doc = "`get_Name()` overload"]
+    fn get_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <DifficultyCommand as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <DifficultyCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
-let __inner:extern "C" fn(DifficultyCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <DifficultyCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <DifficultyCommand as ::unity::ClassIdentity>::NAME,
+                        "get_Name",
+                    )
+                });
+                let __inner: extern "C" fn(DifficultyCommand, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Get()` overload"]
+    fn get(self) -> f32 {
+        unsafe {
+            let __receiver = <DifficultyCommand as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <DifficultyCommand as::unity2::ClassIdentity> ::NAME,"Get",));
-let __inner:extern "C" fn(DifficultyCommand, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DifficultyCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cee0e0usize)as*mut u8,();
-(DifficultyCommand)__receiver)}
-}
-}
-
-#[cfg(feature="app-difficultycommand")]impl<__T:IDifficultyCommand>IDifficultyCommandMethods for __T{}
-
-#[cfg(feature="app-difficultycommand")]impl DifficultyCommand{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-difficultycommand")]impl DifficultyCommand{#[doc="Direct (non-virtual) call to `DifficultyCommand`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_name_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `DifficultyCommand`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <DifficultyCommand as ::unity::ClassIdentity>::NAME,
+                        "Get",
+                    )
+                });
+                let __inner: extern "C" fn(DifficultyCommand, ::unity::OptionalMethod) -> f32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DifficultyCommand as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cee0e0usize)as*mut u8,();
+(DifficultyCommand)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-difficultycommand")]impl DifficultyCommand{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-difficultycommand")]
+impl<__T: IDifficultyCommand> IDifficultyCommandMethods for __T {}
+
+#[cfg(feature = "app-difficultycommand")]
+impl DifficultyCommand {
+    pub fn get_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "app-difficultycommand")]
+impl DifficultyCommand {
+    #[doc = "Direct (non-virtual) call to `DifficultyCommand`'s own `get_Name`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_name(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_name_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `DifficultyCommand`'s own `Get`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get(this: impl ::core::convert::Into<::unity::IlInstance>) -> f32 {
+        let __mi = Self::get_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> f32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-difficultycommand")]
+impl DifficultyCommand {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DifficultyCommand), ::core::stringify!(new),));
- <Self as IDifficultyCommandMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(DifficultyCommand),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDifficultyCommandMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-difficultycommand")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DifficultyCommand;
-    pub use super::IDifficultyCommand;
-    pub use super::IDifficultyCommandMethods;
-    pub use crate::app::calculatorcommand::ICalculatorCommand;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-calculatorcommand")] pub use crate::app::calculatorcommand::ICalculatorCommandMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{DifficultyCommand, IDifficultyCommand, IDifficultyCommandMethods};
+    #[cfg(feature = "app-calculatorcommand")]
+    pub use crate::app::calculatorcommand::ICalculatorCommandMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::calculatorcommand::ICalculatorCommand, system::object::IObject};
 }

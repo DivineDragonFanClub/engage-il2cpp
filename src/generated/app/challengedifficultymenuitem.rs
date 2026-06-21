@@ -2,66 +2,120 @@
 
 #[cfg(feature = "app-challengedifficultymenuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymenuitem/ChallengeDifficultyMenuItem.md"))]#[::unity2::class(namespace="App",name="ChallengeDifficultyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ChallengeDifficultyMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/challengedifficultymenuitem/ChallengeDifficultyMenuItem.md"))]
+    #[::unity::class(namespace = "App", name = "ChallengeDifficultyMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct ChallengeDifficultyMenuItem {
+        #[offset(104)]
+        #[rename(name = "m_DecideEventHandler")]
+        pub m_decide_event_handler: crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler,
+    }
 }
 
 #[cfg(feature = "app-challengedifficultymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-challengedifficultymenuitem")]pub trait IChallengeDifficultyMenuItemMethods:IChallengeDifficultyMenuItem{#[doc="`.ctor(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ChallengeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c2800usize)as*mut u8,();
-(ChallengeDifficultyMenuItem)__receiver,(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ChallengeDifficultyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-challengedifficultymenuitem")]
+pub trait IChallengeDifficultyMenuItemMethods: IChallengeDifficultyMenuItem {
+    #[doc = "`.ctor(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)` overload"]
+    fn ctor(
+        self,
+        decide_event_handler: impl ::core::convert::Into<crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <ChallengeDifficultyMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25c2800usize)as*mut u8,();
+(ChallengeDifficultyMenuItem)__receiver,(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <ChallengeDifficultyMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(18usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <ChallengeDifficultyMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let __inner:extern "C" fn(ChallengeDifficultyMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="app-challengedifficultymenuitem")]impl<__T:IChallengeDifficultyMenuItem>IChallengeDifficultyMenuItemMethods for __T{}
-
-#[cfg(feature="app-challengedifficultymenuitem")]impl ChallengeDifficultyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-challengedifficultymenuitem")]impl ChallengeDifficultyMenuItem{#[doc="Direct (non-virtual) call to `ChallengeDifficultyMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        18usize,
+                        __vt.len(),
+                        <ChallengeDifficultyMenuItem as ::unity::ClassIdentity>::NAME,
+                        "ACall",
+                    )
+                });
+                let __inner: extern "C" fn(ChallengeDifficultyMenuItem, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-challengedifficultymenuitem")]impl ChallengeDifficultyMenuItem{#[doc="`.ctor(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)` — overload selector"]pub fn new(decide_event_handler:crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-challengedifficultymenuitem")]
+impl<__T: IChallengeDifficultyMenuItem> IChallengeDifficultyMenuItemMethods for __T {}
+
+#[cfg(feature = "app-challengedifficultymenuitem")]
+impl ChallengeDifficultyMenuItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn a_call_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "app-challengedifficultymenuitem")]
+impl ChallengeDifficultyMenuItem {
+    #[doc = "Direct (non-virtual) call to `ChallengeDifficultyMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn a_call(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenu::BasicMenu_Result {
+        let __mi = Self::a_call_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-challengedifficultymenuitem")]
+impl ChallengeDifficultyMenuItem {
+    #[doc = "`.ctor(crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler)` — overload selector"]
+    pub fn new(decide_event_handler: crate::app::challengedifficultymenu::ChallengeDifficultyMenu_DecideEventHandler) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ChallengeDifficultyMenuItem), ::core::stringify!(new),));
- <Self as IChallengeDifficultyMenuItemMethods> ::ctor(this,decide_event_handler);
-this}
+ failed to instantiate",
+                ::core::stringify!(ChallengeDifficultyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IChallengeDifficultyMenuItemMethods>::ctor(this, decide_event_handler);
+        this
+    }
 }
 
 #[cfg(feature = "app-challengedifficultymenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ChallengeDifficultyMenuItem;
-    pub use super::IChallengeDifficultyMenuItem;
-    pub use super::IChallengeDifficultyMenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ChallengeDifficultyMenuItem, IChallengeDifficultyMenuItem, IChallengeDifficultyMenuItemMethods};
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
 }

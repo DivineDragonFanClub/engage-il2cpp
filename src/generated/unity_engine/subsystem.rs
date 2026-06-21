@@ -2,44 +2,65 @@
 
 #[cfg(feature = "unity_engine-subsystem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/subsystem/Subsystem.md"))]#[::unity2::class(namespace="UnityEngine",name="Subsystem")]#[parent(crate::system::object::Object)]pub struct Subsystem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/subsystem/Subsystem.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "Subsystem")]
+    #[parent(crate::system::object::Object)]
+    pub struct Subsystem {}
 }
 
 #[cfg(feature = "unity_engine-subsystem-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-subsystem")]pub trait ISubsystemMethods:ISubsystem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Subsystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3aa50usize)as*mut u8,();
-(Subsystem)__receiver)}
-}
+#[cfg(feature = "unity_engine-subsystem")]
+pub trait ISubsystemMethods: ISubsystem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <Subsystem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f3aa50usize)as*mut u8,();
+(Subsystem)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-subsystem")]impl<__T:ISubsystem>ISubsystemMethods for __T{}
+#[cfg(feature = "unity_engine-subsystem")]
+impl<__T: ISubsystem> ISubsystemMethods for __T {}
 
-#[cfg(feature="unity_engine-subsystem")]impl Subsystem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-subsystem")]
+impl Subsystem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-subsystem")]impl Subsystem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-subsystem")]
+impl Subsystem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(Subsystem), ::core::stringify!(new),));
- <Self as ISubsystemMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(Subsystem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISubsystemMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-subsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Subsystem;
-    pub use super::ISubsystem;
-    pub use super::ISubsystemMethods;
+    pub use super::{ISubsystem, ISubsystemMethods, Subsystem};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

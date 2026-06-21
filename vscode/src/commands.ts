@@ -38,7 +38,7 @@ async function featuresPrune(context: vscode.ExtensionContext, output: vscode.Ou
 async function featuresExplain(context: vscode.ExtensionContext, output: vscode.OutputChannel) {
     const path = await vscode.window.showInputBox({
         prompt: "Enter a fully-qualified Rust path",
-        placeHolder: "engage_il2cpp::app::unit::Unit",
+        placeHolder: "engage::app::unit::Unit",
     });
 
     if (!path) {

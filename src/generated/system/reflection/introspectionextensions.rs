@@ -2,33 +2,43 @@
 
 #[cfg(feature = "system-reflection-introspectionextensions-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/introspectionextensions/IntrospectionExtensions.md"))]#[::unity2::class(namespace="System.Reflection",name="IntrospectionExtensions")]#[parent(crate::system::object::Object)]pub struct IntrospectionExtensions{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/introspectionextensions/IntrospectionExtensions.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "IntrospectionExtensions")]
+    #[parent(crate::system::object::Object)]
+    pub struct IntrospectionExtensions {}
 }
 
 #[cfg(feature = "system-reflection-introspectionextensions-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-introspectionextensions")]impl IntrospectionExtensions{#[doc="`GetTypeInfo(::unity2::SystemType)` overload"]pub fn get_type_info(r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::reflection::typeinfo::TypeInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3263860usize)as*mut u8,crate::system::reflection::typeinfo::TypeInfo;
-(::unity2::SystemType)::core::convert::Into::into(r#type))}
-}
+#[cfg(feature = "system-reflection-introspectionextensions")]
+impl IntrospectionExtensions {
+    #[doc = "`GetTypeInfo(::unity::SystemType)` overload"]
+    pub fn get_type_info(r#type: impl ::core::convert::Into<::unity::SystemType>) -> crate::system::reflection::typeinfo::TypeInfo {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3263860usize)as*mut u8,crate::system::reflection::typeinfo::TypeInfo;
+(::unity::SystemType)::core::convert::Into::into(r#type))
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-introspectionextensions")]impl IntrospectionExtensions{pub fn get_type_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "system-reflection-introspectionextensions")]
+impl IntrospectionExtensions {
+    pub fn get_type_info_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "system-reflection-introspectionextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IntrospectionExtensions;
-    pub use super::IIntrospectionExtensions;
+    pub use super::{IIntrospectionExtensions, IntrospectionExtensions};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

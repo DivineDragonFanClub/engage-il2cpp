@@ -2,33 +2,43 @@
 
 #[cfg(feature = "unity_engine-timeline-weightutility-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/weightutility/WeightUtility.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="WeightUtility")]#[parent(crate::system::object::Object)]pub struct WeightUtility{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/weightutility/WeightUtility.md"))]
+    #[::unity::class(namespace = "UnityEngine.Timeline", name = "WeightUtility")]
+    #[parent(crate::system::object::Object)]
+    pub struct WeightUtility {}
 }
 
 #[cfg(feature = "unity_engine-timeline-weightutility-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-weightutility")]impl WeightUtility{#[doc="`NormalizeMixer(crate::unity_engine::playables::playable::Playable)` overload"]pub fn normalize_mixer(mixer:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35cfb50usize)as*mut u8,f32;
-(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(mixer))}
-}
+#[cfg(feature = "unity_engine-timeline-weightutility")]
+impl WeightUtility {
+    #[doc = "`NormalizeMixer(crate::unity_engine::playables::playable::Playable)` overload"]
+    pub fn normalize_mixer(mixer: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>) -> f32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x35cfb50usize)as*mut u8,f32;
+(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(mixer))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-timeline-weightutility")]impl WeightUtility{pub fn normalize_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-timeline-weightutility")]
+impl WeightUtility {
+    pub fn normalize_mixer_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-weightutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeightUtility;
-    pub use super::IWeightUtility;
+    pub use super::{IWeightUtility, WeightUtility};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

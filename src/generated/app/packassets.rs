@@ -2,52 +2,82 @@
 
 #[cfg(feature = "app-packassets-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/packassets/PackAssets.md"))]#[::unity2::class(namespace="App",name="PackAssets")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct PackAssets{#[offset(24)]#[rename(name="m_Objects")]pub m_objects: ::unity2::Array<crate::unity_engine::object_2::Object_2> ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/packassets/PackAssets.md"))]
+    #[::unity::class(namespace = "App", name = "PackAssets")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct PackAssets {
+        #[offset(24)]
+        #[rename(name = "m_Objects")]
+        pub m_objects: ::unity::Array<crate::unity_engine::object_2::Object_2>,
+    }
 }
 
 #[cfg(feature = "app-packassets-types")]
 pub use __types::*;
 
-#[cfg(feature="app-packassets")]pub trait IPackAssetsMethods:IPackAssets{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PackAssets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f227b0usize)as*mut u8,();
-(PackAssets)__receiver)}
-}
+#[cfg(feature = "app-packassets")]
+pub trait IPackAssetsMethods: IPackAssets {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <PackAssets as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f227b0usize)as*mut u8,();
+(PackAssets)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-packassets")]impl<__T:IPackAssets>IPackAssetsMethods for __T{}
+#[cfg(feature = "app-packassets")]
+impl<__T: IPackAssets> IPackAssetsMethods for __T {}
 
-#[cfg(feature="app-packassets")]impl PackAssets{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-packassets")]
+impl PackAssets {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-packassets")]impl PackAssets{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-packassets")]
+impl PackAssets {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(PackAssets), ::core::stringify!(new),));
- <Self as IPackAssetsMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(PackAssets),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPackAssetsMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-packassets")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PackAssets;
-    pub use super::IPackAssets;
-    pub use super::IPackAssetsMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use super::{IPackAssets, IPackAssetsMethods, PackAssets};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

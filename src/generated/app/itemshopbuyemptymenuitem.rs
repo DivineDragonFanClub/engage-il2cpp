@@ -2,98 +2,193 @@
 
 #[cfg(feature = "app-itemshopbuyemptymenuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshopbuyemptymenuitem/ItemShopBuyEmptyMenuItem.md"))]#[::unity2::class(namespace="App",name="ItemShopBuyEmptyMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct ItemShopBuyEmptyMenuItem{#[offset(104)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshopbuyemptymenuitem/ItemShopBuyEmptyMenuItem.md"))]
+    #[::unity::class(namespace = "App", name = "ItemShopBuyEmptyMenuItem")]
+    #[parent(crate::app::basicmenuitem::BasicMenuItem)]
+    pub struct ItemShopBuyEmptyMenuItem {
+        #[offset(104)]
+        #[rename(name = "m_SelectEventHandler")]
+        pub m_select_event_handler: crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler,
+    }
 }
 
 #[cfg(feature = "app-itemshopbuyemptymenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-itemshopbuyemptymenuitem")]pub trait IItemShopBuyEmptyMenuItemMethods:IItemShopBuyEmptyMenuItem{#[doc="`.ctor(crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler)` overload"]fn ctor(self,select_event_handler:impl::core::convert::Into<crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler>)->(){unsafe{let __receiver= <ItemShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x204a280usize)as*mut u8,();
-(ItemShopBuyEmptyMenuItem)__receiver,(crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <ItemShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-itemshopbuyemptymenuitem")]
+pub trait IItemShopBuyEmptyMenuItemMethods: IItemShopBuyEmptyMenuItem {
+    #[doc = "`.ctor(crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler)` overload"]
+    fn ctor(self, select_event_handler: impl ::core::convert::Into<crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler>) -> () {
+        unsafe {
+            let __receiver =
+                <ItemShopBuyEmptyMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x204a280usize)as*mut u8,();
+(ItemShopBuyEmptyMenuItem)__receiver,(crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))
+        }
+    }
+    #[doc = "`BuildAttribute()` overload"]
+    fn build_attribute(self) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        unsafe {
+            let __receiver =
+                <ItemShopBuyEmptyMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <ItemShopBuyEmptyMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
-let __inner:extern "C" fn(ItemShopBuyEmptyMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ItemShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <ItemShopBuyEmptyMenuItem as ::unity::ClassIdentity>::NAME,
+                        "BuildAttribute",
+                    )
+                });
+                let __inner: extern "C" fn(ItemShopBuyEmptyMenuItem, ::unity::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver =
+                <ItemShopBuyEmptyMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(12usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <ItemShopBuyEmptyMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let __inner:extern "C" fn(ItemShopBuyEmptyMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ItemShopBuyEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        12usize,
+                        __vt.len(),
+                        <ItemShopBuyEmptyMenuItem as ::unity::ClassIdentity>::NAME,
+                        "OnSelect",
+                    )
+                });
+                let __inner: extern "C" fn(ItemShopBuyEmptyMenuItem, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`ACall()` overload"]
+    fn a_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver =
+                <ItemShopBuyEmptyMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(18usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",18usize,__vt.len(), <ItemShopBuyEmptyMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
-let __inner:extern "C" fn(ItemShopBuyEmptyMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="app-itemshopbuyemptymenuitem")]impl<__T:IItemShopBuyEmptyMenuItem>IItemShopBuyEmptyMenuItemMethods for __T{}
-
-#[cfg(feature="app-itemshopbuyemptymenuitem")]impl ItemShopBuyEmptyMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-itemshopbuyemptymenuitem")]impl ItemShopBuyEmptyMenuItem{#[doc="Direct (non-virtual) call to `ItemShopBuyEmptyMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_attribute(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __mi=Self::build_attribute_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ItemShopBuyEmptyMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ItemShopBuyEmptyMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn a_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::a_call_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        18usize,
+                        __vt.len(),
+                        <ItemShopBuyEmptyMenuItem as ::unity::ClassIdentity>::NAME,
+                        "ACall",
+                    )
+                });
+                let __inner: extern "C" fn(ItemShopBuyEmptyMenuItem, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-itemshopbuyemptymenuitem")]impl ItemShopBuyEmptyMenuItem{#[doc="`.ctor(crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler)` — overload selector"]pub fn new(select_event_handler:crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-itemshopbuyemptymenuitem")]
+impl<__T: IItemShopBuyEmptyMenuItem> IItemShopBuyEmptyMenuItemMethods for __T {}
+
+#[cfg(feature = "app-itemshopbuyemptymenuitem")]
+impl ItemShopBuyEmptyMenuItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn build_attribute_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn on_select_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn a_call_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+}
+
+#[cfg(feature = "app-itemshopbuyemptymenuitem")]
+impl ItemShopBuyEmptyMenuItem {
+    #[doc = "Direct (non-virtual) call to `ItemShopBuyEmptyMenuItem`'s own `BuildAttribute`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn build_attribute(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenuitem::BasicMenuItem_Attribute {
+        let __mi = Self::build_attribute_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenuitem::BasicMenuItem_Attribute =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ItemShopBuyEmptyMenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_select(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_select_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ItemShopBuyEmptyMenuItem`'s own `ACall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn a_call(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenu::BasicMenu_Result {
+        let __mi = Self::a_call_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-itemshopbuyemptymenuitem")]
+impl ItemShopBuyEmptyMenuItem {
+    #[doc = "`.ctor(crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler)` — overload selector"]
+    pub fn new(select_event_handler: crate::app::itemshopbuymenu::ItemShopBuyMenu_SelectEventHandler) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ItemShopBuyEmptyMenuItem), ::core::stringify!(new),));
- <Self as IItemShopBuyEmptyMenuItemMethods> ::ctor(this,select_event_handler);
-this}
+ failed to instantiate",
+                ::core::stringify!(ItemShopBuyEmptyMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemShopBuyEmptyMenuItemMethods>::ctor(this, select_event_handler);
+        this
+    }
 }
 
 #[cfg(feature = "app-itemshopbuyemptymenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ItemShopBuyEmptyMenuItem;
-    pub use super::IItemShopBuyEmptyMenuItem;
-    pub use super::IItemShopBuyEmptyMenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IItemShopBuyEmptyMenuItem, IItemShopBuyEmptyMenuItemMethods, ItemShopBuyEmptyMenuItem};
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, system::object::IObject};
 }

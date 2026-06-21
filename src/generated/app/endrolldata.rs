@@ -2,154 +2,286 @@
 
 #[cfg(feature = "app-endrolldata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdata_1::{IStructData_1, StructData_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::structbase::{IStructBase,StructBase}
-;
-use crate::app::structdata_1::{IStructData_1,StructData_1}
-;
-use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endrolldata/EndRollData_Kind.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct EndRollData_Kind {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for EndRollData_Kind {
+        const NAME: &'static str = "EndRollData.Kind";
+        const NAMESPACE: &'static str = "App";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for EndRollData_Kind {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl EndRollData_Kind {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endrolldata/EndRollData_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EndRollData_Kind{pub value:i32,}
-impl::unity2::ClassIdentity for EndRollData_Kind{const NAMESPACE: &'static str="App";
-const NAME: &'static str="EndRollData.Kind";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for EndRollData_Kind{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl EndRollData_Kind{pub fn none()->Self{Self{value:0}
-}
-pub fn staff()->Self{Self{value:1}
-}
-pub fn name1()->Self{Self{value:2}
-}
-pub fn name2()->Self{Self{value:3}
-}
-pub fn name3()->Self{Self{value:4}
-}
-pub fn cast()->Self{Self{value:5}
-}
-pub fn company_s()->Self{Self{value:6}
-}
-pub fn company_m()->Self{Self{value:7}
-}
-pub fn company_l()->Self{Self{value:8}
-}
-pub fn image()->Self{Self{value:9}
-}
-pub fn space_s()->Self{Self{value:10}
-}
-pub fn space_m()->Self{Self{value:11}
-}
-pub fn space_l()->Self{Self{value:12}
-}
-}
+        pub fn staff() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn name1() -> Self {
+            Self { value: 2 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endrolldata/EndRollData.md"))]#[::unity2::class(namespace="App",name="EndRollData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::endrolldata::EndRollData>)]pub struct EndRollData{}
+        pub fn name2() -> Self {
+            Self { value: 3 }
+        }
 
+        pub fn name3() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn cast() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn company_s() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn company_m() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn company_l() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn image() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn space_s() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn space_m() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn space_l() -> Self {
+            Self { value: 12 }
+        }
+    }
+
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endrolldata/EndRollData.md"))]
+    #[::unity::class(namespace = "App", name = "EndRollData")]
+    #[parent(crate::app::structdata_1::StructData_1<crate::app::endrolldata::EndRollData>)]
+    pub struct EndRollData {}
 }
 
 #[cfg(feature = "app-endrolldata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-endrolldata")]impl EndRollData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22e36b0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-endrolldata")]pub trait IEndRollDataMethods:IEndRollData{#[doc="`get_Type()` overload"]fn get_type(self,)->crate::app::endrolldata::EndRollData_Kind{unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e3760usize)as*mut u8,crate::app::endrolldata::EndRollData_Kind;
-(EndRollData)__receiver)}
-}
-#[doc="`set_Type(crate::app::endrolldata::EndRollData_Kind)` overload"]fn set_type(self,value:impl::core::convert::Into<crate::app::endrolldata::EndRollData_Kind>)->(){unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e3770usize)as*mut u8,();
-(EndRollData)__receiver,(crate::app::endrolldata::EndRollData_Kind)::core::convert::Into::into(value))}
-}
-#[doc="`get_Text1()` overload"]fn get_text1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e3780usize)as*mut u8, ::unity2::Il2CppString;
-(EndRollData)__receiver)}
-}
-#[doc="`set_Text1(::unity2::Il2CppString)` overload"]fn set_text1(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e3790usize)as*mut u8,();
-(EndRollData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Text2()` overload"]fn get_text2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e37a0usize)as*mut u8, ::unity2::Il2CppString;
-(EndRollData)__receiver)}
-}
-#[doc="`set_Text2(::unity2::Il2CppString)` overload"]fn set_text2(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e37b0usize)as*mut u8,();
-(EndRollData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Text3()` overload"]fn get_text3(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e37c0usize)as*mut u8, ::unity2::Il2CppString;
-(EndRollData)__receiver)}
-}
-#[doc="`set_Text3(::unity2::Il2CppString)` overload"]fn set_text3(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e37d0usize)as*mut u8,();
-(EndRollData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e37e0usize)as*mut u8, ::unity2::Il2CppString;
-(EndRollData)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EndRollData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e3800usize)as*mut u8,();
-(EndRollData)__receiver)}
-}
+#[cfg(feature = "app-endrolldata")]
+impl EndRollData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e36b0usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-endrolldata")]impl<__T:IEndRollData>IEndRollDataMethods for __T{}
-
-#[cfg(feature="app-endrolldata")]impl EndRollData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_text1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_text1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_text2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_text2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_text3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_text3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+#[cfg(feature = "app-endrolldata")]
+pub trait IEndRollDataMethods: IEndRollData {
+    #[doc = "`get_Type()` overload"]
+    fn get_type(self) -> crate::app::endrolldata::EndRollData_Kind {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e3760usize)as*mut u8,crate::app::endrolldata::EndRollData_Kind;
+(EndRollData)__receiver)
+        }
+    }
+    #[doc = "`set_Type(crate::app::endrolldata::EndRollData_Kind)` overload"]
+    fn set_type(self, value: impl ::core::convert::Into<crate::app::endrolldata::EndRollData_Kind>) -> () {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e3770usize)as*mut u8,();
+(EndRollData)__receiver,(crate::app::endrolldata::EndRollData_Kind)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Text1()` overload"]
+    fn get_text1(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e3780usize)as*mut u8, ::unity::Il2CppString;
+(EndRollData)__receiver)
+        }
+    }
+    #[doc = "`set_Text1(::unity::Il2CppString)` overload"]
+    fn set_text1(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e3790usize)as*mut u8,();
+(EndRollData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Text2()` overload"]
+    fn get_text2(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e37a0usize)as*mut u8, ::unity::Il2CppString;
+(EndRollData)__receiver)
+        }
+    }
+    #[doc = "`set_Text2(::unity::Il2CppString)` overload"]
+    fn set_text2(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e37b0usize)as*mut u8,();
+(EndRollData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Text3()` overload"]
+    fn get_text3(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e37c0usize)as*mut u8, ::unity::Il2CppString;
+(EndRollData)__receiver)
+        }
+    }
+    #[doc = "`set_Text3(::unity::Il2CppString)` overload"]
+    fn set_text3(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e37d0usize)as*mut u8,();
+(EndRollData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Text()` overload"]
+    fn get_text(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e37e0usize)as*mut u8, ::unity::Il2CppString;
+(EndRollData)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <EndRollData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e3800usize)as*mut u8,();
+(EndRollData)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-endrolldata")]impl EndRollData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-endrolldata")]
+impl<__T: IEndRollData> IEndRollDataMethods for __T {}
+
+#[cfg(feature = "app-endrolldata")]
+impl EndRollData {
+    pub fn load_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_type_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn set_type_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_text1_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn set_text1_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn get_text2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn set_text2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn get_text3_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn set_text3_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn get_text_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[10]
+    }
+}
+
+#[cfg(feature = "app-endrolldata")]
+impl EndRollData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(EndRollData), ::core::stringify!(new),));
- <Self as IEndRollDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(EndRollData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEndRollDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-endrolldata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EndRollData_Kind;
-    pub use super::EndRollData;
-    pub use super::IEndRollData;
-    pub use super::IEndRollDataMethods;
-    pub use crate::app::structbase::IStructBase;
-    pub use crate::app::structdata_1::IStructData_1;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{EndRollData, EndRollData_Kind, IEndRollData, IEndRollDataMethods};
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")]
+    pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

@@ -2,70 +2,114 @@
 
 #[cfg(feature = "root-unitinfo0menuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        root::mapnavigationstatusbasicmenuitem::{IMapNavigationStatusBasicMenuItem, MapNavigationStatusBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::root::mapnavigationstatusbasicmenuitem::{IMapNavigationStatusBasicMenuItem,MapNavigationStatusBasicMenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/unitinfo0menuitem/UnitInfo0MenuItem.md"))]#[::unity2::class(namespace="",name="UnitInfo0MenuItem")]#[parent(crate::root::mapnavigationstatusbasicmenuitem::MapNavigationStatusBasicMenuItem)]pub struct UnitInfo0MenuItem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/unitinfo0menuitem/UnitInfo0MenuItem.md"))]
+    #[::unity::class(namespace = "", name = "UnitInfo0MenuItem")]
+    #[parent(crate::root::mapnavigationstatusbasicmenuitem::MapNavigationStatusBasicMenuItem)]
+    pub struct UnitInfo0MenuItem {}
 }
 
 #[cfg(feature = "root-unitinfo0menuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="root-unitinfo0menuitem")]pub trait IUnitInfo0MenuItemMethods:IUnitInfo0MenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitInfo0MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f8b030usize)as*mut u8,();
-(UnitInfo0MenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <UnitInfo0MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-unitinfo0menuitem")]
+pub trait IUnitInfo0MenuItemMethods: IUnitInfo0MenuItem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <UnitInfo0MenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f8b030usize)as*mut u8,();
+(UnitInfo0MenuItem)__receiver)
+        }
+    }
+    #[doc = "`OnSelect()` overload"]
+    fn on_select(self) -> () {
+        unsafe {
+            let __receiver = <UnitInfo0MenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(12usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <UnitInfo0MenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let __inner:extern "C" fn(UnitInfo0MenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="root-unitinfo0menuitem")]impl<__T:IUnitInfo0MenuItem>IUnitInfo0MenuItemMethods for __T{}
-
-#[cfg(feature="root-unitinfo0menuitem")]impl UnitInfo0MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root-unitinfo0menuitem")]impl UnitInfo0MenuItem{#[doc="Direct (non-virtual) call to `UnitInfo0MenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_select_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        12usize,
+                        __vt.len(),
+                        <UnitInfo0MenuItem as ::unity::ClassIdentity>::NAME,
+                        "OnSelect",
+                    )
+                });
+                let __inner: extern "C" fn(UnitInfo0MenuItem, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="root-unitinfo0menuitem")]impl UnitInfo0MenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-unitinfo0menuitem")]
+impl<__T: IUnitInfo0MenuItem> IUnitInfo0MenuItemMethods for __T {}
+
+#[cfg(feature = "root-unitinfo0menuitem")]
+impl UnitInfo0MenuItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn on_select_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "root-unitinfo0menuitem")]
+impl UnitInfo0MenuItem {
+    #[doc = "Direct (non-virtual) call to `UnitInfo0MenuItem`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_select(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_select_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "root-unitinfo0menuitem")]
+impl UnitInfo0MenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(UnitInfo0MenuItem), ::core::stringify!(new),));
- <Self as IUnitInfo0MenuItemMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(UnitInfo0MenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitInfo0MenuItemMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-unitinfo0menuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitInfo0MenuItem;
-    pub use super::IUnitInfo0MenuItem;
-    pub use super::IUnitInfo0MenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::root::mapnavigationstatusbasicmenuitem::IMapNavigationStatusBasicMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "root-mapnavigationstatusbasicmenuitem")] pub use crate::root::mapnavigationstatusbasicmenuitem::IMapNavigationStatusBasicMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IUnitInfo0MenuItem, IUnitInfo0MenuItemMethods, UnitInfo0MenuItem};
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "root-mapnavigationstatusbasicmenuitem")]
+    pub use crate::root::mapnavigationstatusbasicmenuitem::IMapNavigationStatusBasicMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::basicmenuitem::IBasicMenuItem, root::mapnavigationstatusbasicmenuitem::IMapNavigationStatusBasicMenuItem, system::object::IObject,
+    };
 }

@@ -1,14 +1,14 @@
 // One-stop import for everyday plugin code:
 //
-//   use engage_il2cpp::prelude::*;
+//   use engage::prelude::*;
 //
 // Brings the common collection types, the IL2CPP infra re-exported from
-// unity2, and every hand-written ext trait into scope so `.iter()`,
+// unity, and every hand-written ext trait into scope so `.iter()`,
 // `.register_action(...)`, etc. resolve without naming each trait
 // individually.
 
-// Core IL2CPP infra (lives in unity2; re-exported for convenience).
-pub use unity2::{Array, Cast, ClassIdentity, FromIlInstance, Il2CppString, IlInstance, IntPtr, MethodInfo, OptionalMethod, SystemObject};
+// Core IL2CPP infra (lives in unity; re-exported for convenience).
+pub use unity::{Array, Cast, ClassIdentity, FromIlInstance, Il2CppString, IlInstance, IntPtr, MethodInfo, OptionalMethod, SystemObject};
 
 // Every ext trait + helper from `crate::ext`.
 pub use crate::ext::*;

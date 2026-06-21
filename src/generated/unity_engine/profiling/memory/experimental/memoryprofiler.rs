@@ -2,49 +2,121 @@
 
 #[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/profiling/memory/experimental/memoryprofiler/MemoryProfiler.md"))]#[::unity2::class(namespace="UnityEngine.Profiling.Memory.Experimental",name="MemoryProfiler")]#[parent(crate::system::object::Object)]pub struct MemoryProfiler{#[static_field]#[rename(name="m_SnapshotFinished")]pub m_snapshot_finished:crate::system::action_2::Action_2< ::unity2::Il2CppString,bool> , #[static_field]#[rename(name="m_SaveScreenshotToDisk")]pub m_save_screenshot_to_disk:crate::system::action_3::Action_3< ::unity2::Il2CppString,bool,crate::unity_engine::profiling::experimental::debugscreencapture::DebugScreenCapture> , #[static_field]#[rename(name="createMetaData")]pub create_meta_data:crate::system::action_1::Action_1<crate::unity_engine::profiling::memory::experimental::metadata::MetaData> ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/profiling/memory/experimental/memoryprofiler/MemoryProfiler.md"))]
+    #[::unity::class(namespace = "UnityEngine.Profiling.Memory.Experimental", name = "MemoryProfiler")]
+    #[parent(crate::system::object::Object)]
+    pub struct MemoryProfiler {
+        #[static_field]
+        #[rename(name = "m_SnapshotFinished")]
+        pub m_snapshot_finished: crate::system::action_2::Action_2<::unity::Il2CppString, bool>,
+        #[static_field]
+        #[rename(name = "m_SaveScreenshotToDisk")]
+        pub m_save_screenshot_to_disk: crate::system::action_3::Action_3<
+            ::unity::Il2CppString,
+            bool,
+            crate::unity_engine::profiling::experimental::debugscreencapture::DebugScreenCapture,
+        >,
+        #[static_field]
+        #[rename(name = "createMetaData")]
+        pub create_meta_data: crate::system::action_1::Action_1<crate::unity_engine::profiling::memory::experimental::metadata::MetaData>,
+    }
 }
 
 #[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-profiling-memory-experimental-memoryprofiler")]impl MemoryProfiler{#[doc="`PrepareMetadata()` overload"]pub fn prepare_metadata()-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e2740usize)as*mut u8, ::unity2::Array<u8> ;
-)}
-}
-#[doc="`WriteIntToByteArray(::unity2::Array<u8>, i32, i32)` overload"]pub fn write_int_to_byte_array(array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e29c0usize)as*mut u8,i32;
-(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(value))}
-}
-#[doc="`WriteStringToByteArray(::unity2::Array<u8>, i32, ::unity2::Il2CppString)` overload"]pub fn write_string_to_byte_array(array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e2a60usize)as*mut u8,i32;
-(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`FinalizeSnapshot(::unity2::Il2CppString, bool)` overload"]pub fn finalize_snapshot(path:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e2b10usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(result))}
-}
-#[doc="`SaveScreenshotToDisk(::unity2::Il2CppString, bool, ::unity2::IntPtr, i32, crate::unity_engine::textureformat::TextureFormat, i32, i32)` overload"]pub fn save_screenshot_to_disk(path:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<bool> ,pixels_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,pixels_count:impl::core::convert::Into<i32> ,format:impl::core::convert::Into<crate::unity_engine::textureformat::TextureFormat> ,width:impl::core::convert::Into<i32> ,height:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e2bb0usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(result),(::unity2::IntPtr)::core::convert::Into::into(pixels_ptr),(i32)::core::convert::Into::into(pixels_count),(crate::unity_engine::textureformat::TextureFormat)::core::convert::Into::into(format),(i32)::core::convert::Into::into(width),(i32)::core::convert::Into::into(height))}
-}
+#[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
+impl MemoryProfiler {
+    #[doc = "`PrepareMetadata()` overload"]
+    pub fn prepare_metadata() -> ::unity::Array<u8> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x32e2740usize)as*mut u8, ::unity::Array<u8> ;
+            )
+        }
+    }
+
+    #[doc = "`WriteIntToByteArray(::unity::Array<u8>, i32, i32)` overload"]
+    pub fn write_int_to_byte_array(
+        array: impl ::core::convert::Into<::unity::Array<u8>>,
+        offset: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<i32>,
+    ) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x32e29c0usize)as*mut u8,i32;
+(::unity::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(value))
+        }
+    }
+
+    #[doc = "`WriteStringToByteArray(::unity::Array<u8>, i32, ::unity::Il2CppString)` overload"]
+    pub fn write_string_to_byte_array(
+        array: impl ::core::convert::Into<::unity::Array<u8>>,
+        offset: impl ::core::convert::Into<i32>,
+        value: impl ::core::convert::Into<::unity::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x32e2a60usize)as*mut u8,i32;
+(::unity::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+
+    #[doc = "`FinalizeSnapshot(::unity::Il2CppString, bool)` overload"]
+    pub fn finalize_snapshot(path: impl ::core::convert::Into<::unity::Il2CppString>, result: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x32e2b10usize)as*mut u8,();
+(::unity::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(result))
+        }
+    }
+
+    #[doc = "`SaveScreenshotToDisk(::unity::Il2CppString, bool, ::unity::IntPtr, i32, crate::unity_engine::textureformat::TextureFormat, i32, i32)` overload"]
+    pub fn save_screenshot_to_disk(
+        path: impl ::core::convert::Into<::unity::Il2CppString>,
+        result: impl ::core::convert::Into<bool>,
+        pixels_ptr: impl ::core::convert::Into<::unity::IntPtr>,
+        pixels_count: impl ::core::convert::Into<i32>,
+        format: impl ::core::convert::Into<crate::unity_engine::textureformat::TextureFormat>,
+        width: impl ::core::convert::Into<i32>,
+        height: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x32e2bb0usize)as*mut u8,();
+(::unity::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(result),(::unity::IntPtr)::core::convert::Into::into(pixels_ptr),(i32)::core::convert::Into::into(pixels_count),(crate::unity_engine::textureformat::TextureFormat)::core::convert::Into::into(format),(i32)::core::convert::Into::into(width),(i32)::core::convert::Into::into(height))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-profiling-memory-experimental-memoryprofiler")]impl MemoryProfiler{pub fn prepare_metadata_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn write_int_to_byte_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn write_string_to_byte_array_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn finalize_snapshot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn save_screenshot_to_disk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
+impl MemoryProfiler {
+    pub fn prepare_metadata_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn write_int_to_byte_array_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn write_string_to_byte_array_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn finalize_snapshot_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn save_screenshot_to_disk_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
 }
 
 #[cfg(feature = "unity_engine-profiling-memory-experimental-memoryprofiler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MemoryProfiler;
-    pub use super::IMemoryProfiler;
+    pub use super::{IMemoryProfiler, MemoryProfiler};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

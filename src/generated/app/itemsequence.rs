@@ -2,50 +2,80 @@
 
 #[cfg(feature = "app-itemsequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemsequence/ItemSequence.md"))]#[::unity2::class(namespace="App",name="ItemSequence")]#[parent(crate::system::object::Object)]pub struct ItemSequence{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemsequence/ItemSequence.md"))]
+    #[::unity::class(namespace = "App", name = "ItemSequence")]
+    #[parent(crate::system::object::Object)]
+    pub struct ItemSequence {}
 }
 
 #[cfg(feature = "app-itemsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-itemsequence")]impl ItemSequence{#[doc="`SetOffset(crate::app::gamemessage::GameMessage)` overload"]pub fn set_offset(msg:impl::core::convert::Into<crate::app::gamemessage::GameMessage>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203ec80usize)as*mut u8,();
-(crate::app::gamemessage::GameMessage)::core::convert::Into::into(msg))}
-}
-}
-
-#[cfg(feature="app-itemsequence")]pub trait IItemSequenceMethods:IItemSequence{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x204a270usize)as*mut u8,();
-(ItemSequence)__receiver)}
-}
-}
-
-#[cfg(feature="app-itemsequence")]impl<__T:IItemSequence>IItemSequenceMethods for __T{}
-
-#[cfg(feature="app-itemsequence")]impl ItemSequence{pub fn set_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-itemsequence")]
+impl ItemSequence {
+    #[doc = "`SetOffset(crate::app::gamemessage::GameMessage)` overload"]
+    pub fn set_offset(msg: impl ::core::convert::Into<crate::app::gamemessage::GameMessage>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x203ec80usize)as*mut u8,();
+(crate::app::gamemessage::GameMessage)::core::convert::Into::into(msg))
+        }
+    }
 }
 
-#[cfg(feature="app-itemsequence")]impl ItemSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-itemsequence")]
+pub trait IItemSequenceMethods: IItemSequence {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ItemSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x204a270usize)as*mut u8,();
+(ItemSequence)__receiver)
+        }
+    }
+}
+
+#[cfg(feature = "app-itemsequence")]
+impl<__T: IItemSequence> IItemSequenceMethods for __T {}
+
+#[cfg(feature = "app-itemsequence")]
+impl ItemSequence {
+    pub fn set_offset_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "app-itemsequence")]
+impl ItemSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ItemSequence), ::core::stringify!(new),));
- <Self as IItemSequenceMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ItemSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IItemSequenceMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-itemsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ItemSequence;
-    pub use super::IItemSequence;
-    pub use super::IItemSequenceMethods;
+    pub use super::{IItemSequence, IItemSequenceMethods, ItemSequence};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

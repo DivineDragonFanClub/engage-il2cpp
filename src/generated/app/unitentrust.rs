@@ -2,81 +2,127 @@
 
 #[cfg(feature = "app-unitentrust-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitentrust/UnitEntrust.md"))]
+    #[::unity::class(namespace = "App", name = "UnitEntrust")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnitEntrust {}
 
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitentrust/UnitEntrust_Type.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct UnitEntrust_Type {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for UnitEntrust_Type {
+        const NAME: &'static str = "UnitEntrust.Type";
+        const NAMESPACE: &'static str = "App";
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitentrust/UnitEntrust.md"))]#[::unity2::class(namespace="App",name="UnitEntrust")]#[parent(crate::system::object::Object)]pub struct UnitEntrust{}
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for UnitEntrust_Type {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl UnitEntrust_Type {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
 
+        pub fn rush() -> Self {
+            Self { value: 1 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitentrust/UnitEntrust_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitEntrust_Type{pub value:i32,}
-impl::unity2::ClassIdentity for UnitEntrust_Type{const NAMESPACE: &'static str="App";
-const NAME: &'static str="UnitEntrust.Type";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for UnitEntrust_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl UnitEntrust_Type{pub fn none()->Self{Self{value:0}
-}
-pub fn rush()->Self{Self{value:1}
-}
-pub fn escort()->Self{Self{value:2}
-}
-pub fn retreat()->Self{Self{value:3}
-}
-pub fn advancement()->Self{Self{value:4}
-}
-pub fn berserk()->Self{Self{value:5}
-}
-pub fn tracking()->Self{Self{value:6}
-}
-pub fn num()->Self{Self{value:7}
-}
-}
+        pub fn escort() -> Self {
+            Self { value: 2 }
+        }
 
+        pub fn retreat() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn advancement() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn berserk() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn tracking() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn num() -> Self {
+            Self { value: 7 }
+        }
+    }
 }
 
 #[cfg(feature = "app-unitentrust-types")]
 pub use __types::*;
 
-#[cfg(feature="app-unitentrust")]pub trait IUnitEntrustMethods:IUnitEntrust{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitEntrust as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f7c990usize)as*mut u8,();
-(UnitEntrust)__receiver)}
-}
+#[cfg(feature = "app-unitentrust")]
+pub trait IUnitEntrustMethods: IUnitEntrust {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <UnitEntrust as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1f7c990usize)as*mut u8,();
+(UnitEntrust)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-unitentrust")]impl<__T:IUnitEntrust>IUnitEntrustMethods for __T{}
+#[cfg(feature = "app-unitentrust")]
+impl<__T: IUnitEntrust> IUnitEntrustMethods for __T {}
 
-#[cfg(feature="app-unitentrust")]impl UnitEntrust{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-unitentrust")]
+impl UnitEntrust {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-unitentrust")]impl UnitEntrust{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-unitentrust")]
+impl UnitEntrust {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(UnitEntrust), ::core::stringify!(new),));
- <Self as IUnitEntrustMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(UnitEntrust),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnitEntrustMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-unitentrust")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitEntrust;
-    pub use super::IUnitEntrust;
-    pub use super::IUnitEntrustMethods;
-    pub use super::UnitEntrust_Type;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{IUnitEntrust, IUnitEntrustMethods, UnitEntrust, UnitEntrust_Type};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

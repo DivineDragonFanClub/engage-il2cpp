@@ -2,33 +2,43 @@
 
 #[cfg(feature = "combat-animsetname-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animsetname/AnimsetName.md"))]#[::unity2::class(namespace="Combat",name="AnimsetName")]#[parent(crate::system::object::Object)]pub struct AnimsetName{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/animsetname/AnimsetName.md"))]
+    #[::unity::class(namespace = "Combat", name = "AnimsetName")]
+    #[parent(crate::system::object::Object)]
+    pub struct AnimsetName {}
 }
 
 #[cfg(feature = "combat-animsetname-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-animsetname")]impl AnimsetName{#[doc="`ChangeNML(::unity2::Il2CppString, u16)` overload"]pub fn change_nml(aoc:impl::core::convert::Into< ::unity2::Il2CppString> ,c:impl::core::convert::Into<u16>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c9cad0usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(aoc),(u16)::core::convert::Into::into(c))}
-}
+#[cfg(feature = "combat-animsetname")]
+impl AnimsetName {
+    #[doc = "`ChangeNML(::unity::Il2CppString, u16)` overload"]
+    pub fn change_nml(aoc: impl ::core::convert::Into<::unity::Il2CppString>, c: impl ::core::convert::Into<u16>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1c9cad0usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(aoc),(u16)::core::convert::Into::into(c))
+        }
+    }
 }
 
-#[cfg(feature="combat-animsetname")]impl AnimsetName{pub fn change_nml_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "combat-animsetname")]
+impl AnimsetName {
+    pub fn change_nml_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "combat-animsetname")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimsetName;
-    pub use super::IAnimsetName;
+    pub use super::{AnimsetName, IAnimsetName};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

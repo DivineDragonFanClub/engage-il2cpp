@@ -2,66 +2,137 @@
 
 #[cfg(feature = "app-myroomfadebehaviour-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomfadebehaviour/MyRoomFadeBehaviour.md"))]#[::unity2::class(namespace="App",name="MyRoomFadeBehaviour")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomFadeBehaviour{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomfadebehaviour/MyRoomFadeBehaviour.md"))]
+    #[::unity::class(namespace = "App", name = "MyRoomFadeBehaviour")]
+    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+    pub struct MyRoomFadeBehaviour {}
 }
 
 #[cfg(feature = "app-myroomfadebehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature="app-myroomfadebehaviour")]pub trait IMyRoomFadeBehaviourMethods:IMyRoomFadeBehaviour{#[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <MyRoomFadeBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-myroomfadebehaviour")]
+pub trait IMyRoomFadeBehaviourMethods: IMyRoomFadeBehaviour {
+    #[doc = "`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]
+    fn process_frame(
+        self,
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        info: impl ::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>,
+        player_data: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            let __receiver = <MyRoomFadeBehaviour as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(20usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",20usize,__vt.len(), <MyRoomFadeBehaviour as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
-let __inner:extern "C" fn(MyRoomFadeBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::convert::Into::into(player_data),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomFadeBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238ff50usize)as*mut u8,();
-(MyRoomFadeBehaviour)__receiver)}
-}
+`)",
+                        20usize,
+                        __vt.len(),
+                        <MyRoomFadeBehaviour as ::unity::ClassIdentity>::NAME,
+                        "ProcessFrame",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    MyRoomFadeBehaviour,
+                    crate::unity_engine::playables::playable::Playable,
+                    crate::unity_engine::playables::framedata::FrameData,
+                    crate::system::object::Object,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(playable),
+                    ::core::convert::Into::into(info),
+                    ::core::convert::Into::into(player_data),
+                    __mi,
+                )
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomFadeBehaviour as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x238ff50usize)as*mut u8,();
+(MyRoomFadeBehaviour)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-myroomfadebehaviour")]impl<__T:IMyRoomFadeBehaviour>IMyRoomFadeBehaviourMethods for __T{}
+#[cfg(feature = "app-myroomfadebehaviour")]
+impl<__T: IMyRoomFadeBehaviour> IMyRoomFadeBehaviourMethods for __T {}
 
-#[cfg(feature="app-myroomfadebehaviour")]impl MyRoomFadeBehaviour{pub fn process_frame_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-myroomfadebehaviour")]
+impl MyRoomFadeBehaviour {
+    pub fn process_frame_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-myroomfadebehaviour")]impl MyRoomFadeBehaviour{#[doc="Direct (non-virtual) call to `MyRoomFadeBehaviour`'s own `ProcessFrame`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn process_frame(this:impl::core::convert::Into< ::unity2::IlInstance> ,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,)->(){let __mi=Self::process_frame_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),playable,info,player_data, ::core::option::Option::None)}
+#[cfg(feature = "app-myroomfadebehaviour")]
+impl MyRoomFadeBehaviour {
+    #[doc = "Direct (non-virtual) call to `MyRoomFadeBehaviour`'s own `ProcessFrame`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn process_frame(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        playable: crate::unity_engine::playables::playable::Playable,
+        info: crate::unity_engine::playables::framedata::FrameData,
+        player_data: crate::system::object::Object,
+    ) -> () {
+        let __mi = Self::process_frame_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::playables::playable::Playable,
+            crate::unity_engine::playables::framedata::FrameData,
+            crate::system::object::Object,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), playable, info, player_data, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-myroomfadebehaviour")]impl MyRoomFadeBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-myroomfadebehaviour")]
+impl MyRoomFadeBehaviour {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomFadeBehaviour), ::core::stringify!(new),));
- <Self as IMyRoomFadeBehaviourMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MyRoomFadeBehaviour),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomFadeBehaviourMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-myroomfadebehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomFadeBehaviour;
-    pub use super::IMyRoomFadeBehaviour;
-    pub use super::IMyRoomFadeBehaviourMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-playables-playablebehaviour")] pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use super::{IMyRoomFadeBehaviour, IMyRoomFadeBehaviourMethods, MyRoomFadeBehaviour};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-playables-playablebehaviour")]
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
 }

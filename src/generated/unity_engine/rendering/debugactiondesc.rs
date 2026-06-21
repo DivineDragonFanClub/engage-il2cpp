@@ -2,44 +2,81 @@
 
 #[cfg(feature = "unity_engine-rendering-debugactiondesc-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/debugactiondesc/DebugActionDesc.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="DebugActionDesc")]#[parent(crate::system::object::Object)]pub struct DebugActionDesc{#[offset(16)]#[rename(name="axisTrigger")]pub axis_trigger: ::unity2::Il2CppString, #[offset(24)]#[rename(name="buttonTriggerList")]pub button_trigger_list:crate::system::collections::generic::list_1::List_1< ::unity2::Array< ::unity2::Il2CppString> > , #[offset(32)]#[rename(name="keyTriggerList")]pub key_trigger_list:crate::system::collections::generic::list_1::List_1< ::unity2::Array<crate::unity_engine::keycode::KeyCode> > , #[offset(40)]#[rename(name="repeatMode")]pub repeat_mode:crate::unity_engine::rendering::debugactionrepeatmode::DebugActionRepeatMode, #[offset(44)]#[rename(name="repeatDelay")]pub repeat_delay:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/debugactiondesc/DebugActionDesc.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering", name = "DebugActionDesc")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugActionDesc {
+        #[offset(16)]
+        #[rename(name = "axisTrigger")]
+        pub axis_trigger: ::unity::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "buttonTriggerList")]
+        pub button_trigger_list: crate::system::collections::generic::list_1::List_1<::unity::Array<::unity::Il2CppString>>,
+        #[offset(32)]
+        #[rename(name = "keyTriggerList")]
+        pub key_trigger_list: crate::system::collections::generic::list_1::List_1<::unity::Array<crate::unity_engine::keycode::KeyCode>>,
+        #[offset(40)]
+        #[rename(name = "repeatMode")]
+        pub repeat_mode: crate::unity_engine::rendering::debugactionrepeatmode::DebugActionRepeatMode,
+        #[offset(44)]
+        #[rename(name = "repeatDelay")]
+        pub repeat_delay: f32,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-debugactiondesc-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-debugactiondesc")]pub trait IDebugActionDescMethods:IDebugActionDesc{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugActionDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3536630usize)as*mut u8,();
-(DebugActionDesc)__receiver)}
-}
+#[cfg(feature = "unity_engine-rendering-debugactiondesc")]
+pub trait IDebugActionDescMethods: IDebugActionDesc {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <DebugActionDesc as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3536630usize)as*mut u8,();
+(DebugActionDesc)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-debugactiondesc")]impl<__T:IDebugActionDesc>IDebugActionDescMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-debugactiondesc")]
+impl<__T: IDebugActionDesc> IDebugActionDescMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-debugactiondesc")]impl DebugActionDesc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-rendering-debugactiondesc")]
+impl DebugActionDesc {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-debugactiondesc")]impl DebugActionDesc{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-debugactiondesc")]
+impl DebugActionDesc {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugActionDesc), ::core::stringify!(new),));
- <Self as IDebugActionDescMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(DebugActionDesc),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugActionDescMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-debugactiondesc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugActionDesc;
-    pub use super::IDebugActionDesc;
-    pub use super::IDebugActionDescMethods;
+    pub use super::{DebugActionDesc, IDebugActionDesc, IDebugActionDescMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,33 +2,43 @@
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/internal_subsystemdescriptors/Internal_SubsystemDescriptors.md"))]#[::unity2::class(namespace="UnityEngine",name="Internal_SubsystemDescriptors")]#[parent(crate::system::object::Object)]pub struct Internal_SubsystemDescriptors{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/internal_subsystemdescriptors/Internal_SubsystemDescriptors.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "Internal_SubsystemDescriptors")]
+    #[parent(crate::system::object::Object)]
+    pub struct Internal_SubsystemDescriptors {}
 }
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-internal_subsystemdescriptors")]impl Internal_SubsystemDescriptors{#[doc="`Internal_AddDescriptor(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)` overload"]pub fn internal_add_descriptor(descriptor:impl::core::convert::Into<crate::unity_engine::subsystemdescriptor::SubsystemDescriptor>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f3a8e0usize)as*mut u8,();
-(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)::core::convert::Into::into(descriptor))}
-}
+#[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
+impl Internal_SubsystemDescriptors {
+    #[doc = "`Internal_AddDescriptor(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)` overload"]
+    pub fn internal_add_descriptor(descriptor: impl ::core::convert::Into<crate::unity_engine::subsystemdescriptor::SubsystemDescriptor>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f3a8e0usize)as*mut u8,();
+(crate::unity_engine::subsystemdescriptor::SubsystemDescriptor)::core::convert::Into::into(descriptor))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-internal_subsystemdescriptors")]impl Internal_SubsystemDescriptors{pub fn internal_add_descriptor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
+impl Internal_SubsystemDescriptors {
+    pub fn internal_add_descriptor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-internal_subsystemdescriptors")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Internal_SubsystemDescriptors;
-    pub use super::IInternal_SubsystemDescriptors;
+    pub use super::{IInternal_SubsystemDescriptors, Internal_SubsystemDescriptors};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

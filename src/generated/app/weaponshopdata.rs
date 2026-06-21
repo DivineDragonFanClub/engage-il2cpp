@@ -2,116 +2,234 @@
 
 #[cfg(feature = "app-weaponshopdata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            shopdatabase_1::{IShopDataBase_1, ShopDataBase_1},
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::shopdatabase_1::{IShopDataBase_1,ShopDataBase_1}
-;
-use crate::app::structbase::{IStructBase,StructBase}
-;
-use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
-;
-use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopdata/WeaponShopData.md"))]#[::unity2::class(namespace="App",name="WeaponShopData")]#[parent(crate::app::shopdatabase_1::ShopDataBase_1<crate::app::weaponshopdata::WeaponShopData>)]pub struct WeaponShopData{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponshopdata/WeaponShopData.md"))]
+    #[::unity::class(namespace = "App", name = "WeaponShopData")]
+    #[parent(crate::app::shopdatabase_1::ShopDataBase_1<crate::app::weaponshopdata::WeaponShopData>)]
+    pub struct WeaponShopData {}
 }
 
 #[cfg(feature = "app-weaponshopdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-weaponshopdata")]impl WeaponShopData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d2990usize)as*mut u8,();
-)}
-}
-#[doc="`GetStockAddedKeyImpl(::unity2::Il2CppString)` overload"]pub fn get_stock_added_key_impl(condition:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d2a40usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(condition))}
-}
-#[doc="`GetStockKeyImpl(::unity2::Il2CppString)` overload"]pub fn get_stock_key_impl(iid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d2aa0usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(iid))}
-}
-#[doc="`Regist()` overload"]pub fn regist()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d2b60usize)as*mut u8,();
-)}
-}
-#[doc="`SetupContentList()` overload"]pub fn setup_content_list()-> ::unity2::Array<crate::app::shopcontent::ShopContent>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21cb5f0usize)as*mut u8, ::unity2::Array<crate::app::shopcontent::ShopContent> ;
-)}
-}
-#[doc="`IsExistAdditionalStock()` overload"]pub fn is_exist_additional_stock()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d2ca0usize)as*mut u8,bool;
-)}
-}
-#[doc="`Purchase(::unity2::Il2CppString, i32)` overload"]pub fn purchase(iid:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d2de0usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(value))}
-}
-#[doc="`GetStockNum(::unity2::Il2CppString)` overload"]pub fn get_stock_num(iid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d2f40usize)as*mut u8,i32;
-(::unity2::Il2CppString)::core::convert::Into::into(iid))}
-}
-#[doc="`IsInfinity(::unity2::Il2CppString)` overload"]pub fn is_infinity(iid:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d3030usize)as*mut u8,bool;
-(::unity2::Il2CppString)::core::convert::Into::into(iid))}
-}
+#[cfg(feature = "app-weaponshopdata")]
+impl WeaponShopData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d2990usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`GetStockAddedKeyImpl(::unity::Il2CppString)` overload"]
+    pub fn get_stock_added_key_impl(condition: impl ::core::convert::Into<::unity::Il2CppString>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d2a40usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(condition))
+        }
+    }
+
+    #[doc = "`GetStockKeyImpl(::unity::Il2CppString)` overload"]
+    pub fn get_stock_key_impl(iid: impl ::core::convert::Into<::unity::Il2CppString>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d2aa0usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(iid))
+        }
+    }
+
+    #[doc = "`Regist()` overload"]
+    pub fn regist() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d2b60usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`SetupContentList()` overload"]
+    pub fn setup_content_list() -> ::unity::Array<crate::app::shopcontent::ShopContent> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21cb5f0usize)as*mut u8, ::unity::Array<crate::app::shopcontent::ShopContent> ;
+            )
+        }
+    }
+
+    #[doc = "`IsExistAdditionalStock()` overload"]
+    pub fn is_exist_additional_stock() -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d2ca0usize)as*mut u8,bool;
+            )
+        }
+    }
+
+    #[doc = "`Purchase(::unity::Il2CppString, i32)` overload"]
+    pub fn purchase(iid: impl ::core::convert::Into<::unity::Il2CppString>, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d2de0usize)as*mut u8,();
+(::unity::Il2CppString)::core::convert::Into::into(iid),(i32)::core::convert::Into::into(value))
+        }
+    }
+
+    #[doc = "`GetStockNum(::unity::Il2CppString)` overload"]
+    pub fn get_stock_num(iid: impl ::core::convert::Into<::unity::Il2CppString>) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d2f40usize)as*mut u8,i32;
+(::unity::Il2CppString)::core::convert::Into::into(iid))
+        }
+    }
+
+    #[doc = "`IsInfinity(::unity::Il2CppString)` overload"]
+    pub fn is_infinity(iid: impl ::core::convert::Into<::unity::Il2CppString>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d3030usize)as*mut u8,bool;
+(::unity::Il2CppString)::core::convert::Into::into(iid))
+        }
+    }
 }
 
-#[cfg(feature="app-weaponshopdata")]pub trait IWeaponShopDataMethods:IWeaponShopData{#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <WeaponShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-weaponshopdata")]
+pub trait IWeaponShopDataMethods: IWeaponShopData {
+    #[doc = "`OnBuild()` overload"]
+    fn on_build(self) -> () {
+        unsafe {
+            let __receiver = <WeaponShopData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <WeaponShopData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let __inner:extern "C" fn(WeaponShopData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WeaponShopData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d3120usize)as*mut u8,();
-(WeaponShopData)__receiver)}
-}
-}
-
-#[cfg(feature="app-weaponshopdata")]impl<__T:IWeaponShopData>IWeaponShopDataMethods for __T{}
-
-#[cfg(feature="app-weaponshopdata")]impl WeaponShopData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_stock_added_key_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_stock_key_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn regist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn setup_content_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_exist_additional_stock_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn purchase_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_stock_num_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn is_infinity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <WeaponShopData as ::unity::ClassIdentity>::NAME,
+                        "OnBuild",
+                    )
+                });
+                let __inner: extern "C" fn(WeaponShopData, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <WeaponShopData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d3120usize)as*mut u8,();
+(WeaponShopData)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-weaponshopdata")]impl WeaponShopData{#[doc="Direct (non-virtual) call to `WeaponShopData`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-weaponshopdata")]
+impl<__T: IWeaponShopData> IWeaponShopDataMethods for __T {}
+
+#[cfg(feature = "app-weaponshopdata")]
+impl WeaponShopData {
+    pub fn load_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_stock_added_key_impl_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_stock_key_impl_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn on_build_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn regist_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn setup_content_list_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn is_exist_additional_stock_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn purchase_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn get_stock_num_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn is_infinity_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[10]
+    }
 }
 
-#[cfg(feature="app-weaponshopdata")]impl WeaponShopData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-weaponshopdata")]
+impl WeaponShopData {
+    #[doc = "Direct (non-virtual) call to `WeaponShopData`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_build(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_build_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-weaponshopdata")]
+impl WeaponShopData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(WeaponShopData), ::core::stringify!(new),));
- <Self as IWeaponShopDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(WeaponShopData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWeaponShopDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-weaponshopdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeaponShopData;
-    pub use super::IWeaponShopData;
-    pub use super::IWeaponShopDataMethods;
-    pub use crate::app::shopdatabase_1::IShopDataBase_1;
-    pub use crate::app::structbase::IStructBase;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-shopdatabase_1")] pub use crate::app::shopdatabase_1::IShopDataBase_1Methods;
-    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdataarray_1")] pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IWeaponShopData, IWeaponShopDataMethods, WeaponShopData};
+    #[cfg(feature = "app-shopdatabase_1")]
+    pub use crate::app::shopdatabase_1::IShopDataBase_1Methods;
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdataarray_1")]
+    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{shopdatabase_1::IShopDataBase_1, structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

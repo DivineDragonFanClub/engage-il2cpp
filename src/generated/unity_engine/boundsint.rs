@@ -2,64 +2,125 @@
 
 #[cfg(feature = "unity_engine-boundsint-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/boundsint/BoundsInt.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct BoundsInt {
+        pub m_position: crate::unity_engine::vector3int::Vector3Int,
+        pub m_size: crate::unity_engine::vector3int::Vector3Int,
+    }
+    impl ::unity::ClassIdentity for BoundsInt {
+        const NAME: &'static str = "BoundsInt";
+        const NAMESPACE: &'static str = "UnityEngine";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/boundsint/BoundsInt.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BoundsInt{pub m_position:crate::unity_engine::vector3int::Vector3Int,pub m_size:crate::unity_engine::vector3int::Vector3Int,}
-impl::unity2::ClassIdentity for BoundsInt{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="BoundsInt";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for BoundsInt{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for BoundsInt {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-boundsint-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-boundsint")]impl BoundsInt{#[doc="`get_position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector3int::Vector3Int{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38b60usize)as*mut u8,crate::unity_engine::vector3int::Vector3Int;
-(*mut BoundsInt)self as*mut BoundsInt)}
-}
-#[doc="`get_size()` overload"]pub fn get_size(&mut self,)->crate::unity_engine::vector3int::Vector3Int{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38b70usize)as*mut u8,crate::unity_engine::vector3int::Vector3Int;
-(*mut BoundsInt)self as*mut BoundsInt)}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38b80usize)as*mut u8, ::unity2::Il2CppString;
-(*mut BoundsInt)self as*mut BoundsInt)}
-}
-#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,other:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38d50usize)as*mut u8,bool;
-(*mut BoundsInt)self as*mut BoundsInt,(crate::system::object::Object)::core::convert::Into::into(other))}
-}
-#[doc="`Equals(crate::unity_engine::boundsint::BoundsInt)` overload"]pub fn equals_2(&mut self,other:impl::core::convert::Into<crate::unity_engine::boundsint::BoundsInt>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38df0usize)as*mut u8,bool;
-(*mut BoundsInt)self as*mut BoundsInt,(crate::unity_engine::boundsint::BoundsInt)::core::convert::Into::into(other))}
-}
-#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c38f40usize)as*mut u8,i32;
-(*mut BoundsInt)self as*mut BoundsInt)}
-}
+#[cfg(feature = "unity_engine-boundsint")]
+impl BoundsInt {
+    #[doc = "`get_position()` overload"]
+    pub fn get_position(&mut self) -> crate::unity_engine::vector3int::Vector3Int {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c38b60usize)as*mut u8,crate::unity_engine::vector3int::Vector3Int;
+(*mut BoundsInt)self as*mut BoundsInt)
+        }
+    }
+
+    #[doc = "`get_size()` overload"]
+    pub fn get_size(&mut self) -> crate::unity_engine::vector3int::Vector3Int {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c38b70usize)as*mut u8,crate::unity_engine::vector3int::Vector3Int;
+(*mut BoundsInt)self as*mut BoundsInt)
+        }
+    }
+
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(&mut self) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c38b80usize)as*mut u8, ::unity::Il2CppString;
+(*mut BoundsInt)self as*mut BoundsInt)
+        }
+    }
+
+    #[doc = "`Equals(crate::system::object::Object)` overload"]
+    pub fn equals(&mut self, other: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c38d50usize)as*mut u8,bool;
+(*mut BoundsInt)self as*mut BoundsInt,(crate::system::object::Object)::core::convert::Into::into(other))
+        }
+    }
+
+    #[doc = "`Equals(crate::unity_engine::boundsint::BoundsInt)` overload"]
+    pub fn equals_2(&mut self, other: impl ::core::convert::Into<crate::unity_engine::boundsint::BoundsInt>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c38df0usize)as*mut u8,bool;
+(*mut BoundsInt)self as*mut BoundsInt,(crate::unity_engine::boundsint::BoundsInt)::core::convert::Into::into(other))
+        }
+    }
+
+    #[doc = "`GetHashCode()` overload"]
+    pub fn get_hash_code(&mut self) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c38f40usize)as*mut u8,i32;
+(*mut BoundsInt)self as*mut BoundsInt)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-boundsint")]impl BoundsInt{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn equals_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature = "unity_engine-boundsint")]
+impl BoundsInt {
+    pub fn get_position_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_size_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn to_string_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn equals_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn equals_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn get_hash_code_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
 }
 
 #[cfg(feature = "unity_engine-boundsint")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::BoundsInt;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,33 +2,43 @@
 
 #[cfg(feature = "unity_engine-cursor-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cursor/Cursor.md"))]#[::unity2::class(namespace="UnityEngine",name="Cursor")]#[parent(crate::system::object::Object)]pub struct Cursor{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cursor/Cursor.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "Cursor")]
+    #[parent(crate::system::object::Object)]
+    pub struct Cursor {}
 }
 
 #[cfg(feature = "unity_engine-cursor-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-cursor")]impl Cursor{#[doc="`get_lockState()` overload"]pub fn get_lock_state()->crate::unity_engine::cursorlockmode::CursorLockMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c49fd0usize)as*mut u8,crate::unity_engine::cursorlockmode::CursorLockMode;
-)}
-}
+#[cfg(feature = "unity_engine-cursor")]
+impl Cursor {
+    #[doc = "`get_lockState()` overload"]
+    pub fn get_lock_state() -> crate::unity_engine::cursorlockmode::CursorLockMode {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c49fd0usize)as*mut u8,crate::unity_engine::cursorlockmode::CursorLockMode;
+            )
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-cursor")]impl Cursor{pub fn get_lock_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-cursor")]
+impl Cursor {
+    pub fn get_lock_state_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-cursor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Cursor;
-    pub use super::ICursor;
+    pub use super::{Cursor, ICursor};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

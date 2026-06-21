@@ -2,33 +2,47 @@
 
 #[cfg(feature = "combat-expansionoffset2d-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/expansionoffset2d/ExpansionOffset2D.md"))]#[::unity2::class(namespace="Combat",name="ExpansionOffset2D")]#[parent(crate::system::object::Object)]pub struct ExpansionOffset2D{#[static_field]#[rename(name="XY")]pub xy: ::unity2::Array<f32> ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/expansionoffset2d/ExpansionOffset2D.md"))]
+    #[::unity::class(namespace = "Combat", name = "ExpansionOffset2D")]
+    #[parent(crate::system::object::Object)]
+    pub struct ExpansionOffset2D {
+        #[static_field]
+        #[rename(name = "XY")]
+        pub xy: ::unity::Array<f32>,
+    }
 }
 
 #[cfg(feature = "combat-expansionoffset2d-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-expansionoffset2d")]impl ExpansionOffset2D{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24ea560usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "combat-expansionoffset2d")]
+impl ExpansionOffset2D {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x24ea560usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="combat-expansionoffset2d")]impl ExpansionOffset2D{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "combat-expansionoffset2d")]
+impl ExpansionOffset2D {
+    pub fn cctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "combat-expansionoffset2d")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExpansionOffset2D;
-    pub use super::IExpansionOffset2D;
+    pub use super::{ExpansionOffset2D, IExpansionOffset2D};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

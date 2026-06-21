@@ -2,44 +2,66 @@
 
 #[cfg(feature = "app-debugchapterrecordmenu-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugchapterrecordmenu/DebugChapterRecordMenu.md"))]#[::unity2::class(namespace="App",name="DebugChapterRecordMenu")]#[parent(crate::system::object::Object)]pub struct DebugChapterRecordMenu{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugchapterrecordmenu/DebugChapterRecordMenu.md"))]
+    #[::unity::class(namespace = "App", name = "DebugChapterRecordMenu")]
+    #[parent(crate::system::object::Object)]
+    pub struct DebugChapterRecordMenu {}
 }
 
 #[cfg(feature = "app-debugchapterrecordmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-debugchapterrecordmenu")]pub trait IDebugChapterRecordMenuMethods:IDebugChapterRecordMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugChapterRecordMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a02960usize)as*mut u8,();
-(DebugChapterRecordMenu)__receiver)}
-}
+#[cfg(feature = "app-debugchapterrecordmenu")]
+pub trait IDebugChapterRecordMenuMethods: IDebugChapterRecordMenu {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <DebugChapterRecordMenu as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2a02960usize)as*mut u8,();
+(DebugChapterRecordMenu)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-debugchapterrecordmenu")]impl<__T:IDebugChapterRecordMenu>IDebugChapterRecordMenuMethods for __T{}
+#[cfg(feature = "app-debugchapterrecordmenu")]
+impl<__T: IDebugChapterRecordMenu> IDebugChapterRecordMenuMethods for __T {}
 
-#[cfg(feature="app-debugchapterrecordmenu")]impl DebugChapterRecordMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-debugchapterrecordmenu")]
+impl DebugChapterRecordMenu {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-debugchapterrecordmenu")]impl DebugChapterRecordMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-debugchapterrecordmenu")]
+impl DebugChapterRecordMenu {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugChapterRecordMenu), ::core::stringify!(new),));
- <Self as IDebugChapterRecordMenuMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(DebugChapterRecordMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDebugChapterRecordMenuMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-debugchapterrecordmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugChapterRecordMenu;
-    pub use super::IDebugChapterRecordMenu;
-    pub use super::IDebugChapterRecordMenuMethods;
+    pub use super::{DebugChapterRecordMenu, IDebugChapterRecordMenu, IDebugChapterRecordMenuMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

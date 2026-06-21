@@ -2,37 +2,62 @@
 
 #[cfg(feature = "root-sr-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/sr/SR.md"))]#[::unity2::class(namespace="",name="SR")]#[parent(crate::system::object::Object)]pub struct SR{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/sr/SR.md"))]
+    #[::unity::class(namespace = "", name = "SR")]
+    #[parent(crate::system::object::Object)]
+    pub struct SR {}
 }
 
 #[cfg(feature = "root-sr-types")]
 pub use __types::*;
 
-#[cfg(feature="root-sr")]impl SR{#[doc="`Format(::unity2::Il2CppString, crate::system::object::Object)` overload"]pub fn format(resource_format:impl::core::convert::Into< ::unity2::Il2CppString> ,p1:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34fe4d0usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(resource_format),(crate::system::object::Object)::core::convert::Into::into(p1))}
-}
-#[doc="`Format(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]pub fn format_2(resource_format:impl::core::convert::Into< ::unity2::Il2CppString> ,p1:impl::core::convert::Into<crate::system::object::Object> ,p2:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34fe550usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(resource_format),(crate::system::object::Object)::core::convert::Into::into(p1),(crate::system::object::Object)::core::convert::Into::into(p2))}
-}
+#[cfg(feature = "root-sr")]
+impl SR {
+    #[doc = "`Format(::unity::Il2CppString, crate::system::object::Object)` overload"]
+    pub fn format(
+        resource_format: impl ::core::convert::Into<::unity::Il2CppString>,
+        p1: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x34fe4d0usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(resource_format),(crate::system::object::Object)::core::convert::Into::into(p1))
+        }
+    }
+
+    #[doc = "`Format(::unity::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]
+    pub fn format_2(
+        resource_format: impl ::core::convert::Into<::unity::Il2CppString>,
+        p1: impl ::core::convert::Into<crate::system::object::Object>,
+        p2: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x34fe550usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(resource_format),(crate::system::object::Object)::core::convert::Into::into(p1),(crate::system::object::Object)::core::convert::Into::into(p2))
+        }
+    }
 }
 
-#[cfg(feature="root-sr")]impl SR{pub fn format_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn format_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "root-sr")]
+impl SR {
+    pub fn format_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn format_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "root-sr")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SR;
-    pub use super::ISR;
+    pub use super::{ISR, SR};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

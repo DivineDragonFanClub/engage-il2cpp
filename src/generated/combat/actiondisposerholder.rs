@@ -2,86 +2,157 @@
 
 #[cfg(feature = "combat-actiondisposerholder-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::{
+            actionbase::{ActionBase, IActionBase},
+            state::{IState, State},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::actionbase::{ActionBase,IActionBase}
-;
-use crate::combat::state::{IState,State}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiondisposerholder/ActionDisposerHolder.md"))]#[::unity2::class(namespace="Combat",name="ActionDisposerHolder")]#[parent(crate::combat::actionbase::ActionBase)]pub struct ActionDisposerHolder{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/actiondisposerholder/ActionDisposerHolder.md"))]
+    #[::unity::class(namespace = "Combat", name = "ActionDisposerHolder")]
+    #[parent(crate::combat::actionbase::ActionBase)]
+    pub struct ActionDisposerHolder {}
 }
 
 #[cfg(feature = "combat-actiondisposerholder-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-actiondisposerholder")]pub trait IActionDisposerHolderMethods:IActionDisposerHolder{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionDisposerHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4940usize)as*mut u8,();
-(ActionDisposerHolder)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
-}
-#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionDisposerHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-actiondisposerholder")]
+pub trait IActionDisposerHolderMethods: IActionDisposerHolder {
+    #[doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]
+    fn ctor(
+        self,
+        chr: impl ::core::convert::Into<crate::combat::character::Character>,
+        phase: impl ::core::convert::Into<crate::combat::phase::Phase>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ActionDisposerHolder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2bc4940usize)as*mut u8,();
+(ActionDisposerHolder)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase))
+        }
+    }
+    #[doc = "`OnExit()` overload"]
+    fn on_exit(self) -> () {
+        unsafe {
+            let __receiver = <ActionDisposerHolder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <ActionDisposerHolder as::unity2::ClassIdentity> ::NAME,"OnExit",));
-let __inner:extern "C" fn(ActionDisposerHolder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ActionDisposerHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <ActionDisposerHolder as ::unity::ClassIdentity>::NAME,
+                        "OnExit",
+                    )
+                });
+                let __inner: extern "C" fn(ActionDisposerHolder, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <ActionDisposerHolder as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(10usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <ActionDisposerHolder as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let __inner:extern "C" fn(ActionDisposerHolder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="combat-actiondisposerholder")]impl<__T:IActionDisposerHolder>IActionDisposerHolderMethods for __T{}
-
-#[cfg(feature="combat-actiondisposerholder")]impl ActionDisposerHolder{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="combat-actiondisposerholder")]impl ActionDisposerHolder{#[doc="Direct (non-virtual) call to `ActionDisposerHolder`'s own `OnExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_exit_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ActionDisposerHolder`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        10usize,
+                        __vt.len(),
+                        <ActionDisposerHolder as ::unity::ClassIdentity>::NAME,
+                        "Dispose",
+                    )
+                });
+                let __inner: extern "C" fn(ActionDisposerHolder, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="combat-actiondisposerholder")]impl ActionDisposerHolder{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"]pub fn new(chr:crate::combat::character::Character,phase:crate::combat::phase::Phase)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-actiondisposerholder")]
+impl<__T: IActionDisposerHolder> IActionDisposerHolderMethods for __T {}
+
+#[cfg(feature = "combat-actiondisposerholder")]
+impl ActionDisposerHolder {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn on_exit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn dispose_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+}
+
+#[cfg(feature = "combat-actiondisposerholder")]
+impl ActionDisposerHolder {
+    #[doc = "Direct (non-virtual) call to `ActionDisposerHolder`'s own `OnExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_exit(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_exit_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ActionDisposerHolder`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn dispose(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::dispose_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "combat-actiondisposerholder")]
+impl ActionDisposerHolder {
+    #[doc = "`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` — overload selector"]
+    pub fn new(chr: crate::combat::character::Character, phase: crate::combat::phase::Phase) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ActionDisposerHolder), ::core::stringify!(new),));
- <Self as IActionDisposerHolderMethods> ::ctor(this,chr,phase);
-this}
+ failed to instantiate",
+                ::core::stringify!(ActionDisposerHolder),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IActionDisposerHolderMethods>::ctor(this, chr, phase);
+        this
+    }
 }
 
 #[cfg(feature = "combat-actiondisposerholder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ActionDisposerHolder;
-    pub use super::IActionDisposerHolder;
-    pub use super::IActionDisposerHolderMethods;
-    pub use crate::combat::actionbase::IActionBase;
-    pub use crate::combat::state::IState;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "combat-actionbase")] pub use crate::combat::actionbase::IActionBaseMethods;
-    #[cfg(feature = "combat-state")] pub use crate::combat::state::IStateMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ActionDisposerHolder, IActionDisposerHolder, IActionDisposerHolderMethods};
+    #[cfg(feature = "combat-actionbase")]
+    pub use crate::combat::actionbase::IActionBaseMethods;
+    #[cfg(feature = "combat-state")]
+    pub use crate::combat::state::IStateMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        combat::{actionbase::IActionBase, state::IState},
+        system::object::IObject,
+    };
 }

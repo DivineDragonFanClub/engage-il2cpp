@@ -2,44 +2,75 @@
 
 #[cfg(feature = "root-akgameobjpositiondata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akgameobjpositiondata/AkGameObjPositionData.md"))]#[::unity2::class(namespace="",name="AkGameObjPositionData")]#[parent(crate::system::object::Object)]pub struct AkGameObjPositionData{#[offset(16)]#[rename(name="forward")]pub forward:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="position")]pub position:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="up")]pub up:crate::unity_engine::vector3::Vector3,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akgameobjpositiondata/AkGameObjPositionData.md"))]
+    #[::unity::class(namespace = "", name = "AkGameObjPositionData")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkGameObjPositionData {
+        #[offset(16)]
+        #[rename(name = "forward")]
+        pub forward: crate::unity_engine::vector3::Vector3,
+        #[offset(28)]
+        #[rename(name = "position")]
+        pub position: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
+        #[rename(name = "up")]
+        pub up: crate::unity_engine::vector3::Vector3,
+    }
 }
 
 #[cfg(feature = "root-akgameobjpositiondata-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akgameobjpositiondata")]pub trait IAkGameObjPositionDataMethods:IAkGameObjPositionData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkGameObjPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ddd0usize)as*mut u8,();
-(AkGameObjPositionData)__receiver)}
-}
+#[cfg(feature = "root-akgameobjpositiondata")]
+pub trait IAkGameObjPositionDataMethods: IAkGameObjPositionData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkGameObjPositionData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f1ddd0usize)as*mut u8,();
+(AkGameObjPositionData)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-akgameobjpositiondata")]impl<__T:IAkGameObjPositionData>IAkGameObjPositionDataMethods for __T{}
+#[cfg(feature = "root-akgameobjpositiondata")]
+impl<__T: IAkGameObjPositionData> IAkGameObjPositionDataMethods for __T {}
 
-#[cfg(feature="root-akgameobjpositiondata")]impl AkGameObjPositionData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "root-akgameobjpositiondata")]
+impl AkGameObjPositionData {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="root-akgameobjpositiondata")]impl AkGameObjPositionData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-akgameobjpositiondata")]
+impl AkGameObjPositionData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AkGameObjPositionData), ::core::stringify!(new),));
- <Self as IAkGameObjPositionDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AkGameObjPositionData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkGameObjPositionDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-akgameobjpositiondata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkGameObjPositionData;
-    pub use super::IAkGameObjPositionData;
-    pub use super::IAkGameObjPositionDataMethods;
+    pub use super::{AkGameObjPositionData, IAkGameObjPositionData, IAkGameObjPositionDataMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

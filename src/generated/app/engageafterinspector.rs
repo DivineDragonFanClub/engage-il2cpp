@@ -2,56 +2,81 @@
 
 #[cfg(feature = "app-engageafterinspector-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapinspector::{IMapInspector, MapInspector},
+            personinspector::{IPersonInspector, PersonInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapinspector::{IMapInspector,MapInspector}
-;
-use crate::app::personinspector::{IPersonInspector,PersonInspector}
-;
-use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/engageafterinspector/EngageAfterInspector.md"))]#[::unity2::class(namespace="App",name="EngageAfterInspector")]#[parent(crate::app::personinspector::PersonInspector)]pub struct EngageAfterInspector{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/engageafterinspector/EngageAfterInspector.md"))]
+    #[::unity::class(namespace = "App", name = "EngageAfterInspector")]
+    #[parent(crate::app::personinspector::PersonInspector)]
+    pub struct EngageAfterInspector {}
 }
 
 #[cfg(feature = "app-engageafterinspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-engageafterinspector")]pub trait IEngageAfterInspectorMethods:IEngageAfterInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <EngageAfterInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e95d0usize)as*mut u8,();
-(EngageAfterInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
-}
+#[cfg(feature = "app-engageafterinspector")]
+pub trait IEngageAfterInspectorMethods: IEngageAfterInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    fn ctor(self, args: impl ::core::convert::Into<::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe {
+            let __receiver = <EngageAfterInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22e95d0usize)as*mut u8,();
+(EngageAfterInspector)__receiver,(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))
+        }
+    }
 }
 
-#[cfg(feature="app-engageafterinspector")]impl<__T:IEngageAfterInspector>IEngageAfterInspectorMethods for __T{}
+#[cfg(feature = "app-engageafterinspector")]
+impl<__T: IEngageAfterInspector> IEngageAfterInspectorMethods for __T {}
 
-#[cfg(feature="app-engageafterinspector")]impl EngageAfterInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-engageafterinspector")]
+impl EngageAfterInspector {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-engageafterinspector")]impl EngageAfterInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-engageafterinspector")]
+impl EngageAfterInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
+    pub fn new(args: ::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(EngageAfterInspector), ::core::stringify!(new),));
- <Self as IEngageAfterInspectorMethods> ::ctor(this,args);
-this}
+ failed to instantiate",
+                ::core::stringify!(EngageAfterInspector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEngageAfterInspectorMethods>::ctor(this, args);
+        this
+    }
 }
 
 #[cfg(feature = "app-engageafterinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EngageAfterInspector;
-    pub use super::IEngageAfterInspector;
-    pub use super::IEngageAfterInspectorMethods;
-    pub use crate::app::mapinspector::IMapInspector;
-    pub use crate::app::personinspector::IPersonInspector;
-    pub use crate::app::scriptutil::IScriptUtil;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-personinspector")] pub use crate::app::personinspector::IPersonInspectorMethods;
-    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{EngageAfterInspector, IEngageAfterInspector, IEngageAfterInspectorMethods};
+    #[cfg(feature = "app-mapinspector")]
+    pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-personinspector")]
+    pub use crate::app::personinspector::IPersonInspectorMethods;
+    #[cfg(feature = "app-scriptutil")]
+    pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapinspector::IMapInspector, personinspector::IPersonInspector, scriptutil::IScriptUtil},
+        system::object::IObject,
+    };
 }

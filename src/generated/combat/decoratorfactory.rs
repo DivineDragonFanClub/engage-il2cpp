@@ -2,33 +2,43 @@
 
 #[cfg(feature = "combat-decoratorfactory-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/decoratorfactory/DecoratorFactory.md"))]#[::unity2::class(namespace="Combat",name="DecoratorFactory")]#[parent(crate::system::object::Object)]pub struct DecoratorFactory{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/decoratorfactory/DecoratorFactory.md"))]
+    #[::unity::class(namespace = "Combat", name = "DecoratorFactory")]
+    #[parent(crate::system::object::Object)]
+    pub struct DecoratorFactory {}
 }
 
 #[cfg(feature = "combat-decoratorfactory-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-decoratorfactory")]impl DecoratorFactory{#[doc="`CreateDecorators(crate::combat::decoratorargs::DecoratorArgs)` overload"]pub fn create_decorators(arg:impl::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>)->crate::combat::decorators::Decorators{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cea510usize)as*mut u8,crate::combat::decorators::Decorators;
-(crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(arg))}
-}
+#[cfg(feature = "combat-decoratorfactory")]
+impl DecoratorFactory {
+    #[doc = "`CreateDecorators(crate::combat::decoratorargs::DecoratorArgs)` overload"]
+    pub fn create_decorators(arg: impl ::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>) -> crate::combat::decorators::Decorators {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1cea510usize)as*mut u8,crate::combat::decorators::Decorators;
+(crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(arg))
+        }
+    }
 }
 
-#[cfg(feature="combat-decoratorfactory")]impl DecoratorFactory{pub fn create_decorators_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "combat-decoratorfactory")]
+impl DecoratorFactory {
+    pub fn create_decorators_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "combat-decoratorfactory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DecoratorFactory;
-    pub use super::IDecoratorFactory;
+    pub use super::{DecoratorFactory, IDecoratorFactory};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

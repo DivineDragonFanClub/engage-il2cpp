@@ -2,65 +2,108 @@
 
 #[cfg(feature = "app-gmapgroundspherecontroller-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapgroundspherecontroller/GmapGroundSphereController.md"))]#[::unity2::class(namespace="App",name="GmapGroundSphereController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct GmapGroundSphereController{#[offset(24)]#[rename(name="m_MeshRenderer")]pub m_mesh_renderer:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(32)]#[rename(name="m_GrandSunkTexture")]pub m_grand_sunk_texture:crate::unity_engine::texture2d::Texture2D, #[offset(40)]#[rename(name="m_GrandAscendTexture")]pub m_grand_ascend_texture:crate::unity_engine::texture2d::Texture2D,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapgroundspherecontroller/GmapGroundSphereController.md"))]
+    #[::unity::class(namespace = "App", name = "GmapGroundSphereController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct GmapGroundSphereController {
+        #[offset(24)]
+        #[rename(name = "m_MeshRenderer")]
+        pub m_mesh_renderer: crate::unity_engine::meshrenderer::MeshRenderer,
+        #[offset(32)]
+        #[rename(name = "m_GrandSunkTexture")]
+        pub m_grand_sunk_texture: crate::unity_engine::texture2d::Texture2D,
+        #[offset(40)]
+        #[rename(name = "m_GrandAscendTexture")]
+        pub m_grand_ascend_texture: crate::unity_engine::texture2d::Texture2D,
+    }
 }
 
 #[cfg(feature = "app-gmapgroundspherecontroller-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gmapgroundspherecontroller")]pub trait IGmapGroundSphereControllerMethods:IGmapGroundSphereController{#[doc="`ChangeTexture(bool)` overload"]fn change_texture(self,is_ascend:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GmapGroundSphereController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2528b20usize)as*mut u8,();
-(GmapGroundSphereController)__receiver,(bool)::core::convert::Into::into(is_ascend))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapGroundSphereController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2528ba0usize)as*mut u8,();
-(GmapGroundSphereController)__receiver)}
-}
+#[cfg(feature = "app-gmapgroundspherecontroller")]
+pub trait IGmapGroundSphereControllerMethods: IGmapGroundSphereController {
+    #[doc = "`ChangeTexture(bool)` overload"]
+    fn change_texture(self, is_ascend: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <GmapGroundSphereController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2528b20usize)as*mut u8,();
+(GmapGroundSphereController)__receiver,(bool)::core::convert::Into::into(is_ascend))
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <GmapGroundSphereController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2528ba0usize)as*mut u8,();
+(GmapGroundSphereController)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-gmapgroundspherecontroller")]impl<__T:IGmapGroundSphereController>IGmapGroundSphereControllerMethods for __T{}
+#[cfg(feature = "app-gmapgroundspherecontroller")]
+impl<__T: IGmapGroundSphereController> IGmapGroundSphereControllerMethods for __T {}
 
-#[cfg(feature="app-gmapgroundspherecontroller")]impl GmapGroundSphereController{pub fn change_texture_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-gmapgroundspherecontroller")]
+impl GmapGroundSphereController {
+    pub fn change_texture_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-gmapgroundspherecontroller")]impl GmapGroundSphereController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-gmapgroundspherecontroller")]
+impl GmapGroundSphereController {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(GmapGroundSphereController), ::core::stringify!(new),));
- <Self as IGmapGroundSphereControllerMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(GmapGroundSphereController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGmapGroundSphereControllerMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-gmapgroundspherecontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapGroundSphereController;
-    pub use super::IGmapGroundSphereController;
-    pub use super::IGmapGroundSphereControllerMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{GmapGroundSphereController, IGmapGroundSphereController, IGmapGroundSphereControllerMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

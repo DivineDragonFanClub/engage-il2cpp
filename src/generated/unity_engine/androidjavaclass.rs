@@ -2,63 +2,109 @@
 
 #[cfg(feature = "unity_engine-androidjavaclass-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::androidjavaobject::{AndroidJavaObject, IAndroidJavaObject},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::androidjavaobject::{AndroidJavaObject,IAndroidJavaObject}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/androidjavaclass/AndroidJavaClass.md"))]#[::unity2::class(namespace="UnityEngine",name="AndroidJavaClass")]#[parent(crate::unity_engine::androidjavaobject::AndroidJavaObject)]pub struct AndroidJavaClass{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/androidjavaclass/AndroidJavaClass.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "AndroidJavaClass")]
+    #[parent(crate::unity_engine::androidjavaobject::AndroidJavaObject)]
+    pub struct AndroidJavaClass {}
 }
 
 #[cfg(feature = "unity_engine-androidjavaclass-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-androidjavaclass")]pub trait IAndroidJavaClassMethods:IAndroidJavaClass{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,class_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AndroidJavaClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f117c0usize)as*mut u8,();
-(AndroidJavaClass)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(class_name))}
-}
-#[doc="`_AndroidJavaClass(::unity2::Il2CppString)` overload"]fn android_java_class(self,class_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AndroidJavaClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11850usize)as*mut u8,();
-(AndroidJavaClass)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(class_name))}
-}
-#[doc="`.ctor(::unity2::IntPtr)` overload"]fn ctor_2(self,jclass:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AndroidJavaClass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f11c00usize)as*mut u8,();
-(AndroidJavaClass)__receiver,(::unity2::IntPtr)::core::convert::Into::into(jclass))}
-}
+#[cfg(feature = "unity_engine-androidjavaclass")]
+pub trait IAndroidJavaClassMethods: IAndroidJavaClass {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, class_name: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <AndroidJavaClass as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f117c0usize)as*mut u8,();
+(AndroidJavaClass)__receiver,(::unity::Il2CppString)::core::convert::Into::into(class_name))
+        }
+    }
+    #[doc = "`_AndroidJavaClass(::unity::Il2CppString)` overload"]
+    fn android_java_class(self, class_name: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <AndroidJavaClass as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f11850usize)as*mut u8,();
+(AndroidJavaClass)__receiver,(::unity::Il2CppString)::core::convert::Into::into(class_name))
+        }
+    }
+    #[doc = "`.ctor(::unity::IntPtr)` overload"]
+    fn ctor_2(self, jclass: impl ::core::convert::Into<::unity::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <AndroidJavaClass as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f11c00usize)as*mut u8,();
+(AndroidJavaClass)__receiver,(::unity::IntPtr)::core::convert::Into::into(jclass))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-androidjavaclass")]impl<__T:IAndroidJavaClass>IAndroidJavaClassMethods for __T{}
+#[cfg(feature = "unity_engine-androidjavaclass")]
+impl<__T: IAndroidJavaClass> IAndroidJavaClassMethods for __T {}
 
-#[cfg(feature="unity_engine-androidjavaclass")]impl AndroidJavaClass{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn android_java_class_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "unity_engine-androidjavaclass")]
+impl AndroidJavaClass {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn android_java_class_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="unity_engine-androidjavaclass")]impl AndroidJavaClass{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(class_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-androidjavaclass")]
+impl AndroidJavaClass {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(class_name: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AndroidJavaClass), ::core::stringify!(new),));
- <Self as IAndroidJavaClassMethods> ::ctor(this,class_name);
-this}
-#[doc="`.ctor(::unity2::IntPtr)` — overload selector"]pub fn new_2(jclass: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+ failed to instantiate",
+                ::core::stringify!(AndroidJavaClass),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAndroidJavaClassMethods>::ctor(this, class_name);
+        this
+    }
+
+    #[doc = "`.ctor(::unity::IntPtr)` — overload selector"]
+    pub fn new_2(jclass: ::unity::IntPtr) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AndroidJavaClass), ::core::stringify!(new_2),));
- <Self as IAndroidJavaClassMethods> ::ctor_2(this,jclass);
-this}
+ failed to instantiate",
+                ::core::stringify!(AndroidJavaClass),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as IAndroidJavaClassMethods>::ctor_2(this, jclass);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-androidjavaclass")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AndroidJavaClass;
-    pub use super::IAndroidJavaClass;
-    pub use super::IAndroidJavaClassMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::androidjavaobject::IAndroidJavaObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-androidjavaobject")] pub use crate::unity_engine::androidjavaobject::IAndroidJavaObjectMethods;
+    pub use super::{AndroidJavaClass, IAndroidJavaClass, IAndroidJavaClassMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-androidjavaobject")]
+    pub use crate::unity_engine::androidjavaobject::IAndroidJavaObjectMethods;
+    pub use crate::{system::object::IObject, unity_engine::androidjavaobject::IAndroidJavaObject};
 }

@@ -2,85 +2,169 @@
 
 #[cfg(feature = "combat-reinscontroller-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/reinscontroller/ReinsController.md"))]#[::unity2::class(namespace="Combat",name="ReinsController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ReinsController{#[offset(24)]#[rename(name="_cp")]pub cp:crate::combat::character::Character, #[offset(32)]#[rename(name="m_bInitialized")]pub m_b_initialized:bool, #[offset(36)]#[rename(name="m_LastPos")]pub m_last_pos:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="names")]pub names:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="Weight")]pub weight_field:f32, #[offset(64)]#[rename(name="transforms")]pub transforms: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(72)]#[rename(name="WorldOffset")]pub world_offset:crate::unity_engine::vector3::Vector3, #[offset(84)]#[rename(name="FrameLatencyCompensation")]pub frame_latency_compensation:bool,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/reinscontroller/ReinsController.md"))]
+    #[::unity::class(namespace = "Combat", name = "ReinsController")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct ReinsController {
+        #[offset(24)]
+        #[rename(name = "_cp")]
+        pub cp: crate::combat::character::Character,
+        #[offset(32)]
+        #[rename(name = "m_bInitialized")]
+        pub m_b_initialized: bool,
+        #[offset(36)]
+        #[rename(name = "m_LastPos")]
+        pub m_last_pos: crate::unity_engine::vector3::Vector3,
+        #[offset(48)]
+        #[rename(name = "names")]
+        pub names: crate::system::collections::generic::list_1::List_1<::unity::Il2CppString>,
+        #[offset(56)]
+        #[rename(name = "Weight")]
+        pub weight_field: f32,
+        #[offset(64)]
+        #[rename(name = "transforms")]
+        pub transforms: ::unity::Array<crate::unity_engine::transform::Transform>,
+        #[offset(72)]
+        #[rename(name = "WorldOffset")]
+        pub world_offset: crate::unity_engine::vector3::Vector3,
+        #[offset(84)]
+        #[rename(name = "FrameLatencyCompensation")]
+        pub frame_latency_compensation: bool,
+    }
 }
 
 #[cfg(feature = "combat-reinscontroller-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-reinscontroller")]pub trait IReinsControllerMethods:IReinsController{#[doc="`get_CP()` overload"]fn get_cp(self,)->crate::combat::character::Character{unsafe{let __receiver= <ReinsController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c7f50usize)as*mut u8,crate::combat::character::Character;
-(ReinsController)__receiver)}
-}
-#[doc="`SetWeight(f32)` overload"]fn set_weight(self,weight:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <ReinsController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8010usize)as*mut u8,f32;
-(ReinsController)__receiver,(f32)::core::convert::Into::into(weight))}
-}
-#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ReinsController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8020usize)as*mut u8,();
-(ReinsController)__receiver)}
-}
-#[doc="`MyStart()` overload"]fn my_start(self,)->(){unsafe{let __receiver= <ReinsController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8110usize)as*mut u8,();
-(ReinsController)__receiver)}
-}
-#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <ReinsController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c83a0usize)as*mut u8,();
-(ReinsController)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReinsController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c8700usize)as*mut u8,();
-(ReinsController)__receiver)}
-}
+#[cfg(feature = "combat-reinscontroller")]
+pub trait IReinsControllerMethods: IReinsController {
+    #[doc = "`get_CP()` overload"]
+    fn get_cp(self) -> crate::combat::character::Character {
+        unsafe {
+            let __receiver = <ReinsController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22c7f50usize)as*mut u8,crate::combat::character::Character;
+(ReinsController)__receiver)
+        }
+    }
+    #[doc = "`SetWeight(f32)` overload"]
+    fn set_weight(self, weight: impl ::core::convert::Into<f32>) -> f32 {
+        unsafe {
+            let __receiver = <ReinsController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22c8010usize)as*mut u8,f32;
+(ReinsController)__receiver,(f32)::core::convert::Into::into(weight))
+        }
+    }
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <ReinsController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22c8020usize)as*mut u8,();
+(ReinsController)__receiver)
+        }
+    }
+    #[doc = "`MyStart()` overload"]
+    fn my_start(self) -> () {
+        unsafe {
+            let __receiver = <ReinsController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22c8110usize)as*mut u8,();
+(ReinsController)__receiver)
+        }
+    }
+    #[doc = "`LateUpdate()` overload"]
+    fn late_update(self) -> () {
+        unsafe {
+            let __receiver = <ReinsController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22c83a0usize)as*mut u8,();
+(ReinsController)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ReinsController as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22c8700usize)as*mut u8,();
+(ReinsController)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="combat-reinscontroller")]impl<__T:IReinsController>IReinsControllerMethods for __T{}
+#[cfg(feature = "combat-reinscontroller")]
+impl<__T: IReinsController> IReinsControllerMethods for __T {}
 
-#[cfg(feature="combat-reinscontroller")]impl ReinsController{pub fn get_cp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_weight_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn my_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature = "combat-reinscontroller")]
+impl ReinsController {
+    pub fn get_cp_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn set_weight_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn start_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn my_start_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn late_update_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
 }
 
-#[cfg(feature="combat-reinscontroller")]impl ReinsController{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-reinscontroller")]
+impl ReinsController {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ReinsController), ::core::stringify!(new),));
- <Self as IReinsControllerMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ReinsController),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReinsControllerMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "combat-reinscontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ReinsController;
-    pub use super::IReinsController;
-    pub use super::IReinsControllerMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{IReinsController, IReinsControllerMethods, ReinsController};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

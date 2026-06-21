@@ -2,82 +2,164 @@
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::guilayoutentry::{GUILayoutEntry, IGUILayoutEntry},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::guilayoutentry::{GUILayoutEntry,IGUILayoutEntry}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guiwordwrapsizer/GUIWordWrapSizer.md"))]#[::unity2::class(namespace="UnityEngine",name="GUIWordWrapSizer")]#[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]pub struct GUIWordWrapSizer{#[offset(72)]#[rename(name="m_Content")]pub m_content:crate::unity_engine::guicontent::GUIContent, #[offset(80)]#[rename(name="m_ForcedMinHeight")]pub m_forced_min_height:f32, #[offset(84)]#[rename(name="m_ForcedMaxHeight")]pub m_forced_max_height:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guiwordwrapsizer/GUIWordWrapSizer.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "GUIWordWrapSizer")]
+    #[parent(crate::unity_engine::guilayoutentry::GUILayoutEntry)]
+    pub struct GUIWordWrapSizer {
+        #[offset(72)]
+        #[rename(name = "m_Content")]
+        pub m_content: crate::unity_engine::guicontent::GUIContent,
+        #[offset(80)]
+        #[rename(name = "m_ForcedMinHeight")]
+        pub m_forced_min_height: f32,
+        #[offset(84)]
+        #[rename(name = "m_ForcedMaxHeight")]
+        pub m_forced_max_height: f32,
+    }
 }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-guiwordwrapsizer")]pub trait IGUIWordWrapSizerMethods:IGUIWordWrapSizer{#[doc="`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]fn ctor(self,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle> ,content:impl::core::convert::Into<crate::unity_engine::guicontent::GUIContent> ,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> >)->(){unsafe{let __receiver= <GUIWordWrapSizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c4ab50usize)as*mut u8,();
-(GUIWordWrapSizer)__receiver,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style),(crate::unity_engine::guicontent::GUIContent)::core::convert::Into::into(content),(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))}
-}
-#[doc="`CalcWidth()` overload"]fn calc_width(self,)->(){unsafe{let __receiver= <GUIWordWrapSizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-guiwordwrapsizer")]
+pub trait IGUIWordWrapSizerMethods: IGUIWordWrapSizer {
+    #[doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]
+    fn ctor(
+        self,
+        style: impl ::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>,
+        content: impl ::core::convert::Into<crate::unity_engine::guicontent::GUIContent>,
+        options: impl ::core::convert::Into<::unity::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>>,
+    ) -> () {
+        unsafe {
+            let __receiver = <GUIWordWrapSizer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3c4ab50usize)as*mut u8,();
+(GUIWordWrapSizer)__receiver,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style),(crate::unity_engine::guicontent::GUIContent)::core::convert::Into::into(content),(::unity::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))
+        }
+    }
+    #[doc = "`CalcWidth()` overload"]
+    fn calc_width(self) -> () {
+        unsafe {
+            let __receiver = <GUIWordWrapSizer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <GUIWordWrapSizer as::unity2::ClassIdentity> ::NAME,"CalcWidth",));
-let __inner:extern "C" fn(GUIWordWrapSizer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`CalcHeight()` overload"]fn calc_height(self,)->(){unsafe{let __receiver= <GUIWordWrapSizer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <GUIWordWrapSizer as ::unity::ClassIdentity>::NAME,
+                        "CalcWidth",
+                    )
+                });
+                let __inner: extern "C" fn(GUIWordWrapSizer, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`CalcHeight()` overload"]
+    fn calc_height(self) -> () {
+        unsafe {
+            let __receiver = <GUIWordWrapSizer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <GUIWordWrapSizer as::unity2::ClassIdentity> ::NAME,"CalcHeight",));
-let __inner:extern "C" fn(GUIWordWrapSizer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="unity_engine-guiwordwrapsizer")]impl<__T:IGUIWordWrapSizer>IGUIWordWrapSizerMethods for __T{}
-
-#[cfg(feature="unity_engine-guiwordwrapsizer")]impl GUIWordWrapSizer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn calc_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn calc_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="unity_engine-guiwordwrapsizer")]impl GUIWordWrapSizer{#[doc="Direct (non-virtual) call to `GUIWordWrapSizer`'s own `CalcWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calc_width_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `GUIWordWrapSizer`'s own `CalcHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::calc_height_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <GUIWordWrapSizer as ::unity::ClassIdentity>::NAME,
+                        "CalcHeight",
+                    )
+                });
+                let __inner: extern "C" fn(GUIWordWrapSizer, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-guiwordwrapsizer")]impl GUIWordWrapSizer{#[doc="`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]pub fn new(style:crate::unity_engine::guistyle::GUIStyle,content:crate::unity_engine::guicontent::GUIContent,options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-guiwordwrapsizer")]
+impl<__T: IGUIWordWrapSizer> IGUIWordWrapSizerMethods for __T {}
+
+#[cfg(feature = "unity_engine-guiwordwrapsizer")]
+impl GUIWordWrapSizer {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn calc_width_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn calc_height_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "unity_engine-guiwordwrapsizer")]
+impl GUIWordWrapSizer {
+    #[doc = "Direct (non-virtual) call to `GUIWordWrapSizer`'s own `CalcWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn calc_width(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::calc_width_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `GUIWordWrapSizer`'s own `CalcHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn calc_height(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::calc_height_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "unity_engine-guiwordwrapsizer")]
+impl GUIWordWrapSizer {
+    #[doc = "`.ctor(crate::unity_engine::guistyle::GUIStyle, crate::unity_engine::guicontent::GUIContent, ::unity::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]
+    pub fn new(
+        style: crate::unity_engine::guistyle::GUIStyle,
+        content: crate::unity_engine::guicontent::GUIContent,
+        options: ::unity::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>,
+    ) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(GUIWordWrapSizer), ::core::stringify!(new),));
- <Self as IGUIWordWrapSizerMethods> ::ctor(this,style,content,options);
-this}
+ failed to instantiate",
+                ::core::stringify!(GUIWordWrapSizer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGUIWordWrapSizerMethods>::ctor(this, style, content, options);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-guiwordwrapsizer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUIWordWrapSizer;
-    pub use super::IGUIWordWrapSizer;
-    pub use super::IGUIWordWrapSizerMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntry;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-guilayoutentry")] pub use crate::unity_engine::guilayoutentry::IGUILayoutEntryMethods;
+    pub use super::{GUIWordWrapSizer, IGUIWordWrapSizer, IGUIWordWrapSizerMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-guilayoutentry")]
+    pub use crate::unity_engine::guilayoutentry::IGUILayoutEntryMethods;
+    pub use crate::{system::object::IObject, unity_engine::guilayoutentry::IGUILayoutEntry};
 }

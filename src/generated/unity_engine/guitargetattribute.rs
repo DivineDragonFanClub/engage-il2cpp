@@ -2,29 +2,45 @@
 
 #[cfg(feature = "unity_engine-guitargetattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guitargetattribute/GUITargetAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="GUITargetAttribute")]pub struct GUITargetAttribute{#[offset(16)]#[rename(name="displayMask")]pub display_mask:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guitargetattribute/GUITargetAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "GUITargetAttribute")]
+    pub struct GUITargetAttribute {
+        #[offset(16)]
+        #[rename(name = "displayMask")]
+        pub display_mask: i32,
+    }
 }
 
 #[cfg(feature = "unity_engine-guitargetattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-guitargetattribute")]impl GUITargetAttribute{#[doc="`GetGUITargetAttrValue(::unity2::SystemType, ::unity2::Il2CppString)` overload"]pub fn get_gui_target_attr_value(klass:impl::core::convert::Into< ::unity2::SystemType> ,method_name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c50710usize)as*mut u8,i32;
-(::unity2::SystemType)::core::convert::Into::into(klass),(::unity2::Il2CppString)::core::convert::Into::into(method_name))}
-}
+#[cfg(feature = "unity_engine-guitargetattribute")]
+impl GUITargetAttribute {
+    #[doc = "`GetGUITargetAttrValue(::unity::SystemType, ::unity::Il2CppString)` overload"]
+    pub fn get_gui_target_attr_value(
+        klass: impl ::core::convert::Into<::unity::SystemType>,
+        method_name: impl ::core::convert::Into<::unity::Il2CppString>,
+    ) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3c50710usize)as*mut u8,i32;
+(::unity::SystemType)::core::convert::Into::into(klass),(::unity::Il2CppString)::core::convert::Into::into(method_name))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-guitargetattribute")]impl GUITargetAttribute{pub fn get_gui_target_attr_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-guitargetattribute")]
+impl GUITargetAttribute {
+    pub fn get_gui_target_attr_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-guitargetattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUITargetAttribute;
-    pub use super::IGUITargetAttribute;
+    pub use super::{GUITargetAttribute, IGUITargetAttribute};
 }

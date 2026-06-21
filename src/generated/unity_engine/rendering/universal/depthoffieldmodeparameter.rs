@@ -2,52 +2,83 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
-;
-use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/depthoffieldmodeparameter/DepthOfFieldModeParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="DepthOfFieldModeParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode>)]pub struct DepthOfFieldModeParameter{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/depthoffieldmodeparameter/DepthOfFieldModeParameter.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering.Universal", name = "DepthOfFieldModeParameter")]
+    #[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode>)]
+    pub struct DepthOfFieldModeParameter {}
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-depthoffieldmodeparameter")]pub trait IDepthOfFieldModeParameterMethods:IDepthOfFieldModeParameter{#[doc="`.ctor(crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DepthOfFieldModeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee7ce0usize)as*mut u8,();
-(DepthOfFieldModeParameter)__receiver,(crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
-}
+#[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter")]
+pub trait IDepthOfFieldModeParameterMethods: IDepthOfFieldModeParameter {
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <DepthOfFieldModeParameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2ee7ce0usize)as*mut u8,();
+(DepthOfFieldModeParameter)__receiver,(crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-universal-depthoffieldmodeparameter")]impl<__T:IDepthOfFieldModeParameter>IDepthOfFieldModeParameterMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter")]
+impl<__T: IDepthOfFieldModeParameter> IDepthOfFieldModeParameterMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-universal-depthoffieldmodeparameter")]impl DepthOfFieldModeParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter")]
+impl DepthOfFieldModeParameter {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-universal-depthoffieldmodeparameter")]impl DepthOfFieldModeParameter{#[doc="`.ctor(crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode, bool)` — overload selector"]pub fn new(value:crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter")]
+impl DepthOfFieldModeParameter {
+    #[doc = "`.ctor(crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode, bool)` — overload selector"]
+    pub fn new(value: crate::unity_engine::rendering::universal::depthoffieldmode::DepthOfFieldMode, override_state: bool) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DepthOfFieldModeParameter), ::core::stringify!(new),));
- <Self as IDepthOfFieldModeParameterMethods> ::ctor(this,value,override_state);
-this}
+ failed to instantiate",
+                ::core::stringify!(DepthOfFieldModeParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDepthOfFieldModeParameterMethods>::ctor(this, value, override_state);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-depthoffieldmodeparameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DepthOfFieldModeParameter;
-    pub use super::IDepthOfFieldModeParameter;
-    pub use super::IDepthOfFieldModeParameterMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter")] pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")] pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use super::{DepthOfFieldModeParameter, IDepthOfFieldModeParameter, IDepthOfFieldModeParameterMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

@@ -2,66 +2,117 @@
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        collections::specialized::stringdictionary::{IStringDictionary, StringDictionary},
+        object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::collections::specialized::stringdictionary::{IStringDictionary,StringDictionary}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/casesensitivestringdictionary/CaseSensitiveStringDictionary.md"))]#[::unity2::class(namespace="System.Collections.Specialized",name="CaseSensitiveStringDictionary")]#[parent(crate::system::collections::specialized::stringdictionary::StringDictionary)]pub struct CaseSensitiveStringDictionary{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/specialized/casesensitivestringdictionary/CaseSensitiveStringDictionary.md"))]
+    #[::unity::class(namespace = "System.Collections.Specialized", name = "CaseSensitiveStringDictionary")]
+    #[parent(crate::system::collections::specialized::stringdictionary::StringDictionary)]
+    pub struct CaseSensitiveStringDictionary {}
 }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]pub trait ICaseSensitiveStringDictionaryMethods:ICaseSensitiveStringDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CaseSensitiveStringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x354c680usize)as*mut u8,();
-(CaseSensitiveStringDictionary)__receiver)}
-}
-#[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add(self,key:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CaseSensitiveStringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+pub trait ICaseSensitiveStringDictionaryMethods: ICaseSensitiveStringDictionary {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <CaseSensitiveStringDictionary as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x354c680usize)as*mut u8,();
+(CaseSensitiveStringDictionary)__receiver)
+        }
+    }
+    #[doc = "`Add(::unity::Il2CppString, ::unity::Il2CppString)` overload"]
+    fn add(self, key: impl ::core::convert::Into<::unity::Il2CppString>, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <CaseSensitiveStringDictionary as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <CaseSensitiveStringDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
-let __inner:extern "C" fn(CaseSensitiveStringDictionary, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value),__mi)}
-}
-}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <CaseSensitiveStringDictionary as ::unity::ClassIdentity>::NAME,
+                        "Add",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    CaseSensitiveStringDictionary,
+                    ::unity::Il2CppString,
+                    ::unity::Il2CppString,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]impl<__T:ICaseSensitiveStringDictionary>ICaseSensitiveStringDictionaryMethods for __T{}
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+impl<__T: ICaseSensitiveStringDictionary> ICaseSensitiveStringDictionaryMethods for __T {}
 
-#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]impl CaseSensitiveStringDictionary{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+impl CaseSensitiveStringDictionary {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn add_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]impl CaseSensitiveStringDictionary{#[doc="Direct (non-virtual) call to `CaseSensitiveStringDictionary`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn add(this:impl::core::convert::Into< ::unity2::IlInstance> ,key: ::unity2::Il2CppString,value: ::unity2::Il2CppString,)->(){let __mi=Self::add_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),key,value, ::core::option::Option::None)}
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+impl CaseSensitiveStringDictionary {
+    #[doc = "Direct (non-virtual) call to `CaseSensitiveStringDictionary`'s own `Add`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn add(this: impl ::core::convert::Into<::unity::IlInstance>, key: ::unity::Il2CppString, value: ::unity::Il2CppString) -> () {
+        let __mi = Self::add_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Il2CppString, ::unity::Il2CppString, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), key, value, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]impl CaseSensitiveStringDictionary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
+impl CaseSensitiveStringDictionary {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(CaseSensitiveStringDictionary), ::core::stringify!(new),));
- <Self as ICaseSensitiveStringDictionaryMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(CaseSensitiveStringDictionary),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICaseSensitiveStringDictionaryMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CaseSensitiveStringDictionary;
-    pub use super::ICaseSensitiveStringDictionary;
-    pub use super::ICaseSensitiveStringDictionaryMethods;
-    pub use crate::system::collections::specialized::stringdictionary::IStringDictionary;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "system-collections-specialized-stringdictionary")] pub use crate::system::collections::specialized::stringdictionary::IStringDictionaryMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{CaseSensitiveStringDictionary, ICaseSensitiveStringDictionary, ICaseSensitiveStringDictionaryMethods};
+    #[cfg(feature = "system-collections-specialized-stringdictionary")]
+    pub use crate::system::collections::specialized::stringdictionary::IStringDictionaryMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{collections::specialized::stringdictionary::IStringDictionary, object::IObject};
 }

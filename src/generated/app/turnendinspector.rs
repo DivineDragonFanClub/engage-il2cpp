@@ -2,56 +2,81 @@
 
 #[cfg(feature = "app-turnendinspector-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapinspector::{IMapInspector, MapInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+            turncommoninspector::{ITurnCommonInspector, TurnCommonInspector},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapinspector::{IMapInspector,MapInspector}
-;
-use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
-;
-use crate::app::turncommoninspector::{ITurnCommonInspector,TurnCommonInspector}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turnendinspector/TurnEndInspector.md"))]#[::unity2::class(namespace="App",name="TurnEndInspector")]#[parent(crate::app::turncommoninspector::TurnCommonInspector)]pub struct TurnEndInspector{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/turnendinspector/TurnEndInspector.md"))]
+    #[::unity::class(namespace = "App", name = "TurnEndInspector")]
+    #[parent(crate::app::turncommoninspector::TurnCommonInspector)]
+    pub struct TurnEndInspector {}
 }
 
 #[cfg(feature = "app-turnendinspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-turnendinspector")]pub trait ITurnEndInspectorMethods:ITurnEndInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <TurnEndInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ad1b0usize)as*mut u8,();
-(TurnEndInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
-}
+#[cfg(feature = "app-turnendinspector")]
+pub trait ITurnEndInspectorMethods: ITurnEndInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    fn ctor(self, args: impl ::core::convert::Into<::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe {
+            let __receiver = <TurnEndInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22ad1b0usize)as*mut u8,();
+(TurnEndInspector)__receiver,(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))
+        }
+    }
 }
 
-#[cfg(feature="app-turnendinspector")]impl<__T:ITurnEndInspector>ITurnEndInspectorMethods for __T{}
+#[cfg(feature = "app-turnendinspector")]
+impl<__T: ITurnEndInspector> ITurnEndInspectorMethods for __T {}
 
-#[cfg(feature="app-turnendinspector")]impl TurnEndInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-turnendinspector")]
+impl TurnEndInspector {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-turnendinspector")]impl TurnEndInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-turnendinspector")]
+impl TurnEndInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
+    pub fn new(args: ::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TurnEndInspector), ::core::stringify!(new),));
- <Self as ITurnEndInspectorMethods> ::ctor(this,args);
-this}
+ failed to instantiate",
+                ::core::stringify!(TurnEndInspector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITurnEndInspectorMethods>::ctor(this, args);
+        this
+    }
 }
 
 #[cfg(feature = "app-turnendinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TurnEndInspector;
-    pub use super::ITurnEndInspector;
-    pub use super::ITurnEndInspectorMethods;
-    pub use crate::app::mapinspector::IMapInspector;
-    pub use crate::app::scriptutil::IScriptUtil;
-    pub use crate::app::turncommoninspector::ITurnCommonInspector;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "app-turncommoninspector")] pub use crate::app::turncommoninspector::ITurnCommonInspectorMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ITurnEndInspector, ITurnEndInspectorMethods, TurnEndInspector};
+    #[cfg(feature = "app-mapinspector")]
+    pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-scriptutil")]
+    pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "app-turncommoninspector")]
+    pub use crate::app::turncommoninspector::ITurnCommonInspectorMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapinspector::IMapInspector, scriptutil::IScriptUtil, turncommoninspector::ITurnCommonInspector},
+        system::object::IObject,
+    };
 }

@@ -2,56 +2,81 @@
 
 #[cfg(feature = "app-targetselectinspector-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapinspector::{IMapInspector, MapInspector},
+            personinspector::{IPersonInspector, PersonInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapinspector::{IMapInspector,MapInspector}
-;
-use crate::app::personinspector::{IPersonInspector,PersonInspector}
-;
-use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/targetselectinspector/TargetSelectInspector.md"))]#[::unity2::class(namespace="App",name="TargetSelectInspector")]#[parent(crate::app::personinspector::PersonInspector)]pub struct TargetSelectInspector{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/targetselectinspector/TargetSelectInspector.md"))]
+    #[::unity::class(namespace = "App", name = "TargetSelectInspector")]
+    #[parent(crate::app::personinspector::PersonInspector)]
+    pub struct TargetSelectInspector {}
 }
 
 #[cfg(feature = "app-targetselectinspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-targetselectinspector")]pub trait ITargetSelectInspectorMethods:ITargetSelectInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <TargetSelectInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ddfa0usize)as*mut u8,();
-(TargetSelectInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
-}
+#[cfg(feature = "app-targetselectinspector")]
+pub trait ITargetSelectInspectorMethods: ITargetSelectInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    fn ctor(self, args: impl ::core::convert::Into<::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe {
+            let __receiver = <TargetSelectInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ddfa0usize)as*mut u8,();
+(TargetSelectInspector)__receiver,(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))
+        }
+    }
 }
 
-#[cfg(feature="app-targetselectinspector")]impl<__T:ITargetSelectInspector>ITargetSelectInspectorMethods for __T{}
+#[cfg(feature = "app-targetselectinspector")]
+impl<__T: ITargetSelectInspector> ITargetSelectInspectorMethods for __T {}
 
-#[cfg(feature="app-targetselectinspector")]impl TargetSelectInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-targetselectinspector")]
+impl TargetSelectInspector {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-targetselectinspector")]impl TargetSelectInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-targetselectinspector")]
+impl TargetSelectInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
+    pub fn new(args: ::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TargetSelectInspector), ::core::stringify!(new),));
- <Self as ITargetSelectInspectorMethods> ::ctor(this,args);
-this}
+ failed to instantiate",
+                ::core::stringify!(TargetSelectInspector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITargetSelectInspectorMethods>::ctor(this, args);
+        this
+    }
 }
 
 #[cfg(feature = "app-targetselectinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TargetSelectInspector;
-    pub use super::ITargetSelectInspector;
-    pub use super::ITargetSelectInspectorMethods;
-    pub use crate::app::mapinspector::IMapInspector;
-    pub use crate::app::personinspector::IPersonInspector;
-    pub use crate::app::scriptutil::IScriptUtil;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-personinspector")] pub use crate::app::personinspector::IPersonInspectorMethods;
-    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ITargetSelectInspector, ITargetSelectInspectorMethods, TargetSelectInspector};
+    #[cfg(feature = "app-mapinspector")]
+    pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-personinspector")]
+    pub use crate::app::personinspector::IPersonInspectorMethods;
+    #[cfg(feature = "app-scriptutil")]
+    pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapinspector::IMapInspector, personinspector::IPersonInspector, scriptutil::IScriptUtil},
+        system::object::IObject,
+    };
 }

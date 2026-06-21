@@ -2,70 +2,127 @@
 
 #[cfg(feature = "app-effectunstoppable-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectunstoppable/EffectUnstoppable.md"))]#[::unity2::class(namespace="App",name="EffectUnstoppable")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EffectUnstoppable{#[offset(24)]#[rename(name="m_Threshold")]pub m_threshold:f32, #[offset(28)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="m_ParticleSystem")]pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem, #[offset(48)]#[rename(name="m_IsStopped")]pub m_is_stopped:bool, #[offset(56)]#[rename(name="m_StartSound")]pub m_start_sound: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_StopSound")]pub m_stop_sound: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectunstoppable/EffectUnstoppable.md"))]
+    #[::unity::class(namespace = "App", name = "EffectUnstoppable")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct EffectUnstoppable {
+        #[offset(24)]
+        #[rename(name = "m_Threshold")]
+        pub m_threshold: f32,
+        #[offset(28)]
+        #[rename(name = "m_Position")]
+        pub m_position: crate::unity_engine::vector3::Vector3,
+        #[offset(40)]
+        #[rename(name = "m_ParticleSystem")]
+        pub m_particle_system: crate::unity_engine::particlesystem::ParticleSystem,
+        #[offset(48)]
+        #[rename(name = "m_IsStopped")]
+        pub m_is_stopped: bool,
+        #[offset(56)]
+        #[rename(name = "m_StartSound")]
+        pub m_start_sound: ::unity::Il2CppString,
+        #[offset(64)]
+        #[rename(name = "m_StopSound")]
+        pub m_stop_sound: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "app-effectunstoppable-types")]
 pub use __types::*;
 
-#[cfg(feature="app-effectunstoppable")]pub trait IEffectUnstoppableMethods:IEffectUnstoppable{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <EffectUnstoppable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22da180usize)as*mut u8,();
-(EffectUnstoppable)__receiver)}
-}
-#[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <EffectUnstoppable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22da230usize)as*mut u8,();
-(EffectUnstoppable)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectUnstoppable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22da3f0usize)as*mut u8,();
-(EffectUnstoppable)__receiver)}
-}
+#[cfg(feature = "app-effectunstoppable")]
+pub trait IEffectUnstoppableMethods: IEffectUnstoppable {
+    #[doc = "`Start()` overload"]
+    fn start(self) -> () {
+        unsafe {
+            let __receiver = <EffectUnstoppable as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22da180usize)as*mut u8,();
+(EffectUnstoppable)__receiver)
+        }
+    }
+    #[doc = "`LateUpdate()` overload"]
+    fn late_update(self) -> () {
+        unsafe {
+            let __receiver = <EffectUnstoppable as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22da230usize)as*mut u8,();
+(EffectUnstoppable)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <EffectUnstoppable as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22da3f0usize)as*mut u8,();
+(EffectUnstoppable)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-effectunstoppable")]impl<__T:IEffectUnstoppable>IEffectUnstoppableMethods for __T{}
+#[cfg(feature = "app-effectunstoppable")]
+impl<__T: IEffectUnstoppable> IEffectUnstoppableMethods for __T {}
 
-#[cfg(feature="app-effectunstoppable")]impl EffectUnstoppable{pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn late_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "app-effectunstoppable")]
+impl EffectUnstoppable {
+    pub fn start_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn late_update_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="app-effectunstoppable")]impl EffectUnstoppable{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-effectunstoppable")]
+impl EffectUnstoppable {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(EffectUnstoppable), ::core::stringify!(new),));
- <Self as IEffectUnstoppableMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(EffectUnstoppable),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEffectUnstoppableMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-effectunstoppable")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EffectUnstoppable;
-    pub use super::IEffectUnstoppable;
-    pub use super::IEffectUnstoppableMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{EffectUnstoppable, IEffectUnstoppable, IEffectUnstoppableMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

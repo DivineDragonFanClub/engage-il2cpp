@@ -2,83 +2,166 @@
 
 #[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::delegate::{Delegate,IDelegate}
-;
-use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/scriptfunctiondelegate/ScriptFunctionDelegate.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="ScriptFunctionDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ScriptFunctionDelegate{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/scriptfunctiondelegate/ScriptFunctionDelegate.md"))]
+    #[::unity::class(namespace = "MoonSharp.Interpreter", name = "ScriptFunctionDelegate")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct ScriptFunctionDelegate {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-scriptfunctiondelegate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptFunctionDelegate_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ScriptFunctionDelegate as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __ScriptFunctionDelegate_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[
+                <crate::system::object::Object as ::unity::IlType>::il_type(),
+                <::unity::IntPtr as ::unity::IlType>::il_type(),
+            ];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <ScriptFunctionDelegate as ::unity::ClassIdentity>::class(),
+                ".ctor",
+                2,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <ScriptFunctionDelegate as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
+",
+                        <ScriptFunctionDelegate as ::unity::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-scriptfunctiondelegate")]pub trait IScriptFunctionDelegateMethods:IScriptFunctionDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ScriptFunctionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ScriptFunctionDelegate_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(ScriptFunctionDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <ScriptFunctionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+pub trait IScriptFunctionDelegateMethods: IScriptFunctionDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <ScriptFunctionDelegate as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__ScriptFunctionDelegate_unity_raw::__lookup_ctor::get_method_info().method_ptr,();
+(ScriptFunctionDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity::IntPtr)::core::convert::Into::into(method))
+        }
+    }
+    #[doc = "`Invoke(::unity::Array<crate::system::object::Object>)` overload"]
+    fn invoke(self, args: impl ::core::convert::Into<::unity::Array<crate::system::object::Object>>) -> crate::system::object::Object {
+        unsafe {
+            let __receiver =
+                <ScriptFunctionDelegate as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(13usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <ScriptFunctionDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
-let __inner:extern "C" fn(ScriptFunctionDelegate, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(args),__mi)}
-}
-}
+`)",
+                        13usize,
+                        __vt.len(),
+                        <ScriptFunctionDelegate as ::unity::ClassIdentity>::NAME,
+                        "Invoke",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    ScriptFunctionDelegate,
+                    ::unity::Array<crate::system::object::Object>,
+                    ::unity::OptionalMethod,
+                ) -> crate::system::object::Object = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(args), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-scriptfunctiondelegate")]impl<__T:IScriptFunctionDelegate>IScriptFunctionDelegateMethods for __T{}
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+impl<__T: IScriptFunctionDelegate> IScriptFunctionDelegateMethods for __T {}
 
-#[cfg(feature="moon_sharp-interpreter-scriptfunctiondelegate")]impl ScriptFunctionDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+impl ScriptFunctionDelegate {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn invoke_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-scriptfunctiondelegate")]impl ScriptFunctionDelegate{#[doc="Direct (non-virtual) call to `ScriptFunctionDelegate`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn invoke(this:impl::core::convert::Into< ::unity2::IlInstance> ,args: ::unity2::Array<crate::system::object::Object> ,)->crate::system::object::Object{let __mi=Self::invoke_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),args, ::core::option::Option::None)}
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+impl ScriptFunctionDelegate {
+    #[doc = "Direct (non-virtual) call to `ScriptFunctionDelegate`'s own `Invoke`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn invoke(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        args: ::unity::Array<crate::system::object::Object>,
+    ) -> crate::system::object::Object {
+        let __mi = Self::invoke_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::Array<crate::system::object::Object>,
+            ::unity::OptionalMethod,
+        ) -> crate::system::object::Object = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), args, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-scriptfunctiondelegate")]impl ScriptFunctionDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
+impl ScriptFunctionDelegate {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity::IntPtr) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ScriptFunctionDelegate), ::core::stringify!(new),));
- <Self as IScriptFunctionDelegateMethods> ::ctor(this,object,method);
-this}
+ failed to instantiate",
+                ::core::stringify!(ScriptFunctionDelegate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScriptFunctionDelegateMethods>::ctor(this, object, method);
+        this
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-scriptfunctiondelegate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptFunctionDelegate;
-    pub use super::IScriptFunctionDelegate;
-    pub use super::IScriptFunctionDelegateMethods;
-    pub use crate::system::delegate::IDelegate;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IScriptFunctionDelegate, IScriptFunctionDelegateMethods, ScriptFunctionDelegate};
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

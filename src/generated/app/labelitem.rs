@@ -2,150 +2,314 @@
 
 #[cfg(feature = "app-labelitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            menuitem::{IMenuItem, MenuItem},
+            stringitem::{IStringItem, StringItem},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::menuitem::{IMenuItem,MenuItem}
-;
-use crate::app::stringitem::{IStringItem,StringItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/labelitem/LabelItem.md"))]#[::unity2::class(namespace="App",name="LabelItem")]#[parent(crate::app::stringitem::StringItem)]pub struct LabelItem{#[static_field]#[rename(name="COLOR_BACK")]pub color_back:crate::unity_engine::color::Color, #[static_field]#[rename(name="COLOR_FONT")]pub color_font:crate::unity_engine::color::Color,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/labelitem/LabelItem.md"))]
+    #[::unity::class(namespace = "App", name = "LabelItem")]
+    #[parent(crate::app::stringitem::StringItem)]
+    pub struct LabelItem {
+        #[static_field]
+        #[rename(name = "COLOR_BACK")]
+        pub color_back: crate::unity_engine::color::Color,
+        #[static_field]
+        #[rename(name = "COLOR_FONT")]
+        pub color_font: crate::unity_engine::color::Color,
+    }
 }
 
 #[cfg(feature = "app-labelitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-labelitem")]impl LabelItem{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb1c0usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "app-labelitem")]
+impl LabelItem {
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdb1c0usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-labelitem")]pub trait ILabelItemMethods:ILabelItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb070usize)as*mut u8,();
-(LabelItem)__receiver)}
-}
-#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,english:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdb080usize)as*mut u8,();
-(LabelItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(english))}
-}
-#[doc="`IsSelectable()` overload"]fn is_selectable(self,)->bool{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-labelitem")]
+pub trait ILabelItemMethods: ILabelItem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <LabelItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdb070usize)as*mut u8,();
+(LabelItem)__receiver)
+        }
+    }
+    #[doc = "`.ctor(::unity::Il2CppString, ::unity::Il2CppString)` overload"]
+    fn ctor_2(self, name: impl ::core::convert::Into<::unity::Il2CppString>, english: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <LabelItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdb080usize)as*mut u8,();
+(LabelItem)__receiver,(::unity::Il2CppString)::core::convert::Into::into(name),(::unity::Il2CppString)::core::convert::Into::into(english))
+        }
+    }
+    #[doc = "`IsSelectable()` overload"]
+    fn is_selectable(self) -> bool {
+        unsafe {
+            let __receiver = <LabelItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(24usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",24usize,__vt.len(), <LabelItem as::unity2::ClassIdentity> ::NAME,"IsSelectable",));
-let __inner:extern "C" fn(LabelItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetBackColor()` overload"]fn get_back_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        24usize,
+                        __vt.len(),
+                        <LabelItem as ::unity::ClassIdentity>::NAME,
+                        "IsSelectable",
+                    )
+                });
+                let __inner: extern "C" fn(LabelItem, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetBackColor()` overload"]
+    fn get_back_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <LabelItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(28usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",28usize,__vt.len(), <LabelItem as::unity2::ClassIdentity> ::NAME,"GetBackColor",));
-let __inner:extern "C" fn(LabelItem, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetFontColor()` overload"]fn get_font_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        28usize,
+                        __vt.len(),
+                        <LabelItem as ::unity::ClassIdentity>::NAME,
+                        "GetBackColor",
+                    )
+                });
+                let __inner: extern "C" fn(LabelItem, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetFontColor()` overload"]
+    fn get_font_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <LabelItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(27usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <LabelItem as::unity2::ClassIdentity> ::NAME,"GetFontColor",));
-let __inner:extern "C" fn(LabelItem, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetMarginWidth()` overload"]fn get_margin_width(self,)->f32{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(65usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        27usize,
+                        __vt.len(),
+                        <LabelItem as ::unity::ClassIdentity>::NAME,
+                        "GetFontColor",
+                    )
+                });
+                let __inner: extern "C" fn(LabelItem, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetMarginWidth()` overload"]
+    fn get_margin_width(self) -> f32 {
+        unsafe {
+            let __receiver = <LabelItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(65usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",65usize,__vt.len(), <LabelItem as::unity2::ClassIdentity> ::NAME,"GetMarginWidth",));
-let __inner:extern "C" fn(LabelItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetMarginHeight()` overload"]fn get_margin_height(self,)->f32{unsafe{let __receiver= <LabelItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(66usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        65usize,
+                        __vt.len(),
+                        <LabelItem as ::unity::ClassIdentity>::NAME,
+                        "GetMarginWidth",
+                    )
+                });
+                let __inner: extern "C" fn(LabelItem, ::unity::OptionalMethod) -> f32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetMarginHeight()` overload"]
+    fn get_margin_height(self) -> f32 {
+        unsafe {
+            let __receiver = <LabelItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(66usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",66usize,__vt.len(), <LabelItem as::unity2::ClassIdentity> ::NAME,"GetMarginHeight",));
-let __inner:extern "C" fn(LabelItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="app-labelitem")]impl<__T:ILabelItem>ILabelItemMethods for __T{}
-
-#[cfg(feature="app-labelitem")]impl LabelItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_selectable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_back_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_font_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_margin_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_margin_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+`)",
+                        66usize,
+                        __vt.len(),
+                        <LabelItem as ::unity::ClassIdentity>::NAME,
+                        "GetMarginHeight",
+                    )
+                });
+                let __inner: extern "C" fn(LabelItem, ::unity::OptionalMethod) -> f32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-labelitem")]impl LabelItem{#[doc="Direct (non-virtual) call to `LabelItem`'s own `IsSelectable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_selectable(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_selectable_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `LabelItem`'s own `GetBackColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_back_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::color::Color{let __mi=Self::get_back_color_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `LabelItem`'s own `GetFontColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_font_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::color::Color{let __mi=Self::get_font_color_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `LabelItem`'s own `GetMarginWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_margin_width(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_margin_width_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `LabelItem`'s own `GetMarginHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_margin_height(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->f32{let __mi=Self::get_margin_height_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-labelitem")]
+impl<__T: ILabelItem> ILabelItemMethods for __T {}
+
+#[cfg(feature = "app-labelitem")]
+impl LabelItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_selectable_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_back_color_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn get_font_color_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn get_margin_width_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn get_margin_height_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn cctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
 }
 
-#[cfg(feature="app-labelitem")]impl LabelItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-labelitem")]
+impl LabelItem {
+    #[doc = "Direct (non-virtual) call to `LabelItem`'s own `IsSelectable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_selectable(this: impl ::core::convert::Into<::unity::IlInstance>) -> bool {
+        let __mi = Self::is_selectable_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `LabelItem`'s own `GetBackColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_back_color(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::color::Color {
+        let __mi = Self::get_back_color_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `LabelItem`'s own `GetFontColor`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_font_color(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::color::Color {
+        let __mi = Self::get_font_color_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `LabelItem`'s own `GetMarginWidth`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_margin_width(this: impl ::core::convert::Into<::unity::IlInstance>) -> f32 {
+        let __mi = Self::get_margin_width_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> f32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `LabelItem`'s own `GetMarginHeight`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_margin_height(this: impl ::core::convert::Into<::unity::IlInstance>) -> f32 {
+        let __mi = Self::get_margin_height_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> f32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-labelitem")]
+impl LabelItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(LabelItem), ::core::stringify!(new),));
- <Self as ILabelItemMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new_2(name: ::unity2::Il2CppString,english: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+ failed to instantiate",
+                ::core::stringify!(LabelItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ILabelItemMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity::Il2CppString, ::unity::Il2CppString)` — overload selector"]
+    pub fn new_2(name: ::unity::Il2CppString, english: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(LabelItem), ::core::stringify!(new_2),));
- <Self as ILabelItemMethods> ::ctor_2(this,name,english);
-this}
+ failed to instantiate",
+                ::core::stringify!(LabelItem),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ILabelItemMethods>::ctor_2(this, name, english);
+        this
+    }
 }
 
 #[cfg(feature = "app-labelitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LabelItem;
-    pub use super::ILabelItem;
-    pub use super::ILabelItemMethods;
-    pub use crate::app::menuitem::IMenuItem;
-    pub use crate::app::stringitem::IStringItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "app-stringitem")] pub use crate::app::stringitem::IStringItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ILabelItem, ILabelItemMethods, LabelItem};
+    #[cfg(feature = "app-menuitem")]
+    pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "app-stringitem")]
+    pub use crate::app::stringitem::IStringItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{menuitem::IMenuItem, stringitem::IStringItem},
+        system::object::IObject,
+    };
 }

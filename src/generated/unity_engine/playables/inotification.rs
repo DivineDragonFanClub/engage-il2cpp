@@ -2,46 +2,71 @@
 
 #[cfg(feature = "unity_engine-playables-inotification-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/inotification/INotification.md"))]#[::unity2::class(namespace="UnityEngine.Playables",name="INotification")]pub struct INotification{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/playables/inotification/INotification.md"))]
+    #[::unity::class(namespace = "UnityEngine.Playables", name = "INotification")]
+    pub struct INotification {}
 }
 
 #[cfg(feature = "unity_engine-playables-inotification-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-playables-inotification")]pub trait IINotificationMethods:IINotification{#[doc="`get_id()` overload"]fn get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <INotification as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-playables-inotification")]
+pub trait IINotificationMethods: IINotification {
+    #[doc = "`get_id()` overload"]
+    fn get_id(self) -> crate::unity_engine::propertyname::PropertyName {
+        unsafe {
+            let __receiver = <INotification as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <INotification as::unity2::ClassIdentity> ::NAME,"get_id",));
-let __inner:extern "C" fn(INotification, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <INotification as ::unity::ClassIdentity>::NAME,
+                        "get_id",
+                    )
+                });
+                let __inner: extern "C" fn(INotification, ::unity::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-playables-inotification")]impl<__T:IINotification>IINotificationMethods for __T{}
+#[cfg(feature = "unity_engine-playables-inotification")]
+impl<__T: IINotification> IINotificationMethods for __T {}
 
-#[cfg(feature="unity_engine-playables-inotification")]impl INotification{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-playables-inotification")]
+impl INotification {
+    pub fn get_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-playables-inotification")]impl INotification{#[doc="Direct (non-virtual) call to `INotification`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::propertyname::PropertyName{let __mi=Self::get_id_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-playables-inotification")]
+impl INotification {
+    #[doc = "Direct (non-virtual) call to `INotification`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_id(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::propertyname::PropertyName {
+        let __mi = Self::get_id_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-playables-inotification")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::INotification;
-    pub use super::IINotification;
-    pub use super::IINotificationMethods;
+    pub use super::{IINotification, IINotificationMethods, INotification};
 }

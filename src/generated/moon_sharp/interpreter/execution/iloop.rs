@@ -2,62 +2,113 @@
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/iloop/ILoop.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Execution",name="ILoop")]pub struct ILoop{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/execution/iloop/ILoop.md"))]
+    #[::unity::class(namespace = "MoonSharp.Interpreter.Execution", name = "ILoop")]
+    pub struct ILoop {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-execution-iloop")]pub trait IILoopMethods:IILoop{#[doc="`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile_break(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <ILoop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
+pub trait IILoopMethods: IILoop {
+    #[doc = "`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
+    fn compile_break(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
+        unsafe {
+            let __receiver = <ILoop as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <ILoop as::unity2::ClassIdentity> ::NAME,"CompileBreak",));
-let __inner:extern "C" fn(ILoop,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(bc),__mi)}
-}
-}
-#[doc="`IsBoundary()` overload"]fn is_boundary(self,)->bool{unsafe{let __receiver= <ILoop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <ILoop as ::unity::ClassIdentity>::NAME,
+                        "CompileBreak",
+                    )
+                });
+                let __inner: extern "C" fn(ILoop, crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(bc), __mi)
+            }
+        }
+    }
+    #[doc = "`IsBoundary()` overload"]
+    fn is_boundary(self) -> bool {
+        unsafe {
+            let __receiver = <ILoop as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(1usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",1usize,__vt.len(), <ILoop as::unity2::ClassIdentity> ::NAME,"IsBoundary",));
-let __inner:extern "C" fn(ILoop, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        1usize,
+                        __vt.len(),
+                        <ILoop as ::unity::ClassIdentity>::NAME,
+                        "IsBoundary",
+                    )
+                });
+                let __inner: extern "C" fn(ILoop, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-execution-iloop")]impl<__T:IILoop>IILoopMethods for __T{}
+#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
+impl<__T: IILoop> IILoopMethods for __T {}
 
-#[cfg(feature="moon_sharp-interpreter-execution-iloop")]impl ILoop{pub fn compile_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_boundary_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
+impl ILoop {
+    pub fn compile_break_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn is_boundary_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-execution-iloop")]impl ILoop{#[doc="Direct (non-virtual) call to `ILoop`'s own `CompileBreak`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compile_break(this:impl::core::convert::Into< ::unity2::IlInstance> ,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,)->(){let __mi=Self::compile_break_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),bc, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ILoop`'s own `IsBoundary`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_boundary(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_boundary_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
+impl ILoop {
+    #[doc = "Direct (non-virtual) call to `ILoop`'s own `CompileBreak`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn compile_break(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> () {
+        let __mi = Self::compile_break_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), bc, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ILoop`'s own `IsBoundary`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_boundary(this: impl ::core::convert::Into<::unity::IlInstance>) -> bool {
+        let __mi = Self::is_boundary_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-execution-iloop")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILoop;
-    pub use super::IILoop;
-    pub use super::IILoopMethods;
+    pub use super::{IILoop, IILoopMethods, ILoop};
 }

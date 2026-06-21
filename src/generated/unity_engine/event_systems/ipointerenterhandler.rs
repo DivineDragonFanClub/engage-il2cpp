@@ -2,46 +2,80 @@
 
 #[cfg(feature = "unity_engine-event_systems-ipointerenterhandler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/ipointerenterhandler/IPointerEnterHandler.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="IPointerEnterHandler")]pub struct IPointerEnterHandler{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/ipointerenterhandler/IPointerEnterHandler.md"))]
+    #[::unity::class(namespace = "UnityEngine.EventSystems", name = "IPointerEnterHandler")]
+    pub struct IPointerEnterHandler {}
 }
 
 #[cfg(feature = "unity_engine-event_systems-ipointerenterhandler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-ipointerenterhandler")]pub trait IIPointerEnterHandlerMethods:IIPointerEnterHandler{#[doc="`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_enter(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <IPointerEnterHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-event_systems-ipointerenterhandler")]
+pub trait IIPointerEnterHandlerMethods: IIPointerEnterHandler {
+    #[doc = "`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    fn on_pointer_enter(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
+        unsafe {
+            let __receiver = <IPointerEnterHandler as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <IPointerEnterHandler as::unity2::ClassIdentity> ::NAME,"OnPointerEnter",));
-let __inner:extern "C" fn(IPointerEnterHandler,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <IPointerEnterHandler as ::unity::ClassIdentity>::NAME,
+                        "OnPointerEnter",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    IPointerEnterHandler,
+                    crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(event_data), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-event_systems-ipointerenterhandler")]impl<__T:IIPointerEnterHandler>IIPointerEnterHandlerMethods for __T{}
+#[cfg(feature = "unity_engine-event_systems-ipointerenterhandler")]
+impl<__T: IIPointerEnterHandler> IIPointerEnterHandlerMethods for __T {}
 
-#[cfg(feature="unity_engine-event_systems-ipointerenterhandler")]impl IPointerEnterHandler{pub fn on_pointer_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-event_systems-ipointerenterhandler")]
+impl IPointerEnterHandler {
+    pub fn on_pointer_enter_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-event_systems-ipointerenterhandler")]impl IPointerEnterHandler{#[doc="Direct (non-virtual) call to `IPointerEnterHandler`'s own `OnPointerEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_pointer_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_pointer_enter_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),event_data, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-event_systems-ipointerenterhandler")]
+impl IPointerEnterHandler {
+    #[doc = "Direct (non-virtual) call to `IPointerEnterHandler`'s own `OnPointerEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_pointer_enter(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> () {
+        let __mi = Self::on_pointer_enter_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), event_data, ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-event_systems-ipointerenterhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPointerEnterHandler;
-    pub use super::IIPointerEnterHandler;
-    pub use super::IIPointerEnterHandlerMethods;
+    pub use super::{IIPointerEnterHandler, IIPointerEnterHandlerMethods, IPointerEnterHandler};
 }

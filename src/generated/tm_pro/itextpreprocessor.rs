@@ -2,46 +2,71 @@
 
 #[cfg(feature = "tm_pro-itextpreprocessor-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/itextpreprocessor/ITextPreprocessor.md"))]#[::unity2::class(namespace="TMPro",name="ITextPreprocessor")]pub struct ITextPreprocessor{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/itextpreprocessor/ITextPreprocessor.md"))]
+    #[::unity::class(namespace = "TMPro", name = "ITextPreprocessor")]
+    pub struct ITextPreprocessor {}
 }
 
 #[cfg(feature = "tm_pro-itextpreprocessor-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-itextpreprocessor")]pub trait IITextPreprocessorMethods:IITextPreprocessor{#[doc="`PreprocessText(::unity2::Il2CppString)` overload"]fn preprocess_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <ITextPreprocessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "tm_pro-itextpreprocessor")]
+pub trait IITextPreprocessorMethods: IITextPreprocessor {
+    #[doc = "`PreprocessText(::unity::Il2CppString)` overload"]
+    fn preprocess_text(self, text: impl ::core::convert::Into<::unity::Il2CppString>) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <ITextPreprocessor as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <ITextPreprocessor as::unity2::ClassIdentity> ::NAME,"PreprocessText",));
-let __inner:extern "C" fn(ITextPreprocessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(text),__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <ITextPreprocessor as ::unity::ClassIdentity>::NAME,
+                        "PreprocessText",
+                    )
+                });
+                let __inner: extern "C" fn(ITextPreprocessor, ::unity::Il2CppString, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(text), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="tm_pro-itextpreprocessor")]impl<__T:IITextPreprocessor>IITextPreprocessorMethods for __T{}
+#[cfg(feature = "tm_pro-itextpreprocessor")]
+impl<__T: IITextPreprocessor> IITextPreprocessorMethods for __T {}
 
-#[cfg(feature="tm_pro-itextpreprocessor")]impl ITextPreprocessor{pub fn preprocess_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "tm_pro-itextpreprocessor")]
+impl ITextPreprocessor {
+    pub fn preprocess_text_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="tm_pro-itextpreprocessor")]impl ITextPreprocessor{#[doc="Direct (non-virtual) call to `ITextPreprocessor`'s own `PreprocessText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn preprocess_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,text: ::unity2::Il2CppString,)-> ::unity2::Il2CppString{let __mi=Self::preprocess_text_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),text, ::core::option::Option::None)}
+#[cfg(feature = "tm_pro-itextpreprocessor")]
+impl ITextPreprocessor {
+    #[doc = "Direct (non-virtual) call to `ITextPreprocessor`'s own `PreprocessText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn preprocess_text(this: impl ::core::convert::Into<::unity::IlInstance>, text: ::unity::Il2CppString) -> ::unity::Il2CppString {
+        let __mi = Self::preprocess_text_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Il2CppString, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), text, ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "tm_pro-itextpreprocessor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITextPreprocessor;
-    pub use super::IITextPreprocessor;
-    pub use super::IITextPreprocessorMethods;
+    pub use super::{IITextPreprocessor, IITextPreprocessorMethods, ITextPreprocessor};
 }

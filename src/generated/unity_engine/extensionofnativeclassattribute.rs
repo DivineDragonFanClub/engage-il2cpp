@@ -2,40 +2,61 @@
 
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/extensionofnativeclassattribute/ExtensionOfNativeClassAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="ExtensionOfNativeClassAttribute")]pub struct ExtensionOfNativeClassAttribute{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/extensionofnativeclassattribute/ExtensionOfNativeClassAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "ExtensionOfNativeClassAttribute")]
+    pub struct ExtensionOfNativeClassAttribute {}
 }
 
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-extensionofnativeclassattribute")]pub trait IExtensionOfNativeClassAttributeMethods:IExtensionOfNativeClassAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExtensionOfNativeClassAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4d570usize)as*mut u8,();
-(ExtensionOfNativeClassAttribute)__receiver)}
-}
+#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
+pub trait IExtensionOfNativeClassAttributeMethods: IExtensionOfNativeClassAttribute {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ExtensionOfNativeClassAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c4d570usize)as*mut u8,();
+(ExtensionOfNativeClassAttribute)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-extensionofnativeclassattribute")]impl<__T:IExtensionOfNativeClassAttribute>IExtensionOfNativeClassAttributeMethods for __T{}
+#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
+impl<__T: IExtensionOfNativeClassAttribute> IExtensionOfNativeClassAttributeMethods for __T {}
 
-#[cfg(feature="unity_engine-extensionofnativeclassattribute")]impl ExtensionOfNativeClassAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
+impl ExtensionOfNativeClassAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-extensionofnativeclassattribute")]impl ExtensionOfNativeClassAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
+impl ExtensionOfNativeClassAttribute {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ExtensionOfNativeClassAttribute), ::core::stringify!(new),));
- <Self as IExtensionOfNativeClassAttributeMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ExtensionOfNativeClassAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IExtensionOfNativeClassAttributeMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-extensionofnativeclassattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ExtensionOfNativeClassAttribute;
-    pub use super::IExtensionOfNativeClassAttribute;
-    pub use super::IExtensionOfNativeClassAttributeMethods;
+    pub use super::{ExtensionOfNativeClassAttribute, IExtensionOfNativeClassAttribute, IExtensionOfNativeClassAttributeMethods};
 }

@@ -2,78 +2,153 @@
 
 #[cfg(feature = "root-akeventtrack-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            playables::playableasset::{IPlayableAsset, PlayableAsset},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+            timeline::trackasset::{ITrackAsset, TrackAsset},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akeventtrack/AkEventTrack.md"))]#[::unity2::class(namespace="",name="AkEventTrack")]#[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]pub struct AkEventTrack{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akeventtrack/AkEventTrack.md"))]
+    #[::unity::class(namespace = "", name = "AkEventTrack")]
+    #[parent(crate::unity_engine::timeline::trackasset::TrackAsset)]
+    pub struct AkEventTrack {}
 }
 
 #[cfg(feature = "root-akeventtrack-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akeventtrack")]pub trait IAkEventTrackMethods:IAkEventTrack{#[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AkEventTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-akeventtrack")]
+pub trait IAkEventTrackMethods: IAkEventTrack {
+    #[doc = "`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]
+    fn create_track_mixer(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        go: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+        input_count: impl ::core::convert::Into<i32>,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <AkEventTrack as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(23usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",23usize,__vt.len(), <AkEventTrack as::unity2::ClassIdentity> ::NAME,"CreateTrackMixer",));
-let __inner:extern "C" fn(AkEventTrack,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::convert::Into::into(input_count),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkEventTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1c940usize)as*mut u8,();
-(AkEventTrack)__receiver)}
-}
+`)",
+                        23usize,
+                        __vt.len(),
+                        <AkEventTrack as ::unity::ClassIdentity>::NAME,
+                        "CreateTrackMixer",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    AkEventTrack,
+                    crate::unity_engine::playables::playablegraph::PlayableGraph,
+                    crate::unity_engine::gameobject::GameObject,
+                    i32,
+                    ::unity::OptionalMethod,
+                ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(graph),
+                    ::core::convert::Into::into(go),
+                    ::core::convert::Into::into(input_count),
+                    __mi,
+                )
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkEventTrack as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f1c940usize)as*mut u8,();
+(AkEventTrack)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-akeventtrack")]impl<__T:IAkEventTrack>IAkEventTrackMethods for __T{}
+#[cfg(feature = "root-akeventtrack")]
+impl<__T: IAkEventTrack> IAkEventTrackMethods for __T {}
 
-#[cfg(feature="root-akeventtrack")]impl AkEventTrack{pub fn create_track_mixer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "root-akeventtrack")]
+impl AkEventTrack {
+    pub fn create_track_mixer_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="root-akeventtrack")]impl AkEventTrack{#[doc="Direct (non-virtual) call to `AkEventTrack`'s own `CreateTrackMixer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_track_mixer(this:impl::core::convert::Into< ::unity2::IlInstance> ,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,input_count:i32,)->crate::unity_engine::playables::playable::Playable{let __mi=Self::create_track_mixer_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),graph,go,input_count, ::core::option::Option::None)}
+#[cfg(feature = "root-akeventtrack")]
+impl AkEventTrack {
+    #[doc = "Direct (non-virtual) call to `AkEventTrack`'s own `CreateTrackMixer`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn create_track_mixer(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        go: crate::unity_engine::gameobject::GameObject,
+        input_count: i32,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let __mi = Self::create_track_mixer_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::gameobject::GameObject,
+            i32,
+            ::unity::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), graph, go, input_count, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="root-akeventtrack")]impl AkEventTrack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-akeventtrack")]
+impl AkEventTrack {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AkEventTrack), ::core::stringify!(new),));
- <Self as IAkEventTrackMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AkEventTrack),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkEventTrackMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-akeventtrack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkEventTrack;
-    pub use super::IAkEventTrack;
-    pub use super::IAkEventTrackMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    pub use crate::unity_engine::timeline::trackasset::ITrackAsset;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-playables-playableasset")] pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    #[cfg(feature = "unity_engine-timeline-trackasset")] pub use crate::unity_engine::timeline::trackasset::ITrackAssetMethods;
+    pub use super::{AkEventTrack, IAkEventTrack, IAkEventTrackMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-playables-playableasset")]
+    pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    #[cfg(feature = "unity_engine-timeline-trackasset")]
+    pub use crate::unity_engine::timeline::trackasset::ITrackAssetMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{
+            object_2::IObject_2, playables::playableasset::IPlayableAsset, scriptableobject::IScriptableObject, timeline::trackasset::ITrackAsset,
+        },
+    };
 }

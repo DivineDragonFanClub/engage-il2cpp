@@ -2,59 +2,87 @@
 
 #[cfg(feature = "unity_engine-tilemaps-tilemaprenderer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+            renderer::{IRenderer, Renderer},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::renderer::{IRenderer,Renderer}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tilemaprenderer/TilemapRenderer.md"))]#[::unity2::class(namespace="UnityEngine.Tilemaps",name="TilemapRenderer")]#[parent(crate::unity_engine::renderer::Renderer)]pub struct TilemapRenderer{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/tilemaps/tilemaprenderer/TilemapRenderer.md"))]
+    #[::unity::class(namespace = "UnityEngine.Tilemaps", name = "TilemapRenderer")]
+    #[parent(crate::unity_engine::renderer::Renderer)]
+    pub struct TilemapRenderer {}
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tilemaprenderer-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-tilemaps-tilemaprenderer")]pub trait ITilemapRendererMethods:ITilemapRenderer{#[doc="`RegisterSpriteAtlasRegistered()` overload"]fn register_sprite_atlas_registered(self,)->(){unsafe{let __receiver= <TilemapRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42f90usize)as*mut u8,();
-(TilemapRenderer)__receiver)}
-}
-#[doc="`UnregisterSpriteAtlasRegistered()` overload"]fn unregister_sprite_atlas_registered(self,)->(){unsafe{let __receiver= <TilemapRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f43060usize)as*mut u8,();
-(TilemapRenderer)__receiver)}
-}
-#[doc="`OnSpriteAtlasRegistered(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]fn on_sprite_atlas_registered(self,atlas:impl::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>)->(){unsafe{let __receiver= <TilemapRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f43130usize)as*mut u8,();
-(TilemapRenderer)__receiver,(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)::core::convert::Into::into(atlas))}
-}
+#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+pub trait ITilemapRendererMethods: ITilemapRenderer {
+    #[doc = "`RegisterSpriteAtlasRegistered()` overload"]
+    fn register_sprite_atlas_registered(self) -> () {
+        unsafe {
+            let __receiver = <TilemapRenderer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f42f90usize)as*mut u8,();
+(TilemapRenderer)__receiver)
+        }
+    }
+    #[doc = "`UnregisterSpriteAtlasRegistered()` overload"]
+    fn unregister_sprite_atlas_registered(self) -> () {
+        unsafe {
+            let __receiver = <TilemapRenderer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f43060usize)as*mut u8,();
+(TilemapRenderer)__receiver)
+        }
+    }
+    #[doc = "`OnSpriteAtlasRegistered(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)` overload"]
+    fn on_sprite_atlas_registered(self, atlas: impl ::core::convert::Into<crate::unity_engine::u2d::spriteatlas::SpriteAtlas>) -> () {
+        unsafe {
+            let __receiver = <TilemapRenderer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f43130usize)as*mut u8,();
+(TilemapRenderer)__receiver,(crate::unity_engine::u2d::spriteatlas::SpriteAtlas)::core::convert::Into::into(atlas))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-tilemaps-tilemaprenderer")]impl<__T:ITilemapRenderer>ITilemapRendererMethods for __T{}
+#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+impl<__T: ITilemapRenderer> ITilemapRendererMethods for __T {}
 
-#[cfg(feature="unity_engine-tilemaps-tilemaprenderer")]impl TilemapRenderer{pub fn register_sprite_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn unregister_sprite_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_sprite_atlas_registered_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
+impl TilemapRenderer {
+    pub fn register_sprite_atlas_registered_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn unregister_sprite_atlas_registered_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn on_sprite_atlas_registered_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
 #[cfg(feature = "unity_engine-tilemaps-tilemaprenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TilemapRenderer;
-    pub use super::ITilemapRenderer;
-    pub use super::ITilemapRendererMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::renderer::IRenderer;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-renderer")] pub use crate::unity_engine::renderer::IRendererMethods;
+    pub use super::{ITilemapRenderer, ITilemapRendererMethods, TilemapRenderer};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-renderer")]
+    pub use crate::unity_engine::renderer::IRendererMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{component::IComponent, object_2::IObject_2, renderer::IRenderer},
+    };
 }

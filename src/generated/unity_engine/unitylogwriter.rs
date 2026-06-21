@@ -2,112 +2,235 @@
 
 #[cfg(feature = "unity_engine-unitylogwriter-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        io::textwriter::{ITextWriter, TextWriter},
+        object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::io::textwriter::{ITextWriter,TextWriter}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/unitylogwriter/UnityLogWriter.md"))]#[::unity2::class(namespace="UnityEngine",name="UnityLogWriter")]#[parent(crate::system::io::textwriter::TextWriter)]pub struct UnityLogWriter{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/unitylogwriter/UnityLogWriter.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "UnityLogWriter")]
+    #[parent(crate::system::io::textwriter::TextWriter)]
+    pub struct UnityLogWriter {}
 }
 
 #[cfg(feature = "unity_engine-unitylogwriter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-unitylogwriter")]impl UnityLogWriter{#[doc="`WriteStringToUnityLog(::unity2::Il2CppString)` overload"]pub fn write_string_to_unity_log(s:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3794b50usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(s))}
-}
-#[doc="`WriteStringToUnityLogImpl(::unity2::Il2CppString)` overload"]pub fn write_string_to_unity_log_impl(s:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3794bb0usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(s))}
-}
-#[doc="`Init()` overload"]pub fn init()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3794c00usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl UnityLogWriter {
+    #[doc = "`WriteStringToUnityLog(::unity::Il2CppString)` overload"]
+    pub fn write_string_to_unity_log(s: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3794b50usize)as*mut u8,();
+(::unity::Il2CppString)::core::convert::Into::into(s))
+        }
+    }
+
+    #[doc = "`WriteStringToUnityLogImpl(::unity::Il2CppString)` overload"]
+    pub fn write_string_to_unity_log_impl(s: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3794bb0usize)as*mut u8,();
+(::unity::Il2CppString)::core::convert::Into::into(s))
+        }
+    }
+
+    #[doc = "`Init()` overload"]
+    pub fn init() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3794c00usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-unitylogwriter")]pub trait IUnityLogWriterMethods:IUnityLogWriter{#[doc="`Write(u16)` overload"]fn write(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <UnityLogWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-unitylogwriter")]
+pub trait IUnityLogWriterMethods: IUnityLogWriter {
+    #[doc = "`Write(u16)` overload"]
+    fn write(self, value: impl ::core::convert::Into<u16>) -> () {
+        unsafe {
+            let __receiver = <UnityLogWriter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(12usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <UnityLogWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let __inner:extern "C" fn(UnityLogWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(value),__mi)}
-}
-}
-#[doc="`Write(::unity2::Il2CppString)` overload"]fn write_2(self,s:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnityLogWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        12usize,
+                        __vt.len(),
+                        <UnityLogWriter as ::unity::ClassIdentity>::NAME,
+                        "Write",
+                    )
+                });
+                let __inner: extern "C" fn(UnityLogWriter, u16, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(value), __mi)
+            }
+        }
+    }
+    #[doc = "`Write(::unity::Il2CppString)` overload"]
+    fn write_2(self, s: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <UnityLogWriter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(15usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",15usize,__vt.len(), <UnityLogWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let __inner:extern "C" fn(UnityLogWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(s),__mi)}
-}
-}
-#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write_3(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnityLogWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        15usize,
+                        __vt.len(),
+                        <UnityLogWriter as ::unity::ClassIdentity>::NAME,
+                        "Write",
+                    )
+                });
+                let __inner: extern "C" fn(UnityLogWriter, ::unity::Il2CppString, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(s), __mi)
+            }
+        }
+    }
+    #[doc = "`Write(::unity::Array<u16>, i32, i32)` overload"]
+    fn write_3(
+        self,
+        buffer: impl ::core::convert::Into<::unity::Array<u16>>,
+        index: impl ::core::convert::Into<i32>,
+        count: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <UnityLogWriter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(14usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",14usize,__vt.len(), <UnityLogWriter as::unity2::ClassIdentity> ::NAME,"Write",));
-let __inner:extern "C" fn(UnityLogWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnityLogWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3794ce0usize)as*mut u8,();
-(UnityLogWriter)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-unitylogwriter")]impl<__T:IUnityLogWriter>IUnityLogWriterMethods for __T{}
-
-#[cfg(feature="unity_engine-unitylogwriter")]impl UnityLogWriter{pub fn write_string_to_unity_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn write_string_to_unity_log_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn write_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn write_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="unity_engine-unitylogwriter")]impl UnityLogWriter{#[doc="Direct (non-virtual) call to `UnityLogWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:u16,)->(){let __mi=Self::write_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),value, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `UnityLogWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,s: ::unity2::Il2CppString,)->(){let __mi=Self::write_2_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),s, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `UnityLogWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn write_3(this:impl::core::convert::Into< ::unity2::IlInstance> ,buffer: ::unity2::Array<u16> ,index:i32,count:i32,)->(){let __mi=Self::write_3_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),buffer,index,count, ::core::option::Option::None)}
+`)",
+                        14usize,
+                        __vt.len(),
+                        <UnityLogWriter as ::unity::ClassIdentity>::NAME,
+                        "Write",
+                    )
+                });
+                let __inner: extern "C" fn(UnityLogWriter, ::unity::Array<u16>, i32, i32, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(buffer),
+                    ::core::convert::Into::into(index),
+                    ::core::convert::Into::into(count),
+                    __mi,
+                )
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <UnityLogWriter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3794ce0usize)as*mut u8,();
+(UnityLogWriter)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-unitylogwriter")]impl UnityLogWriter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl<__T: IUnityLogWriter> IUnityLogWriterMethods for __T {}
+
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl UnityLogWriter {
+    pub fn write_string_to_unity_log_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn write_string_to_unity_log_impl_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn init_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn write_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn write_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn write_3_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+}
+
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl UnityLogWriter {
+    #[doc = "Direct (non-virtual) call to `UnityLogWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn write(this: impl ::core::convert::Into<::unity::IlInstance>, value: u16) -> () {
+        let __mi = Self::write_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, u16, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), value, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `UnityLogWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn write_2(this: impl ::core::convert::Into<::unity::IlInstance>, s: ::unity::Il2CppString) -> () {
+        let __mi = Self::write_2_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Il2CppString, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), s, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `UnityLogWriter`'s own `Write`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn write_3(this: impl ::core::convert::Into<::unity::IlInstance>, buffer: ::unity::Array<u16>, index: i32, count: i32) -> () {
+        let __mi = Self::write_3_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Array<u16>, i32, i32, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), buffer, index, count, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "unity_engine-unitylogwriter")]
+impl UnityLogWriter {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(UnityLogWriter), ::core::stringify!(new),));
- <Self as IUnityLogWriterMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(UnityLogWriter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnityLogWriterMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-unitylogwriter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnityLogWriter;
-    pub use super::IUnityLogWriter;
-    pub use super::IUnityLogWriterMethods;
-    pub use crate::system::io::textwriter::ITextWriter;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "system-io-textwriter")] pub use crate::system::io::textwriter::ITextWriterMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IUnityLogWriter, IUnityLogWriterMethods, UnityLogWriter};
+    #[cfg(feature = "system-io-textwriter")]
+    pub use crate::system::io::textwriter::ITextWriterMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{io::textwriter::ITextWriter, object::IObject};
 }

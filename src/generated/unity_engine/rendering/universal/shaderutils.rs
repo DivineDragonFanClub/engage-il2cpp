@@ -2,45 +2,87 @@
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shaderutils/ShaderUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="ShaderUtils")]#[parent(crate::system::object::Object)]pub struct ShaderUtils{#[static_field]#[rename(name="s_ShaderPaths")]pub s_shader_paths: ::unity2::Array< ::unity2::Il2CppString> ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/shaderutils/ShaderUtils.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering.Universal", name = "ShaderUtils")]
+    #[parent(crate::system::object::Object)]
+    pub struct ShaderUtils {
+        #[static_field]
+        #[rename(name = "s_ShaderPaths")]
+        pub s_shader_paths: ::unity::Array<::unity::Il2CppString>,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-universal-shaderutils")]impl ShaderUtils{#[doc="`GetShaderPath(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)` overload"]pub fn get_shader_path(id:impl::core::convert::Into<crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed7c50usize)as*mut u8, ::unity2::Il2CppString;
-(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)::core::convert::Into::into(id))}
-}
-#[doc="`GetEnumFromPath(::unity2::Il2CppString)` overload"]pub fn get_enum_from_path(path:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed7f80usize)as*mut u8,crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID;
-(::unity2::Il2CppString)::core::convert::Into::into(path))}
-}
-#[doc="`IsLWShader(crate::unity_engine::shader::Shader)` overload"]pub fn is_lw_shader(shader:impl::core::convert::Into<crate::unity_engine::shader::Shader>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed80b0usize)as*mut u8,bool;
-(crate::unity_engine::shader::Shader)::core::convert::Into::into(shader))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ed8150usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
+impl ShaderUtils {
+    #[doc = "`GetShaderPath(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)` overload"]
+    pub fn get_shader_path(
+        id: impl ::core::convert::Into<crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID>,
+    ) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2ed7c50usize)as*mut u8, ::unity::Il2CppString;
+(crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID)::core::convert::Into::into(id))
+        }
+    }
+
+    #[doc = "`GetEnumFromPath(::unity::Il2CppString)` overload"]
+    pub fn get_enum_from_path(
+        path: impl ::core::convert::Into<::unity::Il2CppString>,
+    ) -> crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2ed7f80usize)as*mut u8,crate::unity_engine::rendering::universal::shaderpathid::ShaderPathID;
+(::unity::Il2CppString)::core::convert::Into::into(path))
+        }
+    }
+
+    #[doc = "`IsLWShader(crate::unity_engine::shader::Shader)` overload"]
+    pub fn is_lw_shader(shader: impl ::core::convert::Into<crate::unity_engine::shader::Shader>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2ed80b0usize)as*mut u8,bool;
+(crate::unity_engine::shader::Shader)::core::convert::Into::into(shader))
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2ed8150usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-universal-shaderutils")]impl ShaderUtils{pub fn get_shader_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_enum_from_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_lw_shader_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
+impl ShaderUtils {
+    pub fn get_shader_path_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_enum_from_path_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_lw_shader_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn cctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-shaderutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShaderUtils;
-    pub use super::IShaderUtils;
+    pub use super::{IShaderUtils, ShaderUtils};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

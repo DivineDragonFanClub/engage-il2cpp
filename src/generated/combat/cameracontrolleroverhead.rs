@@ -2,114 +2,214 @@
 
 #[cfg(feature = "combat-cameracontrolleroverhead-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::basecameracontroller::{BaseCameraController, IBaseCameraController},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::basecameracontroller::{BaseCameraController,IBaseCameraController}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrolleroverhead/CameraControllerOverHead.md"))]#[::unity2::class(namespace="Combat",name="CameraControllerOverHead")]#[parent(crate::combat::basecameracontroller::BaseCameraController)]pub struct CameraControllerOverHead{#[static_field]#[rename(name="VDegree")]pub v_degree:f32, #[static_field]#[rename(name="HDegree")]pub h_degree:f32, #[offset(168)]#[rename(name="m_Time")]pub m_time:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/cameracontrolleroverhead/CameraControllerOverHead.md"))]
+    #[::unity::class(namespace = "Combat", name = "CameraControllerOverHead")]
+    #[parent(crate::combat::basecameracontroller::BaseCameraController)]
+    pub struct CameraControllerOverHead {
+        #[static_field]
+        #[rename(name = "VDegree")]
+        pub v_degree: f32,
+        #[static_field]
+        #[rename(name = "HDegree")]
+        pub h_degree: f32,
+        #[offset(168)]
+        #[rename(name = "m_Time")]
+        pub m_time: f32,
+    }
 }
 
 #[cfg(feature = "combat-cameracontrolleroverhead-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-cameracontrolleroverhead")]pub trait ICameraControllerOverHeadMethods:ICameraControllerOverHead{#[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-cameracontrolleroverhead")]
+pub trait ICameraControllerOverHeadMethods: ICameraControllerOverHead {
+    #[doc = "`CheckUsable(bool)` overload"]
+    fn check_usable(self, is_routine: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <CameraControllerOverHead as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <CameraControllerOverHead as::unity2::ClassIdentity> ::NAME,"CheckUsable",));
-let __inner:extern "C" fn(CameraControllerOverHead,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(is_routine),__mi)}
-}
-}
-#[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <CameraControllerOverHead as ::unity::ClassIdentity>::NAME,
+                        "CheckUsable",
+                    )
+                });
+                let __inner: extern "C" fn(CameraControllerOverHead, bool, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(is_routine), __mi)
+            }
+        }
+    }
+    #[doc = "`Activate()` overload"]
+    fn activate(self) -> () {
+        unsafe {
+            let __receiver =
+                <CameraControllerOverHead as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(10usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <CameraControllerOverHead as::unity2::ClassIdentity> ::NAME,"Activate",));
-let __inner:extern "C" fn(CameraControllerOverHead, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        10usize,
+                        __vt.len(),
+                        <CameraControllerOverHead as ::unity::ClassIdentity>::NAME,
+                        "Activate",
+                    )
+                });
+                let __inner: extern "C" fn(CameraControllerOverHead, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetCameraTargets()` overload"]
+    fn get_camera_targets(self) -> ::unity::Array<i32> {
+        unsafe {
+            let __receiver =
+                <CameraControllerOverHead as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(12usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <CameraControllerOverHead as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
-let __inner:extern "C" fn(CameraControllerOverHead, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b25b0usize)as*mut u8,();
-(CameraControllerOverHead)__receiver)}
-}
-}
-
-#[cfg(feature="combat-cameracontrolleroverhead")]impl<__T:ICameraControllerOverHead>ICameraControllerOverHeadMethods for __T{}
-
-#[cfg(feature="combat-cameracontrolleroverhead")]impl CameraControllerOverHead{pub fn check_usable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn activate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_camera_targets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="combat-cameracontrolleroverhead")]impl CameraControllerOverHead{#[doc="Direct (non-virtual) call to `CameraControllerOverHead`'s own `CheckUsable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn check_usable(this:impl::core::convert::Into< ::unity2::IlInstance> ,is_routine:bool,)->(){let __mi=Self::check_usable_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),is_routine, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `CameraControllerOverHead`'s own `Activate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn activate(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::activate_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `CameraControllerOverHead`'s own `GetCameraTargets`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_camera_targets(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<i32>{let __mi=Self::get_camera_targets_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        12usize,
+                        __vt.len(),
+                        <CameraControllerOverHead as ::unity::ClassIdentity>::NAME,
+                        "GetCameraTargets",
+                    )
+                });
+                let __inner: extern "C" fn(CameraControllerOverHead, ::unity::OptionalMethod) -> ::unity::Array<i32> =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <CameraControllerOverHead as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25b25b0usize)as*mut u8,();
+(CameraControllerOverHead)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="combat-cameracontrolleroverhead")]impl CameraControllerOverHead{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-cameracontrolleroverhead")]
+impl<__T: ICameraControllerOverHead> ICameraControllerOverHeadMethods for __T {}
+
+#[cfg(feature = "combat-cameracontrolleroverhead")]
+impl CameraControllerOverHead {
+    pub fn check_usable_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn activate_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_camera_targets_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+}
+
+#[cfg(feature = "combat-cameracontrolleroverhead")]
+impl CameraControllerOverHead {
+    #[doc = "Direct (non-virtual) call to `CameraControllerOverHead`'s own `CheckUsable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn check_usable(this: impl ::core::convert::Into<::unity::IlInstance>, is_routine: bool) -> () {
+        let __mi = Self::check_usable_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, bool, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), is_routine, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `CameraControllerOverHead`'s own `Activate`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn activate(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::activate_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `CameraControllerOverHead`'s own `GetCameraTargets`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_camera_targets(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Array<i32> {
+        let __mi = Self::get_camera_targets_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Array<i32> = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "combat-cameracontrolleroverhead")]
+impl CameraControllerOverHead {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(CameraControllerOverHead), ::core::stringify!(new),));
- <Self as ICameraControllerOverHeadMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(CameraControllerOverHead),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICameraControllerOverHeadMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "combat-cameracontrolleroverhead")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CameraControllerOverHead;
-    pub use super::ICameraControllerOverHead;
-    pub use super::ICameraControllerOverHeadMethods;
-    pub use crate::combat::basecameracontroller::IBaseCameraController;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "combat-basecameracontroller")] pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{CameraControllerOverHead, ICameraControllerOverHead, ICameraControllerOverHeadMethods};
+    #[cfg(feature = "combat-basecameracontroller")]
+    pub use crate::combat::basecameracontroller::IBaseCameraControllerMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        combat::basecameracontroller::IBaseCameraController,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

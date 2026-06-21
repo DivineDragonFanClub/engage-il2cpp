@@ -2,40 +2,60 @@
 
 #[cfg(feature = "unity_engine-writableattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/writableattribute/WritableAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="WritableAttribute")]pub struct WritableAttribute{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/writableattribute/WritableAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "WritableAttribute")]
+    pub struct WritableAttribute {}
 }
 
 #[cfg(feature = "unity_engine-writableattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-writableattribute")]pub trait IWritableAttributeMethods:IWritableAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WritableAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f387b0usize)as*mut u8,();
-(WritableAttribute)__receiver)}
-}
+#[cfg(feature = "unity_engine-writableattribute")]
+pub trait IWritableAttributeMethods: IWritableAttribute {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <WritableAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f387b0usize)as*mut u8,();
+(WritableAttribute)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-writableattribute")]impl<__T:IWritableAttribute>IWritableAttributeMethods for __T{}
+#[cfg(feature = "unity_engine-writableattribute")]
+impl<__T: IWritableAttribute> IWritableAttributeMethods for __T {}
 
-#[cfg(feature="unity_engine-writableattribute")]impl WritableAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-writableattribute")]
+impl WritableAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-writableattribute")]impl WritableAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-writableattribute")]
+impl WritableAttribute {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(WritableAttribute), ::core::stringify!(new),));
- <Self as IWritableAttributeMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(WritableAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWritableAttributeMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-writableattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WritableAttribute;
-    pub use super::IWritableAttribute;
-    pub use super::IWritableAttributeMethods;
+    pub use super::{IWritableAttribute, IWritableAttributeMethods, WritableAttribute};
 }

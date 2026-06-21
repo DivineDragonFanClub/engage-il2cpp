@@ -2,48 +2,74 @@
 
 #[cfg(feature = "unity_engine-minattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/minattribute/MinAttribute.md"))]#[::unity2::class(namespace="UnityEngine",name="MinAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct MinAttribute{#[offset(16)]#[rename(name="min")]pub min:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/minattribute/MinAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "MinAttribute")]
+    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+    pub struct MinAttribute {
+        #[offset(16)]
+        #[rename(name = "min")]
+        pub min: f32,
+    }
 }
 
 #[cfg(feature = "unity_engine-minattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-minattribute")]pub trait IMinAttributeMethods:IMinAttribute{#[doc="`.ctor(f32)` overload"]fn ctor(self,min:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MinAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x32ecef0usize)as*mut u8,();
-(MinAttribute)__receiver,(f32)::core::convert::Into::into(min))}
-}
+#[cfg(feature = "unity_engine-minattribute")]
+pub trait IMinAttributeMethods: IMinAttribute {
+    #[doc = "`.ctor(f32)` overload"]
+    fn ctor(self, min: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <MinAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x32ecef0usize)as*mut u8,();
+(MinAttribute)__receiver,(f32)::core::convert::Into::into(min))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-minattribute")]impl<__T:IMinAttribute>IMinAttributeMethods for __T{}
+#[cfg(feature = "unity_engine-minattribute")]
+impl<__T: IMinAttribute> IMinAttributeMethods for __T {}
 
-#[cfg(feature="unity_engine-minattribute")]impl MinAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-minattribute")]
+impl MinAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-minattribute")]impl MinAttribute{#[doc="`.ctor(f32)` — overload selector"]pub fn new(min:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-minattribute")]
+impl MinAttribute {
+    #[doc = "`.ctor(f32)` — overload selector"]
+    pub fn new(min: f32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MinAttribute), ::core::stringify!(new),));
- <Self as IMinAttributeMethods> ::ctor(this,min);
-this}
+ failed to instantiate",
+                ::core::stringify!(MinAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMinAttributeMethods>::ctor(this, min);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-minattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MinAttribute;
-    pub use super::IMinAttribute;
-    pub use super::IMinAttributeMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-propertyattribute")] pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use super::{IMinAttribute, IMinAttributeMethods, MinAttribute};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-propertyattribute")]
+    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
 }

@@ -2,37 +2,58 @@
 
 #[cfg(feature = "root-locale-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/locale/Locale.md"))]#[::unity2::class(namespace="",name="Locale")]#[parent(crate::system::object::Object)]pub struct Locale{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/locale/Locale.md"))]
+    #[::unity::class(namespace = "", name = "Locale")]
+    #[parent(crate::system::object::Object)]
+    pub struct Locale {}
 }
 
 #[cfg(feature = "root-locale-types")]
 pub use __types::*;
 
-#[cfg(feature="root-locale")]impl Locale{#[doc="`GetText(::unity2::Il2CppString)` overload"]pub fn get_text(msg:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x326ba50usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(msg))}
-}
-#[doc="`GetText(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn get_text_2(fmt:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3270e80usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(fmt),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
-}
+#[cfg(feature = "root-locale")]
+impl Locale {
+    #[doc = "`GetText(::unity::Il2CppString)` overload"]
+    pub fn get_text(msg: impl ::core::convert::Into<::unity::Il2CppString>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x326ba50usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(msg))
+        }
+    }
+
+    #[doc = "`GetText(::unity::Il2CppString, ::unity::Array<crate::system::object::Object>)` overload"]
+    pub fn get_text_2(
+        fmt: impl ::core::convert::Into<::unity::Il2CppString>,
+        args: impl ::core::convert::Into<::unity::Array<crate::system::object::Object>>,
+    ) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3270e80usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(fmt),(::unity::Array<crate::system::object::Object>)::core::convert::Into::into(args))
+        }
+    }
 }
 
-#[cfg(feature="root-locale")]impl Locale{pub fn get_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_text_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "root-locale")]
+impl Locale {
+    pub fn get_text_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_text_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "root-locale")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Locale;
-    pub use super::ILocale;
+    pub use super::{ILocale, Locale};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

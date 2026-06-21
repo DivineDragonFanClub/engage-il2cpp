@@ -2,66 +2,99 @@
 
 #[cfg(feature = "root-akmacsettings-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        root::{
+            akbaseplatformsettings::{AkBasePlatformSettings, IAkBasePlatformSettings},
+            akcommonplatformsettings::{AkCommonPlatformSettings, IAkCommonPlatformSettings},
+            akwwiseinitializationsettings::{
+                AkWwiseInitializationSettings_CommonPlatformSettings, AkWwiseInitializationSettings_PlatformSettings,
+                IAkWwiseInitializationSettings_CommonPlatformSettings, IAkWwiseInitializationSettings_PlatformSettings,
+            },
+        },
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::root::akbaseplatformsettings::{AkBasePlatformSettings,IAkBasePlatformSettings}
-;
-use crate::root::akcommonplatformsettings::{AkCommonPlatformSettings,IAkCommonPlatformSettings}
-;
-use crate::root::akwwiseinitializationsettings::{AkWwiseInitializationSettings_CommonPlatformSettings,AkWwiseInitializationSettings_PlatformSettings,IAkWwiseInitializationSettings_CommonPlatformSettings,IAkWwiseInitializationSettings_PlatformSettings}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmacsettings/AkMacSettings.md"))]#[::unity2::class(namespace="",name="AkMacSettings")]#[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_CommonPlatformSettings)]pub struct AkMacSettings{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akmacsettings/AkMacSettings.md"))]
+    #[::unity::class(namespace = "", name = "AkMacSettings")]
+    #[parent(crate::root::akwwiseinitializationsettings::AkWwiseInitializationSettings_CommonPlatformSettings)]
+    pub struct AkMacSettings {}
 }
 
 #[cfg(feature = "root-akmacsettings-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akmacsettings")]pub trait IAkMacSettingsMethods:IAkMacSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkMacSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f26640usize)as*mut u8,();
-(AkMacSettings)__receiver)}
-}
+#[cfg(feature = "root-akmacsettings")]
+pub trait IAkMacSettingsMethods: IAkMacSettings {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkMacSettings as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f26640usize)as*mut u8,();
+(AkMacSettings)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-akmacsettings")]impl<__T:IAkMacSettings>IAkMacSettingsMethods for __T{}
+#[cfg(feature = "root-akmacsettings")]
+impl<__T: IAkMacSettings> IAkMacSettingsMethods for __T {}
 
-#[cfg(feature="root-akmacsettings")]impl AkMacSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "root-akmacsettings")]
+impl AkMacSettings {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="root-akmacsettings")]impl AkMacSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-akmacsettings")]
+impl AkMacSettings {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AkMacSettings), ::core::stringify!(new),));
- <Self as IAkMacSettingsMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AkMacSettings),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkMacSettingsMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-akmacsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkMacSettings;
-    pub use super::IAkMacSettings;
-    pub use super::IAkMacSettingsMethods;
-    pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettings;
-    pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettings;
-    pub use crate::root::akwwiseinitializationsettings::IAkWwiseInitializationSettings_CommonPlatformSettings;
-    pub use crate::root::akwwiseinitializationsettings::IAkWwiseInitializationSettings_PlatformSettings;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    #[cfg(feature = "root-akbaseplatformsettings")] pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettingsMethods;
-    #[cfg(feature = "root-akcommonplatformsettings")] pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettingsMethods;
-    #[cfg(feature = "root-akwwiseinitializationsettings")] pub use crate::root::akwwiseinitializationsettings::IAkWwiseInitializationSettings_CommonPlatformSettingsMethods;
-    #[cfg(feature = "root-akwwiseinitializationsettings")] pub use crate::root::akwwiseinitializationsettings::IAkWwiseInitializationSettings_PlatformSettingsMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use super::{AkMacSettings, IAkMacSettings, IAkMacSettingsMethods};
+    #[cfg(feature = "root-akbaseplatformsettings")]
+    pub use crate::root::akbaseplatformsettings::IAkBasePlatformSettingsMethods;
+    #[cfg(feature = "root-akcommonplatformsettings")]
+    pub use crate::root::akcommonplatformsettings::IAkCommonPlatformSettingsMethods;
+    #[cfg(feature = "root-akwwiseinitializationsettings")]
+    pub use crate::root::akwwiseinitializationsettings::IAkWwiseInitializationSettings_CommonPlatformSettingsMethods;
+    #[cfg(feature = "root-akwwiseinitializationsettings")]
+    pub use crate::root::akwwiseinitializationsettings::IAkWwiseInitializationSettings_PlatformSettingsMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        root::{
+            akbaseplatformsettings::IAkBasePlatformSettings,
+            akcommonplatformsettings::IAkCommonPlatformSettings,
+            akwwiseinitializationsettings::{IAkWwiseInitializationSettings_CommonPlatformSettings, IAkWwiseInitializationSettings_PlatformSettings},
+        },
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

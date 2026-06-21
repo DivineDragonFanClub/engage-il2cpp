@@ -2,78 +2,145 @@
 
 #[cfg(feature = "tm_pro-itextelement-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/itextelement/ITextElement.md"))]#[::unity2::class(namespace="TMPro",name="ITextElement")]pub struct ITextElement{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/itextelement/ITextElement.md"))]
+    #[::unity::class(namespace = "TMPro", name = "ITextElement")]
+    pub struct ITextElement {}
 }
 
 #[cfg(feature = "tm_pro-itextelement-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-itextelement")]pub trait IITextElementMethods:IITextElement{#[doc="`get_sharedMaterial()` overload"]fn get_shared_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <ITextElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "tm_pro-itextelement")]
+pub trait IITextElementMethods: IITextElement {
+    #[doc = "`get_sharedMaterial()` overload"]
+    fn get_shared_material(self) -> crate::unity_engine::material::Material {
+        unsafe {
+            let __receiver = <ITextElement as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <ITextElement as::unity2::ClassIdentity> ::NAME,"get_sharedMaterial",));
-let __inner:extern "C" fn(ITextElement, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,update:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <ITextElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <ITextElement as ::unity::ClassIdentity>::NAME,
+                        "get_sharedMaterial",
+                    )
+                });
+                let __inner: extern "C" fn(ITextElement, ::unity::OptionalMethod) -> crate::unity_engine::material::Material =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]
+    fn rebuild(self, update: impl ::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>) -> () {
+        unsafe {
+            let __receiver = <ITextElement as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(1usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",1usize,__vt.len(), <ITextElement as::unity2::ClassIdentity> ::NAME,"Rebuild",));
-let __inner:extern "C" fn(ITextElement,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(update),__mi)}
-}
-}
-#[doc="`GetInstanceID()` overload"]fn get_instance_id(self,)->i32{unsafe{let __receiver= <ITextElement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        1usize,
+                        __vt.len(),
+                        <ITextElement as ::unity::ClassIdentity>::NAME,
+                        "Rebuild",
+                    )
+                });
+                let __inner: extern "C" fn(ITextElement, crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(update), __mi)
+            }
+        }
+    }
+    #[doc = "`GetInstanceID()` overload"]
+    fn get_instance_id(self) -> i32 {
+        unsafe {
+            let __receiver = <ITextElement as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(2usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",2usize,__vt.len(), <ITextElement as::unity2::ClassIdentity> ::NAME,"GetInstanceID",));
-let __inner:extern "C" fn(ITextElement, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        2usize,
+                        __vt.len(),
+                        <ITextElement as ::unity::ClassIdentity>::NAME,
+                        "GetInstanceID",
+                    )
+                });
+                let __inner: extern "C" fn(ITextElement, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="tm_pro-itextelement")]impl<__T:IITextElement>IITextElementMethods for __T{}
+#[cfg(feature = "tm_pro-itextelement")]
+impl<__T: IITextElement> IITextElementMethods for __T {}
 
-#[cfg(feature="tm_pro-itextelement")]impl ITextElement{pub fn get_shared_material_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn rebuild_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_instance_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "tm_pro-itextelement")]
+impl ITextElement {
+    pub fn get_shared_material_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn rebuild_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_instance_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="tm_pro-itextelement")]impl ITextElement{#[doc="Direct (non-virtual) call to `ITextElement`'s own `get_sharedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_shared_material(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::material::Material{let __mi=Self::get_shared_material_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ITextElement`'s own `Rebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn rebuild(this:impl::core::convert::Into< ::unity2::IlInstance> ,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,)->(){let __mi=Self::rebuild_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),update, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `ITextElement`'s own `GetInstanceID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_instance_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_instance_id_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "tm_pro-itextelement")]
+impl ITextElement {
+    #[doc = "Direct (non-virtual) call to `ITextElement`'s own `get_sharedMaterial`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_shared_material(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::material::Material {
+        let __mi = Self::get_shared_material_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::material::Material =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ITextElement`'s own `Rebuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn rebuild(this: impl ::core::convert::Into<::unity::IlInstance>, update: crate::unity_engine::ui::canvasupdate::CanvasUpdate) -> () {
+        let __mi = Self::rebuild_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), update, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `ITextElement`'s own `GetInstanceID`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_instance_id(this: impl ::core::convert::Into<::unity::IlInstance>) -> i32 {
+        let __mi = Self::get_instance_id_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "tm_pro-itextelement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ITextElement;
-    pub use super::IITextElement;
-    pub use super::IITextElementMethods;
+    pub use super::{IITextElement, IITextElementMethods, ITextElement};
 }

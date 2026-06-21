@@ -2,46 +2,70 @@
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/exceptions/operationexception/OperationException.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.Exceptions",name="OperationException")]pub struct OperationException{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/exceptions/operationexception/OperationException.md"))]
+    #[::unity::class(namespace = "UnityEngine.ResourceManagement.Exceptions", name = "OperationException")]
+    pub struct OperationException {}
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-exceptions-operationexception")]pub trait IOperationExceptionMethods:IOperationException{#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <OperationException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
+pub trait IOperationExceptionMethods: IOperationException {
+    #[doc = "`ToString()` overload"]
+    fn to_string(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <OperationException as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(3usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",3usize,__vt.len(), <OperationException as::unity2::ClassIdentity> ::NAME,"ToString",));
-let __inner:extern "C" fn(OperationException, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        3usize,
+                        __vt.len(),
+                        <OperationException as ::unity::ClassIdentity>::NAME,
+                        "ToString",
+                    )
+                });
+                let __inner: extern "C" fn(OperationException, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-exceptions-operationexception")]impl<__T:IOperationException>IOperationExceptionMethods for __T{}
+#[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
+impl<__T: IOperationException> IOperationExceptionMethods for __T {}
 
-#[cfg(feature="unity_engine-resource_management-exceptions-operationexception")]impl OperationException{pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
+impl OperationException {
+    pub fn to_string_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-exceptions-operationexception")]impl OperationException{#[doc="Direct (non-virtual) call to `OperationException`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn to_string(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::to_string_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
+impl OperationException {
+    #[doc = "Direct (non-virtual) call to `OperationException`'s own `ToString`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn to_string(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::to_string_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-exceptions-operationexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::OperationException;
-    pub use super::IOperationException;
-    pub use super::IOperationExceptionMethods;
+    pub use super::{IOperationException, IOperationExceptionMethods, OperationException};
 }

@@ -2,50 +2,87 @@
 
 #[cfg(feature = "system-reflection-targetexception-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/targetexception/TargetException.md"))]#[::unity2::class(namespace="System.Reflection",name="TargetException")]pub struct TargetException{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/targetexception/TargetException.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "TargetException")]
+    pub struct TargetException {}
 }
 
 #[cfg(feature = "system-reflection-targetexception-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-targetexception")]pub trait ITargetExceptionMethods:ITargetException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TargetException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3590ab0usize)as*mut u8,();
-(TargetException)__receiver)}
-}
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TargetException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3590af0usize)as*mut u8,();
-(TargetException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
+#[cfg(feature = "system-reflection-targetexception")]
+pub trait ITargetExceptionMethods: ITargetException {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TargetException as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3590ab0usize)as*mut u8,();
+(TargetException)__receiver)
+        }
+    }
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor_2(self, message: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <TargetException as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3590af0usize)as*mut u8,();
+(TargetException)__receiver,(::unity::Il2CppString)::core::convert::Into::into(message))
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-targetexception")]impl<__T:ITargetException>ITargetExceptionMethods for __T{}
+#[cfg(feature = "system-reflection-targetexception")]
+impl<__T: ITargetException> ITargetExceptionMethods for __T {}
 
-#[cfg(feature="system-reflection-targetexception")]impl TargetException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "system-reflection-targetexception")]
+impl TargetException {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="system-reflection-targetexception")]impl TargetException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-reflection-targetexception")]
+impl TargetException {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TargetException), ::core::stringify!(new),));
- <Self as ITargetExceptionMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+ failed to instantiate",
+                ::core::stringify!(TargetException),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITargetExceptionMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new_2(message: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TargetException), ::core::stringify!(new_2),));
- <Self as ITargetExceptionMethods> ::ctor_2(this,message);
-this}
+ failed to instantiate",
+                ::core::stringify!(TargetException),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ITargetExceptionMethods>::ctor_2(this, message);
+        this
+    }
 }
 
 #[cfg(feature = "system-reflection-targetexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TargetException;
-    pub use super::ITargetException;
-    pub use super::ITargetExceptionMethods;
+    pub use super::{ITargetException, ITargetExceptionMethods, TargetException};
 }

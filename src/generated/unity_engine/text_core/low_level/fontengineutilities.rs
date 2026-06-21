@@ -2,44 +2,62 @@
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/text_core/low_level/fontengineutilities/FontEngineUtilities.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct FontEngineUtilities {}
+    impl ::unity::ClassIdentity for FontEngineUtilities {
+        const NAME: &'static str = "FontEngineUtilities";
+        const NAMESPACE: &'static str = "UnityEngine.TextCore.LowLevel";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/text_core/low_level/fontengineutilities/FontEngineUtilities.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FontEngineUtilities{}
-impl::unity2::ClassIdentity for FontEngineUtilities{const NAMESPACE: &'static str="UnityEngine.TextCore.LowLevel";
-const NAME: &'static str="FontEngineUtilities";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for FontEngineUtilities{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for FontEngineUtilities {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-text_core-low_level-fontengineutilities")]impl FontEngineUtilities{#[doc="`MaxValue(i32, i32, i32)` overload"]pub fn max_value(a:impl::core::convert::Into<i32> ,b:impl::core::convert::Into<i32> ,c:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f2db00usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b),(i32)::core::convert::Into::into(c))}
-}
+#[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
+impl FontEngineUtilities {
+    #[doc = "`MaxValue(i32, i32, i32)` overload"]
+    pub fn max_value(a: impl ::core::convert::Into<i32>, b: impl ::core::convert::Into<i32>, c: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f2db00usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b),(i32)::core::convert::Into::into(c))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-text_core-low_level-fontengineutilities")]impl FontEngineUtilities{pub fn max_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
+impl FontEngineUtilities {
+    pub fn max_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-text_core-low_level-fontengineutilities")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FontEngineUtilities;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

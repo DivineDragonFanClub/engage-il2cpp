@@ -2,44 +2,69 @@
 
 #[cfg(feature = "app-sortconstant-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortconstant/SortConstant.md"))]#[::unity2::class(namespace="App",name="SortConstant")]#[parent(crate::system::object::Object)]pub struct SortConstant{#[static_field]#[rename(name="MergeSortThreshold")]pub merge_sort_threshold:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortconstant/SortConstant.md"))]
+    #[::unity::class(namespace = "App", name = "SortConstant")]
+    #[parent(crate::system::object::Object)]
+    pub struct SortConstant {
+        #[static_field]
+        #[rename(name = "MergeSortThreshold")]
+        pub merge_sort_threshold: i32,
+    }
 }
 
 #[cfg(feature = "app-sortconstant-types")]
 pub use __types::*;
 
-#[cfg(feature="app-sortconstant")]pub trait ISortConstantMethods:ISortConstant{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortConstant as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe48f0usize)as*mut u8,();
-(SortConstant)__receiver)}
-}
+#[cfg(feature = "app-sortconstant")]
+pub trait ISortConstantMethods: ISortConstant {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SortConstant as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1fe48f0usize)as*mut u8,();
+(SortConstant)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-sortconstant")]impl<__T:ISortConstant>ISortConstantMethods for __T{}
+#[cfg(feature = "app-sortconstant")]
+impl<__T: ISortConstant> ISortConstantMethods for __T {}
 
-#[cfg(feature="app-sortconstant")]impl SortConstant{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-sortconstant")]
+impl SortConstant {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-sortconstant")]impl SortConstant{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-sortconstant")]
+impl SortConstant {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(SortConstant), ::core::stringify!(new),));
- <Self as ISortConstantMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(SortConstant),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISortConstantMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-sortconstant")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortConstant;
-    pub use super::ISortConstant;
-    pub use super::ISortConstantMethods;
+    pub use super::{ISortConstant, ISortConstantMethods, SortConstant};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

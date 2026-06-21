@@ -2,46 +2,70 @@
 
 #[cfg(feature = "unity_engine-ui-igraphicenableddisabled-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/igraphicenableddisabled/IGraphicEnabledDisabled.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="IGraphicEnabledDisabled")]pub struct IGraphicEnabledDisabled{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/igraphicenableddisabled/IGraphicEnabledDisabled.md"))]
+    #[::unity::class(namespace = "UnityEngine.UI", name = "IGraphicEnabledDisabled")]
+    pub struct IGraphicEnabledDisabled {}
 }
 
 #[cfg(feature = "unity_engine-ui-igraphicenableddisabled-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-igraphicenableddisabled")]pub trait IIGraphicEnabledDisabledMethods:IIGraphicEnabledDisabled{#[doc="`OnSiblingGraphicEnabledDisabled()` overload"]fn on_sibling_graphic_enabled_disabled(self,)->(){unsafe{let __receiver= <IGraphicEnabledDisabled as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-ui-igraphicenableddisabled")]
+pub trait IIGraphicEnabledDisabledMethods: IIGraphicEnabledDisabled {
+    #[doc = "`OnSiblingGraphicEnabledDisabled()` overload"]
+    fn on_sibling_graphic_enabled_disabled(self) -> () {
+        unsafe {
+            let __receiver =
+                <IGraphicEnabledDisabled as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <IGraphicEnabledDisabled as::unity2::ClassIdentity> ::NAME,"OnSiblingGraphicEnabledDisabled",));
-let __inner:extern "C" fn(IGraphicEnabledDisabled, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <IGraphicEnabledDisabled as ::unity::ClassIdentity>::NAME,
+                        "OnSiblingGraphicEnabledDisabled",
+                    )
+                });
+                let __inner: extern "C" fn(IGraphicEnabledDisabled, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-ui-igraphicenableddisabled")]impl<__T:IIGraphicEnabledDisabled>IIGraphicEnabledDisabledMethods for __T{}
+#[cfg(feature = "unity_engine-ui-igraphicenableddisabled")]
+impl<__T: IIGraphicEnabledDisabled> IIGraphicEnabledDisabledMethods for __T {}
 
-#[cfg(feature="unity_engine-ui-igraphicenableddisabled")]impl IGraphicEnabledDisabled{pub fn on_sibling_graphic_enabled_disabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-ui-igraphicenableddisabled")]
+impl IGraphicEnabledDisabled {
+    pub fn on_sibling_graphic_enabled_disabled_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-ui-igraphicenableddisabled")]impl IGraphicEnabledDisabled{#[doc="Direct (non-virtual) call to `IGraphicEnabledDisabled`'s own `OnSiblingGraphicEnabledDisabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_sibling_graphic_enabled_disabled(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_sibling_graphic_enabled_disabled_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-ui-igraphicenableddisabled")]
+impl IGraphicEnabledDisabled {
+    #[doc = "Direct (non-virtual) call to `IGraphicEnabledDisabled`'s own `OnSiblingGraphicEnabledDisabled`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_sibling_graphic_enabled_disabled(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_sibling_graphic_enabled_disabled_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-ui-igraphicenableddisabled")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IGraphicEnabledDisabled;
-    pub use super::IIGraphicEnabledDisabled;
-    pub use super::IIGraphicEnabledDisabledMethods;
+    pub use super::{IGraphicEnabledDisabled, IIGraphicEnabledDisabled, IIGraphicEnabledDisabledMethods};
 }

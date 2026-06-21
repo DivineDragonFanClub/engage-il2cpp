@@ -2,72 +2,126 @@
 
 #[cfg(feature = "combat-assetname-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/assetname/AssetName_SplitMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct AssetName_SplitMode {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for AssetName_SplitMode {
+        const NAME: &'static str = "AssetName.SplitMode";
+        const NAMESPACE: &'static str = "Combat";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for AssetName_SplitMode {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl AssetName_SplitMode {
+        pub fn underscore() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/assetname/AssetName.md"))]#[::unity2::class(namespace="Combat",name="AssetName")]#[parent(crate::system::object::Object)]pub struct AssetName{}
+        pub fn underscore_and_hyphen() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn discard_hyphen() -> Self {
+            Self { value: 2 }
+        }
+    }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/assetname/AssetName_SplitMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AssetName_SplitMode{pub value:i32,}
-impl::unity2::ClassIdentity for AssetName_SplitMode{const NAMESPACE: &'static str="Combat";
-const NAME: &'static str="AssetName.SplitMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AssetName_SplitMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AssetName_SplitMode{pub fn underscore()->Self{Self{value:0}
-}
-pub fn underscore_and_hyphen()->Self{Self{value:1}
-}
-pub fn discard_hyphen()->Self{Self{value:2}
-}
-}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/assetname/AssetName.md"))]
+    #[::unity::class(namespace = "Combat", name = "AssetName")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetName {}
 }
 
 #[cfg(feature = "combat-assetname-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-assetname")]impl AssetName{#[doc="`MakeAddressablesPath(::unity2::Il2CppString)` overload"]pub fn make_addressables_path(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211a650usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`Tokenize(::unity2::Il2CppString, crate::combat::assetname::AssetName_SplitMode, i32, i32)` overload"]pub fn tokenize(name:impl::core::convert::Into< ::unity2::Il2CppString> ,split_mode:impl::core::convert::Into<crate::combat::assetname::AssetName_SplitMode> ,start_index:impl::core::convert::Into<i32> ,end_index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b060usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::combat::assetname::AssetName_SplitMode)::core::convert::Into::into(split_mode),(i32)::core::convert::Into::into(start_index),(i32)::core::convert::Into::into(end_index))}
-}
-#[doc="`IsHighClass(::unity2::Il2CppString)` overload"]pub fn is_high_class(dress_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b290usize)as*mut u8,bool;
-(::unity2::Il2CppString)::core::convert::Into::into(dress_name))}
-}
-#[doc="`Is異形(::unity2::Il2CppString)` overload"]pub fn is異形(name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x211b390usize)as*mut u8,bool;
-(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
+#[cfg(feature = "combat-assetname")]
+impl AssetName {
+    #[doc = "`MakeAddressablesPath(::unity::Il2CppString)` overload"]
+    pub fn make_addressables_path(name: impl ::core::convert::Into<::unity::Il2CppString>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x211a650usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(name))
+        }
+    }
+
+    #[doc = "`Tokenize(::unity::Il2CppString, crate::combat::assetname::AssetName_SplitMode, i32, i32)` overload"]
+    pub fn tokenize(
+        name: impl ::core::convert::Into<::unity::Il2CppString>,
+        split_mode: impl ::core::convert::Into<crate::combat::assetname::AssetName_SplitMode>,
+        start_index: impl ::core::convert::Into<i32>,
+        end_index: impl ::core::convert::Into<i32>,
+    ) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x211b060usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(name),(crate::combat::assetname::AssetName_SplitMode)::core::convert::Into::into(split_mode),(i32)::core::convert::Into::into(start_index),(i32)::core::convert::Into::into(end_index))
+        }
+    }
+
+    #[doc = "`IsHighClass(::unity::Il2CppString)` overload"]
+    pub fn is_high_class(dress_name: impl ::core::convert::Into<::unity::Il2CppString>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x211b290usize)as*mut u8,bool;
+(::unity::Il2CppString)::core::convert::Into::into(dress_name))
+        }
+    }
+
+    #[doc = "`Is異形(::unity::Il2CppString)` overload"]
+    pub fn is異形(name: impl ::core::convert::Into<::unity::Il2CppString>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x211b390usize)as*mut u8,bool;
+(::unity::Il2CppString)::core::convert::Into::into(name))
+        }
+    }
 }
 
-#[cfg(feature="combat-assetname")]impl AssetName{pub fn make_addressables_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn tokenize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_high_class_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is異形_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature = "combat-assetname")]
+impl AssetName {
+    pub fn make_addressables_path_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn tokenize_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_high_class_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn is異形_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
 }
 
 #[cfg(feature = "combat-assetname")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetName;
-    pub use super::IAssetName;
-    pub use super::AssetName_SplitMode;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{AssetName, AssetName_SplitMode, IAssetName};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

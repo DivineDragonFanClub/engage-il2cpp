@@ -2,34 +2,48 @@
 
 #[cfg(feature = "root-ak3dspatializationmode-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/ak3dspatializationmode/Ak3DSpatializationMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct Ak3DSpatializationMode {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for Ak3DSpatializationMode {
+        const NAME: &'static str = "Ak3DSpatializationMode";
+        const NAMESPACE: &'static str = "";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for Ak3DSpatializationMode {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl Ak3DSpatializationMode {
+        pub fn ak_spatialization_mode_none() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/ak3dspatializationmode/Ak3DSpatializationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Ak3DSpatializationMode{pub value:i32,}
-impl::unity2::ClassIdentity for Ak3DSpatializationMode{const NAMESPACE: &'static str="";
-const NAME: &'static str="Ak3DSpatializationMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Ak3DSpatializationMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Ak3DSpatializationMode{pub fn ak_spatialization_mode_none()->Self{Self{value:0}
-}
-pub fn ak_spatialization_mode_position_only()->Self{Self{value:1}
-}
-pub fn ak_spatialization_mode_position_and_orientation()->Self{Self{value:2}
-}
-}
+        pub fn ak_spatialization_mode_position_only() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn ak_spatialization_mode_position_and_orientation() -> Self {
+            Self { value: 2 }
+        }
+    }
 }
 
 #[cfg(feature = "root-ak3dspatializationmode-types")]
@@ -39,10 +53,11 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Ak3DSpatializationMode;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

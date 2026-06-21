@@ -2,40 +2,65 @@
 
 #[cfg(feature = "system-reflection-assemblydescriptionattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblydescriptionattribute/AssemblyDescriptionAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="AssemblyDescriptionAttribute")]pub struct AssemblyDescriptionAttribute{#[offset(16)]#[rename(name="m_description")]pub m_description: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/assemblydescriptionattribute/AssemblyDescriptionAttribute.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "AssemblyDescriptionAttribute")]
+    pub struct AssemblyDescriptionAttribute {
+        #[offset(16)]
+        #[rename(name = "m_description")]
+        pub m_description: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "system-reflection-assemblydescriptionattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-assemblydescriptionattribute")]pub trait IAssemblyDescriptionAttributeMethods:IAssemblyDescriptionAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,description:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssemblyDescriptionAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3401bd0usize)as*mut u8,();
-(AssemblyDescriptionAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(description))}
-}
+#[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+pub trait IAssemblyDescriptionAttributeMethods: IAssemblyDescriptionAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, description: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <AssemblyDescriptionAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3401bd0usize)as*mut u8,();
+(AssemblyDescriptionAttribute)__receiver,(::unity::Il2CppString)::core::convert::Into::into(description))
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-assemblydescriptionattribute")]impl<__T:IAssemblyDescriptionAttribute>IAssemblyDescriptionAttributeMethods for __T{}
+#[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+impl<__T: IAssemblyDescriptionAttribute> IAssemblyDescriptionAttributeMethods for __T {}
 
-#[cfg(feature="system-reflection-assemblydescriptionattribute")]impl AssemblyDescriptionAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+impl AssemblyDescriptionAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="system-reflection-assemblydescriptionattribute")]impl AssemblyDescriptionAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(description: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-reflection-assemblydescriptionattribute")]
+impl AssemblyDescriptionAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(description: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AssemblyDescriptionAttribute), ::core::stringify!(new),));
- <Self as IAssemblyDescriptionAttributeMethods> ::ctor(this,description);
-this}
+ failed to instantiate",
+                ::core::stringify!(AssemblyDescriptionAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssemblyDescriptionAttributeMethods>::ctor(this, description);
+        this
+    }
 }
 
 #[cfg(feature = "system-reflection-assemblydescriptionattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssemblyDescriptionAttribute;
-    pub use super::IAssemblyDescriptionAttribute;
-    pub use super::IAssemblyDescriptionAttributeMethods;
+    pub use super::{AssemblyDescriptionAttribute, IAssemblyDescriptionAttribute, IAssemblyDescriptionAttributeMethods};
 }

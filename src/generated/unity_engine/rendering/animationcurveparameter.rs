@@ -2,52 +2,83 @@
 
 #[cfg(feature = "unity_engine-rendering-animationcurveparameter-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
-;
-use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/animationcurveparameter/AnimationCurveParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="AnimationCurveParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::animationcurve::AnimationCurve>)]pub struct AnimationCurveParameter{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/animationcurveparameter/AnimationCurveParameter.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering", name = "AnimationCurveParameter")]
+    #[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::animationcurve::AnimationCurve>)]
+    pub struct AnimationCurveParameter {}
 }
 
 #[cfg(feature = "unity_engine-rendering-animationcurveparameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-animationcurveparameter")]pub trait IAnimationCurveParameterMethods:IAnimationCurveParameter{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimationCurveParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x352ac50usize)as*mut u8,();
-(AnimationCurveParameter)__receiver,(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
-}
+#[cfg(feature = "unity_engine-rendering-animationcurveparameter")]
+pub trait IAnimationCurveParameterMethods: IAnimationCurveParameter {
+    #[doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AnimationCurveParameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x352ac50usize)as*mut u8,();
+(AnimationCurveParameter)__receiver,(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-animationcurveparameter")]impl<__T:IAnimationCurveParameter>IAnimationCurveParameterMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-animationcurveparameter")]
+impl<__T: IAnimationCurveParameter> IAnimationCurveParameterMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-animationcurveparameter")]impl AnimationCurveParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-rendering-animationcurveparameter")]
+impl AnimationCurveParameter {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-animationcurveparameter")]impl AnimationCurveParameter{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve, bool)` — overload selector"]pub fn new(value:crate::unity_engine::animationcurve::AnimationCurve,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-animationcurveparameter")]
+impl AnimationCurveParameter {
+    #[doc = "`.ctor(crate::unity_engine::animationcurve::AnimationCurve, bool)` — overload selector"]
+    pub fn new(value: crate::unity_engine::animationcurve::AnimationCurve, override_state: bool) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AnimationCurveParameter), ::core::stringify!(new),));
- <Self as IAnimationCurveParameterMethods> ::ctor(this,value,override_state);
-this}
+ failed to instantiate",
+                ::core::stringify!(AnimationCurveParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAnimationCurveParameterMethods>::ctor(this, value, override_state);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-animationcurveparameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AnimationCurveParameter;
-    pub use super::IAnimationCurveParameter;
-    pub use super::IAnimationCurveParameterMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter")] pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")] pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use super::{AnimationCurveParameter, IAnimationCurveParameter, IAnimationCurveParameterMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

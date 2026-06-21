@@ -2,99 +2,239 @@
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        moon_sharp::interpreter::tree::{
+            expression::{Expression, IExpression},
+            nodebase::{INodeBase, NodeBase},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::moon_sharp::interpreter::tree::expression::{Expression,IExpression}
-;
-use crate::moon_sharp::interpreter::tree::nodebase::{INodeBase,NodeBase}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/expressions/unaryoperatorexpression/UnaryOperatorExpression.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree.Expressions",name="UnaryOperatorExpression")]#[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]pub struct UnaryOperatorExpression{#[offset(32)]#[rename(name="m_Exp")]pub m_exp:crate::moon_sharp::interpreter::tree::expression::Expression, #[offset(40)]#[rename(name="m_OpText")]pub m_op_text: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/expressions/unaryoperatorexpression/UnaryOperatorExpression.md"))]
+    #[::unity::class(namespace = "MoonSharp.Interpreter.Tree.Expressions", name = "UnaryOperatorExpression")]
+    #[parent(crate::moon_sharp::interpreter::tree::expression::Expression)]
+    pub struct UnaryOperatorExpression {
+        #[offset(32)]
+        #[rename(name = "m_Exp")]
+        pub m_exp: crate::moon_sharp::interpreter::tree::expression::Expression,
+        #[offset(40)]
+        #[rename(name = "m_OpText")]
+        pub m_op_text: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnaryOperatorExpression_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::tree::expression::Expression as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::tree::token::Token as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<UnaryOperatorExpression as::unity2::ClassIdentity> ::class(),".ctor",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __UnaryOperatorExpression_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[
+                <crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext as ::unity::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::expression::Expression as ::unity::IlType>::il_type(),
+                <crate::moon_sharp::interpreter::tree::token::Token as ::unity::IlType>::il_type(),
+            ];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <UnaryOperatorExpression as ::unity::ClassIdentity>::class(),
+                ".ctor",
+                3,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <UnaryOperatorExpression as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
+",
+                        <UnaryOperatorExpression as ::unity::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]pub trait IUnaryOperatorExpressionMethods:IUnaryOperatorExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext> ,sub_expression:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression> ,unary_op_token:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>)->(){unsafe{let __receiver= <UnaryOperatorExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__UnaryOperatorExpression_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(UnaryOperatorExpression)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext),(crate::moon_sharp::interpreter::tree::expression::Expression)::core::convert::Into::into(sub_expression),(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(unary_op_token))}
-}
-#[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <UnaryOperatorExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+pub trait IUnaryOperatorExpressionMethods: IUnaryOperatorExpression {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` overload"]
+    fn ctor(
+        self,
+        lcontext: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>,
+        sub_expression: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression>,
+        unary_op_token: impl ::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <UnaryOperatorExpression as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__UnaryOperatorExpression_unity_raw::__lookup_ctor::get_method_info().method_ptr,();
+(UnaryOperatorExpression)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext),(crate::moon_sharp::interpreter::tree::expression::Expression)::core::convert::Into::into(sub_expression),(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(unary_op_token))
+        }
+    }
+    #[doc = "`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]
+    fn compile(self, bc: impl ::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>) -> () {
+        unsafe {
+            let __receiver =
+                <UnaryOperatorExpression as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <UnaryOperatorExpression as::unity2::ClassIdentity> ::NAME,"Compile",));
-let __inner:extern "C" fn(UnaryOperatorExpression,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(bc),__mi)}
-}
-}
-#[doc="`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]fn eval(self,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <UnaryOperatorExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <UnaryOperatorExpression as ::unity::ClassIdentity>::NAME,
+                        "Compile",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    UnaryOperatorExpression,
+                    crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(bc), __mi)
+            }
+        }
+    }
+    #[doc = "`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]
+    fn eval(
+        self,
+        context: impl ::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        unsafe {
+            let __receiver =
+                <UnaryOperatorExpression as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <UnaryOperatorExpression as::unity2::ClassIdentity> ::NAME,"Eval",));
-let __inner:extern "C" fn(UnaryOperatorExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(context),__mi)}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]impl<__T:IUnaryOperatorExpression>IUnaryOperatorExpressionMethods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]impl UnaryOperatorExpression{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn eval_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]impl UnaryOperatorExpression{#[doc="Direct (non-virtual) call to `UnaryOperatorExpression`'s own `Compile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn compile(this:impl::core::convert::Into< ::unity2::IlInstance> ,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,)->(){let __mi=Self::compile_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),bc, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `UnaryOperatorExpression`'s own `Eval`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn eval(this:impl::core::convert::Into< ::unity2::IlInstance> ,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __mi=Self::eval_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),context, ::core::option::Option::None)}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <UnaryOperatorExpression as ::unity::ClassIdentity>::NAME,
+                        "Eval",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    UnaryOperatorExpression,
+                    crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+                    ::unity::OptionalMethod,
+                ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(context), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]impl UnaryOperatorExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"]pub fn new(lcontext:crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,sub_expression:crate::moon_sharp::interpreter::tree::expression::Expression,unary_op_token:crate::moon_sharp::interpreter::tree::token::Token)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+impl<__T: IUnaryOperatorExpression> IUnaryOperatorExpressionMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+impl UnaryOperatorExpression {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn compile_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn eval_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+impl UnaryOperatorExpression {
+    #[doc = "Direct (non-virtual) call to `UnaryOperatorExpression`'s own `Compile`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn compile(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        bc: crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+    ) -> () {
+        let __mi = Self::compile_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), bc, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `UnaryOperatorExpression`'s own `Eval`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn eval(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        context: crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+    ) -> crate::moon_sharp::interpreter::dynvalue::DynValue {
+        let __mi = Self::eval_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,
+            ::unity::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::dynvalue::DynValue = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), context, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
+impl UnaryOperatorExpression {
+    #[doc = "`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::tree::token::Token)` — overload selector"]
+    pub fn new(
+        lcontext: crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext,
+        sub_expression: crate::moon_sharp::interpreter::tree::expression::Expression,
+        unary_op_token: crate::moon_sharp::interpreter::tree::token::Token,
+    ) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(UnaryOperatorExpression), ::core::stringify!(new),));
- <Self as IUnaryOperatorExpressionMethods> ::ctor(this,lcontext,sub_expression,unary_op_token);
-this}
+ failed to instantiate",
+                ::core::stringify!(UnaryOperatorExpression),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IUnaryOperatorExpressionMethods>::ctor(this, lcontext, sub_expression, unary_op_token);
+        this
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-expressions-unaryoperatorexpression")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnaryOperatorExpression;
-    pub use super::IUnaryOperatorExpression;
-    pub use super::IUnaryOperatorExpressionMethods;
-    pub use crate::moon_sharp::interpreter::tree::expression::IExpression;
-    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "moon_sharp-interpreter-tree-expression")] pub use crate::moon_sharp::interpreter::tree::expression::IExpressionMethods;
-    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")] pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IUnaryOperatorExpression, IUnaryOperatorExpressionMethods, UnaryOperatorExpression};
+    #[cfg(feature = "moon_sharp-interpreter-tree-expression")]
+    pub use crate::moon_sharp::interpreter::tree::expression::IExpressionMethods;
+    #[cfg(feature = "moon_sharp-interpreter-tree-nodebase")]
+    pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBaseMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::tree::{expression::IExpression, nodebase::INodeBase},
+        system::object::IObject,
+    };
 }

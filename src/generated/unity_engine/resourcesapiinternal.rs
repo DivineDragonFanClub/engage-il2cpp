@@ -2,53 +2,114 @@
 
 #[cfg(feature = "unity_engine-resourcesapiinternal-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resourcesapiinternal/ResourcesAPIInternal.md"))]#[::unity2::class(namespace="UnityEngine",name="ResourcesAPIInternal")]#[parent(crate::system::object::Object)]pub struct ResourcesAPIInternal{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resourcesapiinternal/ResourcesAPIInternal.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "ResourcesAPIInternal")]
+    #[parent(crate::system::object::Object)]
+    pub struct ResourcesAPIInternal {}
 }
 
 #[cfg(feature = "unity_engine-resourcesapiinternal-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resourcesapiinternal")]impl ResourcesAPIInternal{#[doc="`FindObjectsOfTypeAll(::unity2::SystemType)` overload"]pub fn find_objects_of_type_all(r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f894e0usize)as*mut u8, ::unity2::Array<crate::unity_engine::object_2::Object_2> ;
-(::unity2::SystemType)::core::convert::Into::into(r#type))}
-}
-#[doc="`FindShaderByName(::unity2::Il2CppString)` overload"]pub fn find_shader_by_name(name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::shader::Shader{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89580usize)as*mut u8,crate::unity_engine::shader::Shader;
-(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`Load(::unity2::Il2CppString, ::unity2::SystemType)` overload"]pub fn load(path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::object_2::Object_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89620usize)as*mut u8,crate::unity_engine::object_2::Object_2;
-(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
-}
-#[doc="`LoadAll(::unity2::Il2CppString, ::unity2::SystemType)` overload"]pub fn load_all(path:impl::core::convert::Into< ::unity2::Il2CppString> ,system_type_instance:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::unity_engine::object_2::Object_2>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f896c0usize)as*mut u8, ::unity2::Array<crate::unity_engine::object_2::Object_2> ;
-(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(system_type_instance))}
-}
-#[doc="`LoadAsyncInternal(::unity2::Il2CppString, ::unity2::SystemType)` overload"]pub fn load_async_internal(path:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->crate::unity_engine::resourcerequest::ResourceRequest{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89790usize)as*mut u8,crate::unity_engine::resourcerequest::ResourceRequest;
-(::unity2::Il2CppString)::core::convert::Into::into(path),(::unity2::SystemType)::core::convert::Into::into(r#type))}
-}
-#[doc="`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"]pub fn unload_asset(asset_to_unload:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f89830usize)as*mut u8,();
-(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(asset_to_unload))}
-}
+#[cfg(feature = "unity_engine-resourcesapiinternal")]
+impl ResourcesAPIInternal {
+    #[doc = "`FindObjectsOfTypeAll(::unity::SystemType)` overload"]
+    pub fn find_objects_of_type_all(
+        r#type: impl ::core::convert::Into<::unity::SystemType>,
+    ) -> ::unity::Array<crate::unity_engine::object_2::Object_2> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f894e0usize)as*mut u8, ::unity::Array<crate::unity_engine::object_2::Object_2> ;
+(::unity::SystemType)::core::convert::Into::into(r#type))
+        }
+    }
+
+    #[doc = "`FindShaderByName(::unity::Il2CppString)` overload"]
+    pub fn find_shader_by_name(name: impl ::core::convert::Into<::unity::Il2CppString>) -> crate::unity_engine::shader::Shader {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f89580usize)as*mut u8,crate::unity_engine::shader::Shader;
+(::unity::Il2CppString)::core::convert::Into::into(name))
+        }
+    }
+
+    #[doc = "`Load(::unity::Il2CppString, ::unity::SystemType)` overload"]
+    pub fn load(
+        path: impl ::core::convert::Into<::unity::Il2CppString>,
+        system_type_instance: impl ::core::convert::Into<::unity::SystemType>,
+    ) -> crate::unity_engine::object_2::Object_2 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f89620usize)as*mut u8,crate::unity_engine::object_2::Object_2;
+(::unity::Il2CppString)::core::convert::Into::into(path),(::unity::SystemType)::core::convert::Into::into(system_type_instance))
+        }
+    }
+
+    #[doc = "`LoadAll(::unity::Il2CppString, ::unity::SystemType)` overload"]
+    pub fn load_all(
+        path: impl ::core::convert::Into<::unity::Il2CppString>,
+        system_type_instance: impl ::core::convert::Into<::unity::SystemType>,
+    ) -> ::unity::Array<crate::unity_engine::object_2::Object_2> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f896c0usize)as*mut u8, ::unity::Array<crate::unity_engine::object_2::Object_2> ;
+(::unity::Il2CppString)::core::convert::Into::into(path),(::unity::SystemType)::core::convert::Into::into(system_type_instance))
+        }
+    }
+
+    #[doc = "`LoadAsyncInternal(::unity::Il2CppString, ::unity::SystemType)` overload"]
+    pub fn load_async_internal(
+        path: impl ::core::convert::Into<::unity::Il2CppString>,
+        r#type: impl ::core::convert::Into<::unity::SystemType>,
+    ) -> crate::unity_engine::resourcerequest::ResourceRequest {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f89790usize)as*mut u8,crate::unity_engine::resourcerequest::ResourceRequest;
+(::unity::Il2CppString)::core::convert::Into::into(path),(::unity::SystemType)::core::convert::Into::into(r#type))
+        }
+    }
+
+    #[doc = "`UnloadAsset(crate::unity_engine::object_2::Object_2)` overload"]
+    pub fn unload_asset(asset_to_unload: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f89830usize)as*mut u8,();
+(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(asset_to_unload))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resourcesapiinternal")]impl ResourcesAPIInternal{pub fn find_objects_of_type_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn find_shader_by_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn load_all_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn load_async_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn unload_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature = "unity_engine-resourcesapiinternal")]
+impl ResourcesAPIInternal {
+    pub fn find_objects_of_type_all_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn find_shader_by_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn load_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn load_all_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn load_async_internal_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn unload_asset_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
 }
 
 #[cfg(feature = "unity_engine-resourcesapiinternal")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ResourcesAPIInternal;
-    pub use super::IResourcesAPIInternal;
+    pub use super::{IResourcesAPIInternal, ResourcesAPIInternal};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

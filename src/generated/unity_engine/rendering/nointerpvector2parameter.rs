@@ -2,52 +2,79 @@
 
 #[cfg(feature = "unity_engine-rendering-nointerpvector2parameter-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
-;
-use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpvector2parameter/NoInterpVector2Parameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="NoInterpVector2Parameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::vector2::Vector2>)]pub struct NoInterpVector2Parameter{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpvector2parameter/NoInterpVector2Parameter.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering", name = "NoInterpVector2Parameter")]
+    #[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<crate::unity_engine::vector2::Vector2>)]
+    pub struct NoInterpVector2Parameter {}
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpvector2parameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-nointerpvector2parameter")]pub trait INoInterpVector2ParameterMethods:INoInterpVector2Parameter{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpVector2Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac6e0usize)as*mut u8,();
-(NoInterpVector2Parameter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
-}
+#[cfg(feature = "unity_engine-rendering-nointerpvector2parameter")]
+pub trait INoInterpVector2ParameterMethods: INoInterpVector2Parameter {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool)` overload"]
+    fn ctor(self, value: impl ::core::convert::Into<crate::unity_engine::vector2::Vector2>, override_state: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver =
+                <NoInterpVector2Parameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x30ac6e0usize)as*mut u8,();
+(NoInterpVector2Parameter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-nointerpvector2parameter")]impl<__T:INoInterpVector2Parameter>INoInterpVector2ParameterMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-nointerpvector2parameter")]
+impl<__T: INoInterpVector2Parameter> INoInterpVector2ParameterMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-nointerpvector2parameter")]impl NoInterpVector2Parameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-rendering-nointerpvector2parameter")]
+impl NoInterpVector2Parameter {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-nointerpvector2parameter")]impl NoInterpVector2Parameter{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, bool)` — overload selector"]pub fn new(value:crate::unity_engine::vector2::Vector2,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-nointerpvector2parameter")]
+impl NoInterpVector2Parameter {
+    #[doc = "`.ctor(crate::unity_engine::vector2::Vector2, bool)` — overload selector"]
+    pub fn new(value: crate::unity_engine::vector2::Vector2, override_state: bool) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(NoInterpVector2Parameter), ::core::stringify!(new),));
- <Self as INoInterpVector2ParameterMethods> ::ctor(this,value,override_state);
-this}
+ failed to instantiate",
+                ::core::stringify!(NoInterpVector2Parameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoInterpVector2ParameterMethods>::ctor(this, value, override_state);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpvector2parameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NoInterpVector2Parameter;
-    pub use super::INoInterpVector2Parameter;
-    pub use super::INoInterpVector2ParameterMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter")] pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")] pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use super::{INoInterpVector2Parameter, INoInterpVector2ParameterMethods, NoInterpVector2Parameter};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

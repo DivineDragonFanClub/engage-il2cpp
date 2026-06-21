@@ -2,90 +2,212 @@
 
 #[cfg(feature = "root-basicmenuopen-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+            statemachinebehaviour::{IStateMachineBehaviour, StateMachineBehaviour},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMachineBehaviour}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/basicmenuopen/BasicMenuOpen.md"))]#[::unity2::class(namespace="",name="BasicMenuOpen")]#[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]pub struct BasicMenuOpen{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/basicmenuopen/BasicMenuOpen.md"))]
+    #[::unity::class(namespace = "", name = "BasicMenuOpen")]
+    #[parent(crate::unity_engine::statemachinebehaviour::StateMachineBehaviour)]
+    pub struct BasicMenuOpen {}
 }
 
 #[cfg(feature = "root-basicmenuopen-types")]
 pub use __types::*;
 
-#[cfg(feature="root-basicmenuopen")]pub trait IBasicMenuOpenMethods:IBasicMenuOpen{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BasicMenuOpen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-basicmenuopen")]
+pub trait IBasicMenuOpenMethods: IBasicMenuOpen {
+    #[doc = "`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
+    fn on_state_enter(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BasicMenuOpen as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <BasicMenuOpen as::unity2::ClassIdentity> ::NAME,"OnStateEnter",));
-let __inner:extern "C" fn(BasicMenuOpen,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index),__mi)}
-}
-}
-#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BasicMenuOpen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <BasicMenuOpen as ::unity::ClassIdentity>::NAME,
+                        "OnStateEnter",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    BasicMenuOpen,
+                    crate::unity_engine::animator::Animator,
+                    crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+                    i32,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(animator),
+                    ::core::convert::Into::into(state_info),
+                    ::core::convert::Into::into(layer_index),
+                    __mi,
+                )
+            }
+        }
+    }
+    #[doc = "`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]
+    fn on_state_exit(
+        self,
+        animator: impl ::core::convert::Into<crate::unity_engine::animator::Animator>,
+        state_info: impl ::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo>,
+        layer_index: impl ::core::convert::Into<i32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <BasicMenuOpen as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <BasicMenuOpen as::unity2::ClassIdentity> ::NAME,"OnStateExit",));
-let __inner:extern "C" fn(BasicMenuOpen,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicMenuOpen as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2467950usize)as*mut u8,();
-(BasicMenuOpen)__receiver)}
-}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <BasicMenuOpen as ::unity::ClassIdentity>::NAME,
+                        "OnStateExit",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    BasicMenuOpen,
+                    crate::unity_engine::animator::Animator,
+                    crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+                    i32,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(animator),
+                    ::core::convert::Into::into(state_info),
+                    ::core::convert::Into::into(layer_index),
+                    __mi,
+                )
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <BasicMenuOpen as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2467950usize)as*mut u8,();
+(BasicMenuOpen)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-basicmenuopen")]impl<__T:IBasicMenuOpen>IBasicMenuOpenMethods for __T{}
+#[cfg(feature = "root-basicmenuopen")]
+impl<__T: IBasicMenuOpen> IBasicMenuOpenMethods for __T {}
 
-#[cfg(feature="root-basicmenuopen")]impl BasicMenuOpen{pub fn on_state_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_state_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "root-basicmenuopen")]
+impl BasicMenuOpen {
+    pub fn on_state_enter_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn on_state_exit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="root-basicmenuopen")]impl BasicMenuOpen{#[doc="Direct (non-virtual) call to `BasicMenuOpen`'s own `OnStateEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_state_enter(this:impl::core::convert::Into< ::unity2::IlInstance> ,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,)->(){let __mi=Self::on_state_enter_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),animator,state_info,layer_index, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `BasicMenuOpen`'s own `OnStateExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_state_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,)->(){let __mi=Self::on_state_exit_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),animator,state_info,layer_index, ::core::option::Option::None)}
+#[cfg(feature = "root-basicmenuopen")]
+impl BasicMenuOpen {
+    #[doc = "Direct (non-virtual) call to `BasicMenuOpen`'s own `OnStateEnter`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_state_enter(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        animator: crate::unity_engine::animator::Animator,
+        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        layer_index: i32,
+    ) -> () {
+        let __mi = Self::on_state_enter_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), animator, state_info, layer_index, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `BasicMenuOpen`'s own `OnStateExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_state_exit(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        animator: crate::unity_engine::animator::Animator,
+        state_info: crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+        layer_index: i32,
+    ) -> () {
+        let __mi = Self::on_state_exit_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::animator::Animator,
+            crate::unity_engine::animatorstateinfo::AnimatorStateInfo,
+            i32,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), animator, state_info, layer_index, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="root-basicmenuopen")]impl BasicMenuOpen{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-basicmenuopen")]
+impl BasicMenuOpen {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(BasicMenuOpen), ::core::stringify!(new),));
- <Self as IBasicMenuOpenMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(BasicMenuOpen),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IBasicMenuOpenMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-basicmenuopen")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BasicMenuOpen;
-    pub use super::IBasicMenuOpen;
-    pub use super::IBasicMenuOpenMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviour;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    #[cfg(feature = "unity_engine-statemachinebehaviour")] pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviourMethods;
+    pub use super::{BasicMenuOpen, IBasicMenuOpen, IBasicMenuOpenMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    #[cfg(feature = "unity_engine-statemachinebehaviour")]
+    pub use crate::unity_engine::statemachinebehaviour::IStateMachineBehaviourMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject, statemachinebehaviour::IStateMachineBehaviour},
+    };
 }

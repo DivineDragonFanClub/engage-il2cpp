@@ -2,54 +2,88 @@
 
 #[cfg(feature = "unity_engine-touchscreenkeyboardtype-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/touchscreenkeyboardtype/TouchScreenKeyboardType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct TouchScreenKeyboardType {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for TouchScreenKeyboardType {
+        const NAME: &'static str = "TouchScreenKeyboardType";
+        const NAMESPACE: &'static str = "UnityEngine";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for TouchScreenKeyboardType {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl TouchScreenKeyboardType {
+        pub fn default() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/touchscreenkeyboardtype/TouchScreenKeyboardType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TouchScreenKeyboardType{pub value:i32,}
-impl::unity2::ClassIdentity for TouchScreenKeyboardType{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="TouchScreenKeyboardType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TouchScreenKeyboardType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TouchScreenKeyboardType{pub fn default()->Self{Self{value:0}
-}
-pub fn ascii_capable()->Self{Self{value:1}
-}
-pub fn numbers_and_punctuation()->Self{Self{value:2}
-}
-pub fn url()->Self{Self{value:3}
-}
-pub fn number_pad()->Self{Self{value:4}
-}
-pub fn phone_pad()->Self{Self{value:5}
-}
-pub fn name_phone_pad()->Self{Self{value:6}
-}
-pub fn email_address()->Self{Self{value:7}
-}
-pub fn nintendo_network_account()->Self{Self{value:8}
-}
-pub fn social()->Self{Self{value:9}
-}
-pub fn search()->Self{Self{value:10}
-}
-pub fn decimal_pad()->Self{Self{value:11}
-}
-pub fn one_time_code()->Self{Self{value:12}
-}
-}
+        pub fn ascii_capable() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn numbers_and_punctuation() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn url() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn number_pad() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn phone_pad() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn name_phone_pad() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn email_address() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn nintendo_network_account() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn social() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn search() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn decimal_pad() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn one_time_code() -> Self {
+            Self { value: 12 }
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-touchscreenkeyboardtype-types")]
@@ -59,10 +93,11 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TouchScreenKeyboardType;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

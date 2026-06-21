@@ -2,67 +2,121 @@
 
 #[cfg(feature = "root_motion-final_ik-editorikpose-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/editorikpose/EditorIKPose.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="EditorIKPose")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct EditorIKPose{#[offset(24)]#[rename(name="localPositions")]pub local_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(32)]#[rename(name="localRotations")]pub local_rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/editorikpose/EditorIKPose.md"))]
+    #[::unity::class(namespace = "RootMotion.FinalIK", name = "EditorIKPose")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct EditorIKPose {
+        #[offset(24)]
+        #[rename(name = "localPositions")]
+        pub local_positions: ::unity::Array<crate::unity_engine::vector3::Vector3>,
+        #[offset(32)]
+        #[rename(name = "localRotations")]
+        pub local_rotations: ::unity::Array<crate::unity_engine::quaternion::Quaternion>,
+    }
 }
 
 #[cfg(feature = "root_motion-final_ik-editorikpose-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-editorikpose")]pub trait IEditorIKPoseMethods:IEditorIKPose{#[doc="`get_poseStored()` overload"]fn get_pose_stored(self,)->bool{unsafe{let __receiver= <EditorIKPose as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6230usize)as*mut u8,bool;
-(EditorIKPose)__receiver)}
-}
-#[doc="`Store(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]fn store(self,t:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::transform::Transform> >)->(){unsafe{let __receiver= <EditorIKPose as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6510usize)as*mut u8,();
-(EditorIKPose)__receiver,(::unity2::Array<crate::unity_engine::transform::Transform>)::core::convert::Into::into(t))}
-}
-#[doc="`Restore(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]fn restore(self,t:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::transform::Transform> >)->bool{unsafe{let __receiver= <EditorIKPose as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6250usize)as*mut u8,bool;
-(EditorIKPose)__receiver,(::unity2::Array<crate::unity_engine::transform::Transform>)::core::convert::Into::into(t))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EditorIKPose as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22d6ae0usize)as*mut u8,();
-(EditorIKPose)__receiver)}
-}
+#[cfg(feature = "root_motion-final_ik-editorikpose")]
+pub trait IEditorIKPoseMethods: IEditorIKPose {
+    #[doc = "`get_poseStored()` overload"]
+    fn get_pose_stored(self) -> bool {
+        unsafe {
+            let __receiver = <EditorIKPose as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22d6230usize)as*mut u8,bool;
+(EditorIKPose)__receiver)
+        }
+    }
+    #[doc = "`Store(::unity::Array<crate::unity_engine::transform::Transform>)` overload"]
+    fn store(self, t: impl ::core::convert::Into<::unity::Array<crate::unity_engine::transform::Transform>>) -> () {
+        unsafe {
+            let __receiver = <EditorIKPose as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22d6510usize)as*mut u8,();
+(EditorIKPose)__receiver,(::unity::Array<crate::unity_engine::transform::Transform>)::core::convert::Into::into(t))
+        }
+    }
+    #[doc = "`Restore(::unity::Array<crate::unity_engine::transform::Transform>)` overload"]
+    fn restore(self, t: impl ::core::convert::Into<::unity::Array<crate::unity_engine::transform::Transform>>) -> bool {
+        unsafe {
+            let __receiver = <EditorIKPose as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22d6250usize)as*mut u8,bool;
+(EditorIKPose)__receiver,(::unity::Array<crate::unity_engine::transform::Transform>)::core::convert::Into::into(t))
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <EditorIKPose as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x22d6ae0usize)as*mut u8,();
+(EditorIKPose)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root_motion-final_ik-editorikpose")]impl<__T:IEditorIKPose>IEditorIKPoseMethods for __T{}
+#[cfg(feature = "root_motion-final_ik-editorikpose")]
+impl<__T: IEditorIKPose> IEditorIKPoseMethods for __T {}
 
-#[cfg(feature="root_motion-final_ik-editorikpose")]impl EditorIKPose{pub fn get_pose_stored_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn store_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature = "root_motion-final_ik-editorikpose")]
+impl EditorIKPose {
+    pub fn get_pose_stored_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn store_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn restore_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
 }
 
-#[cfg(feature="root_motion-final_ik-editorikpose")]impl EditorIKPose{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root_motion-final_ik-editorikpose")]
+impl EditorIKPose {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(EditorIKPose), ::core::stringify!(new),));
- <Self as IEditorIKPoseMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(EditorIKPose),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEditorIKPoseMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root_motion-final_ik-editorikpose")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EditorIKPose;
-    pub use super::IEditorIKPose;
-    pub use super::IEditorIKPoseMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use super::{EditorIKPose, IEditorIKPose, IEditorIKPoseMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

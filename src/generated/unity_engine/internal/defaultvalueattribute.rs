@@ -2,79 +2,153 @@
 
 #[cfg(feature = "unity_engine-internal-defaultvalueattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/internal/defaultvalueattribute/DefaultValueAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Internal",name="DefaultValueAttribute")]pub struct DefaultValueAttribute{#[offset(16)]#[rename(name="DefaultValue")]pub default_value: ::unity2::IlInstance,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/internal/defaultvalueattribute/DefaultValueAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine.Internal", name = "DefaultValueAttribute")]
+    pub struct DefaultValueAttribute {
+        #[offset(16)]
+        #[rename(name = "DefaultValue")]
+        pub default_value: ::unity::IlInstance,
+    }
 }
 
 #[cfg(feature = "unity_engine-internal-defaultvalueattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-internal-defaultvalueattribute")]pub trait IDefaultValueAttributeMethods:IDefaultValueAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DefaultValueAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4bec0usize)as*mut u8,();
-(DefaultValueAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <DefaultValueAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4bf00usize)as*mut u8,crate::system::object::Object;
-(DefaultValueAttribute)__receiver)}
-}
-#[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <DefaultValueAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
+pub trait IDefaultValueAttributeMethods: IDefaultValueAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <DefaultValueAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c4bec0usize)as*mut u8,();
+(DefaultValueAttribute)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Value()` overload"]
+    fn get_value(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <DefaultValueAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c4bf00usize)as*mut u8,crate::system::object::Object;
+(DefaultValueAttribute)__receiver)
+        }
+    }
+    #[doc = "`Equals(crate::system::object::Object)` overload"]
+    fn equals(self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            let __receiver = <DefaultValueAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <DefaultValueAttribute as::unity2::ClassIdentity> ::NAME,"Equals",));
-let __inner:extern "C" fn(DefaultValueAttribute,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
-}
-}
-#[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <DefaultValueAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <DefaultValueAttribute as ::unity::ClassIdentity>::NAME,
+                        "Equals",
+                    )
+                });
+                let __inner: extern "C" fn(DefaultValueAttribute, crate::system::object::Object, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(obj), __mi)
+            }
+        }
+    }
+    #[doc = "`GetHashCode()` overload"]
+    fn get_hash_code(self) -> i32 {
+        unsafe {
+            let __receiver = <DefaultValueAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(2usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",2usize,__vt.len(), <DefaultValueAttribute as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
-let __inner:extern "C" fn(DefaultValueAttribute, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="unity_engine-internal-defaultvalueattribute")]impl<__T:IDefaultValueAttribute>IDefaultValueAttributeMethods for __T{}
-
-#[cfg(feature="unity_engine-internal-defaultvalueattribute")]impl DefaultValueAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="unity_engine-internal-defaultvalueattribute")]impl DefaultValueAttribute{#[doc="Direct (non-virtual) call to `DefaultValueAttribute`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn equals(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::system::object::Object,)->bool{let __mi=Self::equals_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),obj, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `DefaultValueAttribute`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_hash_code(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_hash_code_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        2usize,
+                        __vt.len(),
+                        <DefaultValueAttribute as ::unity::ClassIdentity>::NAME,
+                        "GetHashCode",
+                    )
+                });
+                let __inner: extern "C" fn(DefaultValueAttribute, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-internal-defaultvalueattribute")]impl DefaultValueAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(value: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
+impl<__T: IDefaultValueAttribute> IDefaultValueAttributeMethods for __T {}
+
+#[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
+impl DefaultValueAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn equals_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_hash_code_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+}
+
+#[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
+impl DefaultValueAttribute {
+    #[doc = "Direct (non-virtual) call to `DefaultValueAttribute`'s own `Equals`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn equals(this: impl ::core::convert::Into<::unity::IlInstance>, obj: crate::system::object::Object) -> bool {
+        let __mi = Self::equals_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::system::object::Object, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), obj, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `DefaultValueAttribute`'s own `GetHashCode`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_hash_code(this: impl ::core::convert::Into<::unity::IlInstance>) -> i32 {
+        let __mi = Self::get_hash_code_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
+impl DefaultValueAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(value: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DefaultValueAttribute), ::core::stringify!(new),));
- <Self as IDefaultValueAttributeMethods> ::ctor(this,value);
-this}
+ failed to instantiate",
+                ::core::stringify!(DefaultValueAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDefaultValueAttributeMethods>::ctor(this, value);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-internal-defaultvalueattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DefaultValueAttribute;
-    pub use super::IDefaultValueAttribute;
-    pub use super::IDefaultValueAttributeMethods;
+    pub use super::{DefaultValueAttribute, IDefaultValueAttribute, IDefaultValueAttributeMethods};
 }

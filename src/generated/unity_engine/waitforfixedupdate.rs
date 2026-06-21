@@ -2,48 +2,70 @@
 
 #[cfg(feature = "unity_engine-waitforfixedupdate-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::yieldinstruction::{IYieldInstruction, YieldInstruction},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/waitforfixedupdate/WaitForFixedUpdate.md"))]#[::unity2::class(namespace="UnityEngine",name="WaitForFixedUpdate")]#[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]pub struct WaitForFixedUpdate{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/waitforfixedupdate/WaitForFixedUpdate.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "WaitForFixedUpdate")]
+    #[parent(crate::unity_engine::yieldinstruction::YieldInstruction)]
+    pub struct WaitForFixedUpdate {}
 }
 
 #[cfg(feature = "unity_engine-waitforfixedupdate-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-waitforfixedupdate")]pub trait IWaitForFixedUpdateMethods:IWaitForFixedUpdate{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WaitForFixedUpdate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379ab40usize)as*mut u8,();
-(WaitForFixedUpdate)__receiver)}
-}
+#[cfg(feature = "unity_engine-waitforfixedupdate")]
+pub trait IWaitForFixedUpdateMethods: IWaitForFixedUpdate {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <WaitForFixedUpdate as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x379ab40usize)as*mut u8,();
+(WaitForFixedUpdate)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-waitforfixedupdate")]impl<__T:IWaitForFixedUpdate>IWaitForFixedUpdateMethods for __T{}
+#[cfg(feature = "unity_engine-waitforfixedupdate")]
+impl<__T: IWaitForFixedUpdate> IWaitForFixedUpdateMethods for __T {}
 
-#[cfg(feature="unity_engine-waitforfixedupdate")]impl WaitForFixedUpdate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-waitforfixedupdate")]
+impl WaitForFixedUpdate {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-waitforfixedupdate")]impl WaitForFixedUpdate{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-waitforfixedupdate")]
+impl WaitForFixedUpdate {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(WaitForFixedUpdate), ::core::stringify!(new),));
- <Self as IWaitForFixedUpdateMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(WaitForFixedUpdate),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWaitForFixedUpdateMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-waitforfixedupdate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WaitForFixedUpdate;
-    pub use super::IWaitForFixedUpdate;
-    pub use super::IWaitForFixedUpdateMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::yieldinstruction::IYieldInstruction;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-yieldinstruction")] pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
+    pub use super::{IWaitForFixedUpdate, IWaitForFixedUpdateMethods, WaitForFixedUpdate};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-yieldinstruction")]
+    pub use crate::unity_engine::yieldinstruction::IYieldInstructionMethods;
+    pub use crate::{system::object::IObject, unity_engine::yieldinstruction::IYieldInstruction};
 }

@@ -2,70 +2,123 @@
 
 #[cfg(feature = "app-procdescmjumpfalse-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            procdesc::{IProcDesc, ProcDesc},
+            procdescjumpfunc::{IProcDescJumpFunc, ProcDescJumpFunc},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::procdesc::{IProcDesc,ProcDesc}
-;
-use crate::app::procdescjumpfunc::{IProcDescJumpFunc,ProcDescJumpFunc}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmjumpfalse/ProcDescMJumpFalse.md"))]#[::unity2::class(namespace="App",name="ProcDescMJumpFalse")]#[parent(crate::app::procdescjumpfunc::ProcDescJumpFunc)]pub struct ProcDescMJumpFalse{#[offset(24)]#[rename(name="m_Method")]pub m_method:crate::app::procboolmethod::ProcBoolMethod,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmjumpfalse/ProcDescMJumpFalse.md"))]
+    #[::unity::class(namespace = "App", name = "ProcDescMJumpFalse")]
+    #[parent(crate::app::procdescjumpfunc::ProcDescJumpFunc)]
+    pub struct ProcDescMJumpFalse {
+        #[offset(24)]
+        #[rename(name = "m_Method")]
+        pub m_method: crate::app::procboolmethod::ProcBoolMethod,
+    }
 }
 
 #[cfg(feature = "app-procdescmjumpfalse-types")]
 pub use __types::*;
 
-#[cfg(feature="app-procdescmjumpfalse")]pub trait IProcDescMJumpFalseMethods:IProcDescMJumpFalse{#[doc="`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod> ,label:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProcDescMJumpFalse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281bf20usize)as*mut u8,();
-(ProcDescMJumpFalse)__receiver,(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(method),(i32)::core::convert::Into::into(label))}
-}
-#[doc="`IsJump(crate::app::procinst::ProcInst)` overload"]fn is_jump(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <ProcDescMJumpFalse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-procdescmjumpfalse")]
+pub trait IProcDescMJumpFalseMethods: IProcDescMJumpFalse {
+    #[doc = "`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` overload"]
+    fn ctor(self, method: impl ::core::convert::Into<crate::app::procboolmethod::ProcBoolMethod>, label: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <ProcDescMJumpFalse as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x281bf20usize)as*mut u8,();
+(ProcDescMJumpFalse)__receiver,(crate::app::procboolmethod::ProcBoolMethod)::core::convert::Into::into(method),(i32)::core::convert::Into::into(label))
+        }
+    }
+    #[doc = "`IsJump(crate::app::procinst::ProcInst)` overload"]
+    fn is_jump(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> bool {
+        unsafe {
+            let __receiver = <ProcDescMJumpFalse as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(7usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <ProcDescMJumpFalse as::unity2::ClassIdentity> ::NAME,"IsJump",));
-let __inner:extern "C" fn(ProcDescMJumpFalse,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
-}
-}
-}
-
-#[cfg(feature="app-procdescmjumpfalse")]impl<__T:IProcDescMJumpFalse>IProcDescMJumpFalseMethods for __T{}
-
-#[cfg(feature="app-procdescmjumpfalse")]impl ProcDescMJumpFalse{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_jump_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-procdescmjumpfalse")]impl ProcDescMJumpFalse{#[doc="Direct (non-virtual) call to `ProcDescMJumpFalse`'s own `IsJump`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_jump(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->bool{let __mi=Self::is_jump_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),inst, ::core::option::Option::None)}
+`)",
+                        7usize,
+                        __vt.len(),
+                        <ProcDescMJumpFalse as ::unity::ClassIdentity>::NAME,
+                        "IsJump",
+                    )
+                });
+                let __inner: extern "C" fn(ProcDescMJumpFalse, crate::app::procinst::ProcInst, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(inst), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-procdescmjumpfalse")]impl ProcDescMJumpFalse{#[doc="`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` — overload selector"]pub fn new(method:crate::app::procboolmethod::ProcBoolMethod,label:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-procdescmjumpfalse")]
+impl<__T: IProcDescMJumpFalse> IProcDescMJumpFalseMethods for __T {}
+
+#[cfg(feature = "app-procdescmjumpfalse")]
+impl ProcDescMJumpFalse {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn is_jump_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "app-procdescmjumpfalse")]
+impl ProcDescMJumpFalse {
+    #[doc = "Direct (non-virtual) call to `ProcDescMJumpFalse`'s own `IsJump`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_jump(this: impl ::core::convert::Into<::unity::IlInstance>, inst: crate::app::procinst::ProcInst) -> bool {
+        let __mi = Self::is_jump_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::app::procinst::ProcInst, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), inst, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-procdescmjumpfalse")]
+impl ProcDescMJumpFalse {
+    #[doc = "`.ctor(crate::app::procboolmethod::ProcBoolMethod, i32)` — overload selector"]
+    pub fn new(method: crate::app::procboolmethod::ProcBoolMethod, label: i32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ProcDescMJumpFalse), ::core::stringify!(new),));
- <Self as IProcDescMJumpFalseMethods> ::ctor(this,method,label);
-this}
+ failed to instantiate",
+                ::core::stringify!(ProcDescMJumpFalse),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescMJumpFalseMethods>::ctor(this, method, label);
+        this
+    }
 }
 
 #[cfg(feature = "app-procdescmjumpfalse")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProcDescMJumpFalse;
-    pub use super::IProcDescMJumpFalse;
-    pub use super::IProcDescMJumpFalseMethods;
-    pub use crate::app::procdesc::IProcDesc;
-    pub use crate::app::procdescjumpfunc::IProcDescJumpFunc;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-procdesc")] pub use crate::app::procdesc::IProcDescMethods;
-    #[cfg(feature = "app-procdescjumpfunc")] pub use crate::app::procdescjumpfunc::IProcDescJumpFuncMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IProcDescMJumpFalse, IProcDescMJumpFalseMethods, ProcDescMJumpFalse};
+    #[cfg(feature = "app-procdesc")]
+    pub use crate::app::procdesc::IProcDescMethods;
+    #[cfg(feature = "app-procdescjumpfunc")]
+    pub use crate::app::procdescjumpfunc::IProcDescJumpFuncMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{procdesc::IProcDesc, procdescjumpfunc::IProcDescJumpFunc},
+        system::object::IObject,
+    };
 }

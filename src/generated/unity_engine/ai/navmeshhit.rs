@@ -2,44 +2,68 @@
 
 #[cfg(feature = "unity_engine-ai-navmeshhit-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmeshhit/NavMeshHit.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct NavMeshHit {
+        pub m_position: crate::unity_engine::vector3::Vector3,
+        pub m_normal: crate::unity_engine::vector3::Vector3,
+        pub m_distance: f32,
+        pub m_mask: i32,
+        pub m_hit: i32,
+    }
+    impl ::unity::ClassIdentity for NavMeshHit {
+        const NAME: &'static str = "NavMeshHit";
+        const NAMESPACE: &'static str = "UnityEngine.AI";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ai/navmeshhit/NavMeshHit.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct NavMeshHit{pub m_position:crate::unity_engine::vector3::Vector3,pub m_normal:crate::unity_engine::vector3::Vector3,pub m_distance:f32,pub m_mask:i32,pub m_hit:i32,}
-impl::unity2::ClassIdentity for NavMeshHit{const NAMESPACE: &'static str="UnityEngine.AI";
-const NAME: &'static str="NavMeshHit";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for NavMeshHit{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for NavMeshHit {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshhit-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ai-navmeshhit")]impl NavMeshHit{#[doc="`get_position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43f60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(*mut NavMeshHit)self as*mut NavMeshHit)}
-}
+#[cfg(feature = "unity_engine-ai-navmeshhit")]
+impl NavMeshHit {
+    #[doc = "`get_position()` overload"]
+    pub fn get_position(&mut self) -> crate::unity_engine::vector3::Vector3 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f43f60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut NavMeshHit)self as*mut NavMeshHit)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-ai-navmeshhit")]impl NavMeshHit{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-ai-navmeshhit")]
+impl NavMeshHit {
+    pub fn get_position_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-ai-navmeshhit")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::NavMeshHit;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

@@ -2,155 +2,293 @@
 
 #[cfg(feature = "app-fishingsequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            procinst::{IProcInst, ProcInst},
+            procscenesequence_1::{IProcSceneSequence_1, ProcSceneSequence_1},
+            singletonprocinst_1::{ISingletonProcInst_1, SingletonProcInst_1},
+        },
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::procinst::{IProcInst,ProcInst}
-;
-use crate::app::procscenesequence_1::{IProcSceneSequence_1,ProcSceneSequence_1}
-;
-use crate::app::singletonprocinst_1::{ISingletonProcInst_1,SingletonProcInst_1}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence_Label.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct FishingSequence_Label {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for FishingSequence_Label {
+        const NAME: &'static str = "FishingSequence.Label";
+        const NAMESPACE: &'static str = "App";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for FishingSequence_Label {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl FishingSequence_Label {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FishingSequence_Label{pub value:i32,}
-impl::unity2::ClassIdentity for FishingSequence_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="FishingSequence.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for FishingSequence_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl FishingSequence_Label{pub fn none()->Self{Self{value:0}
-}
-pub fn ready_menu()->Self{Self{value:1}
-}
-pub fn execute_game()->Self{Self{value:2}
-}
-pub fn check_continue()->Self{Self{value:3}
-}
-pub fn exit()->Self{Self{value:4}
-}
-}
+        pub fn ready_menu() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn execute_game() -> Self {
+            Self { value: 2 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence.md"))]#[::unity2::class(namespace="App",name="FishingSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingSequence{}
+        pub fn check_continue() -> Self {
+            Self { value: 3 }
+        }
 
+        pub fn exit() -> Self {
+            Self { value: 4 }
+        }
+    }
+
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence.md"))]
+    #[::unity::class(namespace = "App", name = "FishingSequence")]
+    #[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]
+    pub struct FishingSequence {}
 }
 
 #[cfg(feature = "app-fishingsequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-fishingsequence")]impl FishingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260a4a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`GetFishingPlayCount()` overload"]pub fn get_fishing_play_count()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260b190usize)as*mut u8,i32;
-)}
-}
+#[cfg(feature = "app-fishingsequence")]
+impl FishingSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a4a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))
+        }
+    }
+
+    #[doc = "`GetFishingPlayCount()` overload"]
+    pub fn get_fishing_play_count() -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x260b190usize)as*mut u8,i32;
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-fishingsequence")]pub trait IFishingSequenceMethods:IFishingSequence{#[doc="`get_FromDebugMenu()` overload"]fn get_from_debug_menu(self,)->bool{unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a060usize)as*mut u8,bool;
-(FishingSequence)__receiver)}
-}
-#[doc="`set_FromDebugMenu(bool)` overload"]fn set_from_debug_menu(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a070usize)as*mut u8,();
-(FishingSequence)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-fishingsequence")]
+pub trait IFishingSequenceMethods: IFishingSequence {
+    #[doc = "`get_FromDebugMenu()` overload"]
+    fn get_from_debug_menu(self) -> bool {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a060usize)as*mut u8,bool;
+(FishingSequence)__receiver)
+        }
+    }
+    #[doc = "`set_FromDebugMenu(bool)` overload"]
+    fn set_from_debug_menu(self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a070usize)as*mut u8,();
+(FishingSequence)__receiver,(bool)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`OnShutdown()` overload"]
+    fn on_shutdown(self) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(15usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",15usize,__vt.len(), <FishingSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
-let __inner:extern "C" fn(FishingSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`ClearRecord()` overload"]fn clear_record(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a0f0usize)as*mut u8,();
-(FishingSequence)__receiver)}
-}
-#[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a210usize)as*mut u8,();
-(FishingSequence)__receiver)}
-}
-#[doc="`IsLoadingResource()` overload"]fn is_loading_resource(self,)->bool{unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a2b0usize)as*mut u8,bool;
-(FishingSequence)__receiver)}
-}
-#[doc="`UnloadResource()` overload"]fn unload_resource(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a330usize)as*mut u8,();
-(FishingSequence)__receiver)}
-}
-#[doc="`CreateGameSequence()` overload"]fn create_game_sequence(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a3b0usize)as*mut u8,();
-(FishingSequence)__receiver)}
-}
-#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a420usize)as*mut u8,();
-(FishingSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260b130usize)as*mut u8,();
-(FishingSequence)__receiver)}
-}
+`)",
+                        15usize,
+                        __vt.len(),
+                        <FishingSequence as ::unity::ClassIdentity>::NAME,
+                        "OnShutdown",
+                    )
+                });
+                let __inner: extern "C" fn(FishingSequence, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`ClearRecord()` overload"]
+    fn clear_record(self) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a0f0usize)as*mut u8,();
+(FishingSequence)__receiver)
+        }
+    }
+    #[doc = "`LoadResource()` overload"]
+    fn load_resource(self) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a210usize)as*mut u8,();
+(FishingSequence)__receiver)
+        }
+    }
+    #[doc = "`IsLoadingResource()` overload"]
+    fn is_loading_resource(self) -> bool {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a2b0usize)as*mut u8,bool;
+(FishingSequence)__receiver)
+        }
+    }
+    #[doc = "`UnloadResource()` overload"]
+    fn unload_resource(self) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a330usize)as*mut u8,();
+(FishingSequence)__receiver)
+        }
+    }
+    #[doc = "`CreateGameSequence()` overload"]
+    fn create_game_sequence(self) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a3b0usize)as*mut u8,();
+(FishingSequence)__receiver)
+        }
+    }
+    #[doc = "`Exit()` overload"]
+    fn exit(self) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260a420usize)as*mut u8,();
+(FishingSequence)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <FishingSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x260b130usize)as*mut u8,();
+(FishingSequence)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-fishingsequence")]impl<__T:IFishingSequence>IFishingSequenceMethods for __T{}
+#[cfg(feature = "app-fishingsequence")]
+impl<__T: IFishingSequence> IFishingSequenceMethods for __T {}
 
-#[cfg(feature="app-fishingsequence")]impl FishingSequence{pub fn get_from_debug_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_from_debug_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_shutdown_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn clear_record_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn load_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_loading_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn unload_resource_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn create_game_sequence_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_fishing_play_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+#[cfg(feature = "app-fishingsequence")]
+impl FishingSequence {
+    pub fn get_from_debug_menu_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn set_from_debug_menu_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn on_shutdown_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn clear_record_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn load_resource_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn is_loading_resource_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn unload_resource_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn create_game_sequence_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn exit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn create_bind_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
+
+    pub fn get_fishing_play_count_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[10]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[11]
+    }
 }
 
-#[cfg(feature="app-fishingsequence")]impl FishingSequence{#[doc="Direct (non-virtual) call to `FishingSequence`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_shutdown(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_shutdown_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-fishingsequence")]
+impl FishingSequence {
+    #[doc = "Direct (non-virtual) call to `FishingSequence`'s own `OnShutdown`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_shutdown(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_shutdown_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-fishingsequence")]impl FishingSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-fishingsequence")]
+impl FishingSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(FishingSequence), ::core::stringify!(new),));
- <Self as IFishingSequenceMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(FishingSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFishingSequenceMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-fishingsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FishingSequence_Label;
-    pub use super::FishingSequence;
-    pub use super::IFishingSequence;
-    pub use super::IFishingSequenceMethods;
-    pub use crate::app::procinst::IProcInst;
-    pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
-    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "app-procscenesequence_1")] pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
-    #[cfg(feature = "app-singletonprocinst_1")] pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{FishingSequence, FishingSequence_Label, IFishingSequence, IFishingSequenceMethods};
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "app-procscenesequence_1")]
+    pub use crate::app::procscenesequence_1::IProcSceneSequence_1Methods;
+    #[cfg(feature = "app-singletonprocinst_1")]
+    pub use crate::app::singletonprocinst_1::ISingletonProcInst_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::{procinst::IProcInst, procscenesequence_1::IProcSceneSequence_1, singletonprocinst_1::ISingletonProcInst_1},
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

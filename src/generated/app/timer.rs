@@ -2,72 +2,164 @@
 
 #[cfg(feature = "app-timer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/timer/Timer.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct Timer {}
+    impl ::unity::ClassIdentity for Timer {
+        const NAME: &'static str = "Timer";
+        const NAMESPACE: &'static str = "App";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/timer/Timer.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Timer{}
-impl::unity2::ClassIdentity for Timer{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Timer";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Timer{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for Timer {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "app-timer-types")]
 pub use __types::*;
 
-#[cfg(feature="app-timer")]impl Timer{#[doc="`.ctor(bool, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn ctor(&mut self,is_show:impl::core::convert::Into<bool> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf00usize)as*mut u8,();
-(*mut Timer)self as*mut Timer,(bool)::core::convert::Into::into(is_show),(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn ctor_2(&mut self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf10usize)as*mut u8,();
-(*mut Timer)self as*mut Timer,(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf20usize)as*mut u8,();
-(*mut Timer)self as*mut Timer)}
-}
-#[doc="`Start(bool, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn start(&mut self,is_show:impl::core::convert::Into<bool> ,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf30usize)as*mut u8,();
-(*mut Timer)self as*mut Timer,(bool)::core::convert::Into::into(is_show),(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
-}
-#[doc="`Start(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]pub fn start_2(&mut self,format:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf40usize)as*mut u8,();
-(*mut Timer)self as*mut Timer,(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
-}
-#[doc="`Stop()` overload"]pub fn stop(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf50usize)as*mut u8,();
-(*mut Timer)self as*mut Timer)}
-}
-#[doc="`get_DeltaTime()` overload"]pub fn get_delta_time(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf60usize)as*mut u8,f32;
-(*mut Timer)self as*mut Timer)}
-}
-#[doc="`IsValid()` overload"]pub fn is_valid(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf70usize)as*mut u8,bool;
-(*mut Timer)self as*mut Timer)}
-}
+#[cfg(feature = "app-timer")]
+impl Timer {
+    #[doc = "`.ctor(bool, ::unity::Il2CppString, ::unity::Array<crate::system::object::Object>)` overload"]
+    pub fn ctor(
+        &mut self,
+        is_show: impl ::core::convert::Into<bool>,
+        format: impl ::core::convert::Into<::unity::Il2CppString>,
+        args: impl ::core::convert::Into<::unity::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf00usize)as*mut u8,();
+(*mut Timer)self as*mut Timer,(bool)::core::convert::Into::into(is_show),(::unity::Il2CppString)::core::convert::Into::into(format),(::unity::Array<crate::system::object::Object>)::core::convert::Into::into(args))
+        }
+    }
+
+    #[doc = "`.ctor(::unity::Il2CppString, ::unity::Array<crate::system::object::Object>)` overload"]
+    pub fn ctor_2(
+        &mut self,
+        format: impl ::core::convert::Into<::unity::Il2CppString>,
+        args: impl ::core::convert::Into<::unity::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf10usize)as*mut u8,();
+(*mut Timer)self as*mut Timer,(::unity::Il2CppString)::core::convert::Into::into(format),(::unity::Array<crate::system::object::Object>)::core::convert::Into::into(args))
+        }
+    }
+
+    #[doc = "`Dispose()` overload"]
+    pub fn dispose(&mut self) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf20usize)as*mut u8,();
+(*mut Timer)self as*mut Timer)
+        }
+    }
+
+    #[doc = "`Start(bool, ::unity::Il2CppString, ::unity::Array<crate::system::object::Object>)` overload"]
+    pub fn start(
+        &mut self,
+        is_show: impl ::core::convert::Into<bool>,
+        format: impl ::core::convert::Into<::unity::Il2CppString>,
+        args: impl ::core::convert::Into<::unity::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf30usize)as*mut u8,();
+(*mut Timer)self as*mut Timer,(bool)::core::convert::Into::into(is_show),(::unity::Il2CppString)::core::convert::Into::into(format),(::unity::Array<crate::system::object::Object>)::core::convert::Into::into(args))
+        }
+    }
+
+    #[doc = "`Start(::unity::Il2CppString, ::unity::Array<crate::system::object::Object>)` overload"]
+    pub fn start_2(
+        &mut self,
+        format: impl ::core::convert::Into<::unity::Il2CppString>,
+        args: impl ::core::convert::Into<::unity::Array<crate::system::object::Object>>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf40usize)as*mut u8,();
+(*mut Timer)self as*mut Timer,(::unity::Il2CppString)::core::convert::Into::into(format),(::unity::Array<crate::system::object::Object>)::core::convert::Into::into(args))
+        }
+    }
+
+    #[doc = "`Stop()` overload"]
+    pub fn stop(&mut self) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf50usize)as*mut u8,();
+(*mut Timer)self as*mut Timer)
+        }
+    }
+
+    #[doc = "`get_DeltaTime()` overload"]
+    pub fn get_delta_time(&mut self) -> f32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf60usize)as*mut u8,f32;
+(*mut Timer)self as*mut Timer)
+        }
+    }
+
+    #[doc = "`IsValid()` overload"]
+    pub fn is_valid(&mut self) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21ebf70usize)as*mut u8,bool;
+(*mut Timer)self as*mut Timer)
+        }
+    }
 }
 
-#[cfg(feature="app-timer")]impl Timer{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn start_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_delta_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+#[cfg(feature = "app-timer")]
+impl Timer {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn dispose_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn start_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn start_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn stop_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn get_delta_time_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn is_valid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
 }
 
 #[cfg(feature = "app-timer")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Timer;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

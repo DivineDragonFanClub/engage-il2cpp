@@ -2,45 +2,78 @@
 
 #[cfg(feature = "system-reflection-defaultmemberattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/defaultmemberattribute/DefaultMemberAttribute.md"))]#[::unity2::class(namespace="System.Reflection",name="DefaultMemberAttribute")]pub struct DefaultMemberAttribute{#[offset(16)]#[rename(name="m_memberName")]pub m_member_name: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/defaultmemberattribute/DefaultMemberAttribute.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "DefaultMemberAttribute")]
+    pub struct DefaultMemberAttribute {
+        #[offset(16)]
+        #[rename(name = "m_memberName")]
+        pub m_member_name: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-defaultmemberattribute")]pub trait IDefaultMemberAttributeMethods:IDefaultMemberAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,member_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DefaultMemberAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3639b30usize)as*mut u8,();
-(DefaultMemberAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(member_name))}
-}
-#[doc="`get_MemberName()` overload"]fn get_member_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DefaultMemberAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3639b70usize)as*mut u8, ::unity2::Il2CppString;
-(DefaultMemberAttribute)__receiver)}
-}
+#[cfg(feature = "system-reflection-defaultmemberattribute")]
+pub trait IDefaultMemberAttributeMethods: IDefaultMemberAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, member_name: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <DefaultMemberAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3639b30usize)as*mut u8,();
+(DefaultMemberAttribute)__receiver,(::unity::Il2CppString)::core::convert::Into::into(member_name))
+        }
+    }
+    #[doc = "`get_MemberName()` overload"]
+    fn get_member_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver =
+                <DefaultMemberAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3639b70usize)as*mut u8, ::unity::Il2CppString;
+(DefaultMemberAttribute)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-defaultmemberattribute")]impl<__T:IDefaultMemberAttribute>IDefaultMemberAttributeMethods for __T{}
+#[cfg(feature = "system-reflection-defaultmemberattribute")]
+impl<__T: IDefaultMemberAttribute> IDefaultMemberAttributeMethods for __T {}
 
-#[cfg(feature="system-reflection-defaultmemberattribute")]impl DefaultMemberAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_member_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "system-reflection-defaultmemberattribute")]
+impl DefaultMemberAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_member_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="system-reflection-defaultmemberattribute")]impl DefaultMemberAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(member_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-reflection-defaultmemberattribute")]
+impl DefaultMemberAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(member_name: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(DefaultMemberAttribute), ::core::stringify!(new),));
- <Self as IDefaultMemberAttributeMethods> ::ctor(this,member_name);
-this}
+ failed to instantiate",
+                ::core::stringify!(DefaultMemberAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IDefaultMemberAttributeMethods>::ctor(this, member_name);
+        this
+    }
 }
 
 #[cfg(feature = "system-reflection-defaultmemberattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DefaultMemberAttribute;
-    pub use super::IDefaultMemberAttribute;
-    pub use super::IDefaultMemberAttributeMethods;
+    pub use super::{DefaultMemberAttribute, IDefaultMemberAttribute, IDefaultMemberAttributeMethods};
 }

@@ -2,102 +2,198 @@
 
 #[cfg(feature = "app-propertyinfoitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            memberinfoitem_1::{IMemberInfoItem_1, MemberInfoItem_1},
+            menuitem::{IMenuItem, MenuItem},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::memberinfoitem_1::{IMemberInfoItem_1,MemberInfoItem_1}
-;
-use crate::app::menuitem::{IMenuItem,MenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/propertyinfoitem/PropertyInfoItem.md"))]#[::unity2::class(namespace="App",name="PropertyInfoItem")]#[parent(crate::app::memberinfoitem_1::MemberInfoItem_1<crate::system::reflection::propertyinfo::PropertyInfo>)]pub struct PropertyInfoItem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/propertyinfoitem/PropertyInfoItem.md"))]
+    #[::unity::class(namespace = "App", name = "PropertyInfoItem")]
+    #[parent(crate::app::memberinfoitem_1::MemberInfoItem_1<crate::system::reflection::propertyinfo::PropertyInfo>)]
+    pub struct PropertyInfoItem {}
 }
 
 #[cfg(feature = "app-propertyinfoitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-propertyinfoitem")]pub trait IPropertyInfoItemMethods:IPropertyInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn ctor(self,obj:impl::core::convert::Into<crate::system::object::Object> ,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->(){unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08150usize)as*mut u8,();
-(PropertyInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info))}
-}
-#[doc="`GetValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-propertyinfoitem")]
+pub trait IPropertyInfoItemMethods: IPropertyInfoItem {
+    #[doc = "`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` overload"]
+    fn ctor(
+        self,
+        obj: impl ::core::convert::Into<crate::system::object::Object>,
+        info: impl ::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>,
+    ) -> () {
+        unsafe {
+            let __receiver = <PropertyInfoItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c08150usize)as*mut u8,();
+(PropertyInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info))
+        }
+    }
+    #[doc = "`GetValueType()` overload"]
+    fn get_value_type(self) -> ::unity::SystemType {
+        unsafe {
+            let __receiver = <PropertyInfoItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(74usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",74usize,__vt.len(), <PropertyInfoItem as::unity2::ClassIdentity> ::NAME,"GetValueType",));
-let __inner:extern "C" fn(PropertyInfoItem, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetValue()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        74usize,
+                        __vt.len(),
+                        <PropertyInfoItem as ::unity::ClassIdentity>::NAME,
+                        "GetValueType",
+                    )
+                });
+                let __inner: extern "C" fn(PropertyInfoItem, ::unity::OptionalMethod) -> ::unity::SystemType =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetValue()` overload"]
+    fn get_value(self) -> crate::system::object::Object {
+        unsafe {
+            let __receiver = <PropertyInfoItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(72usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",72usize,__vt.len(), <PropertyInfoItem as::unity2::ClassIdentity> ::NAME,"GetValue",));
-let __inner:extern "C" fn(PropertyInfoItem, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`SetValue(crate::system::object::Object)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        72usize,
+                        __vt.len(),
+                        <PropertyInfoItem as ::unity::ClassIdentity>::NAME,
+                        "GetValue",
+                    )
+                });
+                let __inner: extern "C" fn(PropertyInfoItem, ::unity::OptionalMethod) -> crate::system::object::Object =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`SetValue(crate::system::object::Object)` overload"]
+    fn set_value(self, value: impl ::core::convert::Into<crate::system::object::Object>) -> () {
+        unsafe {
+            let __receiver = <PropertyInfoItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(73usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",73usize,__vt.len(), <PropertyInfoItem as::unity2::ClassIdentity> ::NAME,"SetValue",));
-let __inner:extern "C" fn(PropertyInfoItem,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(value),__mi)}
-}
-}
-}
-
-#[cfg(feature="app-propertyinfoitem")]impl<__T:IPropertyInfoItem>IPropertyInfoItemMethods for __T{}
-
-#[cfg(feature="app-propertyinfoitem")]impl PropertyInfoItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_value_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-propertyinfoitem")]impl PropertyInfoItem{#[doc="Direct (non-virtual) call to `PropertyInfoItem`'s own `GetValueType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::SystemType{let __mi=Self::get_value_type_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `PropertyInfoItem`'s own `GetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::object::Object{let __mi=Self::get_value_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `PropertyInfoItem`'s own `SetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:crate::system::object::Object,)->(){let __mi=Self::set_value_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),value, ::core::option::Option::None)}
+`)",
+                        73usize,
+                        __vt.len(),
+                        <PropertyInfoItem as ::unity::ClassIdentity>::NAME,
+                        "SetValue",
+                    )
+                });
+                let __inner: extern "C" fn(PropertyInfoItem, crate::system::object::Object, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(value), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-propertyinfoitem")]impl PropertyInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]pub fn new(obj:crate::system::object::Object,info:crate::system::reflection::propertyinfo::PropertyInfo)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-propertyinfoitem")]
+impl<__T: IPropertyInfoItem> IPropertyInfoItemMethods for __T {}
+
+#[cfg(feature = "app-propertyinfoitem")]
+impl PropertyInfoItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_value_type_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn set_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+}
+
+#[cfg(feature = "app-propertyinfoitem")]
+impl PropertyInfoItem {
+    #[doc = "Direct (non-virtual) call to `PropertyInfoItem`'s own `GetValueType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_value_type(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::SystemType {
+        let __mi = Self::get_value_type_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::SystemType = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `PropertyInfoItem`'s own `GetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_value(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::system::object::Object {
+        let __mi = Self::get_value_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::system::object::Object =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `PropertyInfoItem`'s own `SetValue`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn set_value(this: impl ::core::convert::Into<::unity::IlInstance>, value: crate::system::object::Object) -> () {
+        let __mi = Self::set_value_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::system::object::Object, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), value, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-propertyinfoitem")]
+impl PropertyInfoItem {
+    #[doc = "`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` — overload selector"]
+    pub fn new(obj: crate::system::object::Object, info: crate::system::reflection::propertyinfo::PropertyInfo) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(PropertyInfoItem), ::core::stringify!(new),));
- <Self as IPropertyInfoItemMethods> ::ctor(this,obj,info);
-this}
+ failed to instantiate",
+                ::core::stringify!(PropertyInfoItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IPropertyInfoItemMethods>::ctor(this, obj, info);
+        this
+    }
 }
 
 #[cfg(feature = "app-propertyinfoitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PropertyInfoItem;
-    pub use super::IPropertyInfoItem;
-    pub use super::IPropertyInfoItemMethods;
-    pub use crate::app::memberinfoitem_1::IMemberInfoItem_1;
-    pub use crate::app::menuitem::IMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-memberinfoitem_1")] pub use crate::app::memberinfoitem_1::IMemberInfoItem_1Methods;
-    #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IPropertyInfoItem, IPropertyInfoItemMethods, PropertyInfoItem};
+    #[cfg(feature = "app-memberinfoitem_1")]
+    pub use crate::app::memberinfoitem_1::IMemberInfoItem_1Methods;
+    #[cfg(feature = "app-menuitem")]
+    pub use crate::app::menuitem::IMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{memberinfoitem_1::IMemberInfoItem_1, menuitem::IMenuItem},
+        system::object::IObject,
+    };
 }

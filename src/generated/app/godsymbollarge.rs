@@ -2,62 +2,123 @@
 
 #[cfg(feature = "app-godsymbollarge-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godsymbollarge/GodSymbolLarge.md"))]#[::unity2::class(namespace="App",name="GodSymbolLarge")]#[parent(crate::system::object::Object)]pub struct GodSymbolLarge{#[static_field]#[rename(name="Path")]pub path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_GodSymbolLarge")]pub s_god_symbol_large:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/godsymbollarge/GodSymbolLarge.md"))]
+    #[::unity::class(namespace = "App", name = "GodSymbolLarge")]
+    #[parent(crate::system::object::Object)]
+    pub struct GodSymbolLarge {
+        #[static_field]
+        #[rename(name = "Path")]
+        pub path: ::unity::Il2CppString,
+        #[static_field]
+        #[rename(name = "s_GodSymbolLarge")]
+        pub s_god_symbol_large: crate::app::spriteatlasmanager_2::SpriteAtlasManager_2,
+    }
 }
 
 #[cfg(feature = "app-godsymbollarge-types")]
 pub use __types::*;
 
-#[cfg(feature="app-godsymbollarge")]impl GodSymbolLarge{#[doc="`LoadAsync()` overload"]pub fn load_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233e4b0usize)as*mut u8,();
-)}
-}
-#[doc="`Unload()` overload"]pub fn unload()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233e5a0usize)as*mut u8,();
-)}
-}
-#[doc="`Get(::unity2::Il2CppString)` overload"]pub fn get(icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::sprite::Sprite{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233e660usize)as*mut u8,crate::unity_engine::sprite::Sprite;
-(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
-}
-#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233e730usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "app-godsymbollarge")]
+impl GodSymbolLarge {
+    #[doc = "`LoadAsync()` overload"]
+    pub fn load_async() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x233e4b0usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`Unload()` overload"]
+    pub fn unload() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x233e5a0usize)as*mut u8,();
+            )
+        }
+    }
+
+    #[doc = "`Get(::unity::Il2CppString)` overload"]
+    pub fn get(icon_name: impl ::core::convert::Into<::unity::Il2CppString>) -> crate::unity_engine::sprite::Sprite {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x233e660usize)as*mut u8,crate::unity_engine::sprite::Sprite;
+(::unity::Il2CppString)::core::convert::Into::into(icon_name))
+        }
+    }
+
+    #[doc = "`.cctor()` overload"]
+    pub fn cctor() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x233e730usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-godsymbollarge")]pub trait IGodSymbolLargeMethods:IGodSymbolLarge{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GodSymbolLarge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x233e720usize)as*mut u8,();
-(GodSymbolLarge)__receiver)}
-}
-}
-
-#[cfg(feature="app-godsymbollarge")]impl<__T:IGodSymbolLarge>IGodSymbolLargeMethods for __T{}
-
-#[cfg(feature="app-godsymbollarge")]impl GodSymbolLarge{pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn unload_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature = "app-godsymbollarge")]
+pub trait IGodSymbolLargeMethods: IGodSymbolLarge {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <GodSymbolLarge as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x233e720usize)as*mut u8,();
+(GodSymbolLarge)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-godsymbollarge")]impl GodSymbolLarge{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-godsymbollarge")]
+impl<__T: IGodSymbolLarge> IGodSymbolLargeMethods for __T {}
+
+#[cfg(feature = "app-godsymbollarge")]
+impl GodSymbolLarge {
+    pub fn load_async_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn unload_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn cctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+}
+
+#[cfg(feature = "app-godsymbollarge")]
+impl GodSymbolLarge {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(GodSymbolLarge), ::core::stringify!(new),));
- <Self as IGodSymbolLargeMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(GodSymbolLarge),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IGodSymbolLargeMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-godsymbollarge")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodSymbolLarge;
-    pub use super::IGodSymbolLarge;
-    pub use super::IGodSymbolLargeMethods;
+    pub use super::{GodSymbolLarge, IGodSymbolLarge, IGodSymbolLargeMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,52 +2,97 @@
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_fontstylestack/TMP_FontStyleStack.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TMP_FontStyleStack {
+        pub bold: u8,
+        pub italic: u8,
+        pub underline: u8,
+        pub strikethrough: u8,
+        pub highlight: u8,
+        pub superscript: u8,
+        pub subscript: u8,
+        pub uppercase: u8,
+        pub lowercase: u8,
+        pub smallcaps: u8,
+    }
+    impl ::unity::ClassIdentity for TMP_FontStyleStack {
+        const NAME: &'static str = "TMP_FontStyleStack";
+        const NAMESPACE: &'static str = "TMPro";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_fontstylestack/TMP_FontStyleStack.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_FontStyleStack{pub bold:u8,pub italic:u8,pub underline:u8,pub strikethrough:u8,pub highlight:u8,pub superscript:u8,pub subscript:u8,pub uppercase:u8,pub lowercase:u8,pub smallcaps:u8,}
-impl::unity2::ClassIdentity for TMP_FontStyleStack{const NAMESPACE: &'static str="TMPro";
-const NAME: &'static str="TMP_FontStyleStack";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TMP_FontStyleStack{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for TMP_FontStyleStack {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-tmp_fontstylestack")]impl TMP_FontStyleStack{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2430usize)as*mut u8,();
-(*mut TMP_FontStyleStack)self as*mut TMP_FontStyleStack)}
-}
-#[doc="`Add(crate::tm_pro::fontstyles::FontStyles)` overload"]pub fn add(&mut self,style:impl::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>)->u8{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2440usize)as*mut u8,u8;
-(*mut TMP_FontStyleStack)self as*mut TMP_FontStyleStack,(crate::tm_pro::fontstyles::FontStyles)::core::convert::Into::into(style))}
-}
-#[doc="`Remove(crate::tm_pro::fontstyles::FontStyles)` overload"]pub fn remove(&mut self,style:impl::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>)->u8{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a2560usize)as*mut u8,u8;
-(*mut TMP_FontStyleStack)self as*mut TMP_FontStyleStack,(crate::tm_pro::fontstyles::FontStyles)::core::convert::Into::into(style))}
-}
+#[cfg(feature = "tm_pro-tmp_fontstylestack")]
+impl TMP_FontStyleStack {
+    #[doc = "`Clear()` overload"]
+    pub fn clear(&mut self) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x33a2430usize)as*mut u8,();
+(*mut TMP_FontStyleStack)self as*mut TMP_FontStyleStack)
+        }
+    }
+
+    #[doc = "`Add(crate::tm_pro::fontstyles::FontStyles)` overload"]
+    pub fn add(&mut self, style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>) -> u8 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x33a2440usize)as*mut u8,u8;
+(*mut TMP_FontStyleStack)self as*mut TMP_FontStyleStack,(crate::tm_pro::fontstyles::FontStyles)::core::convert::Into::into(style))
+        }
+    }
+
+    #[doc = "`Remove(crate::tm_pro::fontstyles::FontStyles)` overload"]
+    pub fn remove(&mut self, style: impl ::core::convert::Into<crate::tm_pro::fontstyles::FontStyles>) -> u8 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x33a2560usize)as*mut u8,u8;
+(*mut TMP_FontStyleStack)self as*mut TMP_FontStyleStack,(crate::tm_pro::fontstyles::FontStyles)::core::convert::Into::into(style))
+        }
+    }
 }
 
-#[cfg(feature="tm_pro-tmp_fontstylestack")]impl TMP_FontStyleStack{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "tm_pro-tmp_fontstylestack")]
+impl TMP_FontStyleStack {
+    pub fn clear_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn add_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn remove_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
 #[cfg(feature = "tm_pro-tmp_fontstylestack")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TMP_FontStyleStack;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

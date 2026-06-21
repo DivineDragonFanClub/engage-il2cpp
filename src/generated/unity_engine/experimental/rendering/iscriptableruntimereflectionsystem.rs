@@ -2,46 +2,71 @@
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/iscriptableruntimereflectionsystem/IScriptableRuntimeReflectionSystem.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering",name="IScriptableRuntimeReflectionSystem")]pub struct IScriptableRuntimeReflectionSystem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/iscriptableruntimereflectionsystem/IScriptableRuntimeReflectionSystem.md"))]
+    #[::unity::class(namespace = "UnityEngine.Experimental.Rendering", name = "IScriptableRuntimeReflectionSystem")]
+    pub struct IScriptableRuntimeReflectionSystem {}
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]pub trait IIScriptableRuntimeReflectionSystemMethods:IIScriptableRuntimeReflectionSystem{#[doc="`TickRealtimeProbes()` overload"]fn tick_realtime_probes(self,)->bool{unsafe{let __receiver= <IScriptableRuntimeReflectionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
+pub trait IIScriptableRuntimeReflectionSystemMethods: IIScriptableRuntimeReflectionSystem {
+    #[doc = "`TickRealtimeProbes()` overload"]
+    fn tick_realtime_probes(self) -> bool {
+        unsafe {
+            let __receiver =
+                <IScriptableRuntimeReflectionSystem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <IScriptableRuntimeReflectionSystem as::unity2::ClassIdentity> ::NAME,"TickRealtimeProbes",));
-let __inner:extern "C" fn(IScriptableRuntimeReflectionSystem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <IScriptableRuntimeReflectionSystem as ::unity::ClassIdentity>::NAME,
+                        "TickRealtimeProbes",
+                    )
+                });
+                let __inner: extern "C" fn(IScriptableRuntimeReflectionSystem, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]impl<__T:IIScriptableRuntimeReflectionSystem>IIScriptableRuntimeReflectionSystemMethods for __T{}
+#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
+impl<__T: IIScriptableRuntimeReflectionSystem> IIScriptableRuntimeReflectionSystemMethods for __T {}
 
-#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]impl IScriptableRuntimeReflectionSystem{pub fn tick_realtime_probes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
+impl IScriptableRuntimeReflectionSystem {
+    pub fn tick_realtime_probes_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]impl IScriptableRuntimeReflectionSystem{#[doc="Direct (non-virtual) call to `IScriptableRuntimeReflectionSystem`'s own `TickRealtimeProbes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick_realtime_probes(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::tick_realtime_probes_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
+impl IScriptableRuntimeReflectionSystem {
+    #[doc = "Direct (non-virtual) call to `IScriptableRuntimeReflectionSystem`'s own `TickRealtimeProbes`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn tick_realtime_probes(this: impl ::core::convert::Into<::unity::IlInstance>) -> bool {
+        let __mi = Self::tick_realtime_probes_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-iscriptableruntimereflectionsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IScriptableRuntimeReflectionSystem;
-    pub use super::IIScriptableRuntimeReflectionSystem;
-    pub use super::IIScriptableRuntimeReflectionSystemMethods;
+    pub use super::{IIScriptableRuntimeReflectionSystem, IIScriptableRuntimeReflectionSystemMethods, IScriptableRuntimeReflectionSystem};
 }

@@ -2,60 +2,84 @@
 
 #[cfg(feature = "combat-showmeshbounds-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/showmeshbounds/ShowMeshBounds.md"))]#[::unity2::class(namespace="Combat",name="ShowMeshBounds")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ShowMeshBounds{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/showmeshbounds/ShowMeshBounds.md"))]
+    #[::unity::class(namespace = "Combat", name = "ShowMeshBounds")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct ShowMeshBounds {}
 }
 
 #[cfg(feature = "combat-showmeshbounds-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-showmeshbounds")]pub trait IShowMeshBoundsMethods:IShowMeshBounds{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShowMeshBounds as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x247c120usize)as*mut u8,();
-(ShowMeshBounds)__receiver)}
-}
+#[cfg(feature = "combat-showmeshbounds")]
+pub trait IShowMeshBoundsMethods: IShowMeshBounds {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ShowMeshBounds as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x247c120usize)as*mut u8,();
+(ShowMeshBounds)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="combat-showmeshbounds")]impl<__T:IShowMeshBounds>IShowMeshBoundsMethods for __T{}
+#[cfg(feature = "combat-showmeshbounds")]
+impl<__T: IShowMeshBounds> IShowMeshBoundsMethods for __T {}
 
-#[cfg(feature="combat-showmeshbounds")]impl ShowMeshBounds{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "combat-showmeshbounds")]
+impl ShowMeshBounds {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="combat-showmeshbounds")]impl ShowMeshBounds{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-showmeshbounds")]
+impl ShowMeshBounds {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ShowMeshBounds), ::core::stringify!(new),));
- <Self as IShowMeshBoundsMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ShowMeshBounds),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IShowMeshBoundsMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "combat-showmeshbounds")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShowMeshBounds;
-    pub use super::IShowMeshBounds;
-    pub use super::IShowMeshBoundsMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{IShowMeshBounds, IShowMeshBoundsMethods, ShowMeshBounds};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

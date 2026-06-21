@@ -2,48 +2,74 @@
 
 #[cfg(feature = "app-myroomcaptionmid-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::playables::playablebehaviour::{IPlayableBehaviour, PlayableBehaviour},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,PlayableBehaviour}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomcaptionmid/MyRoomCaptionMID.md"))]#[::unity2::class(namespace="App",name="MyRoomCaptionMID")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct MyRoomCaptionMID{#[offset(16)]#[rename(name="MID")]pub mid: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomcaptionmid/MyRoomCaptionMID.md"))]
+    #[::unity::class(namespace = "App", name = "MyRoomCaptionMID")]
+    #[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]
+    pub struct MyRoomCaptionMID {
+        #[offset(16)]
+        #[rename(name = "MID")]
+        pub mid: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "app-myroomcaptionmid-types")]
 pub use __types::*;
 
-#[cfg(feature="app-myroomcaptionmid")]pub trait IMyRoomCaptionMIDMethods:IMyRoomCaptionMID{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomCaptionMID as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238c830usize)as*mut u8,();
-(MyRoomCaptionMID)__receiver)}
-}
+#[cfg(feature = "app-myroomcaptionmid")]
+pub trait IMyRoomCaptionMIDMethods: IMyRoomCaptionMID {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomCaptionMID as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x238c830usize)as*mut u8,();
+(MyRoomCaptionMID)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-myroomcaptionmid")]impl<__T:IMyRoomCaptionMID>IMyRoomCaptionMIDMethods for __T{}
+#[cfg(feature = "app-myroomcaptionmid")]
+impl<__T: IMyRoomCaptionMID> IMyRoomCaptionMIDMethods for __T {}
 
-#[cfg(feature="app-myroomcaptionmid")]impl MyRoomCaptionMID{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-myroomcaptionmid")]
+impl MyRoomCaptionMID {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-myroomcaptionmid")]impl MyRoomCaptionMID{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-myroomcaptionmid")]
+impl MyRoomCaptionMID {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomCaptionMID), ::core::stringify!(new),));
- <Self as IMyRoomCaptionMIDMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MyRoomCaptionMID),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomCaptionMIDMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-myroomcaptionmid")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomCaptionMID;
-    pub use super::IMyRoomCaptionMID;
-    pub use super::IMyRoomCaptionMIDMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviour;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-playables-playablebehaviour")] pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use super::{IMyRoomCaptionMID, IMyRoomCaptionMIDMethods, MyRoomCaptionMID};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-playables-playablebehaviour")]
+    pub use crate::unity_engine::playables::playablebehaviour::IPlayableBehaviourMethods;
+    pub use crate::{system::object::IObject, unity_engine::playables::playablebehaviour::IPlayableBehaviour};
 }

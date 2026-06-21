@@ -2,82 +2,158 @@
 
 #[cfg(feature = "system-reflection-typeinfo-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        reflection::memberinfo::{IMemberInfo, MemberInfo},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/typeinfo/TypeInfo.md"))]#[::unity2::class(namespace="System.Reflection",name="TypeInfo")]pub struct TypeInfo{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/typeinfo/TypeInfo.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "TypeInfo")]
+    pub struct TypeInfo {}
 }
 
 #[cfg(feature = "system-reflection-typeinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-typeinfo")]pub trait ITypeInfoMethods:ITypeInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TypeInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3563ac0usize)as*mut u8,();
-(TypeInfo)__receiver)}
-}
-#[doc="`System.Reflection.IReflectableType.GetTypeInfo()` overload"]fn system_reflection_i_reflectable_type_get_type_info(self,)->crate::system::reflection::typeinfo::TypeInfo{unsafe{let __receiver= <TypeInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(125usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "system-reflection-typeinfo")]
+pub trait ITypeInfoMethods: ITypeInfo {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TypeInfo as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3563ac0usize)as*mut u8,();
+(TypeInfo)__receiver)
+        }
+    }
+    #[doc = "`System.Reflection.IReflectableType.GetTypeInfo()` overload"]
+    fn system_reflection_i_reflectable_type_get_type_info(self) -> crate::system::reflection::typeinfo::TypeInfo {
+        unsafe {
+            let __receiver = <TypeInfo as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(125usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",125usize,__vt.len(), <TypeInfo as::unity2::ClassIdentity> ::NAME,"System.Reflection.IReflectableType.GetTypeInfo",));
-let __inner:extern "C" fn(TypeInfo, ::unity2::OptionalMethod,)->crate::system::reflection::typeinfo::TypeInfo= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`get_ImplementedInterfaces()` overload"]fn get_implemented_interfaces(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType>{unsafe{let __receiver= <TypeInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(126usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        125usize,
+                        __vt.len(),
+                        <TypeInfo as ::unity::ClassIdentity>::NAME,
+                        "System.Reflection.IReflectableType.GetTypeInfo",
+                    )
+                });
+                let __inner: extern "C" fn(TypeInfo, ::unity::OptionalMethod) -> crate::system::reflection::typeinfo::TypeInfo =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`get_ImplementedInterfaces()` overload"]
+    fn get_implemented_interfaces(self) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity::SystemType> {
+        unsafe {
+            let __receiver = <TypeInfo as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(126usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",126usize,__vt.len(), <TypeInfo as::unity2::ClassIdentity> ::NAME,"get_ImplementedInterfaces",));
-let __inner:extern "C" fn(TypeInfo, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="system-reflection-typeinfo")]impl<__T:ITypeInfo>ITypeInfoMethods for __T{}
-
-#[cfg(feature="system-reflection-typeinfo")]impl TypeInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn system_reflection_i_reflectable_type_get_type_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_implemented_interfaces_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="system-reflection-typeinfo")]impl TypeInfo{#[doc="Direct (non-virtual) call to `TypeInfo`'s own `System.Reflection.IReflectableType.GetTypeInfo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn system_reflection_i_reflectable_type_get_type_info(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::reflection::typeinfo::TypeInfo{let __mi=Self::system_reflection_i_reflectable_type_get_type_info_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::reflection::typeinfo::TypeInfo= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `TypeInfo`'s own `get_ImplementedInterfaces`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_implemented_interfaces(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType>{let __mi=Self::get_implemented_interfaces_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::SystemType> = ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        126usize,
+                        __vt.len(),
+                        <TypeInfo as ::unity::ClassIdentity>::NAME,
+                        "get_ImplementedInterfaces",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    TypeInfo,
+                    ::unity::OptionalMethod,
+                )
+                    -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity::SystemType> =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-typeinfo")]impl TypeInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-reflection-typeinfo")]
+impl<__T: ITypeInfo> ITypeInfoMethods for __T {}
+
+#[cfg(feature = "system-reflection-typeinfo")]
+impl TypeInfo {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn system_reflection_i_reflectable_type_get_type_info_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_implemented_interfaces_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "system-reflection-typeinfo")]
+impl TypeInfo {
+    #[doc = "Direct (non-virtual) call to `TypeInfo`'s own `System.Reflection.IReflectableType.GetTypeInfo`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn system_reflection_i_reflectable_type_get_type_info(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+    ) -> crate::system::reflection::typeinfo::TypeInfo {
+        let __mi = Self::system_reflection_i_reflectable_type_get_type_info_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::system::reflection::typeinfo::TypeInfo =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `TypeInfo`'s own `get_ImplementedInterfaces`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_implemented_interfaces(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+    ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity::SystemType> {
+        let __mi = Self::get_implemented_interfaces_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::OptionalMethod,
+        ) -> crate::system::collections::generic::ienumerable_1::IEnumerable_1<::unity::SystemType> = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "system-reflection-typeinfo")]
+impl TypeInfo {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TypeInfo), ::core::stringify!(new),));
- <Self as ITypeInfoMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(TypeInfo),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITypeInfoMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "system-reflection-typeinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TypeInfo;
-    pub use super::ITypeInfo;
-    pub use super::ITypeInfoMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::system::reflection::memberinfo::IMemberInfo;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-reflection-memberinfo")] pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    pub use super::{ITypeInfo, ITypeInfoMethods, TypeInfo};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-reflection-memberinfo")]
+    pub use crate::system::reflection::memberinfo::IMemberInfoMethods;
+    pub use crate::system::{object::IObject, reflection::memberinfo::IMemberInfo};
 }

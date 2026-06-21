@@ -2,56 +2,81 @@
 
 #[cfg(feature = "unity_engine-audiobehaviour-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audiobehaviour/AudioBehaviour.md"))]#[::unity2::class(namespace="UnityEngine",name="AudioBehaviour")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct AudioBehaviour{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/audiobehaviour/AudioBehaviour.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "AudioBehaviour")]
+    #[parent(crate::unity_engine::behaviour::Behaviour)]
+    pub struct AudioBehaviour {}
 }
 
 #[cfg(feature = "unity_engine-audiobehaviour-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-audiobehaviour")]pub trait IAudioBehaviourMethods:IAudioBehaviour{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AudioBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3e4e0usize)as*mut u8,();
-(AudioBehaviour)__receiver)}
-}
+#[cfg(feature = "unity_engine-audiobehaviour")]
+pub trait IAudioBehaviourMethods: IAudioBehaviour {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AudioBehaviour as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f3e4e0usize)as*mut u8,();
+(AudioBehaviour)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-audiobehaviour")]impl<__T:IAudioBehaviour>IAudioBehaviourMethods for __T{}
+#[cfg(feature = "unity_engine-audiobehaviour")]
+impl<__T: IAudioBehaviour> IAudioBehaviourMethods for __T {}
 
-#[cfg(feature="unity_engine-audiobehaviour")]impl AudioBehaviour{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-audiobehaviour")]
+impl AudioBehaviour {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-audiobehaviour")]impl AudioBehaviour{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-audiobehaviour")]
+impl AudioBehaviour {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AudioBehaviour), ::core::stringify!(new),));
- <Self as IAudioBehaviourMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AudioBehaviour),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAudioBehaviourMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-audiobehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AudioBehaviour;
-    pub use super::IAudioBehaviour;
-    pub use super::IAudioBehaviourMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{AudioBehaviour, IAudioBehaviour, IAudioBehaviourMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, object_2::IObject_2},
+    };
 }

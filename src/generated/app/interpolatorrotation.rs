@@ -2,77 +2,124 @@
 
 #[cfg(feature = "app-interpolatorrotation-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            interpolator_1::{IInterpolator_1, Interpolator_1},
+            interpolatorfloat::{IInterpolatorFloat, InterpolatorFloat},
+            interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::interpolator_1::{IInterpolator_1,Interpolator_1}
-;
-use crate::app::interpolatorfloat::{IInterpolatorFloat,InterpolatorFloat}
-;
-use crate::app::interpolatortime::{IInterpolatorTime,InterpolatorTime}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorrotation/InterpolatorRotation.md"))]#[::unity2::class(namespace="App",name="InterpolatorRotation")]#[parent(crate::app::interpolatorfloat::InterpolatorFloat)]pub struct InterpolatorRotation{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorrotation/InterpolatorRotation.md"))]
+    #[::unity::class(namespace = "App", name = "InterpolatorRotation")]
+    #[parent(crate::app::interpolatorfloat::InterpolatorFloat)]
+    pub struct InterpolatorRotation {}
 }
 
 #[cfg(feature = "app-interpolatorrotation-types")]
 pub use __types::*;
 
-#[cfg(feature="app-interpolatorrotation")]pub trait IInterpolatorRotationMethods:IInterpolatorRotation{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorRotation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2794ce0usize)as*mut u8,();
-(InterpolatorRotation)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
-}
-#[doc="`Set(f32, f32)` overload"]fn set(self,value:impl::core::convert::Into<f32> ,time:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <InterpolatorRotation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-interpolatorrotation")]
+pub trait IInterpolatorRotationMethods: IInterpolatorRotation {
+    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"]
+    fn ctor(self, r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>, num: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <InterpolatorRotation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2794ce0usize)as*mut u8,();
+(InterpolatorRotation)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))
+        }
+    }
+    #[doc = "`Set(f32, f32)` overload"]
+    fn set(self, value: impl ::core::convert::Into<f32>, time: impl ::core::convert::Into<f32>) -> bool {
+        unsafe {
+            let __receiver = <InterpolatorRotation as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <InterpolatorRotation as::unity2::ClassIdentity> ::NAME,"Set",));
-let __inner:extern "C" fn(InterpolatorRotation,f32,f32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(time),__mi)}
-}
-}
-}
-
-#[cfg(feature="app-interpolatorrotation")]impl<__T:IInterpolatorRotation>IInterpolatorRotationMethods for __T{}
-
-#[cfg(feature="app-interpolatorrotation")]impl InterpolatorRotation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-interpolatorrotation")]impl InterpolatorRotation{#[doc="Direct (non-virtual) call to `InterpolatorRotation`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:f32,time:f32,)->bool{let __mi=Self::set_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,f32,f32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),value,time, ::core::option::Option::None)}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <InterpolatorRotation as ::unity::ClassIdentity>::NAME,
+                        "Set",
+                    )
+                });
+                let __inner: extern "C" fn(InterpolatorRotation, f32, f32, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(time), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-interpolatorrotation")]impl InterpolatorRotation{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]pub fn new(r#type:crate::app::curve::Curve_Type,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-interpolatorrotation")]
+impl<__T: IInterpolatorRotation> IInterpolatorRotationMethods for __T {}
+
+#[cfg(feature = "app-interpolatorrotation")]
+impl InterpolatorRotation {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn set_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "app-interpolatorrotation")]
+impl InterpolatorRotation {
+    #[doc = "Direct (non-virtual) call to `InterpolatorRotation`'s own `Set`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn set(this: impl ::core::convert::Into<::unity::IlInstance>, value: f32, time: f32) -> bool {
+        let __mi = Self::set_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, f32, f32, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), value, time, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-interpolatorrotation")]
+impl InterpolatorRotation {
+    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]
+    pub fn new(r#type: crate::app::curve::Curve_Type, num: i32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(InterpolatorRotation), ::core::stringify!(new),));
- <Self as IInterpolatorRotationMethods> ::ctor(this,r#type,num);
-this}
+ failed to instantiate",
+                ::core::stringify!(InterpolatorRotation),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInterpolatorRotationMethods>::ctor(this, r#type, num);
+        this
+    }
 }
 
 #[cfg(feature = "app-interpolatorrotation")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InterpolatorRotation;
-    pub use super::IInterpolatorRotation;
-    pub use super::IInterpolatorRotationMethods;
-    pub use crate::app::interpolator_1::IInterpolator_1;
-    pub use crate::app::interpolator_1::Interpolator_1;
-    pub use crate::app::interpolatorfloat::IInterpolatorFloat;
-    pub use crate::app::interpolatorfloat::InterpolatorFloat;
-    pub use crate::app::interpolatortime::IInterpolatorTime;
-    pub use crate::app::interpolatortime::InterpolatorTime;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-interpolator_1")] pub use crate::app::interpolator_1::IInterpolator_1Methods;
-    #[cfg(feature = "app-interpolatorfloat")] pub use crate::app::interpolatorfloat::IInterpolatorFloatMethods;
-    #[cfg(feature = "app-interpolatortime")] pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IInterpolatorRotation, IInterpolatorRotationMethods, InterpolatorRotation};
+    #[cfg(feature = "app-interpolator_1")]
+    pub use crate::app::interpolator_1::IInterpolator_1Methods;
+    #[cfg(feature = "app-interpolatorfloat")]
+    pub use crate::app::interpolatorfloat::IInterpolatorFloatMethods;
+    #[cfg(feature = "app-interpolatortime")]
+    pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            interpolator_1::{IInterpolator_1, Interpolator_1},
+            interpolatorfloat::{IInterpolatorFloat, InterpolatorFloat},
+            interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        },
+        system::object::IObject,
+    };
 }

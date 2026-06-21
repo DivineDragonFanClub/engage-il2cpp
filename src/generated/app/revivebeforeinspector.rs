@@ -2,56 +2,81 @@
 
 #[cfg(feature = "app-revivebeforeinspector-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapinspector::{IMapInspector, MapInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+            unitinspector::{IUnitInspector, UnitInspector},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapinspector::{IMapInspector,MapInspector}
-;
-use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
-;
-use crate::app::unitinspector::{IUnitInspector,UnitInspector}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/revivebeforeinspector/ReviveBeforeInspector.md"))]#[::unity2::class(namespace="App",name="ReviveBeforeInspector")]#[parent(crate::app::unitinspector::UnitInspector)]pub struct ReviveBeforeInspector{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/revivebeforeinspector/ReviveBeforeInspector.md"))]
+    #[::unity::class(namespace = "App", name = "ReviveBeforeInspector")]
+    #[parent(crate::app::unitinspector::UnitInspector)]
+    pub struct ReviveBeforeInspector {}
 }
 
 #[cfg(feature = "app-revivebeforeinspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-revivebeforeinspector")]pub trait IReviveBeforeInspectorMethods:IReviveBeforeInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <ReviveBeforeInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20189e0usize)as*mut u8,();
-(ReviveBeforeInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
-}
+#[cfg(feature = "app-revivebeforeinspector")]
+pub trait IReviveBeforeInspectorMethods: IReviveBeforeInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]
+    fn ctor(self, args: impl ::core::convert::Into<::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>>) -> () {
+        unsafe {
+            let __receiver = <ReviveBeforeInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x20189e0usize)as*mut u8,();
+(ReviveBeforeInspector)__receiver,(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))
+        }
+    }
 }
 
-#[cfg(feature="app-revivebeforeinspector")]impl<__T:IReviveBeforeInspector>IReviveBeforeInspectorMethods for __T{}
+#[cfg(feature = "app-revivebeforeinspector")]
+impl<__T: IReviveBeforeInspector> IReviveBeforeInspectorMethods for __T {}
 
-#[cfg(feature="app-revivebeforeinspector")]impl ReviveBeforeInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-revivebeforeinspector")]
+impl ReviveBeforeInspector {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="app-revivebeforeinspector")]impl ReviveBeforeInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]pub fn new(args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-revivebeforeinspector")]
+impl ReviveBeforeInspector {
+    #[doc = "`.ctor(::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` — overload selector"]
+    pub fn new(args: ::unity::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ReviveBeforeInspector), ::core::stringify!(new),));
- <Self as IReviveBeforeInspectorMethods> ::ctor(this,args);
-this}
+ failed to instantiate",
+                ::core::stringify!(ReviveBeforeInspector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IReviveBeforeInspectorMethods>::ctor(this, args);
+        this
+    }
 }
 
 #[cfg(feature = "app-revivebeforeinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ReviveBeforeInspector;
-    pub use super::IReviveBeforeInspector;
-    pub use super::IReviveBeforeInspectorMethods;
-    pub use crate::app::mapinspector::IMapInspector;
-    pub use crate::app::scriptutil::IScriptUtil;
-    pub use crate::app::unitinspector::IUnitInspector;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "app-unitinspector")] pub use crate::app::unitinspector::IUnitInspectorMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IReviveBeforeInspector, IReviveBeforeInspectorMethods, ReviveBeforeInspector};
+    #[cfg(feature = "app-mapinspector")]
+    pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-scriptutil")]
+    pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "app-unitinspector")]
+    pub use crate::app::unitinspector::IUnitInspectorMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapinspector::IMapInspector, scriptutil::IScriptUtil, unitinspector::IUnitInspector},
+        system::object::IObject,
+    };
 }

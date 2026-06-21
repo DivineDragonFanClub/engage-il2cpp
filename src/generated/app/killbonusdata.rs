@@ -2,110 +2,207 @@
 
 #[cfg(feature = "app-killbonusdata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdataarray_1::{IStructDataArray_1, StructDataArray_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::structbase::{IStructBase,StructBase}
-;
-use crate::app::structdataarray_1::{IStructDataArray_1,StructDataArray_1}
-;
-use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killbonusdata/KillBonusData.md"))]#[::unity2::class(namespace="App",name="KillBonusData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::killbonusdata::KillBonusData>)]pub struct KillBonusData{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/killbonusdata/KillBonusData.md"))]
+    #[::unity::class(namespace = "App", name = "KillBonusData")]
+    #[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::killbonusdata::KillBonusData>)]
+    pub struct KillBonusData {}
 }
 
 #[cfg(feature = "app-killbonusdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-killbonusdata")]impl KillBonusData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1bdab00usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "app-killbonusdata")]
+impl KillBonusData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdab00usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-killbonusdata")]pub trait IKillBonusDataMethods:IKillBonusData{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdabb0usize)as*mut u8, ::unity2::Il2CppString;
-(KillBonusData)__receiver)}
-}
-#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdabc0usize)as*mut u8,();
-(KillBonusData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Rate()` overload"]fn get_rate(self,)->u8{unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdabd0usize)as*mut u8,u8;
-(KillBonusData)__receiver)}
-}
-#[doc="`set_Rate(u8)` overload"]fn set_rate(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdabe0usize)as*mut u8,();
-(KillBonusData)__receiver,(u8)::core::convert::Into::into(value))}
-}
-#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdabf0usize)as*mut u8, ::unity2::Il2CppString;
-(KillBonusData)__receiver)}
-}
-#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdac00usize)as*mut u8,();
-(KillBonusData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-killbonusdata")]
+pub trait IKillBonusDataMethods: IKillBonusData {
+    #[doc = "`get_Iid()` overload"]
+    fn get_iid(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdabb0usize)as*mut u8, ::unity::Il2CppString;
+(KillBonusData)__receiver)
+        }
+    }
+    #[doc = "`set_Iid(::unity::Il2CppString)` overload"]
+    fn set_iid(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdabc0usize)as*mut u8,();
+(KillBonusData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Rate()` overload"]
+    fn get_rate(self) -> u8 {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdabd0usize)as*mut u8,u8;
+(KillBonusData)__receiver)
+        }
+    }
+    #[doc = "`set_Rate(u8)` overload"]
+    fn set_rate(self, value: impl ::core::convert::Into<u8>) -> () {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdabe0usize)as*mut u8,();
+(KillBonusData)__receiver,(u8)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Cid()` overload"]
+    fn get_cid(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdabf0usize)as*mut u8, ::unity::Il2CppString;
+(KillBonusData)__receiver)
+        }
+    }
+    #[doc = "`set_Cid(::unity::Il2CppString)` overload"]
+    fn set_cid(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdac00usize)as*mut u8,();
+(KillBonusData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`GetDebugName()` overload"]
+    fn get_debug_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <KillBonusData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let __inner:extern "C" fn(KillBonusData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <KillBonusData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bdac20usize)as*mut u8,();
-(KillBonusData)__receiver)}
-}
-}
-
-#[cfg(feature="app-killbonusdata")]impl<__T:IKillBonusData>IKillBonusDataMethods for __T{}
-
-#[cfg(feature="app-killbonusdata")]impl KillBonusData{pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <KillBonusData as ::unity::ClassIdentity>::NAME,
+                        "GetDebugName",
+                    )
+                });
+                let __inner: extern "C" fn(KillBonusData, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <KillBonusData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1bdac20usize)as*mut u8,();
+(KillBonusData)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-killbonusdata")]impl KillBonusData{#[doc="Direct (non-virtual) call to `KillBonusData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-killbonusdata")]
+impl<__T: IKillBonusData> IKillBonusDataMethods for __T {}
+
+#[cfg(feature = "app-killbonusdata")]
+impl KillBonusData {
+    pub fn load_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_iid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn set_iid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_rate_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn set_rate_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn get_cid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn set_cid_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn get_debug_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
 }
 
-#[cfg(feature="app-killbonusdata")]impl KillBonusData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-killbonusdata")]
+impl KillBonusData {
+    #[doc = "Direct (non-virtual) call to `KillBonusData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_debug_name(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_debug_name_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-killbonusdata")]
+impl KillBonusData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(KillBonusData), ::core::stringify!(new),));
- <Self as IKillBonusDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(KillBonusData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IKillBonusDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-killbonusdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::KillBonusData;
-    pub use super::IKillBonusData;
-    pub use super::IKillBonusDataMethods;
-    pub use crate::app::structbase::IStructBase;
-    pub use crate::app::structdataarray_1::IStructDataArray_1;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdataarray_1")] pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
-    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IKillBonusData, IKillBonusDataMethods, KillBonusData};
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdataarray_1")]
+    pub use crate::app::structdataarray_1::IStructDataArray_1Methods;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdataarray_1::IStructDataArray_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

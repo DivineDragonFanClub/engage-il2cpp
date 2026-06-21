@@ -2,82 +2,144 @@
 
 #[cfg(feature = "root_motion-interpolationmode-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/interpolationmode/InterpolationMode.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct InterpolationMode {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for InterpolationMode {
+        const NAME: &'static str = "InterpolationMode";
+        const NAMESPACE: &'static str = "RootMotion";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for InterpolationMode {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl InterpolationMode {
+        pub fn none() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/interpolationmode/InterpolationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InterpolationMode{pub value:i32,}
-impl::unity2::ClassIdentity for InterpolationMode{const NAMESPACE: &'static str="RootMotion";
-const NAME: &'static str="InterpolationMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for InterpolationMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl InterpolationMode{pub fn none()->Self{Self{value:0}
-}
-pub fn in_out_cubic()->Self{Self{value:1}
-}
-pub fn in_out_quintic()->Self{Self{value:2}
-}
-pub fn in_out_sine()->Self{Self{value:3}
-}
-pub fn in_quintic()->Self{Self{value:4}
-}
-pub fn in_quartic()->Self{Self{value:5}
-}
-pub fn in_cubic()->Self{Self{value:6}
-}
-pub fn in_quadratic()->Self{Self{value:7}
-}
-pub fn in_elastic()->Self{Self{value:8}
-}
-pub fn in_elastic_small()->Self{Self{value:9}
-}
-pub fn in_elastic_big()->Self{Self{value:10}
-}
-pub fn in_sine()->Self{Self{value:11}
-}
-pub fn in_back()->Self{Self{value:12}
-}
-pub fn out_quintic()->Self{Self{value:13}
-}
-pub fn out_quartic()->Self{Self{value:14}
-}
-pub fn out_cubic()->Self{Self{value:15}
-}
-pub fn out_in_cubic()->Self{Self{value:16}
-}
-pub fn out_in_quartic()->Self{Self{value:17}
-}
-pub fn out_elastic()->Self{Self{value:18}
-}
-pub fn out_elastic_small()->Self{Self{value:19}
-}
-pub fn out_elastic_big()->Self{Self{value:20}
-}
-pub fn out_sine()->Self{Self{value:21}
-}
-pub fn out_back()->Self{Self{value:22}
-}
-pub fn out_back_cubic()->Self{Self{value:23}
-}
-pub fn out_back_quartic()->Self{Self{value:24}
-}
-pub fn back_in_cubic()->Self{Self{value:25}
-}
-pub fn back_in_quartic()->Self{Self{value:26}
-}
-}
+        pub fn in_out_cubic() -> Self {
+            Self { value: 1 }
+        }
 
+        pub fn in_out_quintic() -> Self {
+            Self { value: 2 }
+        }
+
+        pub fn in_out_sine() -> Self {
+            Self { value: 3 }
+        }
+
+        pub fn in_quintic() -> Self {
+            Self { value: 4 }
+        }
+
+        pub fn in_quartic() -> Self {
+            Self { value: 5 }
+        }
+
+        pub fn in_cubic() -> Self {
+            Self { value: 6 }
+        }
+
+        pub fn in_quadratic() -> Self {
+            Self { value: 7 }
+        }
+
+        pub fn in_elastic() -> Self {
+            Self { value: 8 }
+        }
+
+        pub fn in_elastic_small() -> Self {
+            Self { value: 9 }
+        }
+
+        pub fn in_elastic_big() -> Self {
+            Self { value: 10 }
+        }
+
+        pub fn in_sine() -> Self {
+            Self { value: 11 }
+        }
+
+        pub fn in_back() -> Self {
+            Self { value: 12 }
+        }
+
+        pub fn out_quintic() -> Self {
+            Self { value: 13 }
+        }
+
+        pub fn out_quartic() -> Self {
+            Self { value: 14 }
+        }
+
+        pub fn out_cubic() -> Self {
+            Self { value: 15 }
+        }
+
+        pub fn out_in_cubic() -> Self {
+            Self { value: 16 }
+        }
+
+        pub fn out_in_quartic() -> Self {
+            Self { value: 17 }
+        }
+
+        pub fn out_elastic() -> Self {
+            Self { value: 18 }
+        }
+
+        pub fn out_elastic_small() -> Self {
+            Self { value: 19 }
+        }
+
+        pub fn out_elastic_big() -> Self {
+            Self { value: 20 }
+        }
+
+        pub fn out_sine() -> Self {
+            Self { value: 21 }
+        }
+
+        pub fn out_back() -> Self {
+            Self { value: 22 }
+        }
+
+        pub fn out_back_cubic() -> Self {
+            Self { value: 23 }
+        }
+
+        pub fn out_back_quartic() -> Self {
+            Self { value: 24 }
+        }
+
+        pub fn back_in_cubic() -> Self {
+            Self { value: 25 }
+        }
+
+        pub fn back_in_quartic() -> Self {
+            Self { value: 26 }
+        }
+    }
 }
 
 #[cfg(feature = "root_motion-interpolationmode-types")]
@@ -87,10 +149,11 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::InterpolationMode;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

@@ -2,70 +2,108 @@
 
 #[cfg(feature = "root-mapcursoranimmanager-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapcursoranimmanager/MapCursorAnimManager.md"))]#[::unity2::class(namespace="",name="MapCursorAnimManager")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapCursorAnimManager{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapcursoranimmanager/MapCursorAnimManager.md"))]
+    #[::unity::class(namespace = "", name = "MapCursorAnimManager")]
+    #[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]
+    pub struct MapCursorAnimManager {}
 }
 
 #[cfg(feature = "root-mapcursoranimmanager-types")]
 pub use __types::*;
 
-#[cfg(feature="root-mapcursoranimmanager")]pub trait IMapCursorAnimManagerMethods:IMapCursorAnimManager{#[doc="`SetActiveState(bool)` overload"]fn set_active_state(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapCursorAnimManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29c10a0usize)as*mut u8,();
-(MapCursorAnimManager)__receiver,(bool)::core::convert::Into::into(enable))}
-}
-#[doc="`PlayAnim(::unity2::Il2CppString)` overload"]fn play_anim(self,label:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapCursorAnimManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29b31b0usize)as*mut u8,();
-(MapCursorAnimManager)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapCursorAnimManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29c1230usize)as*mut u8,();
-(MapCursorAnimManager)__receiver)}
-}
+#[cfg(feature = "root-mapcursoranimmanager")]
+pub trait IMapCursorAnimManagerMethods: IMapCursorAnimManager {
+    #[doc = "`SetActiveState(bool)` overload"]
+    fn set_active_state(self, enable: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <MapCursorAnimManager as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x29c10a0usize)as*mut u8,();
+(MapCursorAnimManager)__receiver,(bool)::core::convert::Into::into(enable))
+        }
+    }
+    #[doc = "`PlayAnim(::unity::Il2CppString)` overload"]
+    fn play_anim(self, label: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <MapCursorAnimManager as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x29b31b0usize)as*mut u8,();
+(MapCursorAnimManager)__receiver,(::unity::Il2CppString)::core::convert::Into::into(label))
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapCursorAnimManager as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x29c1230usize)as*mut u8,();
+(MapCursorAnimManager)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-mapcursoranimmanager")]impl<__T:IMapCursorAnimManager>IMapCursorAnimManagerMethods for __T{}
+#[cfg(feature = "root-mapcursoranimmanager")]
+impl<__T: IMapCursorAnimManager> IMapCursorAnimManagerMethods for __T {}
 
-#[cfg(feature="root-mapcursoranimmanager")]impl MapCursorAnimManager{pub fn set_active_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn play_anim_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "root-mapcursoranimmanager")]
+impl MapCursorAnimManager {
+    pub fn set_active_state_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn play_anim_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="root-mapcursoranimmanager")]impl MapCursorAnimManager{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-mapcursoranimmanager")]
+impl MapCursorAnimManager {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MapCursorAnimManager), ::core::stringify!(new),));
- <Self as IMapCursorAnimManagerMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MapCursorAnimManager),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapCursorAnimManagerMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-mapcursoranimmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapCursorAnimManager;
-    pub use super::IMapCursorAnimManager;
-    pub use super::IMapCursorAnimManagerMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{IMapCursorAnimManager, IMapCursorAnimManagerMethods, MapCursorAnimManager};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

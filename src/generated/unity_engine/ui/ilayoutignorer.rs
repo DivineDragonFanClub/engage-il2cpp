@@ -2,46 +2,69 @@
 
 #[cfg(feature = "unity_engine-ui-ilayoutignorer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/ilayoutignorer/ILayoutIgnorer.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ILayoutIgnorer")]pub struct ILayoutIgnorer{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/ilayoutignorer/ILayoutIgnorer.md"))]
+    #[::unity::class(namespace = "UnityEngine.UI", name = "ILayoutIgnorer")]
+    pub struct ILayoutIgnorer {}
 }
 
 #[cfg(feature = "unity_engine-ui-ilayoutignorer-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-ui-ilayoutignorer")]pub trait IILayoutIgnorerMethods:IILayoutIgnorer{#[doc="`get_ignoreLayout()` overload"]fn get_ignore_layout(self,)->bool{unsafe{let __receiver= <ILayoutIgnorer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+pub trait IILayoutIgnorerMethods: IILayoutIgnorer {
+    #[doc = "`get_ignoreLayout()` overload"]
+    fn get_ignore_layout(self) -> bool {
+        unsafe {
+            let __receiver = <ILayoutIgnorer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <ILayoutIgnorer as::unity2::ClassIdentity> ::NAME,"get_ignoreLayout",));
-let __inner:extern "C" fn(ILayoutIgnorer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <ILayoutIgnorer as ::unity::ClassIdentity>::NAME,
+                        "get_ignoreLayout",
+                    )
+                });
+                let __inner: extern "C" fn(ILayoutIgnorer, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-ui-ilayoutignorer")]impl<__T:IILayoutIgnorer>IILayoutIgnorerMethods for __T{}
+#[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+impl<__T: IILayoutIgnorer> IILayoutIgnorerMethods for __T {}
 
-#[cfg(feature="unity_engine-ui-ilayoutignorer")]impl ILayoutIgnorer{pub fn get_ignore_layout_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+impl ILayoutIgnorer {
+    pub fn get_ignore_layout_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-ui-ilayoutignorer")]impl ILayoutIgnorer{#[doc="Direct (non-virtual) call to `ILayoutIgnorer`'s own `get_ignoreLayout`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_ignore_layout(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::get_ignore_layout_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-ui-ilayoutignorer")]
+impl ILayoutIgnorer {
+    #[doc = "Direct (non-virtual) call to `ILayoutIgnorer`'s own `get_ignoreLayout`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_ignore_layout(this: impl ::core::convert::Into<::unity::IlInstance>) -> bool {
+        let __mi = Self::get_ignore_layout_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-ui-ilayoutignorer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ILayoutIgnorer;
-    pub use super::IILayoutIgnorer;
-    pub use super::IILayoutIgnorerMethods;
+    pub use super::{IILayoutIgnorer, IILayoutIgnorerMethods, ILayoutIgnorer};
 }

@@ -2,33 +2,47 @@
 
 #[cfg(feature = "app-game-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/game/Game.md"))]#[::unity2::class(namespace="App",name="Game")]#[parent(crate::system::object::Object)]pub struct Game{#[static_field]#[rename(name="Version")]pub version:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/game/Game.md"))]
+    #[::unity::class(namespace = "App", name = "Game")]
+    #[parent(crate::system::object::Object)]
+    pub struct Game {
+        #[static_field]
+        #[rename(name = "Version")]
+        pub version: i32,
+    }
 }
 
 #[cfg(feature = "app-game-types")]
 pub use __types::*;
 
-#[cfg(feature="app-game")]impl Game{#[doc="`GetPatchName()` overload"]pub fn get_patch_name()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22783d0usize)as*mut u8, ::unity2::Il2CppString;
-)}
-}
+#[cfg(feature = "app-game")]
+impl Game {
+    #[doc = "`GetPatchName()` overload"]
+    pub fn get_patch_name() -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x22783d0usize)as*mut u8, ::unity::Il2CppString;
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-game")]impl Game{pub fn get_patch_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "app-game")]
+impl Game {
+    pub fn get_patch_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "app-game")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Game;
-    pub use super::IGame;
+    pub use super::{Game, IGame};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

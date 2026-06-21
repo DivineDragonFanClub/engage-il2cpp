@@ -2,114 +2,255 @@
 
 #[cfg(feature = "root-akacousticsurfacearray-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        root::akbasearray_1::{AkBaseArray_1, IAkBaseArray_1},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::root::akbasearray_1::{AkBaseArray_1,IAkBaseArray_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akacousticsurfacearray/AkAcousticSurfaceArray.md"))]#[::unity2::class(namespace="",name="AkAcousticSurfaceArray")]#[parent(crate::root::akbasearray_1::AkBaseArray_1<crate::root::akacousticsurface::AkAcousticSurface>)]pub struct AkAcousticSurfaceArray{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akacousticsurfacearray/AkAcousticSurfaceArray.md"))]
+    #[::unity::class(namespace = "", name = "AkAcousticSurfaceArray")]
+    #[parent(crate::root::akbasearray_1::AkBaseArray_1<crate::root::akacousticsurface::AkAcousticSurface>)]
+    pub struct AkAcousticSurfaceArray {}
 }
 
 #[cfg(feature = "root-akacousticsurfacearray-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akacousticsurfacearray")]pub trait IAkAcousticSurfaceArrayMethods:IAkAcousticSurfaceArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkAcousticSurfaceArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcbfa0usize)as*mut u8,();
-(AkAcousticSurfaceArray)__receiver,(i32)::core::convert::Into::into(count))}
-}
-#[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkAcousticSurfaceArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-akacousticsurfacearray")]
+pub trait IAkAcousticSurfaceArrayMethods: IAkAcousticSurfaceArray {
+    #[doc = "`.ctor(i32)` overload"]
+    fn ctor(self, count: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <AkAcousticSurfaceArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2bcbfa0usize)as*mut u8,();
+(AkAcousticSurfaceArray)__receiver,(i32)::core::convert::Into::into(count))
+        }
+    }
+    #[doc = "`get_StructureSize()` overload"]
+    fn get_structure_size(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <AkAcousticSurfaceArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <AkAcousticSurfaceArray as::unity2::ClassIdentity> ::NAME,"get_StructureSize",));
-let __inner:extern "C" fn(AkAcousticSurfaceArray, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"]fn default_construct_at_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkAcousticSurfaceArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <AkAcousticSurfaceArray as ::unity::ClassIdentity>::NAME,
+                        "get_StructureSize",
+                    )
+                });
+                let __inner: extern "C" fn(AkAcousticSurfaceArray, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`DefaultConstructAtIntPtr(::unity::IntPtr)` overload"]
+    fn default_construct_at_int_ptr(self, address: impl ::core::convert::Into<::unity::IntPtr>) -> () {
+        unsafe {
+            let __receiver =
+                <AkAcousticSurfaceArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(7usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <AkAcousticSurfaceArray as::unity2::ClassIdentity> ::NAME,"DefaultConstructAtIntPtr",));
-let __inner:extern "C" fn(AkAcousticSurfaceArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(address),__mi)}
-}
-}
-#[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akacousticsurface::AkAcousticSurface{unsafe{let __receiver= <AkAcousticSurfaceArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        7usize,
+                        __vt.len(),
+                        <AkAcousticSurfaceArray as ::unity::ClassIdentity>::NAME,
+                        "DefaultConstructAtIntPtr",
+                    )
+                });
+                let __inner: extern "C" fn(AkAcousticSurfaceArray, ::unity::IntPtr, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(address), __mi)
+            }
+        }
+    }
+    #[doc = "`CreateNewReferenceFromIntPtr(::unity::IntPtr)` overload"]
+    fn create_new_reference_from_int_ptr(
+        self,
+        address: impl ::core::convert::Into<::unity::IntPtr>,
+    ) -> crate::root::akacousticsurface::AkAcousticSurface {
+        unsafe {
+            let __receiver =
+                <AkAcousticSurfaceArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <AkAcousticSurfaceArray as::unity2::ClassIdentity> ::NAME,"CreateNewReferenceFromIntPtr",));
-let __inner:extern "C" fn(AkAcousticSurfaceArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->crate::root::akacousticsurface::AkAcousticSurface= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(address),__mi)}
-}
-}
-#[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akacousticsurface::AkAcousticSurface)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akacousticsurface::AkAcousticSurface>)->(){unsafe{let __receiver= <AkAcousticSurfaceArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <AkAcousticSurfaceArray as ::unity::ClassIdentity>::NAME,
+                        "CreateNewReferenceFromIntPtr",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    AkAcousticSurfaceArray,
+                    ::unity::IntPtr,
+                    ::unity::OptionalMethod,
+                ) -> crate::root::akacousticsurface::AkAcousticSurface = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(address), __mi)
+            }
+        }
+    }
+    #[doc = "`CloneIntoReferenceFromIntPtr(::unity::IntPtr, crate::root::akacousticsurface::AkAcousticSurface)` overload"]
+    fn clone_into_reference_from_int_ptr(
+        self,
+        address: impl ::core::convert::Into<::unity::IntPtr>,
+        other: impl ::core::convert::Into<crate::root::akacousticsurface::AkAcousticSurface>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <AkAcousticSurfaceArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(10usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <AkAcousticSurfaceArray as::unity2::ClassIdentity> ::NAME,"CloneIntoReferenceFromIntPtr",));
-let __inner:extern "C" fn(AkAcousticSurfaceArray, ::unity2::IntPtr,crate::root::akacousticsurface::AkAcousticSurface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(address), ::core::convert::Into::into(other),__mi)}
-}
-}
-}
-
-#[cfg(feature="root-akacousticsurfacearray")]impl<__T:IAkAcousticSurfaceArray>IAkAcousticSurfaceArrayMethods for __T{}
-
-#[cfg(feature="root-akacousticsurfacearray")]impl AkAcousticSurfaceArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_structure_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn default_construct_at_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn create_new_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn clone_into_reference_from_int_ptr_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="root-akacousticsurfacearray")]impl AkAcousticSurfaceArray{#[doc="Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `get_StructureSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_structure_size(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_structure_size_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `DefaultConstructAtIntPtr`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn default_construct_at_int_ptr(this:impl::core::convert::Into< ::unity2::IlInstance> ,address: ::unity2::IntPtr,)->(){let __mi=Self::default_construct_at_int_ptr_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),address, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `CreateNewReferenceFromIntPtr`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_new_reference_from_int_ptr(this:impl::core::convert::Into< ::unity2::IlInstance> ,address: ::unity2::IntPtr,)->crate::root::akacousticsurface::AkAcousticSurface{let __mi=Self::create_new_reference_from_int_ptr_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IntPtr, ::unity2::OptionalMethod,)->crate::root::akacousticsurface::AkAcousticSurface= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),address, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `CloneIntoReferenceFromIntPtr`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn clone_into_reference_from_int_ptr(this:impl::core::convert::Into< ::unity2::IlInstance> ,address: ::unity2::IntPtr,other:crate::root::akacousticsurface::AkAcousticSurface,)->(){let __mi=Self::clone_into_reference_from_int_ptr_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::IntPtr,crate::root::akacousticsurface::AkAcousticSurface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),address,other, ::core::option::Option::None)}
+`)",
+                        10usize,
+                        __vt.len(),
+                        <AkAcousticSurfaceArray as ::unity::ClassIdentity>::NAME,
+                        "CloneIntoReferenceFromIntPtr",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    AkAcousticSurfaceArray,
+                    ::unity::IntPtr,
+                    crate::root::akacousticsurface::AkAcousticSurface,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(address), ::core::convert::Into::into(other), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="root-akacousticsurfacearray")]impl AkAcousticSurfaceArray{#[doc="`.ctor(i32)` — overload selector"]pub fn new(count:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-akacousticsurfacearray")]
+impl<__T: IAkAcousticSurfaceArray> IAkAcousticSurfaceArrayMethods for __T {}
+
+#[cfg(feature = "root-akacousticsurfacearray")]
+impl AkAcousticSurfaceArray {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_structure_size_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn default_construct_at_int_ptr_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn create_new_reference_from_int_ptr_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn clone_into_reference_from_int_ptr_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+}
+
+#[cfg(feature = "root-akacousticsurfacearray")]
+impl AkAcousticSurfaceArray {
+    #[doc = "Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `get_StructureSize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_structure_size(this: impl ::core::convert::Into<::unity::IlInstance>) -> i32 {
+        let __mi = Self::get_structure_size_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `DefaultConstructAtIntPtr`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn default_construct_at_int_ptr(this: impl ::core::convert::Into<::unity::IlInstance>, address: ::unity::IntPtr) -> () {
+        let __mi = Self::default_construct_at_int_ptr_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::IntPtr, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), address, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `CreateNewReferenceFromIntPtr`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn create_new_reference_from_int_ptr(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        address: ::unity::IntPtr,
+    ) -> crate::root::akacousticsurface::AkAcousticSurface {
+        let __mi = Self::create_new_reference_from_int_ptr_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::IntPtr,
+            ::unity::OptionalMethod,
+        ) -> crate::root::akacousticsurface::AkAcousticSurface = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), address, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `AkAcousticSurfaceArray`'s own `CloneIntoReferenceFromIntPtr`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn clone_into_reference_from_int_ptr(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        address: ::unity::IntPtr,
+        other: crate::root::akacousticsurface::AkAcousticSurface,
+    ) -> () {
+        let __mi = Self::clone_into_reference_from_int_ptr_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            ::unity::IntPtr,
+            crate::root::akacousticsurface::AkAcousticSurface,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), address, other, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "root-akacousticsurfacearray")]
+impl AkAcousticSurfaceArray {
+    #[doc = "`.ctor(i32)` — overload selector"]
+    pub fn new(count: i32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AkAcousticSurfaceArray), ::core::stringify!(new),));
- <Self as IAkAcousticSurfaceArrayMethods> ::ctor(this,count);
-this}
+ failed to instantiate",
+                ::core::stringify!(AkAcousticSurfaceArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkAcousticSurfaceArrayMethods>::ctor(this, count);
+        this
+    }
 }
 
 #[cfg(feature = "root-akacousticsurfacearray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkAcousticSurfaceArray;
-    pub use super::IAkAcousticSurfaceArray;
-    pub use super::IAkAcousticSurfaceArrayMethods;
-    pub use crate::root::akbasearray_1::IAkBaseArray_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "root-akbasearray_1")] pub use crate::root::akbasearray_1::IAkBaseArray_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{AkAcousticSurfaceArray, IAkAcousticSurfaceArray, IAkAcousticSurfaceArrayMethods};
+    #[cfg(feature = "root-akbasearray_1")]
+    pub use crate::root::akbasearray_1::IAkBaseArray_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{root::akbasearray_1::IAkBaseArray_1, system::object::IObject};
 }

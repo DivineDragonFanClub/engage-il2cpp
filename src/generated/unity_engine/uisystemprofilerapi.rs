@@ -2,66 +2,108 @@
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        r#enum::{Enum, IEnum},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct UISystemProfilerApi_SampleType {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for UISystemProfilerApi_SampleType {
+        const NAME: &'static str = "UISystemProfilerApi.SampleType";
+        const NAMESPACE: &'static str = "UnityEngine";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for UISystemProfilerApi_SampleType {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl UISystemProfilerApi_SampleType {
+        pub fn layout() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi_SampleType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UISystemProfilerApi_SampleType{pub value:i32,}
-impl::unity2::ClassIdentity for UISystemProfilerApi_SampleType{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="UISystemProfilerApi.SampleType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for UISystemProfilerApi_SampleType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl UISystemProfilerApi_SampleType{pub fn layout()->Self{Self{value:0}
-}
-pub fn render()->Self{Self{value:1}
-}
-}
+        pub fn render() -> Self {
+            Self { value: 1 }
+        }
+    }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]#[::unity2::class(namespace="UnityEngine",name="UISystemProfilerApi")]#[parent(crate::system::object::Object)]pub struct UISystemProfilerApi{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/uisystemprofilerapi/UISystemProfilerApi.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "UISystemProfilerApi")]
+    #[parent(crate::system::object::Object)]
+    pub struct UISystemProfilerApi {}
 }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-uisystemprofilerapi")]impl UISystemProfilerApi{#[doc="`BeginSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]pub fn begin_sample(r#type:impl::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f24770usize)as*mut u8,();
-(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)::core::convert::Into::into(r#type))}
-}
-#[doc="`EndSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]pub fn end_sample(r#type:impl::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f247c0usize)as*mut u8,();
-(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)::core::convert::Into::into(r#type))}
-}
-#[doc="`AddMarker(::unity2::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]pub fn add_marker(name:impl::core::convert::Into< ::unity2::Il2CppString> ,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f24810usize)as*mut u8,();
-(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
-}
+#[cfg(feature = "unity_engine-uisystemprofilerapi")]
+impl UISystemProfilerApi {
+    #[doc = "`BeginSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
+    pub fn begin_sample(r#type: impl ::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f24770usize)as*mut u8,();
+(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)::core::convert::Into::into(r#type))
+        }
+    }
+
+    #[doc = "`EndSample(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)` overload"]
+    pub fn end_sample(r#type: impl ::core::convert::Into<crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f247c0usize)as*mut u8,();
+(crate::unity_engine::uisystemprofilerapi::UISystemProfilerApi_SampleType)::core::convert::Into::into(r#type))
+        }
+    }
+
+    #[doc = "`AddMarker(::unity::Il2CppString, crate::unity_engine::object_2::Object_2)` overload"]
+    pub fn add_marker(
+        name: impl ::core::convert::Into<::unity::Il2CppString>,
+        obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f24810usize)as*mut u8,();
+(::unity::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-uisystemprofilerapi")]impl UISystemProfilerApi{pub fn begin_sample_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn end_sample_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn add_marker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "unity_engine-uisystemprofilerapi")]
+impl UISystemProfilerApi {
+    pub fn begin_sample_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn end_sample_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn add_marker_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
 #[cfg(feature = "unity_engine-uisystemprofilerapi")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UISystemProfilerApi_SampleType;
-    pub use super::UISystemProfilerApi;
-    pub use super::IUISystemProfilerApi;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{IUISystemProfilerApi, UISystemProfilerApi, UISystemProfilerApi_SampleType};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, r#enum::IEnum, valuetype::IValueType};
 }

@@ -2,70 +2,123 @@
 
 #[cfg(feature = "unity_engine-rendering-intparameter-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
-;
-use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/intparameter/IntParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="IntParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<i32>)]pub struct IntParameter{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/intparameter/IntParameter.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering", name = "IntParameter")]
+    #[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<i32>)]
+    pub struct IntParameter {}
 }
 
 #[cfg(feature = "unity_engine-rendering-intparameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-intparameter")]pub trait IIntParameterMethods:IIntParameter{#[doc="`.ctor(i32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<i32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30aaed0usize)as*mut u8,();
-(IntParameter)__receiver,(i32)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
-}
-#[doc="`Interp(i32, i32, f32)` overload"]fn interp(self,from:impl::core::convert::Into<i32> ,to:impl::core::convert::Into<i32> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+pub trait IIntParameterMethods: IIntParameter {
+    #[doc = "`.ctor(i32, bool)` overload"]
+    fn ctor(self, value: impl ::core::convert::Into<i32>, override_state: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <IntParameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x30aaed0usize)as*mut u8,();
+(IntParameter)__receiver,(i32)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))
+        }
+    }
+    #[doc = "`Interp(i32, i32, f32)` overload"]
+    fn interp(self, from: impl ::core::convert::Into<i32>, to: impl ::core::convert::Into<i32>, t: impl ::core::convert::Into<f32>) -> () {
+        unsafe {
+            let __receiver = <IntParameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(14usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",14usize,__vt.len(), <IntParameter as::unity2::ClassIdentity> ::NAME,"Interp",));
-let __inner:extern "C" fn(IntParameter,i32,i32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t),__mi)}
-}
-}
+`)",
+                        14usize,
+                        __vt.len(),
+                        <IntParameter as ::unity::ClassIdentity>::NAME,
+                        "Interp",
+                    )
+                });
+                let __inner: extern "C" fn(IntParameter, i32, i32, f32, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(from),
+                    ::core::convert::Into::into(to),
+                    ::core::convert::Into::into(t),
+                    __mi,
+                )
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-intparameter")]impl<__T:IIntParameter>IIntParameterMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+impl<__T: IIntParameter> IIntParameterMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-intparameter")]impl IntParameter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn interp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+impl IntParameter {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn interp_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-intparameter")]impl IntParameter{#[doc="Direct (non-virtual) call to `IntParameter`'s own `Interp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn interp(this:impl::core::convert::Into< ::unity2::IlInstance> ,from:i32,to:i32,t:f32,)->(){let __mi=Self::interp_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,i32,i32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),from,to,t, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+impl IntParameter {
+    #[doc = "Direct (non-virtual) call to `IntParameter`'s own `Interp`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn interp(this: impl ::core::convert::Into<::unity::IlInstance>, from: i32, to: i32, t: f32) -> () {
+        let __mi = Self::interp_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, i32, i32, f32, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), from, to, t, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-intparameter")]impl IntParameter{#[doc="`.ctor(i32, bool)` — overload selector"]pub fn new(value:i32,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-intparameter")]
+impl IntParameter {
+    #[doc = "`.ctor(i32, bool)` — overload selector"]
+    pub fn new(value: i32, override_state: bool) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(IntParameter), ::core::stringify!(new),));
- <Self as IIntParameterMethods> ::ctor(this,value,override_state);
-this}
+ failed to instantiate",
+                ::core::stringify!(IntParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIntParameterMethods>::ctor(this, value, override_state);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-intparameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IntParameter;
-    pub use super::IIntParameter;
-    pub use super::IIntParameterMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter")] pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")] pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use super::{IIntParameter, IIntParameterMethods, IntParameter};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }

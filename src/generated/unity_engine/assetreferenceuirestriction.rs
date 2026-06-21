@@ -2,74 +2,142 @@
 
 #[cfg(feature = "unity_engine-assetreferenceuirestriction-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/assetreferenceuirestriction/AssetReferenceUIRestriction.md"))]#[::unity2::class(namespace="UnityEngine",name="AssetReferenceUIRestriction")]pub struct AssetReferenceUIRestriction{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/assetreferenceuirestriction/AssetReferenceUIRestriction.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "AssetReferenceUIRestriction")]
+    pub struct AssetReferenceUIRestriction {}
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuirestriction-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-assetreferenceuirestriction")]pub trait IAssetReferenceUIRestrictionMethods:IAssetReferenceUIRestriction{#[doc="`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]fn validate_asset(self,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->bool{unsafe{let __receiver= <AssetReferenceUIRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
+pub trait IAssetReferenceUIRestrictionMethods: IAssetReferenceUIRestriction {
+    #[doc = "`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]
+    fn validate_asset(self, obj: impl ::core::convert::Into<crate::unity_engine::object_2::Object_2>) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetReferenceUIRestriction as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <AssetReferenceUIRestriction as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
-let __inner:extern "C" fn(AssetReferenceUIRestriction,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(obj),__mi)}
-}
-}
-#[doc="`ValidateAsset(::unity2::Il2CppString)` overload"]fn validate_asset_2(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AssetReferenceUIRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <AssetReferenceUIRestriction as ::unity::ClassIdentity>::NAME,
+                        "ValidateAsset",
+                    )
+                });
+                let __inner: extern "C" fn(AssetReferenceUIRestriction, crate::unity_engine::object_2::Object_2, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(obj), __mi)
+            }
+        }
+    }
+    #[doc = "`ValidateAsset(::unity::Il2CppString)` overload"]
+    fn validate_asset_2(self, path: impl ::core::convert::Into<::unity::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver =
+                <AssetReferenceUIRestriction as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <AssetReferenceUIRestriction as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
-let __inner:extern "C" fn(AssetReferenceUIRestriction, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(path),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetReferenceUIRestriction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3170usize)as*mut u8,();
-(AssetReferenceUIRestriction)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-assetreferenceuirestriction")]impl<__T:IAssetReferenceUIRestriction>IAssetReferenceUIRestrictionMethods for __T{}
-
-#[cfg(feature="unity_engine-assetreferenceuirestriction")]impl AssetReferenceUIRestriction{pub fn validate_asset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn validate_asset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="unity_engine-assetreferenceuirestriction")]impl AssetReferenceUIRestriction{#[doc="Direct (non-virtual) call to `AssetReferenceUIRestriction`'s own `ValidateAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn validate_asset(this:impl::core::convert::Into< ::unity2::IlInstance> ,obj:crate::unity_engine::object_2::Object_2,)->bool{let __mi=Self::validate_asset_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),obj, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `AssetReferenceUIRestriction`'s own `ValidateAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn validate_asset_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,path: ::unity2::Il2CppString,)->bool{let __mi=Self::validate_asset_2_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),path, ::core::option::Option::None)}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <AssetReferenceUIRestriction as ::unity::ClassIdentity>::NAME,
+                        "ValidateAsset",
+                    )
+                });
+                let __inner: extern "C" fn(AssetReferenceUIRestriction, ::unity::Il2CppString, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(path), __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <AssetReferenceUIRestriction as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2db3170usize)as*mut u8,();
+(AssetReferenceUIRestriction)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-assetreferenceuirestriction")]impl AssetReferenceUIRestriction{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
+impl<__T: IAssetReferenceUIRestriction> IAssetReferenceUIRestrictionMethods for __T {}
+
+#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
+impl AssetReferenceUIRestriction {
+    pub fn validate_asset_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn validate_asset_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
+impl AssetReferenceUIRestriction {
+    #[doc = "Direct (non-virtual) call to `AssetReferenceUIRestriction`'s own `ValidateAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn validate_asset(this: impl ::core::convert::Into<::unity::IlInstance>, obj: crate::unity_engine::object_2::Object_2) -> bool {
+        let __mi = Self::validate_asset_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::unity_engine::object_2::Object_2, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), obj, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `AssetReferenceUIRestriction`'s own `ValidateAsset`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn validate_asset_2(this: impl ::core::convert::Into<::unity::IlInstance>, path: ::unity::Il2CppString) -> bool {
+        let __mi = Self::validate_asset_2_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Il2CppString, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), path, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "unity_engine-assetreferenceuirestriction")]
+impl AssetReferenceUIRestriction {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AssetReferenceUIRestriction), ::core::stringify!(new),));
- <Self as IAssetReferenceUIRestrictionMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AssetReferenceUIRestriction),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetReferenceUIRestrictionMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-assetreferenceuirestriction")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetReferenceUIRestriction;
-    pub use super::IAssetReferenceUIRestriction;
-    pub use super::IAssetReferenceUIRestrictionMethods;
+    pub use super::{AssetReferenceUIRestriction, IAssetReferenceUIRestriction, IAssetReferenceUIRestrictionMethods};
 }

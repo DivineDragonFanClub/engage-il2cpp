@@ -2,57 +2,104 @@
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-downloadstatus-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/async_operations/downloadstatus/DownloadStatus.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct DownloadStatus {
+        pub total_bytes: i64,
+        pub downloaded_bytes: i64,
+        pub is_done: bool,
+    }
+    impl ::unity::ClassIdentity for DownloadStatus {
+        const NAME: &'static str = "DownloadStatus";
+        const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.AsyncOperations";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/async_operations/downloadstatus/DownloadStatus.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DownloadStatus{pub total_bytes:i64,pub downloaded_bytes:i64,pub is_done:bool,}
-impl::unity2::ClassIdentity for DownloadStatus{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.AsyncOperations";
-const NAME: &'static str="DownloadStatus";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for DownloadStatus{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for DownloadStatus {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-downloadstatus-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-async_operations-downloadstatus")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DownloadStatus_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_percent{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<DownloadStatus as::unity2::ClassIdentity> ::class(),"get_Percent",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "unity_engine-resource_management-async_operations-downloadstatus")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __DownloadStatus_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_percent {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <DownloadStatus as ::unity::ClassIdentity>::class(),
+                "get_Percent",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <DownloadStatus as::unity2::ClassIdentity> ::NAME,"get_Percent",e),}
-}
-}
+",
+                        <DownloadStatus as ::unity::ClassIdentity>::NAME,
+                        "get_Percent",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-async_operations-downloadstatus")]impl DownloadStatus{#[doc="`get_Percent()` overload"]pub fn get_percent(&mut self,)->f32{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__DownloadStatus_unity2_raw::__lookup_get_percent::get_method_info().method_ptr),f32;
-(*mut DownloadStatus)self as*mut DownloadStatus)}
-}
+#[cfg(feature = "unity_engine-resource_management-async_operations-downloadstatus")]
+impl DownloadStatus {
+    #[doc = "`get_Percent()` overload"]
+    pub fn get_percent(&mut self) -> f32 {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__DownloadStatus_unity_raw::__lookup_get_percent::get_method_info().method_ptr),f32;
+(*mut DownloadStatus)self as*mut DownloadStatus)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-async_operations-downloadstatus")]impl DownloadStatus{pub fn get_percent_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-resource_management-async_operations-downloadstatus")]
+impl DownloadStatus {
+    pub fn get_percent_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-async_operations-downloadstatus")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::DownloadStatus;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

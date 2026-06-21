@@ -2,40 +2,61 @@
 
 #[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/ignoreonplayabletrackattribute/IgnoreOnPlayableTrackAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="IgnoreOnPlayableTrackAttribute")]pub struct IgnoreOnPlayableTrackAttribute{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/ignoreonplayabletrackattribute/IgnoreOnPlayableTrackAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine.Timeline", name = "IgnoreOnPlayableTrackAttribute")]
+    pub struct IgnoreOnPlayableTrackAttribute {}
 }
 
 #[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-ignoreonplayabletrackattribute")]pub trait IIgnoreOnPlayableTrackAttributeMethods:IIgnoreOnPlayableTrackAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IgnoreOnPlayableTrackAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d6ea0usize)as*mut u8,();
-(IgnoreOnPlayableTrackAttribute)__receiver)}
-}
+#[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute")]
+pub trait IIgnoreOnPlayableTrackAttributeMethods: IIgnoreOnPlayableTrackAttribute {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <IgnoreOnPlayableTrackAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x35d6ea0usize)as*mut u8,();
+(IgnoreOnPlayableTrackAttribute)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-timeline-ignoreonplayabletrackattribute")]impl<__T:IIgnoreOnPlayableTrackAttribute>IIgnoreOnPlayableTrackAttributeMethods for __T{}
+#[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute")]
+impl<__T: IIgnoreOnPlayableTrackAttribute> IIgnoreOnPlayableTrackAttributeMethods for __T {}
 
-#[cfg(feature="unity_engine-timeline-ignoreonplayabletrackattribute")]impl IgnoreOnPlayableTrackAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute")]
+impl IgnoreOnPlayableTrackAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-timeline-ignoreonplayabletrackattribute")]impl IgnoreOnPlayableTrackAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute")]
+impl IgnoreOnPlayableTrackAttribute {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(IgnoreOnPlayableTrackAttribute), ::core::stringify!(new),));
- <Self as IIgnoreOnPlayableTrackAttributeMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(IgnoreOnPlayableTrackAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IIgnoreOnPlayableTrackAttributeMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-ignoreonplayabletrackattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IgnoreOnPlayableTrackAttribute;
-    pub use super::IIgnoreOnPlayableTrackAttribute;
-    pub use super::IIgnoreOnPlayableTrackAttributeMethods;
+    pub use super::{IIgnoreOnPlayableTrackAttribute, IIgnoreOnPlayableTrackAttributeMethods, IgnoreOnPlayableTrackAttribute};
 }

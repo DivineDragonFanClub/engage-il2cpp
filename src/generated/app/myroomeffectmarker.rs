@@ -2,74 +2,129 @@
 
 #[cfg(feature = "app-myroomeffectmarker-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+            timeline::marker::{IMarker, Marker},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-use crate::unity_engine::timeline::marker::{IMarker,Marker}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeffectmarker/MyRoomEffectMarker.md"))]#[::unity2::class(namespace="App",name="MyRoomEffectMarker")]#[parent(crate::unity_engine::timeline::marker::Marker)]pub struct MyRoomEffectMarker{#[offset(40)]#[rename(name="EffectName")]pub effect_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="duration")]pub duration:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeffectmarker/MyRoomEffectMarker.md"))]
+    #[::unity::class(namespace = "App", name = "MyRoomEffectMarker")]
+    #[parent(crate::unity_engine::timeline::marker::Marker)]
+    pub struct MyRoomEffectMarker {
+        #[offset(40)]
+        #[rename(name = "EffectName")]
+        pub effect_name: ::unity::Il2CppString,
+        #[offset(48)]
+        #[rename(name = "duration")]
+        pub duration: f32,
+    }
 }
 
 #[cfg(feature = "app-myroomeffectmarker-types")]
 pub use __types::*;
 
-#[cfg(feature="app-myroomeffectmarker")]pub trait IMyRoomEffectMarkerMethods:IMyRoomEffectMarker{#[doc="`get_id()` overload"]fn get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <MyRoomEffectMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-myroomeffectmarker")]
+pub trait IMyRoomEffectMarkerMethods: IMyRoomEffectMarker {
+    #[doc = "`get_id()` overload"]
+    fn get_id(self) -> crate::unity_engine::propertyname::PropertyName {
+        unsafe {
+            let __receiver = <MyRoomEffectMarker as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <MyRoomEffectMarker as::unity2::ClassIdentity> ::NAME,"get_id",));
-let __inner:extern "C" fn(MyRoomEffectMarker, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomEffectMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238dfb0usize)as*mut u8,();
-(MyRoomEffectMarker)__receiver)}
-}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <MyRoomEffectMarker as ::unity::ClassIdentity>::NAME,
+                        "get_id",
+                    )
+                });
+                let __inner: extern "C" fn(MyRoomEffectMarker, ::unity::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomEffectMarker as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x238dfb0usize)as*mut u8,();
+(MyRoomEffectMarker)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-myroomeffectmarker")]impl<__T:IMyRoomEffectMarker>IMyRoomEffectMarkerMethods for __T{}
+#[cfg(feature = "app-myroomeffectmarker")]
+impl<__T: IMyRoomEffectMarker> IMyRoomEffectMarkerMethods for __T {}
 
-#[cfg(feature="app-myroomeffectmarker")]impl MyRoomEffectMarker{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-myroomeffectmarker")]
+impl MyRoomEffectMarker {
+    pub fn get_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-myroomeffectmarker")]impl MyRoomEffectMarker{#[doc="Direct (non-virtual) call to `MyRoomEffectMarker`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_id(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::propertyname::PropertyName{let __mi=Self::get_id_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-myroomeffectmarker")]
+impl MyRoomEffectMarker {
+    #[doc = "Direct (non-virtual) call to `MyRoomEffectMarker`'s own `get_id`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_id(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::propertyname::PropertyName {
+        let __mi = Self::get_id_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::propertyname::PropertyName =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-myroomeffectmarker")]impl MyRoomEffectMarker{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-myroomeffectmarker")]
+impl MyRoomEffectMarker {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomEffectMarker), ::core::stringify!(new),));
- <Self as IMyRoomEffectMarkerMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MyRoomEffectMarker),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomEffectMarkerMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-myroomeffectmarker")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomEffectMarker;
-    pub use super::IMyRoomEffectMarker;
-    pub use super::IMyRoomEffectMarkerMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    pub use crate::unity_engine::timeline::marker::IMarker;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
-    #[cfg(feature = "unity_engine-timeline-marker")] pub use crate::unity_engine::timeline::marker::IMarkerMethods;
+    pub use super::{IMyRoomEffectMarker, IMyRoomEffectMarkerMethods, MyRoomEffectMarker};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    #[cfg(feature = "unity_engine-timeline-marker")]
+    pub use crate::unity_engine::timeline::marker::IMarkerMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject, timeline::marker::IMarker},
+    };
 }

@@ -2,66 +2,127 @@
 
 #[cfg(feature = "combat-situation_converter-convertnorecord-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        combat::situation_converter::baseconverter::{BaseConverter, IBaseConverter},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::combat::situation_converter::baseconverter::{BaseConverter,IBaseConverter}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertnorecord/ConvertNoRecord.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertNoRecord")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertNoRecord{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertnorecord/ConvertNoRecord.md"))]
+    #[::unity::class(namespace = "Combat.SituationConverter", name = "ConvertNoRecord")]
+    #[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]
+    pub struct ConvertNoRecord {}
 }
 
 #[cfg(feature = "combat-situation_converter-convertnorecord-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-situation_converter-convertnorecord")]pub trait IConvertNoRecordMethods:IConvertNoRecord{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertNoRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2542290usize)as*mut u8,();
-(ConvertNoRecord)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
-}
-#[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertNoRecord as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "combat-situation_converter-convertnorecord")]
+pub trait IConvertNoRecordMethods: IConvertNoRecord {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]
+    fn ctor(self, data: impl ::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>) -> () {
+        unsafe {
+            let __receiver = <ConvertNoRecord as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2542290usize)as*mut u8,();
+(ConvertNoRecord)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))
+        }
+    }
+    #[doc = "`Convert(crate::combat::camerasituation::CameraSituation, ::unity::Il2CppString)` overload"]
+    fn convert(
+        self,
+        situation: impl ::core::convert::Into<crate::combat::camerasituation::CameraSituation>,
+        arg: impl ::core::convert::Into<::unity::Il2CppString>,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        unsafe {
+            let __receiver = <ConvertNoRecord as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <ConvertNoRecord as::unity2::ClassIdentity> ::NAME,"Convert",));
-let __inner:extern "C" fn(ConvertNoRecord,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg),__mi)}
-}
-}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <ConvertNoRecord as ::unity::ClassIdentity>::NAME,
+                        "Convert",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    ConvertNoRecord,
+                    crate::combat::camerasituation::CameraSituation,
+                    ::unity::Il2CppString,
+                    ::unity::OptionalMethod,
+                ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertnorecord")]impl<__T:IConvertNoRecord>IConvertNoRecordMethods for __T{}
+#[cfg(feature = "combat-situation_converter-convertnorecord")]
+impl<__T: IConvertNoRecord> IConvertNoRecordMethods for __T {}
 
-#[cfg(feature="combat-situation_converter-convertnorecord")]impl ConvertNoRecord{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn convert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "combat-situation_converter-convertnorecord")]
+impl ConvertNoRecord {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn convert_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertnorecord")]impl ConvertNoRecord{#[doc="Direct (non-virtual) call to `ConvertNoRecord`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn convert(this:impl::core::convert::Into< ::unity2::IlInstance> ,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,)->crate::combat::cameraposition::CameraPosition{let __mi=Self::convert_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),situation,arg, ::core::option::Option::None)}
+#[cfg(feature = "combat-situation_converter-convertnorecord")]
+impl ConvertNoRecord {
+    #[doc = "Direct (non-virtual) call to `ConvertNoRecord`'s own `Convert`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn convert(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        situation: crate::combat::camerasituation::CameraSituation,
+        arg: ::unity::Il2CppString,
+    ) -> crate::combat::cameraposition::CameraPosition {
+        let __mi = Self::convert_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::combat::camerasituation::CameraSituation,
+            ::unity::Il2CppString,
+            ::unity::OptionalMethod,
+        ) -> crate::combat::cameraposition::CameraPosition = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), situation, arg, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="combat-situation_converter-convertnorecord")]impl ConvertNoRecord{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]pub fn new(data:crate::combat::situation_converter::cameradataset::CameraDataSet)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-situation_converter-convertnorecord")]
+impl ConvertNoRecord {
+    #[doc = "`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` — overload selector"]
+    pub fn new(data: crate::combat::situation_converter::cameradataset::CameraDataSet) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ConvertNoRecord), ::core::stringify!(new),));
- <Self as IConvertNoRecordMethods> ::ctor(this,data);
-this}
+ failed to instantiate",
+                ::core::stringify!(ConvertNoRecord),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IConvertNoRecordMethods>::ctor(this, data);
+        this
+    }
 }
 
 #[cfg(feature = "combat-situation_converter-convertnorecord")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertNoRecord;
-    pub use super::IConvertNoRecord;
-    pub use super::IConvertNoRecordMethods;
-    pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "combat-situation_converter-baseconverter")] pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ConvertNoRecord, IConvertNoRecord, IConvertNoRecordMethods};
+    #[cfg(feature = "combat-situation_converter-baseconverter")]
+    pub use crate::combat::situation_converter::baseconverter::IBaseConverterMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{combat::situation_converter::baseconverter::IBaseConverter, system::object::IObject};
 }

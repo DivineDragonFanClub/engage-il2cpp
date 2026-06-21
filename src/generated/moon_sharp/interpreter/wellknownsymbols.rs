@@ -2,15 +2,22 @@
 
 #[cfg(feature = "moon_sharp-interpreter-wellknownsymbols-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/wellknownsymbols/WellKnownSymbols.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter",name="WellKnownSymbols")]#[parent(crate::system::object::Object)]pub struct WellKnownSymbols{#[static_field]#[rename(name="VARARGS")]pub varargs: ::unity2::Il2CppString, #[static_field]#[rename(name="ENV")]pub env: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/wellknownsymbols/WellKnownSymbols.md"))]
+    #[::unity::class(namespace = "MoonSharp.Interpreter", name = "WellKnownSymbols")]
+    #[parent(crate::system::object::Object)]
+    pub struct WellKnownSymbols {
+        #[static_field]
+        #[rename(name = "VARARGS")]
+        pub varargs: ::unity::Il2CppString,
+        #[static_field]
+        #[rename(name = "ENV")]
+        pub env: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-wellknownsymbols-types")]
@@ -19,8 +26,8 @@ pub use __types::*;
 #[cfg(feature = "moon_sharp-interpreter-wellknownsymbols")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WellKnownSymbols;
-    pub use super::IWellKnownSymbols;
+    pub use super::{IWellKnownSymbols, WellKnownSymbols};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

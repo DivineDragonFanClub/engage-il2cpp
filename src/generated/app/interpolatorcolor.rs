@@ -2,88 +2,176 @@
 
 #[cfg(feature = "app-interpolatorcolor-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            interpolator_1::{IInterpolator_1, Interpolator_1},
+            interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::interpolator_1::{IInterpolator_1,Interpolator_1}
-;
-use crate::app::interpolatortime::{IInterpolatorTime,InterpolatorTime}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorcolor/InterpolatorColor.md"))]#[::unity2::class(namespace="App",name="InterpolatorColor")]#[parent(crate::app::interpolator_1::Interpolator_1<crate::unity_engine::color::Color>)]pub struct InterpolatorColor{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/interpolatorcolor/InterpolatorColor.md"))]
+    #[::unity::class(namespace = "App", name = "InterpolatorColor")]
+    #[parent(crate::app::interpolator_1::Interpolator_1<crate::unity_engine::color::Color>)]
+    pub struct InterpolatorColor {}
 }
 
 #[cfg(feature = "app-interpolatorcolor-types")]
 pub use __types::*;
 
-#[cfg(feature="app-interpolatorcolor")]pub trait IInterpolatorColorMethods:IInterpolatorColor{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2794970usize)as*mut u8,();
-(InterpolatorColor)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
-}
-#[doc="`get_Value()` overload"]fn get_value(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-interpolatorcolor")]
+pub trait IInterpolatorColorMethods: IInterpolatorColor {
+    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` overload"]
+    fn ctor(self, r#type: impl ::core::convert::Into<crate::app::curve::Curve_Type>, num: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver = <InterpolatorColor as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2794970usize)as*mut u8,();
+(InterpolatorColor)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))
+        }
+    }
+    #[doc = "`get_Value()` overload"]
+    fn get_value(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <InterpolatorColor as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <InterpolatorColor as::unity2::ClassIdentity> ::NAME,"get_Value",));
-let __inner:extern "C" fn(InterpolatorColor, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`IsEqual(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]fn is_equal(self,a:impl::core::convert::Into<crate::unity_engine::color::Color> ,b:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <InterpolatorColor as ::unity::ClassIdentity>::NAME,
+                        "get_Value",
+                    )
+                });
+                let __inner: extern "C" fn(InterpolatorColor, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`IsEqual(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]
+    fn is_equal(
+        self,
+        a: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+        b: impl ::core::convert::Into<crate::unity_engine::color::Color>,
+    ) -> bool {
+        unsafe {
+            let __receiver = <InterpolatorColor as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <InterpolatorColor as::unity2::ClassIdentity> ::NAME,"IsEqual",));
-let __inner:extern "C" fn(InterpolatorColor,crate::unity_engine::color::Color,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b),__mi)}
-}
-}
-}
-
-#[cfg(feature="app-interpolatorcolor")]impl<__T:IInterpolatorColor>IInterpolatorColorMethods for __T{}
-
-#[cfg(feature="app-interpolatorcolor")]impl InterpolatorColor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_equal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-interpolatorcolor")]impl InterpolatorColor{#[doc="Direct (non-virtual) call to `InterpolatorColor`'s own `get_Value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::color::Color{let __mi=Self::get_value_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `InterpolatorColor`'s own `IsEqual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_equal(this:impl::core::convert::Into< ::unity2::IlInstance> ,a:crate::unity_engine::color::Color,b:crate::unity_engine::color::Color,)->bool{let __mi=Self::is_equal_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::color::Color,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),a,b, ::core::option::Option::None)}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <InterpolatorColor as ::unity::ClassIdentity>::NAME,
+                        "IsEqual",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    InterpolatorColor,
+                    crate::unity_engine::color::Color,
+                    crate::unity_engine::color::Color,
+                    ::unity::OptionalMethod,
+                ) -> bool = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-interpolatorcolor")]impl InterpolatorColor{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]pub fn new(r#type:crate::app::curve::Curve_Type,num:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-interpolatorcolor")]
+impl<__T: IInterpolatorColor> IInterpolatorColorMethods for __T {}
+
+#[cfg(feature = "app-interpolatorcolor")]
+impl InterpolatorColor {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_equal_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "app-interpolatorcolor")]
+impl InterpolatorColor {
+    #[doc = "Direct (non-virtual) call to `InterpolatorColor`'s own `get_Value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_value(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::color::Color {
+        let __mi = Self::get_value_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `InterpolatorColor`'s own `IsEqual`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_equal(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        a: crate::unity_engine::color::Color,
+        b: crate::unity_engine::color::Color,
+    ) -> bool {
+        let __mi = Self::is_equal_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::color::Color,
+            crate::unity_engine::color::Color,
+            ::unity::OptionalMethod,
+        ) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), a, b, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-interpolatorcolor")]
+impl InterpolatorColor {
+    #[doc = "`.ctor(crate::app::curve::Curve_Type, i32)` — overload selector"]
+    pub fn new(r#type: crate::app::curve::Curve_Type, num: i32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(InterpolatorColor), ::core::stringify!(new),));
- <Self as IInterpolatorColorMethods> ::ctor(this,r#type,num);
-this}
+ failed to instantiate",
+                ::core::stringify!(InterpolatorColor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IInterpolatorColorMethods>::ctor(this, r#type, num);
+        this
+    }
 }
 
 #[cfg(feature = "app-interpolatorcolor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InterpolatorColor;
-    pub use super::IInterpolatorColor;
-    pub use super::IInterpolatorColorMethods;
-    pub use crate::app::interpolator_1::IInterpolator_1;
-    pub use crate::app::interpolator_1::Interpolator_1;
-    pub use crate::app::interpolatortime::IInterpolatorTime;
-    pub use crate::app::interpolatortime::InterpolatorTime;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-interpolator_1")] pub use crate::app::interpolator_1::IInterpolator_1Methods;
-    #[cfg(feature = "app-interpolatortime")] pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IInterpolatorColor, IInterpolatorColorMethods, InterpolatorColor};
+    #[cfg(feature = "app-interpolator_1")]
+    pub use crate::app::interpolator_1::IInterpolator_1Methods;
+    #[cfg(feature = "app-interpolatortime")]
+    pub use crate::app::interpolatortime::IInterpolatorTimeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{
+            interpolator_1::{IInterpolator_1, Interpolator_1},
+            interpolatortime::{IInterpolatorTime, InterpolatorTime},
+        },
+        system::object::IObject,
+    };
 }

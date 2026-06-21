@@ -2,82 +2,133 @@
 
 #[cfg(feature = "app-relaymapmenuitemcontent-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitemcontent::{BasicMenuItemContent, IBasicMenuItemContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitemcontent::{BasicMenuItemContent,IBasicMenuItemContent}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenuitemcontent/RelayMapMenuItemContent.md"))]#[::unity2::class(namespace="App",name="RelayMapMenuItemContent")]#[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]pub struct RelayMapMenuItemContent{#[offset(72)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenuitemcontent/RelayMapMenuItemContent.md"))]
+    #[::unity::class(namespace = "App", name = "RelayMapMenuItemContent")]
+    #[parent(crate::app::basicmenuitemcontent::BasicMenuItemContent)]
+    pub struct RelayMapMenuItemContent {
+        #[offset(72)]
+        #[rename(name = "m_TitleText")]
+        pub m_title_text: crate::tm_pro::textmeshprougui::TextMeshProUGUI,
+    }
 }
 
 #[cfg(feature = "app-relaymapmenuitemcontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-relaymapmenuitemcontent")]pub trait IRelayMapMenuItemContentMethods:IRelayMapMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <RelayMapMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-relaymapmenuitemcontent")]
+pub trait IRelayMapMenuItemContentMethods: IRelayMapMenuItemContent {
+    #[doc = "`BuildText()` overload"]
+    fn build_text(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelayMapMenuItemContent as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(10usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <RelayMapMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
-let __inner:extern "C" fn(RelayMapMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayMapMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe570usize)as*mut u8,();
-(RelayMapMenuItemContent)__receiver)}
-}
+`)",
+                        10usize,
+                        __vt.len(),
+                        <RelayMapMenuItemContent as ::unity::ClassIdentity>::NAME,
+                        "BuildText",
+                    )
+                });
+                let __inner: extern "C" fn(RelayMapMenuItemContent, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <RelayMapMenuItemContent as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ffe570usize)as*mut u8,();
+(RelayMapMenuItemContent)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-relaymapmenuitemcontent")]impl<__T:IRelayMapMenuItemContent>IRelayMapMenuItemContentMethods for __T{}
+#[cfg(feature = "app-relaymapmenuitemcontent")]
+impl<__T: IRelayMapMenuItemContent> IRelayMapMenuItemContentMethods for __T {}
 
-#[cfg(feature="app-relaymapmenuitemcontent")]impl RelayMapMenuItemContent{pub fn build_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-relaymapmenuitemcontent")]
+impl RelayMapMenuItemContent {
+    pub fn build_text_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-relaymapmenuitemcontent")]impl RelayMapMenuItemContent{#[doc="Direct (non-virtual) call to `RelayMapMenuItemContent`'s own `BuildText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn build_text(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::build_text_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-relaymapmenuitemcontent")]
+impl RelayMapMenuItemContent {
+    #[doc = "Direct (non-virtual) call to `RelayMapMenuItemContent`'s own `BuildText`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn build_text(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::build_text_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-relaymapmenuitemcontent")]impl RelayMapMenuItemContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-relaymapmenuitemcontent")]
+impl RelayMapMenuItemContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(RelayMapMenuItemContent), ::core::stringify!(new),));
- <Self as IRelayMapMenuItemContentMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(RelayMapMenuItemContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IRelayMapMenuItemContentMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-relaymapmenuitemcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayMapMenuItemContent;
-    pub use super::IRelayMapMenuItemContent;
-    pub use super::IRelayMapMenuItemContentMethods;
-    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContent;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "app-basicmenuitemcontent")] pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{IRelayMapMenuItemContent, IRelayMapMenuItemContentMethods, RelayMapMenuItemContent};
+    #[cfg(feature = "app-basicmenuitemcontent")]
+    pub use crate::app::basicmenuitemcontent::IBasicMenuItemContentMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenuitemcontent::IBasicMenuItemContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

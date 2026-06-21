@@ -2,33 +2,46 @@
 
 #[cfg(feature = "root-customplayableextensions-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/customplayableextensions/CustomPlayableExtensions.md"))]#[::unity2::class(namespace="",name="CustomPlayableExtensions")]#[parent(crate::system::object::Object)]pub struct CustomPlayableExtensions{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/customplayableextensions/CustomPlayableExtensions.md"))]
+    #[::unity::class(namespace = "", name = "CustomPlayableExtensions")]
+    #[parent(crate::system::object::Object)]
+    pub struct CustomPlayableExtensions {}
 }
 
 #[cfg(feature = "root-customplayableextensions-types")]
 pub use __types::*;
 
-#[cfg(feature="root-customplayableextensions")]impl CustomPlayableExtensions{#[doc="`ResetTime(crate::unity_engine::playables::playable::Playable, f32)` overload"]pub fn reset_time(playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,time:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eea200usize)as*mut u8,();
-(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(f32)::core::convert::Into::into(time))}
-}
+#[cfg(feature = "root-customplayableextensions")]
+impl CustomPlayableExtensions {
+    #[doc = "`ResetTime(crate::unity_engine::playables::playable::Playable, f32)` overload"]
+    pub fn reset_time(
+        playable: impl ::core::convert::Into<crate::unity_engine::playables::playable::Playable>,
+        time: impl ::core::convert::Into<f32>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3eea200usize)as*mut u8,();
+(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(f32)::core::convert::Into::into(time))
+        }
+    }
 }
 
-#[cfg(feature="root-customplayableextensions")]impl CustomPlayableExtensions{pub fn reset_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "root-customplayableextensions")]
+impl CustomPlayableExtensions {
+    pub fn reset_time_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "root-customplayableextensions")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomPlayableExtensions;
-    pub use super::ICustomPlayableExtensions;
+    pub use super::{CustomPlayableExtensions, ICustomPlayableExtensions};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

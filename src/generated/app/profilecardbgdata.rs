@@ -2,120 +2,232 @@
 
 #[cfg(feature = "app-profilecardbgdata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdata_1::{IStructData_1, StructData_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::structbase::{IStructBase,StructBase}
-;
-use crate::app::structdata_1::{IStructData_1,StructData_1}
-;
-use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardbgdata/ProfileCardBgData.md"))]#[::unity2::class(namespace="App",name="ProfileCardBgData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardbgdata::ProfileCardBgData>)]pub struct ProfileCardBgData{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardbgdata/ProfileCardBgData.md"))]
+    #[::unity::class(namespace = "App", name = "ProfileCardBgData")]
+    #[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardbgdata::ProfileCardBgData>)]
+    pub struct ProfileCardBgData {}
 }
 
 #[cfg(feature = "app-profilecardbgdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-profilecardbgdata")]impl ProfileCardBgData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x230cda0usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "app-profilecardbgdata")]
+impl ProfileCardBgData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cda0usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-profilecardbgdata")]pub trait IProfileCardBgDataMethods:IProfileCardBgData{#[doc="`get_Id()` overload"]fn get_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd20usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardBgData)__receiver)}
-}
-#[doc="`set_Id(::unity2::Il2CppString)` overload"]fn set_id(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd30usize)as*mut u8,();
-(ProfileCardBgData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Image()` overload"]fn get_image(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd40usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardBgData)__receiver)}
-}
-#[doc="`set_Image(::unity2::Il2CppString)` overload"]fn set_image(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd50usize)as*mut u8,();
-(ProfileCardBgData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Condition()` overload"]fn get_condition(self,)->crate::app::profilecardcondition::ProfileCardCondition{unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd60usize)as*mut u8,crate::app::profilecardcondition::ProfileCardCondition;
-(ProfileCardBgData)__receiver)}
-}
-#[doc="`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"]fn set_condition(self,value:impl::core::convert::Into<crate::app::profilecardcondition::ProfileCardCondition>)->(){unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd70usize)as*mut u8,();
-(ProfileCardBgData)__receiver,(crate::app::profilecardcondition::ProfileCardCondition)::core::convert::Into::into(value))}
-}
-#[doc="`get_Arg()` overload"]fn get_arg(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd80usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardBgData)__receiver)}
-}
-#[doc="`set_Arg(::unity2::Il2CppString)` overload"]fn set_arg(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cd90usize)as*mut u8,();
-(ProfileCardBgData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-profilecardbgdata")]
+pub trait IProfileCardBgDataMethods: IProfileCardBgData {
+    #[doc = "`get_Id()` overload"]
+    fn get_id(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd20usize)as*mut u8, ::unity::Il2CppString;
+(ProfileCardBgData)__receiver)
+        }
+    }
+    #[doc = "`set_Id(::unity::Il2CppString)` overload"]
+    fn set_id(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd30usize)as*mut u8,();
+(ProfileCardBgData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Image()` overload"]
+    fn get_image(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd40usize)as*mut u8, ::unity::Il2CppString;
+(ProfileCardBgData)__receiver)
+        }
+    }
+    #[doc = "`set_Image(::unity::Il2CppString)` overload"]
+    fn set_image(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd50usize)as*mut u8,();
+(ProfileCardBgData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Condition()` overload"]
+    fn get_condition(self) -> crate::app::profilecardcondition::ProfileCardCondition {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd60usize)as*mut u8,crate::app::profilecardcondition::ProfileCardCondition;
+(ProfileCardBgData)__receiver)
+        }
+    }
+    #[doc = "`set_Condition(crate::app::profilecardcondition::ProfileCardCondition)` overload"]
+    fn set_condition(self, value: impl ::core::convert::Into<crate::app::profilecardcondition::ProfileCardCondition>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd70usize)as*mut u8,();
+(ProfileCardBgData)__receiver,(crate::app::profilecardcondition::ProfileCardCondition)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`get_Arg()` overload"]
+    fn get_arg(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd80usize)as*mut u8, ::unity::Il2CppString;
+(ProfileCardBgData)__receiver)
+        }
+    }
+    #[doc = "`set_Arg(::unity::Il2CppString)` overload"]
+    fn set_arg(self, value: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230cd90usize)as*mut u8,();
+(ProfileCardBgData)__receiver,(::unity::Il2CppString)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`GetDebugName()` overload"]
+    fn get_debug_name(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(8usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",8usize,__vt.len(), <ProfileCardBgData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
-let __inner:extern "C" fn(ProfileCardBgData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardBgData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230ce60usize)as*mut u8,();
-(ProfileCardBgData)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardbgdata")]impl<__T:IProfileCardBgData>IProfileCardBgDataMethods for __T{}
-
-#[cfg(feature="app-profilecardbgdata")]impl ProfileCardBgData{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_arg_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+`)",
+                        8usize,
+                        __vt.len(),
+                        <ProfileCardBgData as ::unity::ClassIdentity>::NAME,
+                        "GetDebugName",
+                    )
+                });
+                let __inner: extern "C" fn(ProfileCardBgData, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ProfileCardBgData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x230ce60usize)as*mut u8,();
+(ProfileCardBgData)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-profilecardbgdata")]impl ProfileCardBgData{#[doc="Direct (non-virtual) call to `ProfileCardBgData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_debug_name(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_debug_name_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-profilecardbgdata")]
+impl<__T: IProfileCardBgData> IProfileCardBgDataMethods for __T {}
+
+#[cfg(feature = "app-profilecardbgdata")]
+impl ProfileCardBgData {
+    pub fn get_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn set_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_image_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn set_image_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn get_condition_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn set_condition_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn get_arg_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn set_arg_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
+
+    pub fn load_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[8]
+    }
+
+    pub fn get_debug_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[9]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[10]
+    }
 }
 
-#[cfg(feature="app-profilecardbgdata")]impl ProfileCardBgData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-profilecardbgdata")]
+impl ProfileCardBgData {
+    #[doc = "Direct (non-virtual) call to `ProfileCardBgData`'s own `GetDebugName`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_debug_name(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_debug_name_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-profilecardbgdata")]
+impl ProfileCardBgData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ProfileCardBgData), ::core::stringify!(new),));
- <Self as IProfileCardBgDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ProfileCardBgData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProfileCardBgDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-profilecardbgdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardBgData;
-    pub use super::IProfileCardBgData;
-    pub use super::IProfileCardBgDataMethods;
-    pub use crate::app::structbase::IStructBase;
-    pub use crate::app::structdata_1::IStructData_1;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IProfileCardBgData, IProfileCardBgDataMethods, ProfileCardBgData};
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")]
+    pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

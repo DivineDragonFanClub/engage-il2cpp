@@ -2,162 +2,341 @@
 
 #[cfg(feature = "app-soundtestplayer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::bgmplayer::{BgmPlayer, IBgmPlayer},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::bgmplayer::{BgmPlayer,IBgmPlayer}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundtestplayer/SoundTestPlayer.md"))]#[::unity2::class(namespace="App",name="SoundTestPlayer")]#[parent(crate::app::bgmplayer::BgmPlayer)]pub struct SoundTestPlayer{#[offset(16)]#[rename(name="m_handle")]pub m_handle:crate::app::gamesound::GameSound_Handle, #[offset(24)]#[rename(name="m_currentPause")]pub m_current_pause:bool, #[offset(32)]#[rename(name="m_soundList")]pub m_sound_list:crate::system::collections::generic::list_1::List_1<crate::app::gamesound::GameSound_Handle> ,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundtestplayer/SoundTestPlayer.md"))]
+    #[::unity::class(namespace = "App", name = "SoundTestPlayer")]
+    #[parent(crate::app::bgmplayer::BgmPlayer)]
+    pub struct SoundTestPlayer {
+        #[offset(16)]
+        #[rename(name = "m_handle")]
+        pub m_handle: crate::app::gamesound::GameSound_Handle,
+        #[offset(24)]
+        #[rename(name = "m_currentPause")]
+        pub m_current_pause: bool,
+        #[offset(32)]
+        #[rename(name = "m_soundList")]
+        pub m_sound_list: crate::system::collections::generic::list_1::List_1<crate::app::gamesound::GameSound_Handle>,
+    }
 }
 
 #[cfg(feature = "app-soundtestplayer-types")]
 pub use __types::*;
 
-#[cfg(feature="app-soundtestplayer")]pub trait ISoundTestPlayerMethods:ISoundTestPlayer{#[doc="`PauseCurrentBgm()` overload"]fn pause_current_bgm(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-soundtestplayer")]
+pub trait ISoundTestPlayerMethods: ISoundTestPlayer {
+    #[doc = "`PauseCurrentBgm()` overload"]
+    fn pause_current_bgm(self) -> () {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <SoundTestPlayer as::unity2::ClassIdentity> ::NAME,"PauseCurrentBgm",));
-let __inner:extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <SoundTestPlayer as ::unity::ClassIdentity>::NAME,
+                        "PauseCurrentBgm",
+                    )
+                });
+                let __inner: extern "C" fn(SoundTestPlayer, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`IsPlaying()` overload"]
+    fn is_playing(self) -> bool {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <SoundTestPlayer as::unity2::ClassIdentity> ::NAME,"IsPlaying",));
-let __inner:extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`IsPlaying(::unity2::Il2CppString)` overload"]fn is_playing_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <SoundTestPlayer as ::unity::ClassIdentity>::NAME,
+                        "IsPlaying",
+                    )
+                });
+                let __inner: extern "C" fn(SoundTestPlayer, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`IsPlaying(::unity::Il2CppString)` overload"]
+    fn is_playing_2(self, event_name: impl ::core::convert::Into<::unity::Il2CppString>) -> bool {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <SoundTestPlayer as::unity2::ClassIdentity> ::NAME,"IsPlaying",));
-let __inner:extern "C" fn(SoundTestPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(event_name),__mi)}
-}
-}
-#[doc="`Play(::unity2::Il2CppString)` overload"]fn play(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <SoundTestPlayer as ::unity::ClassIdentity>::NAME,
+                        "IsPlaying",
+                    )
+                });
+                let __inner: extern "C" fn(SoundTestPlayer, ::unity::Il2CppString, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(event_name), __mi)
+            }
+        }
+    }
+    #[doc = "`Play(::unity::Il2CppString)` overload"]
+    fn play(self, event_name: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(7usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <SoundTestPlayer as::unity2::ClassIdentity> ::NAME,"Play",));
-let __inner:extern "C" fn(SoundTestPlayer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(event_name),__mi)}
-}
-}
-#[doc="`Stop()` overload"]fn stop(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        7usize,
+                        __vt.len(),
+                        <SoundTestPlayer as ::unity::ClassIdentity>::NAME,
+                        "Play",
+                    )
+                });
+                let __inner: extern "C" fn(SoundTestPlayer, ::unity::Il2CppString, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(event_name), __mi)
+            }
+        }
+    }
+    #[doc = "`Stop()` overload"]
+    fn stop(self) -> () {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <SoundTestPlayer as::unity2::ClassIdentity> ::NAME,"Stop",));
-let __inner:extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Tick(crate::app::myroomsoundmenu::MyRoomSoundMenu)` overload"]fn tick(self,menu:impl::core::convert::Into<crate::app::myroomsoundmenu::MyRoomSoundMenu>)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <SoundTestPlayer as ::unity::ClassIdentity>::NAME,
+                        "Stop",
+                    )
+                });
+                let __inner: extern "C" fn(SoundTestPlayer, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Tick(crate::app::myroomsoundmenu::MyRoomSoundMenu)` overload"]
+    fn tick(self, menu: impl ::core::convert::Into<crate::app::myroomsoundmenu::MyRoomSoundMenu>) -> () {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(10usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <SoundTestPlayer as::unity2::ClassIdentity> ::NAME,"Tick",));
-let __inner:extern "C" fn(SoundTestPlayer,crate::app::myroomsoundmenu::MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(menu),__mi)}
-}
-}
-#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        10usize,
+                        __vt.len(),
+                        <SoundTestPlayer as ::unity::ClassIdentity>::NAME,
+                        "Tick",
+                    )
+                });
+                let __inner: extern "C" fn(SoundTestPlayer, crate::app::myroomsoundmenu::MyRoomSoundMenu, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(menu), __mi)
+            }
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(11usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",11usize,__vt.len(), <SoundTestPlayer as::unity2::ClassIdentity> ::NAME,"Close",));
-let __inner:extern "C" fn(SoundTestPlayer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundTestPlayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24fc6a0usize)as*mut u8,();
-(SoundTestPlayer)__receiver)}
-}
+`)",
+                        11usize,
+                        __vt.len(),
+                        <SoundTestPlayer as ::unity::ClassIdentity>::NAME,
+                        "Close",
+                    )
+                });
+                let __inner: extern "C" fn(SoundTestPlayer, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <SoundTestPlayer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x24fc6a0usize)as*mut u8,();
+(SoundTestPlayer)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-soundtestplayer")]impl<__T:ISoundTestPlayer>ISoundTestPlayerMethods for __T{}
+#[cfg(feature = "app-soundtestplayer")]
+impl<__T: ISoundTestPlayer> ISoundTestPlayerMethods for __T {}
 
-#[cfg(feature="app-soundtestplayer")]impl SoundTestPlayer{pub fn pause_current_bgm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_playing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_playing_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn play_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn stop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+#[cfg(feature = "app-soundtestplayer")]
+impl SoundTestPlayer {
+    pub fn pause_current_bgm_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn is_playing_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn is_playing_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn play_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn stop_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn tick_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn close_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[7]
+    }
 }
 
-#[cfg(feature="app-soundtestplayer")]impl SoundTestPlayer{#[doc="Direct (non-virtual) call to `SoundTestPlayer`'s own `PauseCurrentBgm`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn pause_current_bgm(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::pause_current_bgm_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `SoundTestPlayer`'s own `IsPlaying`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_playing(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->bool{let __mi=Self::is_playing_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `SoundTestPlayer`'s own `IsPlaying`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_playing_2(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_name: ::unity2::Il2CppString,)->bool{let __mi=Self::is_playing_2_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),event_name, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `SoundTestPlayer`'s own `Play`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn play(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_name: ::unity2::Il2CppString,)->(){let __mi=Self::play_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),event_name, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `SoundTestPlayer`'s own `Stop`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn stop(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::stop_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `SoundTestPlayer`'s own `Tick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn tick(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu:crate::app::myroomsoundmenu::MyRoomSoundMenu,)->(){let __mi=Self::tick_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::app::myroomsoundmenu::MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),menu, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `SoundTestPlayer`'s own `Close`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn close(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::close_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-soundtestplayer")]
+impl SoundTestPlayer {
+    #[doc = "Direct (non-virtual) call to `SoundTestPlayer`'s own `PauseCurrentBgm`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn pause_current_bgm(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::pause_current_bgm_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `SoundTestPlayer`'s own `IsPlaying`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_playing(this: impl ::core::convert::Into<::unity::IlInstance>) -> bool {
+        let __mi = Self::is_playing_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> bool = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `SoundTestPlayer`'s own `IsPlaying`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_playing_2(this: impl ::core::convert::Into<::unity::IlInstance>, event_name: ::unity::Il2CppString) -> bool {
+        let __mi = Self::is_playing_2_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Il2CppString, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), event_name, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `SoundTestPlayer`'s own `Play`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn play(this: impl ::core::convert::Into<::unity::IlInstance>, event_name: ::unity::Il2CppString) -> () {
+        let __mi = Self::play_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::Il2CppString, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), event_name, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `SoundTestPlayer`'s own `Stop`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn stop(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::stop_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `SoundTestPlayer`'s own `Tick`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn tick(this: impl ::core::convert::Into<::unity::IlInstance>, menu: crate::app::myroomsoundmenu::MyRoomSoundMenu) -> () {
+        let __mi = Self::tick_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::app::myroomsoundmenu::MyRoomSoundMenu, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), menu, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `SoundTestPlayer`'s own `Close`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn close(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::close_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-soundtestplayer")]impl SoundTestPlayer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-soundtestplayer")]
+impl SoundTestPlayer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(SoundTestPlayer), ::core::stringify!(new),));
- <Self as ISoundTestPlayerMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(SoundTestPlayer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ISoundTestPlayerMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-soundtestplayer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SoundTestPlayer;
-    pub use super::ISoundTestPlayer;
-    pub use super::ISoundTestPlayerMethods;
-    pub use crate::app::bgmplayer::IBgmPlayer;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-bgmplayer")] pub use crate::app::bgmplayer::IBgmPlayerMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{ISoundTestPlayer, ISoundTestPlayerMethods, SoundTestPlayer};
+    #[cfg(feature = "app-bgmplayer")]
+    pub use crate::app::bgmplayer::IBgmPlayerMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::bgmplayer::IBgmPlayer, system::object::IObject};
 }

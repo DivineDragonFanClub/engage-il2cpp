@@ -2,82 +2,168 @@
 
 #[cfg(feature = "system-io-stringresulthandler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        io::searchresulthandler_1::{ISearchResultHandler_1, SearchResultHandler_1},
+        object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::io::searchresulthandler_1::{ISearchResultHandler_1,SearchResultHandler_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stringresulthandler/StringResultHandler.md"))]#[::unity2::class(namespace="System.IO",name="StringResultHandler")]#[parent(crate::system::io::searchresulthandler_1::SearchResultHandler_1< ::unity2::Il2CppString>)]pub struct StringResultHandler{#[offset(16)]#[rename(name="_includeFiles")]pub include_files:bool, #[offset(17)]#[rename(name="_includeDirs")]pub include_dirs:bool,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stringresulthandler/StringResultHandler.md"))]
+    #[::unity::class(namespace = "System.IO", name = "StringResultHandler")]
+    #[parent(crate::system::io::searchresulthandler_1::SearchResultHandler_1< ::unity::Il2CppString>)]
+    pub struct StringResultHandler {
+        #[offset(16)]
+        #[rename(name = "_includeFiles")]
+        pub include_files: bool,
+        #[offset(17)]
+        #[rename(name = "_includeDirs")]
+        pub include_dirs: bool,
+    }
 }
 
 #[cfg(feature = "system-io-stringresulthandler-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-stringresulthandler")]pub trait IStringResultHandlerMethods:IStringResultHandler{#[doc="`.ctor(bool, bool)` overload"]fn ctor(self,include_files:impl::core::convert::Into<bool> ,include_dirs:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x358c0a0usize)as*mut u8,();
-(StringResultHandler)__receiver,(bool)::core::convert::Into::into(include_files),(bool)::core::convert::Into::into(include_dirs))}
-}
-#[doc="`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]fn is_result_included(self,result:impl::core::convert::Into<crate::system::io::searchresult::SearchResult>)->bool{unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "system-io-stringresulthandler")]
+pub trait IStringResultHandlerMethods: IStringResultHandler {
+    #[doc = "`.ctor(bool, bool)` overload"]
+    fn ctor(self, include_files: impl ::core::convert::Into<bool>, include_dirs: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            let __receiver = <StringResultHandler as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x358c0a0usize)as*mut u8,();
+(StringResultHandler)__receiver,(bool)::core::convert::Into::into(include_files),(bool)::core::convert::Into::into(include_dirs))
+        }
+    }
+    #[doc = "`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]
+    fn is_result_included(self, result: impl ::core::convert::Into<crate::system::io::searchresult::SearchResult>) -> bool {
+        unsafe {
+            let __receiver = <StringResultHandler as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <StringResultHandler as::unity2::ClassIdentity> ::NAME,"IsResultIncluded",));
-let __inner:extern "C" fn(StringResultHandler,crate::system::io::searchresult::SearchResult, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(result),__mi)}
-}
-}
-#[doc="`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]fn create_object(self,result:impl::core::convert::Into<crate::system::io::searchresult::SearchResult>)-> ::unity2::Il2CppString{unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <StringResultHandler as ::unity::ClassIdentity>::NAME,
+                        "IsResultIncluded",
+                    )
+                });
+                let __inner: extern "C" fn(StringResultHandler, crate::system::io::searchresult::SearchResult, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(result), __mi)
+            }
+        }
+    }
+    #[doc = "`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]
+    fn create_object(self, result: impl ::core::convert::Into<crate::system::io::searchresult::SearchResult>) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <StringResultHandler as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <StringResultHandler as::unity2::ClassIdentity> ::NAME,"CreateObject",));
-let __inner:extern "C" fn(StringResultHandler,crate::system::io::searchresult::SearchResult, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(result),__mi)}
-}
-}
-}
-
-#[cfg(feature="system-io-stringresulthandler")]impl<__T:IStringResultHandler>IStringResultHandlerMethods for __T{}
-
-#[cfg(feature="system-io-stringresulthandler")]impl StringResultHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_result_included_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="system-io-stringresulthandler")]impl StringResultHandler{#[doc="Direct (non-virtual) call to `StringResultHandler`'s own `IsResultIncluded`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn is_result_included(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::system::io::searchresult::SearchResult,)->bool{let __mi=Self::is_result_included_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::system::io::searchresult::SearchResult, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),result, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `StringResultHandler`'s own `CreateObject`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_object(this:impl::core::convert::Into< ::unity2::IlInstance> ,result:crate::system::io::searchresult::SearchResult,)-> ::unity2::Il2CppString{let __mi=Self::create_object_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::system::io::searchresult::SearchResult, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),result, ::core::option::Option::None)}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <StringResultHandler as ::unity::ClassIdentity>::NAME,
+                        "CreateObject",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    StringResultHandler,
+                    crate::system::io::searchresult::SearchResult,
+                    ::unity::OptionalMethod,
+                ) -> ::unity::Il2CppString = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(result), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="system-io-stringresulthandler")]impl StringResultHandler{#[doc="`.ctor(bool, bool)` — overload selector"]pub fn new(include_files:bool,include_dirs:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-io-stringresulthandler")]
+impl<__T: IStringResultHandler> IStringResultHandlerMethods for __T {}
+
+#[cfg(feature = "system-io-stringresulthandler")]
+impl StringResultHandler {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn is_result_included_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn create_object_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "system-io-stringresulthandler")]
+impl StringResultHandler {
+    #[doc = "Direct (non-virtual) call to `StringResultHandler`'s own `IsResultIncluded`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn is_result_included(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        result: crate::system::io::searchresult::SearchResult,
+    ) -> bool {
+        let __mi = Self::is_result_included_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::system::io::searchresult::SearchResult, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), result, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `StringResultHandler`'s own `CreateObject`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn create_object(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        result: crate::system::io::searchresult::SearchResult,
+    ) -> ::unity::Il2CppString {
+        let __mi = Self::create_object_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::system::io::searchresult::SearchResult,
+            ::unity::OptionalMethod,
+        ) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), result, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "system-io-stringresulthandler")]
+impl StringResultHandler {
+    #[doc = "`.ctor(bool, bool)` — overload selector"]
+    pub fn new(include_files: bool, include_dirs: bool) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(StringResultHandler), ::core::stringify!(new),));
- <Self as IStringResultHandlerMethods> ::ctor(this,include_files,include_dirs);
-this}
+ failed to instantiate",
+                ::core::stringify!(StringResultHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IStringResultHandlerMethods>::ctor(this, include_files, include_dirs);
+        this
+    }
 }
 
 #[cfg(feature = "system-io-stringresulthandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::StringResultHandler;
-    pub use super::IStringResultHandler;
-    pub use super::IStringResultHandlerMethods;
-    pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "system-io-searchresulthandler_1")] pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IStringResultHandler, IStringResultHandlerMethods, StringResultHandler};
+    #[cfg(feature = "system-io-searchresulthandler_1")]
+    pub use crate::system::io::searchresulthandler_1::ISearchResultHandler_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{io::searchresulthandler_1::ISearchResultHandler_1, object::IObject};
 }

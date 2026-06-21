@@ -2,70 +2,130 @@
 
 #[cfg(feature = "app-procdescmargs-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            procdesc::{IProcDesc, ProcDesc},
+            procdesccallbase::{IProcDescCallBase, ProcDescCallBase},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::procdesc::{IProcDesc,ProcDesc}
-;
-use crate::app::procdesccallbase::{IProcDescCallBase,ProcDescCallBase}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmargs/ProcDescMArgS.md"))]#[::unity2::class(namespace="App",name="ProcDescMArgS")]#[parent(crate::app::procdesccallbase::ProcDescCallBase)]pub struct ProcDescMArgS{#[offset(24)]#[rename(name="m_Method")]pub m_method:crate::system::action_1::Action_1< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_Arg")]pub m_arg: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdescmargs/ProcDescMArgS.md"))]
+    #[::unity::class(namespace = "App", name = "ProcDescMArgS")]
+    #[parent(crate::app::procdesccallbase::ProcDescCallBase)]
+    pub struct ProcDescMArgS {
+        #[offset(24)]
+        #[rename(name = "m_Method")]
+        pub m_method: crate::system::action_1::Action_1<::unity::Il2CppString>,
+        #[offset(32)]
+        #[rename(name = "m_Arg")]
+        pub m_arg: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "app-procdescmargs-types")]
 pub use __types::*;
 
-#[cfg(feature="app-procdescmargs")]pub trait IProcDescMArgSMethods:IProcDescMArgS{#[doc="`.ctor(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> > ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProcDescMArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281b4d0usize)as*mut u8,();
-(ProcDescMArgS)__receiver,(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(method),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
-}
-#[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescMArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-procdescmargs")]
+pub trait IProcDescMArgSMethods: IProcDescMArgS {
+    #[doc = "`.ctor(crate::system::action_1::Action_1<::unity::Il2CppString>, ::unity::Il2CppString)` overload"]
+    fn ctor(
+        self,
+        method: impl ::core::convert::Into<crate::system::action_1::Action_1<::unity::Il2CppString>>,
+        arg: impl ::core::convert::Into<::unity::Il2CppString>,
+    ) -> () {
+        unsafe {
+            let __receiver = <ProcDescMArgS as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x281b4d0usize)as*mut u8,();
+(ProcDescMArgS)__receiver,(crate::system::action_1::Action_1< ::unity::Il2CppString>)::core::convert::Into::into(method),(::unity::Il2CppString)::core::convert::Into::into(arg))
+        }
+    }
+    #[doc = "`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]
+    fn execute_impl(self, inst: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            let __receiver = <ProcDescMArgS as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(7usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",7usize,__vt.len(), <ProcDescMArgS as::unity2::ClassIdentity> ::NAME,"ExecuteImpl",));
-let __inner:extern "C" fn(ProcDescMArgS,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(inst),__mi)}
-}
-}
-}
-
-#[cfg(feature="app-procdescmargs")]impl<__T:IProcDescMArgS>IProcDescMArgSMethods for __T{}
-
-#[cfg(feature="app-procdescmargs")]impl ProcDescMArgS{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-procdescmargs")]impl ProcDescMArgS{#[doc="Direct (non-virtual) call to `ProcDescMArgS`'s own `ExecuteImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn execute_impl(this:impl::core::convert::Into< ::unity2::IlInstance> ,inst:crate::app::procinst::ProcInst,)->(){let __mi=Self::execute_impl_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),inst, ::core::option::Option::None)}
+`)",
+                        7usize,
+                        __vt.len(),
+                        <ProcDescMArgS as ::unity::ClassIdentity>::NAME,
+                        "ExecuteImpl",
+                    )
+                });
+                let __inner: extern "C" fn(ProcDescMArgS, crate::app::procinst::ProcInst, ::unity::OptionalMethod) -> () =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(inst), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-procdescmargs")]impl ProcDescMArgS{#[doc="`.ctor(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` — overload selector"]pub fn new(method:crate::system::action_1::Action_1< ::unity2::Il2CppString> ,arg: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-procdescmargs")]
+impl<__T: IProcDescMArgS> IProcDescMArgSMethods for __T {}
+
+#[cfg(feature = "app-procdescmargs")]
+impl ProcDescMArgS {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn execute_impl_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+}
+
+#[cfg(feature = "app-procdescmargs")]
+impl ProcDescMArgS {
+    #[doc = "Direct (non-virtual) call to `ProcDescMArgS`'s own `ExecuteImpl`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn execute_impl(this: impl ::core::convert::Into<::unity::IlInstance>, inst: crate::app::procinst::ProcInst) -> () {
+        let __mi = Self::execute_impl_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, crate::app::procinst::ProcInst, ::unity::OptionalMethod) -> () =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), inst, ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-procdescmargs")]
+impl ProcDescMArgS {
+    #[doc = "`.ctor(crate::system::action_1::Action_1<::unity::Il2CppString>, ::unity::Il2CppString)` — overload selector"]
+    pub fn new(method: crate::system::action_1::Action_1<::unity::Il2CppString>, arg: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ProcDescMArgS), ::core::stringify!(new),));
- <Self as IProcDescMArgSMethods> ::ctor(this,method,arg);
-this}
+ failed to instantiate",
+                ::core::stringify!(ProcDescMArgS),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IProcDescMArgSMethods>::ctor(this, method, arg);
+        this
+    }
 }
 
 #[cfg(feature = "app-procdescmargs")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProcDescMArgS;
-    pub use super::IProcDescMArgS;
-    pub use super::IProcDescMArgSMethods;
-    pub use crate::app::procdesc::IProcDesc;
-    pub use crate::app::procdesccallbase::IProcDescCallBase;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-procdesc")] pub use crate::app::procdesc::IProcDescMethods;
-    #[cfg(feature = "app-procdesccallbase")] pub use crate::app::procdesccallbase::IProcDescCallBaseMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IProcDescMArgS, IProcDescMArgSMethods, ProcDescMArgS};
+    #[cfg(feature = "app-procdesc")]
+    pub use crate::app::procdesc::IProcDescMethods;
+    #[cfg(feature = "app-procdesccallbase")]
+    pub use crate::app::procdesccallbase::IProcDescCallBaseMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{procdesc::IProcDesc, procdesccallbase::IProcDescCallBase},
+        system::object::IObject,
+    };
 }

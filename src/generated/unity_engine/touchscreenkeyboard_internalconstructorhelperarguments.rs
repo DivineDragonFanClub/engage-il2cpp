@@ -2,25 +2,39 @@
 
 #[cfg(feature = "unity_engine-touchscreenkeyboard_internalconstructorhelperarguments-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/touchscreenkeyboard_internalconstructorhelperarguments/TouchScreenKeyboard_InternalConstructorHelperArguments.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct TouchScreenKeyboard_InternalConstructorHelperArguments {
+        pub keyboard_type: u32,
+        pub autocorrection: u32,
+        pub multiline: u32,
+        pub secure: u32,
+        pub alert: u32,
+        pub character_limit: i32,
+    }
+    impl ::unity::ClassIdentity for TouchScreenKeyboard_InternalConstructorHelperArguments {
+        const NAME: &'static str = "TouchScreenKeyboard_InternalConstructorHelperArguments";
+        const NAMESPACE: &'static str = "UnityEngine";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/touchscreenkeyboard_internalconstructorhelperarguments/TouchScreenKeyboard_InternalConstructorHelperArguments.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TouchScreenKeyboard_InternalConstructorHelperArguments{pub keyboard_type:u32,pub autocorrection:u32,pub multiline:u32,pub secure:u32,pub alert:u32,pub character_limit:i32,}
-impl::unity2::ClassIdentity for TouchScreenKeyboard_InternalConstructorHelperArguments{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="TouchScreenKeyboard_InternalConstructorHelperArguments";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TouchScreenKeyboard_InternalConstructorHelperArguments{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for TouchScreenKeyboard_InternalConstructorHelperArguments {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-touchscreenkeyboard_internalconstructorhelperarguments-types")]
@@ -30,8 +44,9 @@ pub use __types::*;
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TouchScreenKeyboard_InternalConstructorHelperArguments;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

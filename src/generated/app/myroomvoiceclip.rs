@@ -2,90 +2,180 @@
 
 #[cfg(feature = "app-myroomvoiceclip-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            playables::playableasset::{IPlayableAsset, PlayableAsset},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::playables::playableasset::{IPlayableAsset,PlayableAsset}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomvoiceclip/MyRoomVoiceClip.md"))]#[::unity2::class(namespace="App",name="MyRoomVoiceClip")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct MyRoomVoiceClip{#[offset(24)]#[rename(name="VoiceSituation")]pub voice_situation:crate::app::gamesound::GameSound_WakeupVoiceSituation,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomvoiceclip/MyRoomVoiceClip.md"))]
+    #[::unity::class(namespace = "App", name = "MyRoomVoiceClip")]
+    #[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]
+    pub struct MyRoomVoiceClip {
+        #[offset(24)]
+        #[rename(name = "VoiceSituation")]
+        pub voice_situation: crate::app::gamesound::GameSound_WakeupVoiceSituation,
+    }
 }
 
 #[cfg(feature = "app-myroomvoiceclip-types")]
 pub use __types::*;
 
-#[cfg(feature="app-myroomvoiceclip")]pub trait IMyRoomVoiceClipMethods:IMyRoomVoiceClip{#[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <MyRoomVoiceClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-myroomvoiceclip")]
+pub trait IMyRoomVoiceClipMethods: IMyRoomVoiceClip {
+    #[doc = "`get_clipCaps()` overload"]
+    fn get_clip_caps(self) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
+        unsafe {
+            let __receiver = <MyRoomVoiceClip as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(9usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",9usize,__vt.len(), <MyRoomVoiceClip as::unity2::ClassIdentity> ::NAME,"get_clipCaps",));
-let __inner:extern "C" fn(MyRoomVoiceClip, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <MyRoomVoiceClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        9usize,
+                        __vt.len(),
+                        <MyRoomVoiceClip as ::unity::ClassIdentity>::NAME,
+                        "get_clipCaps",
+                    )
+                });
+                let __inner: extern "C" fn(MyRoomVoiceClip, ::unity::OptionalMethod) -> crate::unity_engine::timeline::clipcaps::ClipCaps =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]
+    fn create_playable(
+        self,
+        graph: impl ::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph>,
+        owner: impl ::core::convert::Into<crate::unity_engine::gameobject::GameObject>,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        unsafe {
+            let __receiver = <MyRoomVoiceClip as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(6usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",6usize,__vt.len(), <MyRoomVoiceClip as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
-let __inner:extern "C" fn(MyRoomVoiceClip,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomVoiceClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a30e0usize)as*mut u8,();
-(MyRoomVoiceClip)__receiver)}
-}
+`)",
+                        6usize,
+                        __vt.len(),
+                        <MyRoomVoiceClip as ::unity::ClassIdentity>::NAME,
+                        "CreatePlayable",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    MyRoomVoiceClip,
+                    crate::unity_engine::playables::playablegraph::PlayableGraph,
+                    crate::unity_engine::gameobject::GameObject,
+                    ::unity::OptionalMethod,
+                ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner), __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MyRoomVoiceClip as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x23a30e0usize)as*mut u8,();
+(MyRoomVoiceClip)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-myroomvoiceclip")]impl<__T:IMyRoomVoiceClip>IMyRoomVoiceClipMethods for __T{}
+#[cfg(feature = "app-myroomvoiceclip")]
+impl<__T: IMyRoomVoiceClip> IMyRoomVoiceClipMethods for __T {}
 
-#[cfg(feature="app-myroomvoiceclip")]impl MyRoomVoiceClip{pub fn get_clip_caps_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_playable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "app-myroomvoiceclip")]
+impl MyRoomVoiceClip {
+    pub fn get_clip_caps_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn create_playable_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="app-myroomvoiceclip")]impl MyRoomVoiceClip{#[doc="Direct (non-virtual) call to `MyRoomVoiceClip`'s own `get_clipCaps`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_clip_caps(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::timeline::clipcaps::ClipCaps{let __mi=Self::get_clip_caps_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MyRoomVoiceClip`'s own `CreatePlayable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_playable(this:impl::core::convert::Into< ::unity2::IlInstance> ,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,)->crate::unity_engine::playables::playable::Playable{let __mi=Self::create_playable_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),graph,owner, ::core::option::Option::None)}
+#[cfg(feature = "app-myroomvoiceclip")]
+impl MyRoomVoiceClip {
+    #[doc = "Direct (non-virtual) call to `MyRoomVoiceClip`'s own `get_clipCaps`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_clip_caps(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::timeline::clipcaps::ClipCaps {
+        let __mi = Self::get_clip_caps_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::timeline::clipcaps::ClipCaps =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MyRoomVoiceClip`'s own `CreatePlayable`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn create_playable(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        graph: crate::unity_engine::playables::playablegraph::PlayableGraph,
+        owner: crate::unity_engine::gameobject::GameObject,
+    ) -> crate::unity_engine::playables::playable::Playable {
+        let __mi = Self::create_playable_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::playables::playablegraph::PlayableGraph,
+            crate::unity_engine::gameobject::GameObject,
+            ::unity::OptionalMethod,
+        ) -> crate::unity_engine::playables::playable::Playable = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), graph, owner, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-myroomvoiceclip")]impl MyRoomVoiceClip{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-myroomvoiceclip")]
+impl MyRoomVoiceClip {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomVoiceClip), ::core::stringify!(new),));
- <Self as IMyRoomVoiceClipMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MyRoomVoiceClip),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMyRoomVoiceClipMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-myroomvoiceclip")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomVoiceClip;
-    pub use super::IMyRoomVoiceClip;
-    pub use super::IMyRoomVoiceClipMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::playables::playableasset::IPlayableAsset;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-playables-playableasset")] pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use super::{IMyRoomVoiceClip, IMyRoomVoiceClipMethods, MyRoomVoiceClip};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-playables-playableasset")]
+    pub use crate::unity_engine::playables::playableasset::IPlayableAssetMethods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, playables::playableasset::IPlayableAsset, scriptableobject::IScriptableObject},
+    };
 }

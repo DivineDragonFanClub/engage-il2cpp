@@ -2,106 +2,195 @@
 
 #[cfg(feature = "app-helpspotinspector-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            mapinspector::{IMapInspector, MapInspector},
+            pokeinspector::{IPokeInspector, PokeInspector},
+            scriptutil::{IScriptUtil, ScriptUtil},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::mapinspector::{IMapInspector,MapInspector}
-;
-use crate::app::pokeinspector::{IPokeInspector,PokeInspector}
-;
-use crate::app::scriptutil::{IScriptUtil,ScriptUtil}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpspotinspector/HelpSpotInspector.md"))]#[::unity2::class(namespace="App",name="HelpSpotInspector")]#[parent(crate::app::pokeinspector::PokeInspector)]pub struct HelpSpotInspector{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/helpspotinspector/HelpSpotInspector.md"))]
+    #[::unity::class(namespace = "App", name = "HelpSpotInspector")]
+    #[parent(crate::app::pokeinspector::PokeInspector)]
+    pub struct HelpSpotInspector {}
 }
 
 #[cfg(feature = "app-helpspotinspector-types")]
 pub use __types::*;
 
-#[cfg(feature="app-helpspotinspector")]pub trait IHelpSpotInspectorMethods:IHelpSpotInspector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpSpotInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2165600usize)as*mut u8,();
-(HelpSpotInspector)__receiver)}
-}
-#[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HelpSpotInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-helpspotinspector")]
+pub trait IHelpSpotInspectorMethods: IHelpSpotInspector {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <HelpSpotInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2165600usize)as*mut u8,();
+(HelpSpotInspector)__receiver)
+        }
+    }
+    #[doc = "`GetLabel()` overload"]
+    fn get_label(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <HelpSpotInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(36usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",36usize,__vt.len(), <HelpSpotInspector as::unity2::ClassIdentity> ::NAME,"GetLabel",));
-let __inner:extern "C" fn(HelpSpotInspector, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <HelpSpotInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        36usize,
+                        __vt.len(),
+                        <HelpSpotInspector as ::unity::ClassIdentity>::NAME,
+                        "GetLabel",
+                    )
+                });
+                let __inner: extern "C" fn(HelpSpotInspector, ::unity::OptionalMethod) -> ::unity::Il2CppString =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetRange()` overload"]
+    fn get_range(self) -> i32 {
+        unsafe {
+            let __receiver = <HelpSpotInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(37usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",37usize,__vt.len(), <HelpSpotInspector as::unity2::ClassIdentity> ::NAME,"GetRange",));
-let __inner:extern "C" fn(HelpSpotInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <HelpSpotInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        37usize,
+                        __vt.len(),
+                        <HelpSpotInspector as ::unity::ClassIdentity>::NAME,
+                        "GetRange",
+                    )
+                });
+                let __inner: extern "C" fn(HelpSpotInspector, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`get_Color()` overload"]
+    fn get_color(self) -> crate::unity_engine::color::Color {
+        unsafe {
+            let __receiver = <HelpSpotInspector as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(11usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",11usize,__vt.len(), <HelpSpotInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
-let __inner:extern "C" fn(HelpSpotInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="app-helpspotinspector")]impl<__T:IHelpSpotInspector>IHelpSpotInspectorMethods for __T{}
-
-#[cfg(feature="app-helpspotinspector")]impl HelpSpotInspector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_label_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-helpspotinspector")]impl HelpSpotInspector{#[doc="Direct (non-virtual) call to `HelpSpotInspector`'s own `GetLabel`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_label(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Il2CppString{let __mi=Self::get_label_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `HelpSpotInspector`'s own `GetRange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_range(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_range_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `HelpSpotInspector`'s own `get_Color`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_color(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::unity_engine::color::Color{let __mi=Self::get_color_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        11usize,
+                        __vt.len(),
+                        <HelpSpotInspector as ::unity::ClassIdentity>::NAME,
+                        "get_Color",
+                    )
+                });
+                let __inner: extern "C" fn(HelpSpotInspector, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-helpspotinspector")]impl HelpSpotInspector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-helpspotinspector")]
+impl<__T: IHelpSpotInspector> IHelpSpotInspectorMethods for __T {}
+
+#[cfg(feature = "app-helpspotinspector")]
+impl HelpSpotInspector {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_label_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_range_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_color_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+}
+
+#[cfg(feature = "app-helpspotinspector")]
+impl HelpSpotInspector {
+    #[doc = "Direct (non-virtual) call to `HelpSpotInspector`'s own `GetLabel`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_label(this: impl ::core::convert::Into<::unity::IlInstance>) -> ::unity::Il2CppString {
+        let __mi = Self::get_label_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Il2CppString = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `HelpSpotInspector`'s own `GetRange`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_range(this: impl ::core::convert::Into<::unity::IlInstance>) -> i32 {
+        let __mi = Self::get_range_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `HelpSpotInspector`'s own `get_Color`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_color(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::unity_engine::color::Color {
+        let __mi = Self::get_color_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::unity_engine::color::Color =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-helpspotinspector")]
+impl HelpSpotInspector {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(HelpSpotInspector), ::core::stringify!(new),));
- <Self as IHelpSpotInspectorMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(HelpSpotInspector),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHelpSpotInspectorMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-helpspotinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HelpSpotInspector;
-    pub use super::IHelpSpotInspector;
-    pub use super::IHelpSpotInspectorMethods;
-    pub use crate::app::mapinspector::IMapInspector;
-    pub use crate::app::pokeinspector::IPokeInspector;
-    pub use crate::app::scriptutil::IScriptUtil;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-mapinspector")] pub use crate::app::mapinspector::IMapInspectorMethods;
-    #[cfg(feature = "app-pokeinspector")] pub use crate::app::pokeinspector::IPokeInspectorMethods;
-    #[cfg(feature = "app-scriptutil")] pub use crate::app::scriptutil::IScriptUtilMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{HelpSpotInspector, IHelpSpotInspector, IHelpSpotInspectorMethods};
+    #[cfg(feature = "app-mapinspector")]
+    pub use crate::app::mapinspector::IMapInspectorMethods;
+    #[cfg(feature = "app-pokeinspector")]
+    pub use crate::app::pokeinspector::IPokeInspectorMethods;
+    #[cfg(feature = "app-scriptutil")]
+    pub use crate::app::scriptutil::IScriptUtilMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{mapinspector::IMapInspector, pokeinspector::IPokeInspector, scriptutil::IScriptUtil},
+        system::object::IObject,
+    };
 }

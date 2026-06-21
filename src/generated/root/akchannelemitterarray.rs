@@ -2,98 +2,204 @@
 
 #[cfg(feature = "root-akchannelemitterarray-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akchannelemitterarray/AkChannelEmitterArray.md"))]#[::unity2::class(namespace="",name="AkChannelEmitterArray")]#[parent(crate::system::object::Object)]pub struct AkChannelEmitterArray{#[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_Current")]pub m_current: ::unity2::IntPtr, #[offset(32)]#[rename(name="m_MaxCount")]pub m_max_count:u32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akchannelemitterarray/AkChannelEmitterArray.md"))]
+    #[::unity::class(namespace = "", name = "AkChannelEmitterArray")]
+    #[parent(crate::system::object::Object)]
+    pub struct AkChannelEmitterArray {
+        #[offset(16)]
+        #[rename(name = "m_Buffer")]
+        pub m_buffer: ::unity::IntPtr,
+        #[offset(24)]
+        #[rename(name = "m_Current")]
+        pub m_current: ::unity::IntPtr,
+        #[offset(32)]
+        #[rename(name = "m_MaxCount")]
+        pub m_max_count: u32,
+    }
 }
 
 #[cfg(feature = "root-akchannelemitterarray-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akchannelemitterarray")]pub trait IAkChannelEmitterArrayMethods:IAkChannelEmitterArray{#[doc="`.ctor(u32)` overload"]fn ctor(self,in_count:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11130usize)as*mut u8,();
-(AkChannelEmitterArray)__receiver,(u32)::core::convert::Into::into(in_count))}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->u32{unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f111c0usize)as*mut u8,u32;
-(AkChannelEmitterArray)__receiver)}
-}
-#[doc="`set_Count(u32)` overload"]fn set_count(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f111d0usize)as*mut u8,();
-(AkChannelEmitterArray)__receiver,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-akchannelemitterarray")]
+pub trait IAkChannelEmitterArrayMethods: IAkChannelEmitterArray {
+    #[doc = "`.ctor(u32)` overload"]
+    fn ctor(self, in_count: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            let __receiver = <AkChannelEmitterArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f11130usize)as*mut u8,();
+(AkChannelEmitterArray)__receiver,(u32)::core::convert::Into::into(in_count))
+        }
+    }
+    #[doc = "`get_Count()` overload"]
+    fn get_count(self) -> u32 {
+        unsafe {
+            let __receiver = <AkChannelEmitterArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f111c0usize)as*mut u8,u32;
+(AkChannelEmitterArray)__receiver)
+        }
+    }
+    #[doc = "`set_Count(u32)` overload"]
+    fn set_count(self, value: impl ::core::convert::Into<u32>) -> () {
+        unsafe {
+            let __receiver = <AkChannelEmitterArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f111d0usize)as*mut u8,();
+(AkChannelEmitterArray)__receiver,(u32)::core::convert::Into::into(value))
+        }
+    }
+    #[doc = "`Dispose()` overload"]
+    fn dispose(self) -> () {
+        unsafe {
+            let __receiver = <AkChannelEmitterArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <AkChannelEmitterArray as::unity2::ClassIdentity> ::NAME,"Dispose",));
-let __inner:extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <AkChannelEmitterArray as ::unity::ClassIdentity>::NAME,
+                        "Dispose",
+                    )
+                });
+                let __inner: extern "C" fn(AkChannelEmitterArray, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Finalize()` overload"]
+    fn finalize(self) -> () {
+        unsafe {
+            let __receiver = <AkChannelEmitterArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(1usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",1usize,__vt.len(), <AkChannelEmitterArray as::unity2::ClassIdentity> ::NAME,"Finalize",));
-let __inner:extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11360usize)as*mut u8,();
-(AkChannelEmitterArray)__receiver)}
-}
-#[doc="`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, u32)` overload"]fn add(self,in_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_forward:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_top:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,in_channel_mask:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11370usize)as*mut u8,();
-(AkChannelEmitterArray)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_forward),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_top),(u32)::core::convert::Into::into(in_channel_mask))}
-}
+`)",
+                        1usize,
+                        __vt.len(),
+                        <AkChannelEmitterArray as ::unity::ClassIdentity>::NAME,
+                        "Finalize",
+                    )
+                });
+                let __inner: extern "C" fn(AkChannelEmitterArray, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`Reset()` overload"]
+    fn reset(self) -> () {
+        unsafe {
+            let __receiver = <AkChannelEmitterArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f11360usize)as*mut u8,();
+(AkChannelEmitterArray)__receiver)
+        }
+    }
+    #[doc = "`Add(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, u32)` overload"]
+    fn add(
+        self,
+        in_pos: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        in_forward: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        in_top: impl ::core::convert::Into<crate::unity_engine::vector3::Vector3>,
+        in_channel_mask: impl ::core::convert::Into<u32>,
+    ) -> () {
+        unsafe {
+            let __receiver = <AkChannelEmitterArray as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f11370usize)as*mut u8,();
+(AkChannelEmitterArray)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_forward),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(in_top),(u32)::core::convert::Into::into(in_channel_mask))
+        }
+    }
 }
 
-#[cfg(feature="root-akchannelemitterarray")]impl<__T:IAkChannelEmitterArray>IAkChannelEmitterArrayMethods for __T{}
+#[cfg(feature = "root-akchannelemitterarray")]
+impl<__T: IAkChannelEmitterArray> IAkChannelEmitterArrayMethods for __T {}
 
-#[cfg(feature="root-akchannelemitterarray")]impl AkChannelEmitterArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature = "root-akchannelemitterarray")]
+impl AkChannelEmitterArray {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_count_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn set_count_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn dispose_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn finalize_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn reset_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn add_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
 }
 
-#[cfg(feature="root-akchannelemitterarray")]impl AkChannelEmitterArray{#[doc="Direct (non-virtual) call to `AkChannelEmitterArray`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn dispose(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::dispose_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `AkChannelEmitterArray`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn finalize(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::finalize_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "root-akchannelemitterarray")]
+impl AkChannelEmitterArray {
+    #[doc = "Direct (non-virtual) call to `AkChannelEmitterArray`'s own `Dispose`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn dispose(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::dispose_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `AkChannelEmitterArray`'s own `Finalize`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn finalize(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::finalize_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="root-akchannelemitterarray")]impl AkChannelEmitterArray{#[doc="`.ctor(u32)` — overload selector"]pub fn new(in_count:u32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-akchannelemitterarray")]
+impl AkChannelEmitterArray {
+    #[doc = "`.ctor(u32)` — overload selector"]
+    pub fn new(in_count: u32) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AkChannelEmitterArray), ::core::stringify!(new),));
- <Self as IAkChannelEmitterArrayMethods> ::ctor(this,in_count);
-this}
+ failed to instantiate",
+                ::core::stringify!(AkChannelEmitterArray),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkChannelEmitterArrayMethods>::ctor(this, in_count);
+        this
+    }
 }
 
 #[cfg(feature = "root-akchannelemitterarray")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkChannelEmitterArray;
-    pub use super::IAkChannelEmitterArray;
-    pub use super::IAkChannelEmitterArrayMethods;
+    pub use super::{AkChannelEmitterArray, IAkChannelEmitterArray, IAkChannelEmitterArrayMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

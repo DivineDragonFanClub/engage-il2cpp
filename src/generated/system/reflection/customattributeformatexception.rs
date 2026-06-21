@@ -2,50 +2,89 @@
 
 #[cfg(feature = "system-reflection-customattributeformatexception-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributeformatexception/CustomAttributeFormatException.md"))]#[::unity2::class(namespace="System.Reflection",name="CustomAttributeFormatException")]pub struct CustomAttributeFormatException{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributeformatexception/CustomAttributeFormatException.md"))]
+    #[::unity::class(namespace = "System.Reflection", name = "CustomAttributeFormatException")]
+    pub struct CustomAttributeFormatException {}
 }
 
 #[cfg(feature = "system-reflection-customattributeformatexception-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-customattributeformatexception")]pub trait ICustomAttributeFormatExceptionMethods:ICustomAttributeFormatException{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomAttributeFormatException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3716470usize)as*mut u8,();
-(CustomAttributeFormatException)__receiver)}
-}
-#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor_2(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CustomAttributeFormatException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x37164e0usize)as*mut u8,();
-(CustomAttributeFormatException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
+#[cfg(feature = "system-reflection-customattributeformatexception")]
+pub trait ICustomAttributeFormatExceptionMethods: ICustomAttributeFormatException {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <CustomAttributeFormatException as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3716470usize)as*mut u8,();
+(CustomAttributeFormatException)__receiver)
+        }
+    }
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor_2(self, message: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver =
+                <CustomAttributeFormatException as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x37164e0usize)as*mut u8,();
+(CustomAttributeFormatException)__receiver,(::unity::Il2CppString)::core::convert::Into::into(message))
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-customattributeformatexception")]impl<__T:ICustomAttributeFormatException>ICustomAttributeFormatExceptionMethods for __T{}
+#[cfg(feature = "system-reflection-customattributeformatexception")]
+impl<__T: ICustomAttributeFormatException> ICustomAttributeFormatExceptionMethods for __T {}
 
-#[cfg(feature="system-reflection-customattributeformatexception")]impl CustomAttributeFormatException{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "system-reflection-customattributeformatexception")]
+impl CustomAttributeFormatException {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="system-reflection-customattributeformatexception")]impl CustomAttributeFormatException{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-reflection-customattributeformatexception")]
+impl CustomAttributeFormatException {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(CustomAttributeFormatException), ::core::stringify!(new),));
- <Self as ICustomAttributeFormatExceptionMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new_2(message: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+ failed to instantiate",
+                ::core::stringify!(CustomAttributeFormatException),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomAttributeFormatExceptionMethods>::ctor(this);
+        this
+    }
+
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new_2(message: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(CustomAttributeFormatException), ::core::stringify!(new_2),));
- <Self as ICustomAttributeFormatExceptionMethods> ::ctor_2(this,message);
-this}
+ failed to instantiate",
+                ::core::stringify!(CustomAttributeFormatException),
+                ::core::stringify!(new_2),
+            )
+        });
+        <Self as ICustomAttributeFormatExceptionMethods>::ctor_2(this, message);
+        this
+    }
 }
 
 #[cfg(feature = "system-reflection-customattributeformatexception")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomAttributeFormatException;
-    pub use super::ICustomAttributeFormatException;
-    pub use super::ICustomAttributeFormatExceptionMethods;
+    pub use super::{CustomAttributeFormatException, ICustomAttributeFormatException, ICustomAttributeFormatExceptionMethods};
 }

@@ -2,40 +2,64 @@
 
 #[cfg(feature = "unity_engine-timeline-customstyleattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/customstyleattribute/CustomStyleAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="CustomStyleAttribute")]pub struct CustomStyleAttribute{#[offset(16)]#[rename(name="ussStyle")]pub uss_style: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/customstyleattribute/CustomStyleAttribute.md"))]
+    #[::unity::class(namespace = "UnityEngine.Timeline", name = "CustomStyleAttribute")]
+    pub struct CustomStyleAttribute {
+        #[offset(16)]
+        #[rename(name = "ussStyle")]
+        pub uss_style: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-customstyleattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-timeline-customstyleattribute")]pub trait ICustomStyleAttributeMethods:ICustomStyleAttribute{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,uss_style:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CustomStyleAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d5cc0usize)as*mut u8,();
-(CustomStyleAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(uss_style))}
-}
+#[cfg(feature = "unity_engine-timeline-customstyleattribute")]
+pub trait ICustomStyleAttributeMethods: ICustomStyleAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, uss_style: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <CustomStyleAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x35d5cc0usize)as*mut u8,();
+(CustomStyleAttribute)__receiver,(::unity::Il2CppString)::core::convert::Into::into(uss_style))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-timeline-customstyleattribute")]impl<__T:ICustomStyleAttribute>ICustomStyleAttributeMethods for __T{}
+#[cfg(feature = "unity_engine-timeline-customstyleattribute")]
+impl<__T: ICustomStyleAttribute> ICustomStyleAttributeMethods for __T {}
 
-#[cfg(feature="unity_engine-timeline-customstyleattribute")]impl CustomStyleAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-timeline-customstyleattribute")]
+impl CustomStyleAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-timeline-customstyleattribute")]impl CustomStyleAttribute{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(uss_style: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-timeline-customstyleattribute")]
+impl CustomStyleAttribute {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(uss_style: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(CustomStyleAttribute), ::core::stringify!(new),));
- <Self as ICustomStyleAttributeMethods> ::ctor(this,uss_style);
-this}
+ failed to instantiate",
+                ::core::stringify!(CustomStyleAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ICustomStyleAttributeMethods>::ctor(this, uss_style);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-timeline-customstyleattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CustomStyleAttribute;
-    pub use super::ICustomStyleAttribute;
-    pub use super::ICustomStyleAttributeMethods;
+    pub use super::{CustomStyleAttribute, ICustomStyleAttribute, ICustomStyleAttributeMethods};
 }

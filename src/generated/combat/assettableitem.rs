@@ -2,44 +2,87 @@
 
 #[cfg(feature = "combat-assettableitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/assettableitem/AssetTableItem.md"))]#[::unity2::class(namespace="Combat",name="AssetTableItem")]#[parent(crate::system::object::Object)]pub struct AssetTableItem{#[offset(16)]#[rename(name="PresetName")]pub preset_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Mode")]pub mode:u8, #[offset(32)]#[rename(name="Conditions")]pub conditions: ::unity2::Il2CppString, #[offset(40)]#[rename(name="BodyModel")]pub body_model: ::unity2::Il2CppString, #[offset(48)]#[rename(name="BodyTexture")]pub body_texture: ::unity2::Il2CppString, #[offset(56)]#[rename(name="DressModel")]pub dress_model: ::unity2::Il2CppString, #[offset(64)]#[rename(name="DressTexture")]pub dress_texture: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/assettableitem/AssetTableItem.md"))]
+    #[::unity::class(namespace = "Combat", name = "AssetTableItem")]
+    #[parent(crate::system::object::Object)]
+    pub struct AssetTableItem {
+        #[offset(16)]
+        #[rename(name = "PresetName")]
+        pub preset_name: ::unity::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "Mode")]
+        pub mode: u8,
+        #[offset(32)]
+        #[rename(name = "Conditions")]
+        pub conditions: ::unity::Il2CppString,
+        #[offset(40)]
+        #[rename(name = "BodyModel")]
+        pub body_model: ::unity::Il2CppString,
+        #[offset(48)]
+        #[rename(name = "BodyTexture")]
+        pub body_texture: ::unity::Il2CppString,
+        #[offset(56)]
+        #[rename(name = "DressModel")]
+        pub dress_model: ::unity::Il2CppString,
+        #[offset(64)]
+        #[rename(name = "DressTexture")]
+        pub dress_texture: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "combat-assettableitem-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-assettableitem")]pub trait IAssetTableItemMethods:IAssetTableItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetTableItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211d760usize)as*mut u8,();
-(AssetTableItem)__receiver)}
-}
+#[cfg(feature = "combat-assettableitem")]
+pub trait IAssetTableItemMethods: IAssetTableItem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AssetTableItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x211d760usize)as*mut u8,();
+(AssetTableItem)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="combat-assettableitem")]impl<__T:IAssetTableItem>IAssetTableItemMethods for __T{}
+#[cfg(feature = "combat-assettableitem")]
+impl<__T: IAssetTableItem> IAssetTableItemMethods for __T {}
 
-#[cfg(feature="combat-assettableitem")]impl AssetTableItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "combat-assettableitem")]
+impl AssetTableItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="combat-assettableitem")]impl AssetTableItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "combat-assettableitem")]
+impl AssetTableItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AssetTableItem), ::core::stringify!(new),));
- <Self as IAssetTableItemMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AssetTableItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAssetTableItemMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "combat-assettableitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AssetTableItem;
-    pub use super::IAssetTableItem;
-    pub use super::IAssetTableItemMethods;
+    pub use super::{AssetTableItem, IAssetTableItem, IAssetTableItemMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,141 +2,362 @@
 
 #[cfg(feature = "unity_engine-resource_management-util-serializedtype-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/serializedtype/SerializedType.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct SerializedType {
+        pub m_assembly_name: ::unity::Il2CppString,
+        pub m_class_name: ::unity::Il2CppString,
+        pub m_cached_type: ::unity::SystemType,
+    }
+    impl ::unity::ClassIdentity for SerializedType {
+        const NAME: &'static str = "SerializedType";
+        const NAMESPACE: &'static str = "UnityEngine.ResourceManagement.Util";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/util/serializedtype/SerializedType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SerializedType{pub m_assembly_name: ::unity2::Il2CppString,pub m_class_name: ::unity2::Il2CppString,pub m_cached_type: ::unity2::SystemType,}
-impl::unity2::ClassIdentity for SerializedType{const NAMESPACE: &'static str="UnityEngine.ResourceManagement.Util";
-const NAME: &'static str="SerializedType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SerializedType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for SerializedType {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-serializedtype-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-resource_management-util-serializedtype")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SerializedType_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_assembly_name{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SerializedType as::unity2::ClassIdentity> ::class(),"get_AssemblyName",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "unity_engine-resource_management-util-serializedtype")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __SerializedType_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_assembly_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <SerializedType as ::unity::ClassIdentity>::class(),
+                "get_AssemblyName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <SerializedType as::unity2::ClassIdentity> ::NAME,"get_AssemblyName",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_class_name{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SerializedType as::unity2::ClassIdentity> ::class(),"get_ClassName",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <SerializedType as ::unity::ClassIdentity>::NAME,
+                        "get_AssemblyName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_class_name {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <SerializedType as ::unity::ClassIdentity>::class(),
+                "get_ClassName",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <SerializedType as::unity2::ClassIdentity> ::NAME,"get_ClassName",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SerializedType as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <SerializedType as ::unity::ClassIdentity>::NAME,
+                        "get_ClassName",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_to_string {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <SerializedType as ::unity::ClassIdentity>::class(),
+                "ToString",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <SerializedType as::unity2::ClassIdentity> ::NAME,"ToString",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SerializedType as::unity2::ClassIdentity> ::class(),"get_Value",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <SerializedType as ::unity::ClassIdentity>::NAME,
+                        "ToString",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <SerializedType as ::unity::ClassIdentity>::class(),
+                "get_Value",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <SerializedType as::unity2::ClassIdentity> ::NAME,"get_Value",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SerializedType as::unity2::ClassIdentity> ::class(),"set_Value",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <SerializedType as ::unity::ClassIdentity>::NAME,
+                        "get_Value",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_value {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[<::unity::SystemType as ::unity::IlType>::il_type()];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <SerializedType as ::unity::ClassIdentity>::class(),
+                "set_Value",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <SerializedType as::unity2::ClassIdentity> ::NAME,"set_Value",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_value_changed{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SerializedType as::unity2::ClassIdentity> ::class(),"get_ValueChanged",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <SerializedType as ::unity::ClassIdentity>::NAME,
+                        "set_Value",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_get_value_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <SerializedType as ::unity::ClassIdentity>::class(),
+                "get_ValueChanged",
+                0,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <SerializedType as::unity2::ClassIdentity> ::NAME,"get_ValueChanged",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_value_changed{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SerializedType as::unity2::ClassIdentity> ::class(),"set_ValueChanged",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+",
+                        <SerializedType as ::unity::ClassIdentity>::NAME,
+                        "get_ValueChanged",
+                        e
+                    )
+                },
+            }
+        }
+    }
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_set_value_changed {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[<bool as ::unity::IlType>::il_type()];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <SerializedType as ::unity::ClassIdentity>::class(),
+                "set_ValueChanged",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <SerializedType as::unity2::ClassIdentity> ::NAME,"set_ValueChanged",e),}
-}
-}
+",
+                        <SerializedType as ::unity::ClassIdentity>::NAME,
+                        "set_ValueChanged",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-util-serializedtype")]impl SerializedType{#[doc="`get_AssemblyName()` overload"]pub fn get_assembly_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__SerializedType_unity2_raw::__lookup_get_assembly_name::get_method_info().method_ptr), ::unity2::Il2CppString;
-(*mut SerializedType)self as*mut SerializedType)}
-}
-#[doc="`get_ClassName()` overload"]pub fn get_class_name(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__SerializedType_unity2_raw::__lookup_get_class_name::get_method_info().method_ptr), ::unity2::Il2CppString;
-(*mut SerializedType)self as*mut SerializedType)}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__SerializedType_unity2_raw::__lookup_to_string::get_method_info().method_ptr), ::unity2::Il2CppString;
-(*mut SerializedType)self as*mut SerializedType)}
-}
-#[doc="`get_Value()` overload"]pub fn get_value(&mut self,)-> ::unity2::SystemType{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__SerializedType_unity2_raw::__lookup_get_value::get_method_info().method_ptr), ::unity2::SystemType;
-(*mut SerializedType)self as*mut SerializedType)}
-}
-#[doc="`set_Value(::unity2::SystemType)` overload"]pub fn set_value(&mut self,value:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__SerializedType_unity2_raw::__lookup_set_value::get_method_info().method_ptr),();
-(*mut SerializedType)self as*mut SerializedType,(::unity2::SystemType)::core::convert::Into::into(value))}
-}
-#[doc="`get_ValueChanged()` overload"]pub fn get_value_changed(&mut self,)->bool{unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__SerializedType_unity2_raw::__lookup_get_value_changed::get_method_info().method_ptr),bool;
-(*mut SerializedType)self as*mut SerializedType)}
-}
-#[doc="`set_ValueChanged(bool)` overload"]pub fn set_value_changed(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!(::unity2::callable_ptr(__SerializedType_unity2_raw::__lookup_set_value_changed::get_method_info().method_ptr),();
-(*mut SerializedType)self as*mut SerializedType,(bool)::core::convert::Into::into(value))}
-}
+#[cfg(feature = "unity_engine-resource_management-util-serializedtype")]
+impl SerializedType {
+    #[doc = "`get_AssemblyName()` overload"]
+    pub fn get_assembly_name(&mut self) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__SerializedType_unity_raw::__lookup_get_assembly_name::get_method_info().method_ptr), ::unity::Il2CppString;
+(*mut SerializedType)self as*mut SerializedType)
+        }
+    }
+
+    #[doc = "`get_ClassName()` overload"]
+    pub fn get_class_name(&mut self) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__SerializedType_unity_raw::__lookup_get_class_name::get_method_info().method_ptr), ::unity::Il2CppString;
+(*mut SerializedType)self as*mut SerializedType)
+        }
+    }
+
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(&mut self) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__SerializedType_unity_raw::__lookup_to_string::get_method_info().method_ptr), ::unity::Il2CppString;
+(*mut SerializedType)self as*mut SerializedType)
+        }
+    }
+
+    #[doc = "`get_Value()` overload"]
+    pub fn get_value(&mut self) -> ::unity::SystemType {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__SerializedType_unity_raw::__lookup_get_value::get_method_info().method_ptr), ::unity::SystemType;
+(*mut SerializedType)self as*mut SerializedType)
+        }
+    }
+
+    #[doc = "`set_Value(::unity::SystemType)` overload"]
+    pub fn set_value(&mut self, value: impl ::core::convert::Into<::unity::SystemType>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__SerializedType_unity_raw::__lookup_set_value::get_method_info().method_ptr),();
+(*mut SerializedType)self as*mut SerializedType,(::unity::SystemType)::core::convert::Into::into(value))
+        }
+    }
+
+    #[doc = "`get_ValueChanged()` overload"]
+    pub fn get_value_changed(&mut self) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__SerializedType_unity_raw::__lookup_get_value_changed::get_method_info().method_ptr),bool;
+(*mut SerializedType)self as*mut SerializedType)
+        }
+    }
+
+    #[doc = "`set_ValueChanged(bool)` overload"]
+    pub fn set_value_changed(&mut self, value: impl ::core::convert::Into<bool>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!(::unity::callable_ptr(__SerializedType_unity_raw::__lookup_set_value_changed::get_method_info().method_ptr),();
+(*mut SerializedType)self as*mut SerializedType,(bool)::core::convert::Into::into(value))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-resource_management-util-serializedtype")]impl SerializedType{pub fn get_assembly_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_class_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_value_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_value_changed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature = "unity_engine-resource_management-util-serializedtype")]
+impl SerializedType {
+    pub fn get_assembly_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_class_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn to_string_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn set_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn get_value_changed_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn set_value_changed_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
 }
 
 #[cfg(feature = "unity_engine-resource_management-util-serializedtype")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SerializedType;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

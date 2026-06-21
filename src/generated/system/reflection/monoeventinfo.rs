@@ -2,50 +2,89 @@
 
 #[cfg(feature = "system-reflection-monoeventinfo-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoeventinfo/MonoEventInfo.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct MonoEventInfo {
+        pub declaring_type: ::unity::SystemType,
+        pub reflected_type: ::unity::SystemType,
+        pub name: ::unity::Il2CppString,
+        pub add_method: crate::system::reflection::methodinfo::MethodInfo,
+        pub remove_method: crate::system::reflection::methodinfo::MethodInfo,
+        pub raise_method: crate::system::reflection::methodinfo::MethodInfo,
+        pub attrs: crate::system::reflection::eventattributes::EventAttributes,
+        pub other_methods: ::unity::Array<crate::system::reflection::methodinfo::MethodInfo>,
+    }
+    impl ::unity::ClassIdentity for MonoEventInfo {
+        const NAME: &'static str = "MonoEventInfo";
+        const NAMESPACE: &'static str = "System.Reflection";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/monoeventinfo/MonoEventInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MonoEventInfo{pub declaring_type: ::unity2::SystemType,pub reflected_type: ::unity2::SystemType,pub name: ::unity2::Il2CppString,pub add_method:crate::system::reflection::methodinfo::MethodInfo,pub remove_method:crate::system::reflection::methodinfo::MethodInfo,pub raise_method:crate::system::reflection::methodinfo::MethodInfo,pub attrs:crate::system::reflection::eventattributes::EventAttributes,pub other_methods: ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>,}
-impl::unity2::ClassIdentity for MonoEventInfo{const NAMESPACE: &'static str="System.Reflection";
-const NAME: &'static str="MonoEventInfo";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MonoEventInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for MonoEventInfo {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "system-reflection-monoeventinfo-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-monoeventinfo")]impl MonoEventInfo{#[doc="`get_event_info(crate::system::reflection::monoevent::MonoEvent, *mutcrate::system::reflection::monoeventinfo::MonoEventInfo)` overload"]pub fn get_event_info(ev:impl::core::convert::Into<crate::system::reflection::monoevent::MonoEvent>)->crate::system::reflection::monoeventinfo::MonoEventInfo{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::reflection::monoeventinfo::MonoEventInfo> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337f140usize)as*mut u8,();
+#[cfg(feature = "system-reflection-monoeventinfo")]
+impl MonoEventInfo {
+    #[doc = "`get_event_info(crate::system::reflection::monoevent::MonoEvent, *mutcrate::system::reflection::monoeventinfo::MonoEventInfo)` overload"]
+    pub fn get_event_info(
+        ev: impl ::core::convert::Into<crate::system::reflection::monoevent::MonoEvent>,
+    ) -> crate::system::reflection::monoeventinfo::MonoEventInfo {
+        unsafe {
+            let mut __out_0 = ::core::mem::MaybeUninit::<crate::system::reflection::monoeventinfo::MonoEventInfo>::uninit();
+            ::unity::il2cpp_call!((::unity::module_base()+0x337f140usize)as*mut u8,();
 (crate::system::reflection::monoevent::MonoEvent)::core::convert::Into::into(ev),(*mut crate::system::reflection::monoeventinfo::MonoEventInfo)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-#[doc="`GetEventInfo(crate::system::reflection::monoevent::MonoEvent)` overload"]pub fn get_event_info_2(ev:impl::core::convert::Into<crate::system::reflection::monoevent::MonoEvent>)->crate::system::reflection::monoeventinfo::MonoEventInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x337ec50usize)as*mut u8,crate::system::reflection::monoeventinfo::MonoEventInfo;
-(crate::system::reflection::monoevent::MonoEvent)::core::convert::Into::into(ev))}
-}
+            __out_0.assume_init()
+        }
+    }
+
+    #[doc = "`GetEventInfo(crate::system::reflection::monoevent::MonoEvent)` overload"]
+    pub fn get_event_info_2(
+        ev: impl ::core::convert::Into<crate::system::reflection::monoevent::MonoEvent>,
+    ) -> crate::system::reflection::monoeventinfo::MonoEventInfo {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x337ec50usize)as*mut u8,crate::system::reflection::monoeventinfo::MonoEventInfo;
+(crate::system::reflection::monoevent::MonoEvent)::core::convert::Into::into(ev))
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-monoeventinfo")]impl MonoEventInfo{pub fn get_event_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_event_info_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "system-reflection-monoeventinfo")]
+impl MonoEventInfo {
+    pub fn get_event_info_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_event_info_2_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "system-reflection-monoeventinfo")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MonoEventInfo;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

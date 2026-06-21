@@ -2,44 +2,96 @@
 
 #[cfg(feature = "unity_engine-scrollviewstate-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scrollviewstate/ScrollViewState.md"))]#[::unity2::class(namespace="UnityEngine",name="ScrollViewState")]#[parent(crate::system::object::Object)]pub struct ScrollViewState{#[offset(16)]#[rename(name="position")]pub position:crate::unity_engine::rect::Rect, #[offset(32)]#[rename(name="visibleRect")]pub visible_rect:crate::unity_engine::rect::Rect, #[offset(48)]#[rename(name="viewRect")]pub view_rect:crate::unity_engine::rect::Rect, #[offset(64)]#[rename(name="scrollPosition")]pub scroll_position:crate::unity_engine::vector2::Vector2, #[offset(72)]#[rename(name="apply")]pub apply:bool, #[offset(73)]#[rename(name="isDuringTouchScroll")]pub is_during_touch_scroll:bool, #[offset(76)]#[rename(name="touchScrollStartMousePosition")]pub touch_scroll_start_mouse_position:crate::unity_engine::vector2::Vector2, #[offset(84)]#[rename(name="touchScrollStartPosition")]pub touch_scroll_start_position:crate::unity_engine::vector2::Vector2, #[offset(92)]#[rename(name="velocity")]pub velocity:crate::unity_engine::vector2::Vector2, #[offset(100)]#[rename(name="previousTimeSinceStartup")]pub previous_time_since_startup:f32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/scrollviewstate/ScrollViewState.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "ScrollViewState")]
+    #[parent(crate::system::object::Object)]
+    pub struct ScrollViewState {
+        #[offset(16)]
+        #[rename(name = "position")]
+        pub position: crate::unity_engine::rect::Rect,
+        #[offset(32)]
+        #[rename(name = "visibleRect")]
+        pub visible_rect: crate::unity_engine::rect::Rect,
+        #[offset(48)]
+        #[rename(name = "viewRect")]
+        pub view_rect: crate::unity_engine::rect::Rect,
+        #[offset(64)]
+        #[rename(name = "scrollPosition")]
+        pub scroll_position: crate::unity_engine::vector2::Vector2,
+        #[offset(72)]
+        #[rename(name = "apply")]
+        pub apply: bool,
+        #[offset(73)]
+        #[rename(name = "isDuringTouchScroll")]
+        pub is_during_touch_scroll: bool,
+        #[offset(76)]
+        #[rename(name = "touchScrollStartMousePosition")]
+        pub touch_scroll_start_mouse_position: crate::unity_engine::vector2::Vector2,
+        #[offset(84)]
+        #[rename(name = "touchScrollStartPosition")]
+        pub touch_scroll_start_position: crate::unity_engine::vector2::Vector2,
+        #[offset(92)]
+        #[rename(name = "velocity")]
+        pub velocity: crate::unity_engine::vector2::Vector2,
+        #[offset(100)]
+        #[rename(name = "previousTimeSinceStartup")]
+        pub previous_time_since_startup: f32,
+    }
 }
 
 #[cfg(feature = "unity_engine-scrollviewstate-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-scrollviewstate")]pub trait IScrollViewStateMethods:IScrollViewState{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScrollViewState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c51710usize)as*mut u8,();
-(ScrollViewState)__receiver)}
-}
+#[cfg(feature = "unity_engine-scrollviewstate")]
+pub trait IScrollViewStateMethods: IScrollViewState {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <ScrollViewState as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3c51710usize)as*mut u8,();
+(ScrollViewState)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-scrollviewstate")]impl<__T:IScrollViewState>IScrollViewStateMethods for __T{}
+#[cfg(feature = "unity_engine-scrollviewstate")]
+impl<__T: IScrollViewState> IScrollViewStateMethods for __T {}
 
-#[cfg(feature="unity_engine-scrollviewstate")]impl ScrollViewState{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-scrollviewstate")]
+impl ScrollViewState {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-scrollviewstate")]impl ScrollViewState{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-scrollviewstate")]
+impl ScrollViewState {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ScrollViewState), ::core::stringify!(new),));
- <Self as IScrollViewStateMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ScrollViewState),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IScrollViewStateMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-scrollviewstate")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScrollViewState;
-    pub use super::IScrollViewState;
-    pub use super::IScrollViewStateMethods;
+    pub use super::{IScrollViewState, IScrollViewStateMethods, ScrollViewState};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

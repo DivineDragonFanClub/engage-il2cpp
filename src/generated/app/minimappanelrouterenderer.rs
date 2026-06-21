@@ -2,115 +2,203 @@
 
 #[cfg(feature = "app-minimappanelrouterenderer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::minimappanelbase::{IMiniMapPanelBase, MiniMapPanelBase},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            event_systems::uibehaviour::{IUIBehaviour, UIBehaviour},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+            ui::{
+                graphic::{Graphic, IGraphic},
+                maskablegraphic::{IMaskableGraphic, MaskableGraphic},
+            },
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::minimappanelbase::{IMiniMapPanelBase,MiniMapPanelBase}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::event_systems::uibehaviour::{IUIBehaviour,UIBehaviour}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
-;
-use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimappanelrouterenderer/MiniMapPanelRouteRenderer.md"))]#[::unity2::class(namespace="App",name="MiniMapPanelRouteRenderer")]#[parent(crate::app::minimappanelbase::MiniMapPanelBase)]pub struct MiniMapPanelRouteRenderer{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/minimappanelrouterenderer/MiniMapPanelRouteRenderer.md"))]
+    #[::unity::class(namespace = "App", name = "MiniMapPanelRouteRenderer")]
+    #[parent(crate::app::minimappanelbase::MiniMapPanelBase)]
+    pub struct MiniMapPanelRouteRenderer {}
 }
 
 #[cfg(feature = "app-minimappanelrouterenderer-types")]
 pub use __types::*;
 
-#[cfg(feature="app-minimappanelrouterenderer")]pub trait IMiniMapPanelRouteRendererMethods:IMiniMapPanelRouteRenderer{#[doc="`CreatePanelMesh()` overload"]fn create_panel_mesh(self,)->(){unsafe{let __receiver= <MiniMapPanelRouteRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-minimappanelrouterenderer")]
+pub trait IMiniMapPanelRouteRendererMethods: IMiniMapPanelRouteRenderer {
+    #[doc = "`CreatePanelMesh()` overload"]
+    fn create_panel_mesh(self) -> () {
+        unsafe {
+            let __receiver =
+                <MiniMapPanelRouteRenderer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(68usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",68usize,__vt.len(), <MiniMapPanelRouteRenderer as::unity2::ClassIdentity> ::NAME,"CreatePanelMesh",));
-let __inner:extern "C" fn(MiniMapPanelRouteRenderer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`GetMapPanelMaterials()` overload"]fn get_map_panel_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelRouteRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(66usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        68usize,
+                        __vt.len(),
+                        <MiniMapPanelRouteRenderer as ::unity::ClassIdentity>::NAME,
+                        "CreatePanelMesh",
+                    )
+                });
+                let __inner: extern "C" fn(MiniMapPanelRouteRenderer, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`GetMapPanelMaterials()` overload"]
+    fn get_map_panel_materials(self) -> ::unity::Array<crate::unity_engine::material::Material> {
+        unsafe {
+            let __receiver =
+                <MiniMapPanelRouteRenderer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(66usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",66usize,__vt.len(), <MiniMapPanelRouteRenderer as::unity2::ClassIdentity> ::NAME,"GetMapPanelMaterials",));
-let __inner:extern "C" fn(MiniMapPanelRouteRenderer, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`CreatePanelRouteMesh()` overload"]fn create_panel_route_mesh(self,)->(){unsafe{let __receiver= <MiniMapPanelRouteRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27796b0usize)as*mut u8,();
-(MiniMapPanelRouteRenderer)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MiniMapPanelRouteRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2779880usize)as*mut u8,();
-(MiniMapPanelRouteRenderer)__receiver)}
-}
+`)",
+                        66usize,
+                        __vt.len(),
+                        <MiniMapPanelRouteRenderer as ::unity::ClassIdentity>::NAME,
+                        "GetMapPanelMaterials",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    MiniMapPanelRouteRenderer,
+                    ::unity::OptionalMethod,
+                ) -> ::unity::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`CreatePanelRouteMesh()` overload"]
+    fn create_panel_route_mesh(self) -> () {
+        unsafe {
+            let __receiver =
+                <MiniMapPanelRouteRenderer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x27796b0usize)as*mut u8,();
+(MiniMapPanelRouteRenderer)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MiniMapPanelRouteRenderer as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2779880usize)as*mut u8,();
+(MiniMapPanelRouteRenderer)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-minimappanelrouterenderer")]impl<__T:IMiniMapPanelRouteRenderer>IMiniMapPanelRouteRendererMethods for __T{}
+#[cfg(feature = "app-minimappanelrouterenderer")]
+impl<__T: IMiniMapPanelRouteRenderer> IMiniMapPanelRouteRendererMethods for __T {}
 
-#[cfg(feature="app-minimappanelrouterenderer")]impl MiniMapPanelRouteRenderer{pub fn create_panel_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_map_panel_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_panel_route_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature = "app-minimappanelrouterenderer")]
+impl MiniMapPanelRouteRenderer {
+    pub fn create_panel_mesh_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_map_panel_materials_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn create_panel_route_mesh_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
 }
 
-#[cfg(feature="app-minimappanelrouterenderer")]impl MiniMapPanelRouteRenderer{#[doc="Direct (non-virtual) call to `MiniMapPanelRouteRenderer`'s own `CreatePanelMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn create_panel_mesh(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::create_panel_mesh_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MiniMapPanelRouteRenderer`'s own `GetMapPanelMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_map_panel_materials(this:impl::core::convert::Into< ::unity2::IlInstance> ,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __mi=Self::get_map_panel_materials_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "app-minimappanelrouterenderer")]
+impl MiniMapPanelRouteRenderer {
+    #[doc = "Direct (non-virtual) call to `MiniMapPanelRouteRenderer`'s own `CreatePanelMesh`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn create_panel_mesh(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::create_panel_mesh_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MiniMapPanelRouteRenderer`'s own `GetMapPanelMaterials`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_map_panel_materials(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+    ) -> ::unity::Array<crate::unity_engine::material::Material> {
+        let __mi = Self::get_map_panel_materials_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> ::unity::Array<crate::unity_engine::material::Material> =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-minimappanelrouterenderer")]impl MiniMapPanelRouteRenderer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-minimappanelrouterenderer")]
+impl MiniMapPanelRouteRenderer {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MiniMapPanelRouteRenderer), ::core::stringify!(new),));
- <Self as IMiniMapPanelRouteRendererMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MiniMapPanelRouteRenderer),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMiniMapPanelRouteRendererMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-minimappanelrouterenderer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MiniMapPanelRouteRenderer;
-    pub use super::IMiniMapPanelRouteRenderer;
-    pub use super::IMiniMapPanelRouteRendererMethods;
-    pub use crate::app::minimappanelbase::IMiniMapPanelBase;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviour;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::ui::graphic::IGraphic;
-    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphic;
-    #[cfg(feature = "app-minimappanelbase")] pub use crate::app::minimappanelbase::IMiniMapPanelBaseMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-event_systems-uibehaviour")] pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-ui-graphic")] pub use crate::unity_engine::ui::graphic::IGraphicMethods;
-    #[cfg(feature = "unity_engine-ui-maskablegraphic")] pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
+    pub use super::{IMiniMapPanelRouteRenderer, IMiniMapPanelRouteRendererMethods, MiniMapPanelRouteRenderer};
+    #[cfg(feature = "app-minimappanelbase")]
+    pub use crate::app::minimappanelbase::IMiniMapPanelBaseMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-event_systems-uibehaviour")]
+    pub use crate::unity_engine::event_systems::uibehaviour::IUIBehaviourMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-ui-graphic")]
+    pub use crate::unity_engine::ui::graphic::IGraphicMethods;
+    #[cfg(feature = "unity_engine-ui-maskablegraphic")]
+    pub use crate::unity_engine::ui::maskablegraphic::IMaskableGraphicMethods;
+    pub use crate::{
+        app::minimappanelbase::IMiniMapPanelBase,
+        system::object::IObject,
+        unity_engine::{
+            behaviour::IBehaviour,
+            component::IComponent,
+            event_systems::uibehaviour::IUIBehaviour,
+            monobehaviour::IMonoBehaviour,
+            object_2::IObject_2,
+            ui::{graphic::IGraphic, maskablegraphic::IMaskableGraphic},
+        },
+    };
 }

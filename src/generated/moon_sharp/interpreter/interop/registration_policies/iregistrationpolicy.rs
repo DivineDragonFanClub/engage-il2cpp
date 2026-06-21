@@ -2,62 +2,130 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/registration_policies/iregistrationpolicy/IRegistrationPolicy.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.RegistrationPolicies",name="IRegistrationPolicy")]pub struct IRegistrationPolicy{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/registration_policies/iregistrationpolicy/IRegistrationPolicy.md"))]
+    #[::unity::class(namespace = "MoonSharp.Interpreter.Interop.RegistrationPolicies", name = "IRegistrationPolicy")]
+    pub struct IRegistrationPolicy {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]pub trait IIRegistrationPolicyMethods:IIRegistrationPolicy{#[doc="`HandleRegistration(crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor)` overload"]fn handle_registration(self,new_descriptor:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor> ,old_descriptor:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{unsafe{let __receiver= <IRegistrationPolicy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
+pub trait IIRegistrationPolicyMethods: IIRegistrationPolicy {
+    #[doc = "`HandleRegistration(crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor)` overload"]
+    fn handle_registration(
+        self,
+        new_descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
+        old_descriptor: impl ::core::convert::Into<crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor>,
+    ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
+        unsafe {
+            let __receiver = <IRegistrationPolicy as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <IRegistrationPolicy as::unity2::ClassIdentity> ::NAME,"HandleRegistration",));
-let __inner:extern "C" fn(IRegistrationPolicy,crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(new_descriptor), ::core::convert::Into::into(old_descriptor),__mi)}
-}
-}
-#[doc="`AllowTypeAutoRegistration(::unity2::SystemType)` overload"]fn allow_type_auto_registration(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <IRegistrationPolicy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <IRegistrationPolicy as ::unity::ClassIdentity>::NAME,
+                        "HandleRegistration",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    IRegistrationPolicy,
+                    crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+                    crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+                    ::unity::OptionalMethod,
+                ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(
+                    __receiver,
+                    ::core::convert::Into::into(new_descriptor),
+                    ::core::convert::Into::into(old_descriptor),
+                    __mi,
+                )
+            }
+        }
+    }
+    #[doc = "`AllowTypeAutoRegistration(::unity::SystemType)` overload"]
+    fn allow_type_auto_registration(self, r#type: impl ::core::convert::Into<::unity::SystemType>) -> bool {
+        unsafe {
+            let __receiver = <IRegistrationPolicy as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(1usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",1usize,__vt.len(), <IRegistrationPolicy as::unity2::ClassIdentity> ::NAME,"AllowTypeAutoRegistration",));
-let __inner:extern "C" fn(IRegistrationPolicy, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(r#type),__mi)}
-}
-}
+`)",
+                        1usize,
+                        __vt.len(),
+                        <IRegistrationPolicy as ::unity::ClassIdentity>::NAME,
+                        "AllowTypeAutoRegistration",
+                    )
+                });
+                let __inner: extern "C" fn(IRegistrationPolicy, ::unity::SystemType, ::unity::OptionalMethod) -> bool =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(r#type), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]impl<__T:IIRegistrationPolicy>IIRegistrationPolicyMethods for __T{}
+#[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
+impl<__T: IIRegistrationPolicy> IIRegistrationPolicyMethods for __T {}
 
-#[cfg(feature="moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]impl IRegistrationPolicy{pub fn handle_registration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn allow_type_auto_registration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
+impl IRegistrationPolicy {
+    pub fn handle_registration_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn allow_type_auto_registration_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]impl IRegistrationPolicy{#[doc="Direct (non-virtual) call to `IRegistrationPolicy`'s own `HandleRegistration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn handle_registration(this:impl::core::convert::Into< ::unity2::IlInstance> ,new_descriptor:crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,old_descriptor:crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{let __mi=Self::handle_registration_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),new_descriptor,old_descriptor, ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `IRegistrationPolicy`'s own `AllowTypeAutoRegistration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn allow_type_auto_registration(this:impl::core::convert::Into< ::unity2::IlInstance> ,r#type: ::unity2::SystemType,)->bool{let __mi=Self::allow_type_auto_registration_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),r#type, ::core::option::Option::None)}
+#[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
+impl IRegistrationPolicy {
+    #[doc = "Direct (non-virtual) call to `IRegistrationPolicy`'s own `HandleRegistration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn handle_registration(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        new_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+        old_descriptor: crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+    ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor {
+        let __mi = Self::handle_registration_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,
+            ::unity::OptionalMethod,
+        ) -> crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), new_descriptor, old_descriptor, ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `IRegistrationPolicy`'s own `AllowTypeAutoRegistration`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn allow_type_auto_registration(this: impl ::core::convert::Into<::unity::IlInstance>, r#type: ::unity::SystemType) -> bool {
+        let __mi = Self::allow_type_auto_registration_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::SystemType, ::unity::OptionalMethod) -> bool =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), r#type, ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IRegistrationPolicy;
-    pub use super::IIRegistrationPolicy;
-    pub use super::IIRegistrationPolicyMethods;
+    pub use super::{IIRegistrationPolicy, IIRegistrationPolicyMethods, IRegistrationPolicy};
 }

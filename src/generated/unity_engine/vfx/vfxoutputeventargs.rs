@@ -2,44 +2,66 @@
 
 #[cfg(feature = "unity_engine-vfx-vfxoutputeventargs-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/vfxoutputeventargs/VFXOutputEventArgs.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct VFXOutputEventArgs {}
+    impl ::unity::ClassIdentity for VFXOutputEventArgs {
+        const NAME: &'static str = "VFXOutputEventArgs";
+        const NAMESPACE: &'static str = "UnityEngine.VFX";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/vfx/vfxoutputeventargs/VFXOutputEventArgs.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct VFXOutputEventArgs{}
-impl::unity2::ClassIdentity for VFXOutputEventArgs{const NAMESPACE: &'static str="UnityEngine.VFX";
-const NAME: &'static str="VFXOutputEventArgs";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for VFXOutputEventArgs{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for VFXOutputEventArgs {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxoutputeventargs-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-vfx-vfxoutputeventargs")]impl VFXOutputEventArgs{#[doc="`.ctor(i32, crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute)` overload"]pub fn ctor(&mut self,name_id:impl::core::convert::Into<i32> ,event_attribute:impl::core::convert::Into<crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f44890usize)as*mut u8,();
-(*mut VFXOutputEventArgs)self as*mut VFXOutputEventArgs,(i32)::core::convert::Into::into(name_id),(crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute)::core::convert::Into::into(event_attribute))}
-}
+#[cfg(feature = "unity_engine-vfx-vfxoutputeventargs")]
+impl VFXOutputEventArgs {
+    #[doc = "`.ctor(i32, crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute)` overload"]
+    pub fn ctor(
+        &mut self,
+        name_id: impl ::core::convert::Into<i32>,
+        event_attribute: impl ::core::convert::Into<crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f44890usize)as*mut u8,();
+(*mut VFXOutputEventArgs)self as*mut VFXOutputEventArgs,(i32)::core::convert::Into::into(name_id),(crate::unity_engine::vfx::vfxeventattribute::VFXEventAttribute)::core::convert::Into::into(event_attribute))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-vfx-vfxoutputeventargs")]impl VFXOutputEventArgs{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-vfx-vfxoutputeventargs")]
+impl VFXOutputEventArgs {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-vfx-vfxoutputeventargs")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::VFXOutputEventArgs;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

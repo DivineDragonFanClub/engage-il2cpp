@@ -2,82 +2,130 @@
 
 #[cfg(feature = "app-arenabondlevelselectmenucontent-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenucontent::{BasicMenuContent, IBasicMenuContent},
+        system::object::{IObject, Object},
+        unity_engine::{
+            behaviour::{Behaviour, IBehaviour},
+            component::{Component, IComponent},
+            monobehaviour::{IMonoBehaviour, MonoBehaviour},
+            object_2::{IObject_2, Object_2},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenucontent::{BasicMenuContent,IBasicMenuContent}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::behaviour::{Behaviour,IBehaviour}
-;
-use crate::unity_engine::component::{Component,IComponent}
-;
-use crate::unity_engine::monobehaviour::{IMonoBehaviour,MonoBehaviour}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenucontent/ArenaBondLevelSelectMenuContent.md"))]#[::unity2::class(namespace="App",name="ArenaBondLevelSelectMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct ArenaBondLevelSelectMenuContent{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondlevelselectmenucontent/ArenaBondLevelSelectMenuContent.md"))]
+    #[::unity::class(namespace = "App", name = "ArenaBondLevelSelectMenuContent")]
+    #[parent(crate::app::basicmenucontent::BasicMenuContent)]
+    pub struct ArenaBondLevelSelectMenuContent {}
 }
 
 #[cfg(feature = "app-arenabondlevelselectmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-arenabondlevelselectmenucontent")]pub trait IArenaBondLevelSelectMenuContentMethods:IArenaBondLevelSelectMenuContent{#[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ArenaBondLevelSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-arenabondlevelselectmenucontent")]
+pub trait IArenaBondLevelSelectMenuContentMethods: IArenaBondLevelSelectMenuContent {
+    #[doc = "`CalcCursorMovedPosY(i32)` overload"]
+    fn calc_cursor_moved_pos_y(self, menu_item_index: impl ::core::convert::Into<i32>) -> f32 {
+        unsafe {
+            let __receiver =
+                <ArenaBondLevelSelectMenuContent as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(10usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",10usize,__vt.len(), <ArenaBondLevelSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
-let __inner:extern "C" fn(ArenaBondLevelSelectMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(menu_item_index),__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondLevelSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0bd0usize)as*mut u8,();
-(ArenaBondLevelSelectMenuContent)__receiver)}
-}
+`)",
+                        10usize,
+                        __vt.len(),
+                        <ArenaBondLevelSelectMenuContent as ::unity::ClassIdentity>::NAME,
+                        "CalcCursorMovedPosY",
+                    )
+                });
+                let __inner: extern "C" fn(ArenaBondLevelSelectMenuContent, i32, ::unity::OptionalMethod) -> f32 =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(menu_item_index), __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <ArenaBondLevelSelectMenuContent as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1ca0bd0usize)as*mut u8,();
+(ArenaBondLevelSelectMenuContent)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-arenabondlevelselectmenucontent")]impl<__T:IArenaBondLevelSelectMenuContent>IArenaBondLevelSelectMenuContentMethods for __T{}
+#[cfg(feature = "app-arenabondlevelselectmenucontent")]
+impl<__T: IArenaBondLevelSelectMenuContent> IArenaBondLevelSelectMenuContentMethods for __T {}
 
-#[cfg(feature="app-arenabondlevelselectmenucontent")]impl ArenaBondLevelSelectMenuContent{pub fn calc_cursor_moved_pos_y_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "app-arenabondlevelselectmenucontent")]
+impl ArenaBondLevelSelectMenuContent {
+    pub fn calc_cursor_moved_pos_y_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="app-arenabondlevelselectmenucontent")]impl ArenaBondLevelSelectMenuContent{#[doc="Direct (non-virtual) call to `ArenaBondLevelSelectMenuContent`'s own `CalcCursorMovedPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn calc_cursor_moved_pos_y(this:impl::core::convert::Into< ::unity2::IlInstance> ,menu_item_index:i32,)->f32{let __mi=Self::calc_cursor_moved_pos_y_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),menu_item_index, ::core::option::Option::None)}
+#[cfg(feature = "app-arenabondlevelselectmenucontent")]
+impl ArenaBondLevelSelectMenuContent {
+    #[doc = "Direct (non-virtual) call to `ArenaBondLevelSelectMenuContent`'s own `CalcCursorMovedPosY`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn calc_cursor_moved_pos_y(this: impl ::core::convert::Into<::unity::IlInstance>, menu_item_index: i32) -> f32 {
+        let __mi = Self::calc_cursor_moved_pos_y_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, i32, ::unity::OptionalMethod) -> f32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), menu_item_index, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="app-arenabondlevelselectmenucontent")]impl ArenaBondLevelSelectMenuContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-arenabondlevelselectmenucontent")]
+impl ArenaBondLevelSelectMenuContent {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(ArenaBondLevelSelectMenuContent), ::core::stringify!(new),));
- <Self as IArenaBondLevelSelectMenuContentMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(ArenaBondLevelSelectMenuContent),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IArenaBondLevelSelectMenuContentMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-arenabondlevelselectmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaBondLevelSelectMenuContent;
-    pub use super::IArenaBondLevelSelectMenuContent;
-    pub use super::IArenaBondLevelSelectMenuContentMethods;
-    pub use crate::app::basicmenucontent::IBasicMenuContent;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::behaviour::IBehaviour;
-    pub use crate::unity_engine::component::IComponent;
-    pub use crate::unity_engine::monobehaviour::IMonoBehaviour;
-    pub use crate::unity_engine::object_2::IObject_2;
-    #[cfg(feature = "app-basicmenucontent")] pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-behaviour")] pub use crate::unity_engine::behaviour::IBehaviourMethods;
-    #[cfg(feature = "unity_engine-component")] pub use crate::unity_engine::component::IComponentMethods;
-    #[cfg(feature = "unity_engine-monobehaviour")] pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use super::{ArenaBondLevelSelectMenuContent, IArenaBondLevelSelectMenuContent, IArenaBondLevelSelectMenuContentMethods};
+    #[cfg(feature = "app-basicmenucontent")]
+    pub use crate::app::basicmenucontent::IBasicMenuContentMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-behaviour")]
+    pub use crate::unity_engine::behaviour::IBehaviourMethods;
+    #[cfg(feature = "unity_engine-component")]
+    pub use crate::unity_engine::component::IComponentMethods;
+    #[cfg(feature = "unity_engine-monobehaviour")]
+    pub use crate::unity_engine::monobehaviour::IMonoBehaviourMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    pub use crate::{
+        app::basicmenucontent::IBasicMenuContent,
+        system::object::IObject,
+        unity_engine::{behaviour::IBehaviour, component::IComponent, monobehaviour::IMonoBehaviour, object_2::IObject_2},
+    };
 }

@@ -2,74 +2,123 @@
 
 #[cfg(feature = "root-wwisertpcreference-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        root::wwiseobjectreference::{IWwiseObjectReference, WwiseObjectReference},
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::root::wwiseobjectreference::{IWwiseObjectReference,WwiseObjectReference}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/wwisertpcreference/WwiseRtpcReference.md"))]#[::unity2::class(namespace="",name="WwiseRtpcReference")]#[parent(crate::root::wwiseobjectreference::WwiseObjectReference)]pub struct WwiseRtpcReference{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/wwisertpcreference/WwiseRtpcReference.md"))]
+    #[::unity::class(namespace = "", name = "WwiseRtpcReference")]
+    #[parent(crate::root::wwiseobjectreference::WwiseObjectReference)]
+    pub struct WwiseRtpcReference {}
 }
 
 #[cfg(feature = "root-wwisertpcreference-types")]
 pub use __types::*;
 
-#[cfg(feature="root-wwisertpcreference")]pub trait IWwiseRtpcReferenceMethods:IWwiseRtpcReference{#[doc="`get_WwiseObjectType()` overload"]fn get_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseRtpcReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-wwisertpcreference")]
+pub trait IWwiseRtpcReferenceMethods: IWwiseRtpcReference {
+    #[doc = "`get_WwiseObjectType()` overload"]
+    fn get_wwise_object_type(self) -> crate::root::wwiseobjecttype::WwiseObjectType {
+        unsafe {
+            let __receiver = <WwiseRtpcReference as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(5usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",5usize,__vt.len(), <WwiseRtpcReference as::unity2::ClassIdentity> ::NAME,"get_WwiseObjectType",));
-let __inner:extern "C" fn(WwiseRtpcReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseRtpcReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x293fe80usize)as*mut u8,();
-(WwiseRtpcReference)__receiver)}
-}
+`)",
+                        5usize,
+                        __vt.len(),
+                        <WwiseRtpcReference as ::unity::ClassIdentity>::NAME,
+                        "get_WwiseObjectType",
+                    )
+                });
+                let __inner: extern "C" fn(WwiseRtpcReference, ::unity::OptionalMethod) -> crate::root::wwiseobjecttype::WwiseObjectType =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <WwiseRtpcReference as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x293fe80usize)as*mut u8,();
+(WwiseRtpcReference)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-wwisertpcreference")]impl<__T:IWwiseRtpcReference>IWwiseRtpcReferenceMethods for __T{}
+#[cfg(feature = "root-wwisertpcreference")]
+impl<__T: IWwiseRtpcReference> IWwiseRtpcReferenceMethods for __T {}
 
-#[cfg(feature="root-wwisertpcreference")]impl WwiseRtpcReference{pub fn get_wwise_object_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "root-wwisertpcreference")]
+impl WwiseRtpcReference {
+    pub fn get_wwise_object_type_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="root-wwisertpcreference")]impl WwiseRtpcReference{#[doc="Direct (non-virtual) call to `WwiseRtpcReference`'s own `get_WwiseObjectType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_wwise_object_type(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::root::wwiseobjecttype::WwiseObjectType{let __mi=Self::get_wwise_object_type_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+#[cfg(feature = "root-wwisertpcreference")]
+impl WwiseRtpcReference {
+    #[doc = "Direct (non-virtual) call to `WwiseRtpcReference`'s own `get_WwiseObjectType`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_wwise_object_type(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::root::wwiseobjecttype::WwiseObjectType {
+        let __mi = Self::get_wwise_object_type_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::root::wwiseobjecttype::WwiseObjectType =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="root-wwisertpcreference")]impl WwiseRtpcReference{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-wwisertpcreference")]
+impl WwiseRtpcReference {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(WwiseRtpcReference), ::core::stringify!(new),));
- <Self as IWwiseRtpcReferenceMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(WwiseRtpcReference),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IWwiseRtpcReferenceMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-wwisertpcreference")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WwiseRtpcReference;
-    pub use super::IWwiseRtpcReference;
-    pub use super::IWwiseRtpcReferenceMethods;
-    pub use crate::root::wwiseobjectreference::IWwiseObjectReference;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    #[cfg(feature = "root-wwiseobjectreference")] pub use crate::root::wwiseobjectreference::IWwiseObjectReferenceMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use super::{IWwiseRtpcReference, IWwiseRtpcReferenceMethods, WwiseRtpcReference};
+    #[cfg(feature = "root-wwiseobjectreference")]
+    pub use crate::root::wwiseobjectreference::IWwiseObjectReferenceMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        root::wwiseobjectreference::IWwiseObjectReference,
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

@@ -2,61 +2,116 @@
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::{
+            DispatchingUserDataDescriptor, IDispatchingUserDataDescriptor,
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::{DispatchingUserDataDescriptor,IDispatchingUserDataDescriptor}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/standard_descriptors/hardwired_descriptors/hardwireduserdatadescriptor/HardwiredUserDataDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop.StandardDescriptors.HardwiredDescriptors",name="HardwiredUserDataDescriptor")]#[parent(crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::DispatchingUserDataDescriptor)]pub struct HardwiredUserDataDescriptor{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/standard_descriptors/hardwired_descriptors/hardwireduserdatadescriptor/HardwiredUserDataDescriptor.md"))]
+    #[::unity::class(
+        namespace = "MoonSharp.Interpreter.Interop.StandardDescriptors.HardwiredDescriptors",
+        name = "HardwiredUserDataDescriptor"
+    )]
+    #[parent(crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::DispatchingUserDataDescriptor)]
+    pub struct HardwiredUserDataDescriptor {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HardwiredUserDataDescriptor_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<HardwiredUserDataDescriptor as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __HardwiredUserDataDescriptor_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[<::unity::SystemType as ::unity::IlType>::il_type()];
+            ::unity::lookup::method_info_on_class_with_signature(
+                <HardwiredUserDataDescriptor as ::unity::ClassIdentity>::class(),
+                ".ctor",
+                1,
+                param_types,
+                false,
+            )
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <HardwiredUserDataDescriptor as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]pub trait IHardwiredUserDataDescriptorMethods:IHardwiredUserDataDescriptor{#[doc="`.ctor(::unity2::SystemType)` overload"]fn ctor(self,t:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <HardwiredUserDataDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__HardwiredUserDataDescriptor_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(HardwiredUserDataDescriptor)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]impl<__T:IHardwiredUserDataDescriptor>IHardwiredUserDataDescriptorMethods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]impl HardwiredUserDataDescriptor{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+",
+                        <HardwiredUserDataDescriptor as ::unity::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]impl HardwiredUserDataDescriptor{#[doc="`.ctor(::unity2::SystemType)` — overload selector"]pub fn new(t: ::unity2::SystemType)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
+pub trait IHardwiredUserDataDescriptorMethods: IHardwiredUserDataDescriptor {
+    #[doc = "`.ctor(::unity::SystemType)` overload"]
+    fn ctor(self, t: impl ::core::convert::Into<::unity::SystemType>) -> () {
+        unsafe {
+            let __receiver =
+                <HardwiredUserDataDescriptor as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__HardwiredUserDataDescriptor_unity_raw::__lookup_ctor::get_method_info().method_ptr,();
+(HardwiredUserDataDescriptor)__receiver,(::unity::SystemType)::core::convert::Into::into(t))
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
+impl<__T: IHardwiredUserDataDescriptor> IHardwiredUserDataDescriptorMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
+impl HardwiredUserDataDescriptor {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
+impl HardwiredUserDataDescriptor {
+    #[doc = "`.ctor(::unity::SystemType)` — overload selector"]
+    pub fn new(t: ::unity::SystemType) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(HardwiredUserDataDescriptor), ::core::stringify!(new),));
- <Self as IHardwiredUserDataDescriptorMethods> ::ctor(this,t);
-this}
+ failed to instantiate",
+                ::core::stringify!(HardwiredUserDataDescriptor),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IHardwiredUserDataDescriptorMethods>::ctor(this, t);
+        this
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwireduserdatadescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HardwiredUserDataDescriptor;
-    pub use super::IHardwiredUserDataDescriptor;
-    pub use super::IHardwiredUserDataDescriptorMethods;
-    pub use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptor;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")] pub use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptorMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{HardwiredUserDataDescriptor, IHardwiredUserDataDescriptor, IHardwiredUserDataDescriptorMethods};
+    #[cfg(feature = "moon_sharp-interpreter-interop-basic_descriptors-dispatchinguserdatadescriptor")]
+    pub use crate::moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptorMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        moon_sharp::interpreter::interop::basic_descriptors::dispatchinguserdatadescriptor::IDispatchingUserDataDescriptor, system::object::IObject,
+    };
 }

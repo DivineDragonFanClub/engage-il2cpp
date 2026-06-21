@@ -2,33 +2,43 @@
 
 #[cfg(feature = "unity_engine-colorutility-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/colorutility/ColorUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="ColorUtility")]#[parent(crate::system::object::Object)]pub struct ColorUtility{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/colorutility/ColorUtility.md"))]
+    #[::unity::class(namespace = "UnityEngine", name = "ColorUtility")]
+    #[parent(crate::system::object::Object)]
+    pub struct ColorUtility {}
 }
 
 #[cfg(feature = "unity_engine-colorutility-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-colorutility")]impl ColorUtility{#[doc="`ToHtmlStringRGB(crate::unity_engine::color::Color)` overload"]pub fn to_html_string_rgb(color:impl::core::convert::Into<crate::unity_engine::color::Color>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c41b70usize)as*mut u8, ::unity2::Il2CppString;
-(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
-}
+#[cfg(feature = "unity_engine-colorutility")]
+impl ColorUtility {
+    #[doc = "`ToHtmlStringRGB(crate::unity_engine::color::Color)` overload"]
+    pub fn to_html_string_rgb(color: impl ::core::convert::Into<crate::unity_engine::color::Color>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2c41b70usize)as*mut u8, ::unity::Il2CppString;
+(crate::unity_engine::color::Color)::core::convert::Into::into(color))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-colorutility")]impl ColorUtility{pub fn to_html_string_rgb_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-colorutility")]
+impl ColorUtility {
+    pub fn to_html_string_rgb_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-colorutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ColorUtility;
-    pub use super::IColorUtility;
+    pub use super::{ColorUtility, IColorUtility};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

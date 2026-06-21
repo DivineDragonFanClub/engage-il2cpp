@@ -2,57 +2,97 @@
 
 #[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/code_analysis/astnode/AstNode.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.CodeAnalysis",name="AstNode")]#[parent(crate::system::object::Object)]pub struct AstNode{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/code_analysis/astnode/AstNode.md"))]
+    #[::unity::class(namespace = "MoonSharp.Interpreter.CodeAnalysis", name = "AstNode")]
+    #[parent(crate::system::object::Object)]
+    pub struct AstNode {}
 }
 
 #[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-code_analysis-astnode")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AstNode_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<AstNode as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+#[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
+#[doc(hidden)]
+#[allow(non_snake_case, non_camel_case_types, clippy::too_many_arguments)]
+mod __AstNode_unity_raw {
+    use super::*;
+    #[doc(hidden)]
+    #[allow(non_snake_case)]
+    pub mod __lookup_ctor {
+        use super::*;
+        static METHOD: ::std::sync::LazyLock<::unity::Il2CppResult<&'static ::unity::il2cpp::MethodInfo>> = ::std::sync::LazyLock::new(|| {
+            let param_types: &[&'static ::unity::il2cpp::Il2CppType] = &[];
+            ::unity::lookup::method_info_on_class_with_signature(<AstNode as ::unity::ClassIdentity>::class(), ".ctor", 0, param_types, false)
+        });
+        pub fn get_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+            match &*METHOD {
+                ::core::result::Result::Ok(mi) => *mi,
+                ::core::result::Result::Err(e) => {
+                    panic!(
+                        "method lookup failed: {}
 ::{}
 : {}
-", <AstNode as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-code_analysis-astnode")]pub trait IAstNodeMethods:IAstNode{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AstNode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__AstNode_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(AstNode)__receiver)}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-code_analysis-astnode")]impl<__T:IAstNode>IAstNodeMethods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-code_analysis-astnode")]impl AstNode{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+",
+                        <AstNode as ::unity::ClassIdentity>::NAME,
+                        ".ctor",
+                        e
+                    )
+                },
+            }
+        }
+    }
 }
 
-#[cfg(feature="moon_sharp-interpreter-code_analysis-astnode")]impl AstNode{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
+pub trait IAstNodeMethods: IAstNode {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AstNode as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!(__AstNode_unity_raw::__lookup_ctor::get_method_info().method_ptr,();
+(AstNode)__receiver)
+        }
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
+impl<__T: IAstNode> IAstNodeMethods for __T {}
+
+#[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
+impl AstNode {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+}
+
+#[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
+impl AstNode {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AstNode), ::core::stringify!(new),));
- <Self as IAstNodeMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AstNode),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAstNodeMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "moon_sharp-interpreter-code_analysis-astnode")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AstNode;
-    pub use super::IAstNode;
-    pub use super::IAstNodeMethods;
+    pub use super::{AstNode, IAstNode, IAstNodeMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,66 +2,127 @@
 
 #[cfg(feature = "unity_engine-sortinglayer-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/sortinglayer/SortingLayer.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct SortingLayer {
+        pub m_id: i32,
+    }
+    impl ::unity::ClassIdentity for SortingLayer {
+        const NAME: &'static str = "SortingLayer";
+        const NAMESPACE: &'static str = "UnityEngine";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/sortinglayer/SortingLayer.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct SortingLayer{pub m_id:i32,}
-impl::unity2::ClassIdentity for SortingLayer{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="SortingLayer";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SortingLayer{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for SortingLayer {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "unity_engine-sortinglayer-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-sortinglayer")]impl SortingLayer{#[doc="`get_layers()` overload"]pub fn get_layers()-> ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94660usize)as*mut u8, ::unity2::Array<crate::unity_engine::sortinglayer::SortingLayer> ;
-)}
-}
-#[doc="`GetSortingLayerIDsInternal()` overload"]pub fn get_sorting_layer_i_ds_internal()-> ::unity2::Array<i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94730usize)as*mut u8, ::unity2::Array<i32> ;
-)}
-}
-#[doc="`GetLayerValueFromID(i32)` overload"]pub fn get_layer_value_from_id(id:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94610usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(id))}
-}
-#[doc="`IDToName(i32)` overload"]pub fn id_to_name(id:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f94770usize)as*mut u8, ::unity2::Il2CppString;
-(i32)::core::convert::Into::into(id))}
-}
+#[cfg(feature = "unity_engine-sortinglayer")]
+impl SortingLayer {
+    #[doc = "`get_layers()` overload"]
+    pub fn get_layers() -> ::unity::Array<crate::unity_engine::sortinglayer::SortingLayer> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f94660usize)as*mut u8, ::unity::Array<crate::unity_engine::sortinglayer::SortingLayer> ;
+            )
+        }
+    }
+
+    #[doc = "`GetSortingLayerIDsInternal()` overload"]
+    pub fn get_sorting_layer_i_ds_internal() -> ::unity::Array<i32> {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f94730usize)as*mut u8, ::unity::Array<i32> ;
+            )
+        }
+    }
+
+    #[doc = "`GetLayerValueFromID(i32)` overload"]
+    pub fn get_layer_value_from_id(id: impl ::core::convert::Into<i32>) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f94610usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(id))
+        }
+    }
+
+    #[doc = "`IDToName(i32)` overload"]
+    pub fn id_to_name(id: impl ::core::convert::Into<i32>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f94770usize)as*mut u8, ::unity::Il2CppString;
+(i32)::core::convert::Into::into(id))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-sortinglayer")]impl SortingLayer{#[doc="`get_id()` overload"]pub fn get_id(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f945b0usize)as*mut u8,i32;
-(*mut SortingLayer)self as*mut SortingLayer)}
-}
-#[doc="`get_value()` overload"]pub fn get_value(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f945c0usize)as*mut u8,i32;
-(*mut SortingLayer)self as*mut SortingLayer)}
-}
+#[cfg(feature = "unity_engine-sortinglayer")]
+impl SortingLayer {
+    #[doc = "`get_id()` overload"]
+    pub fn get_id(&mut self) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f945b0usize)as*mut u8,i32;
+(*mut SortingLayer)self as*mut SortingLayer)
+        }
+    }
+
+    #[doc = "`get_value()` overload"]
+    pub fn get_value(&mut self) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2f945c0usize)as*mut u8,i32;
+(*mut SortingLayer)self as*mut SortingLayer)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-sortinglayer")]impl SortingLayer{pub fn get_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_layers_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_sorting_layer_i_ds_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_layer_value_from_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn id_to_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature = "unity_engine-sortinglayer")]
+impl SortingLayer {
+    pub fn get_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn get_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_layers_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_sorting_layer_i_ds_internal_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn get_layer_value_from_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn id_to_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
 }
 
 #[cfg(feature = "unity_engine-sortinglayer")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SortingLayer;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

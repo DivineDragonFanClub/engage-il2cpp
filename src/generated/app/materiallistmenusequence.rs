@@ -2,104 +2,192 @@
 
 #[cfg(feature = "app-materiallistmenusequence-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::procinst::{IProcInst, ProcInst},
+        system::{
+            object::{IObject, Object},
+            r#enum::{Enum, IEnum},
+            valuetype::{IValueType, ValueType},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::procinst::{IProcInst,ProcInst}
-;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::r#enum::{Enum,IEnum}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenusequence/MaterialListMenuSequence_Label2.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]
+    pub struct MaterialListMenuSequence_Label2 {
+        pub value: i32,
+    }
+    impl ::unity::ClassIdentity for MaterialListMenuSequence_Label2 {
+        const NAME: &'static str = "MaterialListMenuSequence.Label2";
+        const NAMESPACE: &'static str = "App";
 
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for MaterialListMenuSequence_Label2 {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
+    impl MaterialListMenuSequence_Label2 {
+        pub fn entry() -> Self {
+            Self { value: 0 }
+        }
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]#[::unity2::class(namespace="App",name="MaterialListMenuSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MaterialListMenuSequence{}
+        pub fn end() -> Self {
+            Self { value: 1 }
+        }
+    }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenusequence/MaterialListMenuSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MaterialListMenuSequence_Label2{pub value:i32,}
-impl::unity2::ClassIdentity for MaterialListMenuSequence_Label2{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MaterialListMenuSequence.Label2";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MaterialListMenuSequence_Label2{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MaterialListMenuSequence_Label2{pub fn entry()->Self{Self{value:0}
-}
-pub fn end()->Self{Self{value:1}
-}
-}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materiallistmenusequence/MaterialListMenuSequence.md"))]
+    #[::unity::class(namespace = "App", name = "MaterialListMenuSequence")]
+    #[parent(crate::app::procinst::ProcInst)]
+    pub struct MaterialListMenuSequence {}
 }
 
 #[cfg(feature = "app-materiallistmenusequence-types")]
 pub use __types::*;
 
-#[cfg(feature="app-materiallistmenusequence")]impl MaterialListMenuSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c97d0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-materiallistmenusequence")]pub trait IMaterialListMenuSequenceMethods:IMaterialListMenuSequence{#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <MaterialListMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9860usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(MaterialListMenuSequence)__receiver)}
-}
-#[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <MaterialListMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9cf0usize)as*mut u8,();
-(MaterialListMenuSequence)__receiver)}
-}
-#[doc="`IsLoadingRes()` overload"]fn is_loading_res(self,)->bool{unsafe{let __receiver= <MaterialListMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9d90usize)as*mut u8,bool;
-(MaterialListMenuSequence)__receiver)}
-}
-#[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <MaterialListMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9e10usize)as*mut u8,();
-(MaterialListMenuSequence)__receiver)}
-}
-#[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <MaterialListMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca050usize)as*mut u8,();
-(MaterialListMenuSequence)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaterialListMenuSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9850usize)as*mut u8,();
-(MaterialListMenuSequence)__receiver)}
-}
+#[cfg(feature = "app-materiallistmenusequence")]
+impl MaterialListMenuSequence {
+    #[doc = "`CreateBind(crate::app::procinst::ProcInst)` overload"]
+    pub fn create_bind(super_: impl ::core::convert::Into<crate::app::procinst::ProcInst>) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x25c97d0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))
+        }
+    }
 }
 
-#[cfg(feature="app-materiallistmenusequence")]impl<__T:IMaterialListMenuSequence>IMaterialListMenuSequenceMethods for __T{}
-
-#[cfg(feature="app-materiallistmenusequence")]impl MaterialListMenuSequence{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn load_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_loading_res_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn open_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+#[cfg(feature = "app-materiallistmenusequence")]
+pub trait IMaterialListMenuSequenceMethods: IMaterialListMenuSequence {
+    #[doc = "`CreateDesc()` overload"]
+    fn create_desc(self) -> ::unity::Array<crate::app::procdesc::ProcDesc> {
+        unsafe {
+            let __receiver =
+                <MaterialListMenuSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25c9860usize)as*mut u8, ::unity::Array<crate::app::procdesc::ProcDesc> ;
+(MaterialListMenuSequence)__receiver)
+        }
+    }
+    #[doc = "`LoadRes()` overload"]
+    fn load_res(self) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialListMenuSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25c9cf0usize)as*mut u8,();
+(MaterialListMenuSequence)__receiver)
+        }
+    }
+    #[doc = "`IsLoadingRes()` overload"]
+    fn is_loading_res(self) -> bool {
+        unsafe {
+            let __receiver =
+                <MaterialListMenuSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25c9d90usize)as*mut u8,bool;
+(MaterialListMenuSequence)__receiver)
+        }
+    }
+    #[doc = "`Open()` overload"]
+    fn open(self) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialListMenuSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25c9e10usize)as*mut u8,();
+(MaterialListMenuSequence)__receiver)
+        }
+    }
+    #[doc = "`Close()` overload"]
+    fn close(self) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialListMenuSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25ca050usize)as*mut u8,();
+(MaterialListMenuSequence)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver =
+                <MaterialListMenuSequence as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x25c9850usize)as*mut u8,();
+(MaterialListMenuSequence)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="app-materiallistmenusequence")]impl MaterialListMenuSequence{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-materiallistmenusequence")]
+impl<__T: IMaterialListMenuSequence> IMaterialListMenuSequenceMethods for __T {}
+
+#[cfg(feature = "app-materiallistmenusequence")]
+impl MaterialListMenuSequence {
+    pub fn create_bind_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn create_desc_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn load_res_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn is_loading_res_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn open_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+
+    pub fn close_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[5]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[6]
+    }
+}
+
+#[cfg(feature = "app-materiallistmenusequence")]
+impl MaterialListMenuSequence {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MaterialListMenuSequence), ::core::stringify!(new),));
- <Self as IMaterialListMenuSequenceMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MaterialListMenuSequence),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMaterialListMenuSequenceMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-materiallistmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MaterialListMenuSequence;
-    pub use super::IMaterialListMenuSequence;
-    pub use super::IMaterialListMenuSequenceMethods;
-    pub use super::MaterialListMenuSequence_Label2;
-    pub use crate::app::procinst::IProcInst;
-    pub use crate::system::object::IObject;
-    pub use crate::system::r#enum::IEnum;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "app-procinst")] pub use crate::app::procinst::IProcInstMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-enum")] pub use crate::system::r#enum::IEnumMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    pub use super::{IMaterialListMenuSequence, IMaterialListMenuSequenceMethods, MaterialListMenuSequence, MaterialListMenuSequence_Label2};
+    #[cfg(feature = "app-procinst")]
+    pub use crate::app::procinst::IProcInstMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-enum")]
+    pub use crate::system::r#enum::IEnumMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::{
+        app::procinst::IProcInst,
+        system::{object::IObject, r#enum::IEnum, valuetype::IValueType},
+    };
 }

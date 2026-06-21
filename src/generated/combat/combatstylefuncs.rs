@@ -2,41 +2,67 @@
 
 #[cfg(feature = "combat-combatstylefuncs-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatstylefuncs/CombatStyleFuncs.md"))]#[::unity2::class(namespace="Combat",name="CombatStyleFuncs")]#[parent(crate::system::object::Object)]pub struct CombatStyleFuncs{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/combatstylefuncs/CombatStyleFuncs.md"))]
+    #[::unity::class(namespace = "Combat", name = "CombatStyleFuncs")]
+    #[parent(crate::system::object::Object)]
+    pub struct CombatStyleFuncs {}
 }
 
 #[cfg(feature = "combat-combatstylefuncs-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-combatstylefuncs")]impl CombatStyleFuncs{#[doc="`MakeStyle1st(crate::combat::combatrecord::CombatRecord)` overload"]pub fn make_style1st(record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->crate::combat::combatstyle::CombatStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29276a0usize)as*mut u8,crate::combat::combatstyle::CombatStyle;
-(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
-}
-#[doc="`MakeStyle2nd(crate::combat::combatrecord::CombatRecord)` overload"]pub fn make_style2nd(record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->crate::combat::combatstyle::CombatStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2924e30usize)as*mut u8,crate::combat::combatstyle::CombatStyle;
-(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
-}
-#[doc="`GetShootStyle(crate::combat::combatrecord::CombatRecord)` overload"]pub fn get_shoot_style(record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->crate::combat::combatstyle::CombatStyle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2930000usize)as*mut u8,crate::combat::combatstyle::CombatStyle;
-(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
-}
+#[cfg(feature = "combat-combatstylefuncs")]
+impl CombatStyleFuncs {
+    #[doc = "`MakeStyle1st(crate::combat::combatrecord::CombatRecord)` overload"]
+    pub fn make_style1st(record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> crate::combat::combatstyle::CombatStyle {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x29276a0usize)as*mut u8,crate::combat::combatstyle::CombatStyle;
+(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))
+        }
+    }
+
+    #[doc = "`MakeStyle2nd(crate::combat::combatrecord::CombatRecord)` overload"]
+    pub fn make_style2nd(record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> crate::combat::combatstyle::CombatStyle {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2924e30usize)as*mut u8,crate::combat::combatstyle::CombatStyle;
+(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))
+        }
+    }
+
+    #[doc = "`GetShootStyle(crate::combat::combatrecord::CombatRecord)` overload"]
+    pub fn get_shoot_style(record: impl ::core::convert::Into<crate::combat::combatrecord::CombatRecord>) -> crate::combat::combatstyle::CombatStyle {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2930000usize)as*mut u8,crate::combat::combatstyle::CombatStyle;
+(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))
+        }
+    }
 }
 
-#[cfg(feature="combat-combatstylefuncs")]impl CombatStyleFuncs{pub fn make_style1st_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn make_style2nd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_shoot_style_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "combat-combatstylefuncs")]
+impl CombatStyleFuncs {
+    pub fn make_style1st_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn make_style2nd_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn get_shoot_style_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
 #[cfg(feature = "combat-combatstylefuncs")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CombatStyleFuncs;
-    pub use super::ICombatStyleFuncs;
+    pub use super::{CombatStyleFuncs, ICombatStyleFuncs};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

@@ -2,96 +2,174 @@
 
 #[cfg(feature = "root-mapunitgaugemenuitem-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::basicmenuitem::{BasicMenuItem, IBasicMenuItem},
+        root::configbasicmenuitem::{ConfigBasicMenuItem, IConfigBasicMenuItem},
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::basicmenuitem::{BasicMenuItem,IBasicMenuItem}
-;
-use crate::root::configbasicmenuitem::{ConfigBasicMenuItem,IConfigBasicMenuItem}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapunitgaugemenuitem/MapUnitGaugeMenuItem.md"))]#[::unity2::class(namespace="",name="MapUnitGaugeMenuItem")]#[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]pub struct MapUnitGaugeMenuItem{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapunitgaugemenuitem/MapUnitGaugeMenuItem.md"))]
+    #[::unity::class(namespace = "", name = "MapUnitGaugeMenuItem")]
+    #[parent(crate::root::configbasicmenuitem::ConfigBasicMenuItem)]
+    pub struct MapUnitGaugeMenuItem {}
 }
 
 #[cfg(feature = "root-mapunitgaugemenuitem-types")]
 pub use __types::*;
 
-#[cfg(feature="root-mapunitgaugemenuitem")]pub trait IMapUnitGaugeMenuItemMethods:IMapUnitGaugeMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapUnitGaugeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202dc10usize)as*mut u8,();
-(MapUnitGaugeMenuItem)__receiver)}
-}
-#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapUnitGaugeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "root-mapunitgaugemenuitem")]
+pub trait IMapUnitGaugeMenuItemMethods: IMapUnitGaugeMenuItem {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MapUnitGaugeMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x202dc10usize)as*mut u8,();
+(MapUnitGaugeMenuItem)__receiver)
+        }
+    }
+    #[doc = "`CustomCall()` overload"]
+    fn custom_call(self) -> crate::app::basicmenu::BasicMenu_Result {
+        unsafe {
+            let __receiver = <MapUnitGaugeMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(26usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",26usize,__vt.len(), <MapUnitGaugeMenuItem as::unity2::ClassIdentity> ::NAME,"CustomCall",));
-let __inner:extern "C" fn(MapUnitGaugeMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`InitContent()` overload"]fn init_content(self,)->(){unsafe{let __receiver= <MapUnitGaugeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        26usize,
+                        __vt.len(),
+                        <MapUnitGaugeMenuItem as ::unity::ClassIdentity>::NAME,
+                        "CustomCall",
+                    )
+                });
+                let __inner: extern "C" fn(MapUnitGaugeMenuItem, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+                    ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`InitContent()` overload"]
+    fn init_content(self) -> () {
+        unsafe {
+            let __receiver = <MapUnitGaugeMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(27usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",27usize,__vt.len(), <MapUnitGaugeMenuItem as::unity2::ClassIdentity> ::NAME,"InitContent",));
-let __inner:extern "C" fn(MapUnitGaugeMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`SetCommandText()` overload"]fn set_command_text(self,)->(){unsafe{let __receiver= <MapUnitGaugeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202dcd0usize)as*mut u8,();
-(MapUnitGaugeMenuItem)__receiver)}
-}
-#[doc="`SetHelpText()` overload"]fn set_help_text(self,)->(){unsafe{let __receiver= <MapUnitGaugeMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202de00usize)as*mut u8,();
-(MapUnitGaugeMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="root-mapunitgaugemenuitem")]impl<__T:IMapUnitGaugeMenuItem>IMapUnitGaugeMenuItemMethods for __T{}
-
-#[cfg(feature="root-mapunitgaugemenuitem")]impl MapUnitGaugeMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn init_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_command_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_help_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="root-mapunitgaugemenuitem")]impl MapUnitGaugeMenuItem{#[doc="Direct (non-virtual) call to `MapUnitGaugeMenuItem`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn custom_call(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->crate::app::basicmenu::BasicMenu_Result{let __mi=Self::custom_call_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `MapUnitGaugeMenuItem`'s own `InitContent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn init_content(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::init_content_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        27usize,
+                        __vt.len(),
+                        <MapUnitGaugeMenuItem as ::unity::ClassIdentity>::NAME,
+                        "InitContent",
+                    )
+                });
+                let __inner: extern "C" fn(MapUnitGaugeMenuItem, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`SetCommandText()` overload"]
+    fn set_command_text(self) -> () {
+        unsafe {
+            let __receiver = <MapUnitGaugeMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x202dcd0usize)as*mut u8,();
+(MapUnitGaugeMenuItem)__receiver)
+        }
+    }
+    #[doc = "`SetHelpText()` overload"]
+    fn set_help_text(self) -> () {
+        unsafe {
+            let __receiver = <MapUnitGaugeMenuItem as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x202de00usize)as*mut u8,();
+(MapUnitGaugeMenuItem)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-mapunitgaugemenuitem")]impl MapUnitGaugeMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-mapunitgaugemenuitem")]
+impl<__T: IMapUnitGaugeMenuItem> IMapUnitGaugeMenuItemMethods for __T {}
+
+#[cfg(feature = "root-mapunitgaugemenuitem")]
+impl MapUnitGaugeMenuItem {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn custom_call_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn init_content_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn set_command_text_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
+
+    pub fn set_help_text_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[4]
+    }
+}
+
+#[cfg(feature = "root-mapunitgaugemenuitem")]
+impl MapUnitGaugeMenuItem {
+    #[doc = "Direct (non-virtual) call to `MapUnitGaugeMenuItem`'s own `CustomCall`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn custom_call(this: impl ::core::convert::Into<::unity::IlInstance>) -> crate::app::basicmenu::BasicMenu_Result {
+        let __mi = Self::custom_call_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> crate::app::basicmenu::BasicMenu_Result =
+            ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `MapUnitGaugeMenuItem`'s own `InitContent`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn init_content(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::init_content_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "root-mapunitgaugemenuitem")]
+impl MapUnitGaugeMenuItem {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MapUnitGaugeMenuItem), ::core::stringify!(new),));
- <Self as IMapUnitGaugeMenuItemMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MapUnitGaugeMenuItem),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMapUnitGaugeMenuItemMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-mapunitgaugemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapUnitGaugeMenuItem;
-    pub use super::IMapUnitGaugeMenuItem;
-    pub use super::IMapUnitGaugeMenuItemMethods;
-    pub use crate::app::basicmenuitem::IBasicMenuItem;
-    pub use crate::root::configbasicmenuitem::IConfigBasicMenuItem;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-basicmenuitem")] pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
-    #[cfg(feature = "root-configbasicmenuitem")] pub use crate::root::configbasicmenuitem::IConfigBasicMenuItemMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IMapUnitGaugeMenuItem, IMapUnitGaugeMenuItemMethods, MapUnitGaugeMenuItem};
+    #[cfg(feature = "app-basicmenuitem")]
+    pub use crate::app::basicmenuitem::IBasicMenuItemMethods;
+    #[cfg(feature = "root-configbasicmenuitem")]
+    pub use crate::root::configbasicmenuitem::IConfigBasicMenuItemMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{app::basicmenuitem::IBasicMenuItem, root::configbasicmenuitem::IConfigBasicMenuItem, system::object::IObject};
 }

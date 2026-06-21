@@ -2,46 +2,80 @@
 
 #[cfg(feature = "unity_engine-event_systems-iselecthandler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/iselecthandler/ISelectHandler.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="ISelectHandler")]pub struct ISelectHandler{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/iselecthandler/ISelectHandler.md"))]
+    #[::unity::class(namespace = "UnityEngine.EventSystems", name = "ISelectHandler")]
+    pub struct ISelectHandler {}
 }
 
 #[cfg(feature = "unity_engine-event_systems-iselecthandler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-iselecthandler")]pub trait IISelectHandlerMethods:IISelectHandler{#[doc="`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_select(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <ISelectHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-event_systems-iselecthandler")]
+pub trait IISelectHandlerMethods: IISelectHandler {
+    #[doc = "`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]
+    fn on_select(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>) -> () {
+        unsafe {
+            let __receiver = <ISelectHandler as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <ISelectHandler as::unity2::ClassIdentity> ::NAME,"OnSelect",));
-let __inner:extern "C" fn(ISelectHandler,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <ISelectHandler as ::unity::ClassIdentity>::NAME,
+                        "OnSelect",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    ISelectHandler,
+                    crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(event_data), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-event_systems-iselecthandler")]impl<__T:IISelectHandler>IISelectHandlerMethods for __T{}
+#[cfg(feature = "unity_engine-event_systems-iselecthandler")]
+impl<__T: IISelectHandler> IISelectHandlerMethods for __T {}
 
-#[cfg(feature="unity_engine-event_systems-iselecthandler")]impl ISelectHandler{pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-event_systems-iselecthandler")]
+impl ISelectHandler {
+    pub fn on_select_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-event_systems-iselecthandler")]impl ISelectHandler{#[doc="Direct (non-virtual) call to `ISelectHandler`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_select(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,)->(){let __mi=Self::on_select_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),event_data, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-event_systems-iselecthandler")]
+impl ISelectHandler {
+    #[doc = "Direct (non-virtual) call to `ISelectHandler`'s own `OnSelect`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_select(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        event_data: crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+    ) -> () {
+        let __mi = Self::on_select_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::event_systems::baseeventdata::BaseEventData,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), event_data, ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-event_systems-iselecthandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ISelectHandler;
-    pub use super::IISelectHandler;
-    pub use super::IISelectHandlerMethods;
+    pub use super::{IISelectHandler, IISelectHandlerMethods, ISelectHandler};
 }

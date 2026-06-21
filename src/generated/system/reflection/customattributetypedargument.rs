@@ -2,56 +2,105 @@
 
 #[cfg(feature = "system-reflection-customattributetypedargument-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        object::{IObject, Object},
+        valuetype::{IValueType, ValueType},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::system::valuetype::{IValueType,ValueType}
-;
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributetypedargument/CustomAttributeTypedArgument.md"))]
+    #[repr(C)]
+    #[derive(::core::clone::Clone, ::core::marker::Copy)]
+    pub struct CustomAttributeTypedArgument {
+        pub argument_type: ::unity::SystemType,
+        pub value: ::unity::IlInstance,
+    }
+    impl ::unity::ClassIdentity for CustomAttributeTypedArgument {
+        const NAME: &'static str = "CustomAttributeTypedArgument";
+        const NAMESPACE: &'static str = "System.Reflection";
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/reflection/customattributetypedargument/CustomAttributeTypedArgument.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CustomAttributeTypedArgument{pub argument_type: ::unity2::SystemType,pub value: ::unity2::IlInstance,}
-impl::unity2::ClassIdentity for CustomAttributeTypedArgument{const NAMESPACE: &'static str="System.Reflection";
-const NAME: &'static str="CustomAttributeTypedArgument";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for CustomAttributeTypedArgument{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
+        fn class() -> ::unity::Class {
+            static CACHE: ::std::sync::OnceLock<::unity::Class> = ::std::sync::OnceLock::new();
+            *CACHE.get_or_init(|| ::unity::Class::lookup(Self::NAMESPACE, Self::NAME))
+        }
+    }
+    impl ::unity::IlType for CustomAttributeTypedArgument {
+        fn il_type() -> &'static ::unity::il2cpp::Il2CppType {
+            &<Self as ::unity::ClassIdentity>::class().raw()._1.byval_arg
+        }
+    }
 }
 
 #[cfg(feature = "system-reflection-customattributetypedargument-types")]
 pub use __types::*;
 
-#[cfg(feature="system-reflection-customattributetypedargument")]impl CustomAttributeTypedArgument{#[doc="`.ctor(::unity2::SystemType, crate::system::object::Object)` overload"]pub fn ctor(&mut self,argument_type:impl::core::convert::Into< ::unity2::SystemType> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37165a0usize)as*mut u8,();
-(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument,(::unity2::SystemType)::core::convert::Into::into(argument_type),(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-#[doc="`ToString()` overload"]pub fn to_string(&mut self,)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3715560usize)as*mut u8, ::unity2::Il2CppString;
-(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument)}
-}
-#[doc="`Equals(crate::system::object::Object)` overload"]pub fn equals(&mut self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3715e50usize)as*mut u8,bool;
-(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument,(crate::system::object::Object)::core::convert::Into::into(obj))}
-}
-#[doc="`GetHashCode()` overload"]pub fn get_hash_code(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3716380usize)as*mut u8,i32;
-(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument)}
-}
+#[cfg(feature = "system-reflection-customattributetypedargument")]
+impl CustomAttributeTypedArgument {
+    #[doc = "`.ctor(::unity::SystemType, crate::system::object::Object)` overload"]
+    pub fn ctor(
+        &mut self,
+        argument_type: impl ::core::convert::Into<::unity::SystemType>,
+        value: impl ::core::convert::Into<crate::system::object::Object>,
+    ) -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x37165a0usize)as*mut u8,();
+(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument,(::unity::SystemType)::core::convert::Into::into(argument_type),(crate::system::object::Object)::core::convert::Into::into(value))
+        }
+    }
+
+    #[doc = "`ToString()` overload"]
+    pub fn to_string(&mut self) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3715560usize)as*mut u8, ::unity::Il2CppString;
+(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument)
+        }
+    }
+
+    #[doc = "`Equals(crate::system::object::Object)` overload"]
+    pub fn equals(&mut self, obj: impl ::core::convert::Into<crate::system::object::Object>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3715e50usize)as*mut u8,bool;
+(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument,(crate::system::object::Object)::core::convert::Into::into(obj))
+        }
+    }
+
+    #[doc = "`GetHashCode()` overload"]
+    pub fn get_hash_code(&mut self) -> i32 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x3716380usize)as*mut u8,i32;
+(*mut CustomAttributeTypedArgument)self as*mut CustomAttributeTypedArgument)
+        }
+    }
 }
 
-#[cfg(feature="system-reflection-customattributetypedargument")]impl CustomAttributeTypedArgument{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn equals_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+#[cfg(feature = "system-reflection-customattributetypedargument")]
+impl CustomAttributeTypedArgument {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn to_string_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn equals_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+
+    pub fn get_hash_code_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[3]
+    }
 }
 
 #[cfg(feature = "system-reflection-customattributetypedargument")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CustomAttributeTypedArgument;
-    pub use crate::system::object::IObject;
-    pub use crate::system::valuetype::IValueType;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "system-valuetype")] pub use crate::system::valuetype::IValueTypeMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-valuetype")]
+    pub use crate::system::valuetype::IValueTypeMethods;
+    pub use crate::system::{object::IObject, valuetype::IValueType};
 }

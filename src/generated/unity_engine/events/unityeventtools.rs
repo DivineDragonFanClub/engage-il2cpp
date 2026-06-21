@@ -2,33 +2,43 @@
 
 #[cfg(feature = "unity_engine-events-unityeventtools-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/unityeventtools/UnityEventTools.md"))]#[::unity2::class(namespace="UnityEngine.Events",name="UnityEventTools")]#[parent(crate::system::object::Object)]pub struct UnityEventTools{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/events/unityeventtools/UnityEventTools.md"))]
+    #[::unity::class(namespace = "UnityEngine.Events", name = "UnityEventTools")]
+    #[parent(crate::system::object::Object)]
+    pub struct UnityEventTools {}
 }
 
 #[cfg(feature = "unity_engine-events-unityeventtools-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-events-unityeventtools")]impl UnityEventTools{#[doc="`TidyAssemblyTypeName(::unity2::Il2CppString)` overload"]pub fn tidy_assembly_type_name(assembly_type_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37947d0usize)as*mut u8, ::unity2::Il2CppString;
-(::unity2::Il2CppString)::core::convert::Into::into(assembly_type_name))}
-}
+#[cfg(feature = "unity_engine-events-unityeventtools")]
+impl UnityEventTools {
+    #[doc = "`TidyAssemblyTypeName(::unity::Il2CppString)` overload"]
+    pub fn tidy_assembly_type_name(assembly_type_name: impl ::core::convert::Into<::unity::Il2CppString>) -> ::unity::Il2CppString {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x37947d0usize)as*mut u8, ::unity::Il2CppString;
+(::unity::Il2CppString)::core::convert::Into::into(assembly_type_name))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-events-unityeventtools")]impl UnityEventTools{pub fn tidy_assembly_type_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-events-unityeventtools")]
+impl UnityEventTools {
+    pub fn tidy_assembly_type_name_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
 #[cfg(feature = "unity_engine-events-unityeventtools")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnityEventTools;
-    pub use super::IUnityEventTools;
+    pub use super::{IUnityEventTools, UnityEventTools};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

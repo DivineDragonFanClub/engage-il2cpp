@@ -2,40 +2,64 @@
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentmenu-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumecomponentmenu/VolumeComponentMenu.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="VolumeComponentMenu")]pub struct VolumeComponentMenu{#[offset(16)]#[rename(name="menu")]pub menu: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/volumecomponentmenu/VolumeComponentMenu.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering", name = "VolumeComponentMenu")]
+    pub struct VolumeComponentMenu {
+        #[offset(16)]
+        #[rename(name = "menu")]
+        pub menu: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]pub trait IVolumeComponentMenuMethods:IVolumeComponentMenu{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,menu:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VolumeComponentMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e67d0usize)as*mut u8,();
-(VolumeComponentMenu)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(menu))}
-}
+#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
+pub trait IVolumeComponentMenuMethods: IVolumeComponentMenu {
+    #[doc = "`.ctor(::unity::Il2CppString)` overload"]
+    fn ctor(self, menu: impl ::core::convert::Into<::unity::Il2CppString>) -> () {
+        unsafe {
+            let __receiver = <VolumeComponentMenu as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x33e67d0usize)as*mut u8,();
+(VolumeComponentMenu)__receiver,(::unity::Il2CppString)::core::convert::Into::into(menu))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]impl<__T:IVolumeComponentMenu>IVolumeComponentMenuMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
+impl<__T: IVolumeComponentMenu> IVolumeComponentMenuMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]impl VolumeComponentMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
+impl VolumeComponentMenu {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-volumecomponentmenu")]impl VolumeComponentMenu{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(menu: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
+impl VolumeComponentMenu {
+    #[doc = "`.ctor(::unity::Il2CppString)` — overload selector"]
+    pub fn new(menu: ::unity::Il2CppString) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(VolumeComponentMenu), ::core::stringify!(new),));
- <Self as IVolumeComponentMenuMethods> ::ctor(this,menu);
-this}
+ failed to instantiate",
+                ::core::stringify!(VolumeComponentMenu),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IVolumeComponentMenuMethods>::ctor(this, menu);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-volumecomponentmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::VolumeComponentMenu;
-    pub use super::IVolumeComponentMenu;
-    pub use super::IVolumeComponentMenuMethods;
+    pub use super::{IVolumeComponentMenu, IVolumeComponentMenuMethods, VolumeComponentMenu};
 }

@@ -2,41 +2,67 @@
 
 #[cfg(feature = "combat-weaponstyleex-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/weaponstyleex/WeaponStyleEx.md"))]#[::unity2::class(namespace="Combat",name="WeaponStyleEx")]#[parent(crate::system::object::Object)]pub struct WeaponStyleEx{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/weaponstyleex/WeaponStyleEx.md"))]
+    #[::unity::class(namespace = "Combat", name = "WeaponStyleEx")]
+    #[parent(crate::system::object::Object)]
+    pub struct WeaponStyleEx {}
 }
 
 #[cfg(feature = "combat-weaponstyleex-types")]
 pub use __types::*;
 
-#[cfg(feature="combat-weaponstyleex")]impl WeaponStyleEx{#[doc="`IsShootOrMagic(crate::combat::weaponstyle::WeaponStyle)` overload"]pub fn is_shoot_or_magic(s:impl::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d3490usize)as*mut u8,bool;
-(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(s))}
-}
-#[doc="`IsHit(crate::combat::weaponstyle::WeaponStyle)` overload"]pub fn is_hit(s:impl::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d34a0usize)as*mut u8,bool;
-(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(s))}
-}
-#[doc="`ToNML(crate::combat::weaponstyle::WeaponStyle)` overload"]pub fn to_nml(s:impl::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>)->u16{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d34b0usize)as*mut u8,u16;
-(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(s))}
-}
+#[cfg(feature = "combat-weaponstyleex")]
+impl WeaponStyleEx {
+    #[doc = "`IsShootOrMagic(crate::combat::weaponstyle::WeaponStyle)` overload"]
+    pub fn is_shoot_or_magic(s: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d3490usize)as*mut u8,bool;
+(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(s))
+        }
+    }
+
+    #[doc = "`IsHit(crate::combat::weaponstyle::WeaponStyle)` overload"]
+    pub fn is_hit(s: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>) -> bool {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d34a0usize)as*mut u8,bool;
+(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(s))
+        }
+    }
+
+    #[doc = "`ToNML(crate::combat::weaponstyle::WeaponStyle)` overload"]
+    pub fn to_nml(s: impl ::core::convert::Into<crate::combat::weaponstyle::WeaponStyle>) -> u16 {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x21d34b0usize)as*mut u8,u16;
+(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(s))
+        }
+    }
 }
 
-#[cfg(feature="combat-weaponstyleex")]impl WeaponStyleEx{pub fn is_shoot_or_magic_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_nml_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "combat-weaponstyleex")]
+impl WeaponStyleEx {
+    pub fn is_shoot_or_magic_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn is_hit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn to_nml_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
 #[cfg(feature = "combat-weaponstyleex")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeaponStyleEx;
-    pub use super::IWeaponStyleEx;
+    pub use super::{IWeaponStyleEx, WeaponStyleEx};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

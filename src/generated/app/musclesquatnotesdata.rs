@@ -2,80 +2,135 @@
 
 #[cfg(feature = "app-musclesquatnotesdata-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        app::{
+            structbase::{IStructBase, StructBase},
+            structdata_1::{IStructData_1, StructData_1},
+            structtemplate_1::{IStructTemplate_1, StructTemplate_1},
+        },
+        system::object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::app::structbase::{IStructBase,StructBase}
-;
-use crate::app::structdata_1::{IStructData_1,StructData_1}
-;
-use crate::app::structtemplate_1::{IStructTemplate_1,StructTemplate_1}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclesquatnotesdata/MuscleSquatNotesData.md"))]#[::unity2::class(namespace="App",name="MuscleSquatNotesData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::musclesquatnotesdata::MuscleSquatNotesData>)]pub struct MuscleSquatNotesData{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclesquatnotesdata/MuscleSquatNotesData.md"))]
+    #[::unity::class(namespace = "App", name = "MuscleSquatNotesData")]
+    #[parent(crate::app::structdata_1::StructData_1<crate::app::musclesquatnotesdata::MuscleSquatNotesData>)]
+    pub struct MuscleSquatNotesData {}
 }
 
 #[cfg(feature = "app-musclesquatnotesdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-musclesquatnotesdata")]impl MuscleSquatNotesData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dcadd0usize)as*mut u8,();
-)}
-}
+#[cfg(feature = "app-musclesquatnotesdata")]
+impl MuscleSquatNotesData {
+    #[doc = "`Load()` overload"]
+    pub fn load() -> () {
+        unsafe {
+            ::unity::il2cpp_call!((::unity::module_base()+0x2dcadd0usize)as*mut u8,();
+            )
+        }
+    }
 }
 
-#[cfg(feature="app-musclesquatnotesdata")]pub trait IMuscleSquatNotesDataMethods:IMuscleSquatNotesData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MuscleSquatNotesData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dcad50usize)as*mut u8,();
-(MuscleSquatNotesData)__receiver)}
-}
-#[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MuscleSquatNotesData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "app-musclesquatnotesdata")]
+pub trait IMuscleSquatNotesDataMethods: IMuscleSquatNotesData {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <MuscleSquatNotesData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2dcad50usize)as*mut u8,();
+(MuscleSquatNotesData)__receiver)
+        }
+    }
+    #[doc = "`OnBuild()` overload"]
+    fn on_build(self) -> () {
+        unsafe {
+            let __receiver = <MuscleSquatNotesData as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(4usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",4usize,__vt.len(), <MuscleSquatNotesData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
-let __inner:extern "C" fn(MuscleSquatNotesData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-}
-
-#[cfg(feature="app-musclesquatnotesdata")]impl<__T:IMuscleSquatNotesData>IMuscleSquatNotesDataMethods for __T{}
-
-#[cfg(feature="app-musclesquatnotesdata")]impl MuscleSquatNotesData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-musclesquatnotesdata")]impl MuscleSquatNotesData{#[doc="Direct (non-virtual) call to `MuscleSquatNotesData`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_build(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->(){let __mi=Self::on_build_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
+`)",
+                        4usize,
+                        __vt.len(),
+                        <MuscleSquatNotesData as ::unity::ClassIdentity>::NAME,
+                        "OnBuild",
+                    )
+                });
+                let __inner: extern "C" fn(MuscleSquatNotesData, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="app-musclesquatnotesdata")]impl MuscleSquatNotesData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "app-musclesquatnotesdata")]
+impl<__T: IMuscleSquatNotesData> IMuscleSquatNotesDataMethods for __T {}
+
+#[cfg(feature = "app-musclesquatnotesdata")]
+impl MuscleSquatNotesData {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn load_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn on_build_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
+}
+
+#[cfg(feature = "app-musclesquatnotesdata")]
+impl MuscleSquatNotesData {
+    #[doc = "Direct (non-virtual) call to `MuscleSquatNotesData`'s own `OnBuild`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_build(this: impl ::core::convert::Into<::unity::IlInstance>) -> () {
+        let __mi = Self::on_build_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+}
+
+#[cfg(feature = "app-musclesquatnotesdata")]
+impl MuscleSquatNotesData {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(MuscleSquatNotesData), ::core::stringify!(new),));
- <Self as IMuscleSquatNotesDataMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(MuscleSquatNotesData),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IMuscleSquatNotesDataMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "app-musclesquatnotesdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MuscleSquatNotesData;
-    pub use super::IMuscleSquatNotesData;
-    pub use super::IMuscleSquatNotesDataMethods;
-    pub use crate::app::structbase::IStructBase;
-    pub use crate::app::structdata_1::IStructData_1;
-    pub use crate::app::structtemplate_1::IStructTemplate_1;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "app-structbase")] pub use crate::app::structbase::IStructBaseMethods;
-    #[cfg(feature = "app-structdata_1")] pub use crate::app::structdata_1::IStructData_1Methods;
-    #[cfg(feature = "app-structtemplate_1")] pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{IMuscleSquatNotesData, IMuscleSquatNotesDataMethods, MuscleSquatNotesData};
+    #[cfg(feature = "app-structbase")]
+    pub use crate::app::structbase::IStructBaseMethods;
+    #[cfg(feature = "app-structdata_1")]
+    pub use crate::app::structdata_1::IStructData_1Methods;
+    #[cfg(feature = "app-structtemplate_1")]
+    pub use crate::app::structtemplate_1::IStructTemplate_1Methods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::{
+        app::{structbase::IStructBase, structdata_1::IStructData_1, structtemplate_1::IStructTemplate_1},
+        system::object::IObject,
+    };
 }

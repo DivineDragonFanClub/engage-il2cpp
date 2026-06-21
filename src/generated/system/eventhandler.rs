@@ -2,52 +2,73 @@
 
 #[cfg(feature = "system-eventhandler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::{
+        delegate::{Delegate, IDelegate},
+        multicastdelegate::{IMulticastDelegate, MulticastDelegate},
+        object::{IObject, Object},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::delegate::{Delegate,IDelegate}
-;
-use crate::system::multicastdelegate::{IMulticastDelegate,MulticastDelegate}
-;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/eventhandler/EventHandler.md"))]#[::unity2::class(namespace="System",name="EventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventHandler{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/eventhandler/EventHandler.md"))]
+    #[::unity::class(namespace = "System", name = "EventHandler")]
+    #[parent(crate::system::multicastdelegate::MulticastDelegate)]
+    pub struct EventHandler {}
 }
 
 #[cfg(feature = "system-eventhandler-types")]
 pub use __types::*;
 
-#[cfg(feature="system-eventhandler")]pub trait IEventHandlerMethods:IEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad2f40usize)as*mut u8,();
-(EventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
+#[cfg(feature = "system-eventhandler")]
+pub trait IEventHandlerMethods: IEventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity::IntPtr)` overload"]
+    fn ctor(self, object: impl ::core::convert::Into<crate::system::object::Object>, method: impl ::core::convert::Into<::unity::IntPtr>) -> () {
+        unsafe {
+            let __receiver = <EventHandler as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3ad2f40usize)as*mut u8,();
+(EventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity::IntPtr)::core::convert::Into::into(method))
+        }
+    }
 }
 
-#[cfg(feature="system-eventhandler")]impl<__T:IEventHandler>IEventHandlerMethods for __T{}
+#[cfg(feature = "system-eventhandler")]
+impl<__T: IEventHandler> IEventHandlerMethods for __T {}
 
-#[cfg(feature="system-eventhandler")]impl EventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "system-eventhandler")]
+impl EventHandler {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="system-eventhandler")]impl EventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "system-eventhandler")]
+impl EventHandler {
+    #[doc = "`.ctor(crate::system::object::Object, ::unity::IntPtr)` — overload selector"]
+    pub fn new(object: crate::system::object::Object, method: ::unity::IntPtr) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(EventHandler), ::core::stringify!(new),));
- <Self as IEventHandlerMethods> ::ctor(this,object,method);
-this}
+ failed to instantiate",
+                ::core::stringify!(EventHandler),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IEventHandlerMethods>::ctor(this, object, method);
+        this
+    }
 }
 
 #[cfg(feature = "system-eventhandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventHandler;
-    pub use super::IEventHandler;
-    pub use super::IEventHandlerMethods;
-    pub use crate::system::delegate::IDelegate;
-    pub use crate::system::multicastdelegate::IMulticastDelegate;
-    pub use crate::system::object::IObject;
-    #[cfg(feature = "system-delegate")] pub use crate::system::delegate::IDelegateMethods;
-    #[cfg(feature = "system-multicastdelegate")] pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    pub use super::{EventHandler, IEventHandler, IEventHandlerMethods};
+    #[cfg(feature = "system-delegate")]
+    pub use crate::system::delegate::IDelegateMethods;
+    #[cfg(feature = "system-multicastdelegate")]
+    pub use crate::system::multicastdelegate::IMulticastDelegateMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    pub use crate::system::{delegate::IDelegate, multicastdelegate::IMulticastDelegate, object::IObject};
 }

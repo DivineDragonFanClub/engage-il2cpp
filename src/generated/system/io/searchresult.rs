@@ -2,37 +2,54 @@
 
 #[cfg(feature = "system-io-searchresult-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/searchresult/SearchResult.md"))]#[::unity2::class(namespace="System.IO",name="SearchResult")]#[parent(crate::system::object::Object)]pub struct SearchResult{#[offset(16)]#[rename(name="fullPath")]pub full_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="userPath")]pub user_path: ::unity2::Il2CppString,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/searchresult/SearchResult.md"))]
+    #[::unity::class(namespace = "System.IO", name = "SearchResult")]
+    #[parent(crate::system::object::Object)]
+    pub struct SearchResult {
+        #[offset(16)]
+        #[rename(name = "fullPath")]
+        pub full_path: ::unity::Il2CppString,
+        #[offset(24)]
+        #[rename(name = "userPath")]
+        pub user_path: ::unity::Il2CppString,
+    }
 }
 
 #[cfg(feature = "system-io-searchresult-types")]
 pub use __types::*;
 
-#[cfg(feature="system-io-searchresult")]pub trait ISearchResultMethods:ISearchResult{#[doc="`get_UserPath()` overload"]fn get_user_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SearchResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3500ab0usize)as*mut u8, ::unity2::Il2CppString;
-(SearchResult)__receiver)}
-}
+#[cfg(feature = "system-io-searchresult")]
+pub trait ISearchResultMethods: ISearchResult {
+    #[doc = "`get_UserPath()` overload"]
+    fn get_user_path(self) -> ::unity::Il2CppString {
+        unsafe {
+            let __receiver = <SearchResult as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3500ab0usize)as*mut u8, ::unity::Il2CppString;
+(SearchResult)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="system-io-searchresult")]impl<__T:ISearchResult>ISearchResultMethods for __T{}
+#[cfg(feature = "system-io-searchresult")]
+impl<__T: ISearchResult> ISearchResultMethods for __T {}
 
-#[cfg(feature="system-io-searchresult")]impl SearchResult{pub fn get_user_path_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "system-io-searchresult")]
+impl SearchResult {
+    pub fn get_user_path_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
 #[cfg(feature = "system-io-searchresult")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SearchResult;
-    pub use super::ISearchResult;
-    pub use super::ISearchResultMethods;
+    pub use super::{ISearchResult, ISearchResultMethods, SearchResult};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

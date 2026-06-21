@@ -2,57 +2,103 @@
 
 #[cfg(feature = "tm_pro-tmp_asset-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::{
+            object_2::{IObject_2, Object_2},
+            scriptableobject::{IScriptableObject, ScriptableObject},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::object_2::{IObject_2,Object_2}
-;
-use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_asset/TMP_Asset.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Asset")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct TMP_Asset{#[offset(24)]#[rename(name="m_InstanceID")]pub m_instance_id:i32, #[offset(28)]#[rename(name="hashCode")]pub hash_code:i32, #[offset(32)]#[rename(name="material")]pub material:crate::unity_engine::material::Material, #[offset(40)]#[rename(name="materialHashCode")]pub material_hash_code:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_asset/TMP_Asset.md"))]
+    #[::unity::class(namespace = "TMPro", name = "TMP_Asset")]
+    #[parent(crate::unity_engine::scriptableobject::ScriptableObject)]
+    pub struct TMP_Asset {
+        #[offset(24)]
+        #[rename(name = "m_InstanceID")]
+        pub m_instance_id: i32,
+        #[offset(28)]
+        #[rename(name = "hashCode")]
+        pub hash_code: i32,
+        #[offset(32)]
+        #[rename(name = "material")]
+        pub material: crate::unity_engine::material::Material,
+        #[offset(40)]
+        #[rename(name = "materialHashCode")]
+        pub material_hash_code: i32,
+    }
 }
 
 #[cfg(feature = "tm_pro-tmp_asset-types")]
 pub use __types::*;
 
-#[cfg(feature="tm_pro-tmp_asset")]pub trait ITMP_AssetMethods:ITMP_Asset{#[doc="`get_instanceID()` overload"]fn get_instance_id(self,)->i32{unsafe{let __receiver= <TMP_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d91230usize)as*mut u8,i32;
-(TMP_Asset)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_Asset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d91270usize)as*mut u8,();
-(TMP_Asset)__receiver)}
-}
+#[cfg(feature = "tm_pro-tmp_asset")]
+pub trait ITMP_AssetMethods: ITMP_Asset {
+    #[doc = "`get_instanceID()` overload"]
+    fn get_instance_id(self) -> i32 {
+        unsafe {
+            let __receiver = <TMP_Asset as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2d91230usize)as*mut u8,i32;
+(TMP_Asset)__receiver)
+        }
+    }
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <TMP_Asset as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x2d91270usize)as*mut u8,();
+(TMP_Asset)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="tm_pro-tmp_asset")]impl<__T:ITMP_Asset>ITMP_AssetMethods for __T{}
+#[cfg(feature = "tm_pro-tmp_asset")]
+impl<__T: ITMP_Asset> ITMP_AssetMethods for __T {}
 
-#[cfg(feature="tm_pro-tmp_asset")]impl TMP_Asset{pub fn get_instance_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature = "tm_pro-tmp_asset")]
+impl TMP_Asset {
+    pub fn get_instance_id_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
 }
 
-#[cfg(feature="tm_pro-tmp_asset")]impl TMP_Asset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "tm_pro-tmp_asset")]
+impl TMP_Asset {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(TMP_Asset), ::core::stringify!(new),));
- <Self as ITMP_AssetMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(TMP_Asset),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as ITMP_AssetMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "tm_pro-tmp_asset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_Asset;
-    pub use super::ITMP_Asset;
-    pub use super::ITMP_AssetMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::object_2::IObject_2;
-    pub use crate::unity_engine::scriptableobject::IScriptableObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-object_2")] pub use crate::unity_engine::object_2::IObject_2Methods;
-    #[cfg(feature = "unity_engine-scriptableobject")] pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use super::{ITMP_Asset, ITMP_AssetMethods, TMP_Asset};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-object_2")]
+    pub use crate::unity_engine::object_2::IObject_2Methods;
+    #[cfg(feature = "unity_engine-scriptableobject")]
+    pub use crate::unity_engine::scriptableobject::IScriptableObjectMethods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::{object_2::IObject_2, scriptableobject::IScriptableObject},
+    };
 }

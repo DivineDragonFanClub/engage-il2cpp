@@ -2,48 +2,70 @@
 
 #[cfg(feature = "root-akshowonlyattribute-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::propertyattribute::{IPropertyAttribute, PropertyAttribute},
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribute}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akshowonlyattribute/AkShowOnlyAttribute.md"))]#[::unity2::class(namespace="",name="AkShowOnlyAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct AkShowOnlyAttribute{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akshowonlyattribute/AkShowOnlyAttribute.md"))]
+    #[::unity::class(namespace = "", name = "AkShowOnlyAttribute")]
+    #[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]
+    pub struct AkShowOnlyAttribute {}
 }
 
 #[cfg(feature = "root-akshowonlyattribute-types")]
 pub use __types::*;
 
-#[cfg(feature="root-akshowonlyattribute")]pub trait IAkShowOnlyAttributeMethods:IAkShowOnlyAttribute{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkShowOnlyAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d04ce0usize)as*mut u8,();
-(AkShowOnlyAttribute)__receiver)}
-}
+#[cfg(feature = "root-akshowonlyattribute")]
+pub trait IAkShowOnlyAttributeMethods: IAkShowOnlyAttribute {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <AkShowOnlyAttribute as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x1d04ce0usize)as*mut u8,();
+(AkShowOnlyAttribute)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="root-akshowonlyattribute")]impl<__T:IAkShowOnlyAttribute>IAkShowOnlyAttributeMethods for __T{}
+#[cfg(feature = "root-akshowonlyattribute")]
+impl<__T: IAkShowOnlyAttribute> IAkShowOnlyAttributeMethods for __T {}
 
-#[cfg(feature="root-akshowonlyattribute")]impl AkShowOnlyAttribute{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "root-akshowonlyattribute")]
+impl AkShowOnlyAttribute {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="root-akshowonlyattribute")]impl AkShowOnlyAttribute{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "root-akshowonlyattribute")]
+impl AkShowOnlyAttribute {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(AkShowOnlyAttribute), ::core::stringify!(new),));
- <Self as IAkShowOnlyAttributeMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(AkShowOnlyAttribute),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IAkShowOnlyAttributeMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "root-akshowonlyattribute")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkShowOnlyAttribute;
-    pub use super::IAkShowOnlyAttribute;
-    pub use super::IAkShowOnlyAttributeMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::propertyattribute::IPropertyAttribute;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-propertyattribute")] pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use super::{AkShowOnlyAttribute, IAkShowOnlyAttribute, IAkShowOnlyAttributeMethods};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-propertyattribute")]
+    pub use crate::unity_engine::propertyattribute::IPropertyAttributeMethods;
+    pub use crate::{system::object::IObject, unity_engine::propertyattribute::IPropertyAttribute};
 }

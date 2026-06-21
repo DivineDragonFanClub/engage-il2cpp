@@ -2,44 +2,65 @@
 
 #[cfg(feature = "unity_engine-switch-fmvtexture-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::system::object::{IObject, Object};
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/fmvtexture/FMVTexture.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="FMVTexture")]#[parent(crate::system::object::Object)]pub struct FMVTexture{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/fmvtexture/FMVTexture.md"))]
+    #[::unity::class(namespace = "UnityEngine.Switch", name = "FMVTexture")]
+    #[parent(crate::system::object::Object)]
+    pub struct FMVTexture {}
 }
 
 #[cfg(feature = "unity_engine-switch-fmvtexture-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-switch-fmvtexture")]pub trait IFMVTextureMethods:IFMVTexture{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FMVTexture as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f47020usize)as*mut u8,();
-(FMVTexture)__receiver)}
-}
+#[cfg(feature = "unity_engine-switch-fmvtexture")]
+pub trait IFMVTextureMethods: IFMVTexture {
+    #[doc = "`.ctor()` overload"]
+    fn ctor(self) -> () {
+        unsafe {
+            let __receiver = <FMVTexture as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x3f47020usize)as*mut u8,();
+(FMVTexture)__receiver)
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-switch-fmvtexture")]impl<__T:IFMVTexture>IFMVTextureMethods for __T{}
+#[cfg(feature = "unity_engine-switch-fmvtexture")]
+impl<__T: IFMVTexture> IFMVTextureMethods for __T {}
 
-#[cfg(feature="unity_engine-switch-fmvtexture")]impl FMVTexture{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-switch-fmvtexture")]
+impl FMVTexture {
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-switch-fmvtexture")]impl FMVTexture{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-switch-fmvtexture")]
+impl FMVTexture {
+    #[doc = "`.ctor()` — no args"]
+    pub fn new() -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(FMVTexture), ::core::stringify!(new),));
- <Self as IFMVTextureMethods> ::ctor(this,);
-this}
+ failed to instantiate",
+                ::core::stringify!(FMVTexture),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as IFMVTextureMethods>::ctor(this);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-switch-fmvtexture")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FMVTexture;
-    pub use super::IFMVTexture;
-    pub use super::IFMVTextureMethods;
+    pub use super::{FMVTexture, IFMVTexture, IFMVTextureMethods};
     pub use crate::system::object::IObject;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
 }

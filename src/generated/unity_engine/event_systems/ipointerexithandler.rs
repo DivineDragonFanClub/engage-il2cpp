@@ -2,46 +2,80 @@
 
 #[cfg(feature = "unity_engine-event_systems-ipointerexithandler-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/ipointerexithandler/IPointerExitHandler.md"))]#[::unity2::class(namespace="UnityEngine.EventSystems",name="IPointerExitHandler")]pub struct IPointerExitHandler{}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/event_systems/ipointerexithandler/IPointerExitHandler.md"))]
+    #[::unity::class(namespace = "UnityEngine.EventSystems", name = "IPointerExitHandler")]
+    pub struct IPointerExitHandler {}
 }
 
 #[cfg(feature = "unity_engine-event_systems-ipointerexithandler-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-event_systems-ipointerexithandler")]pub trait IIPointerExitHandlerMethods:IIPointerExitHandler{#[doc="`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_exit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <IPointerExitHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+pub trait IIPointerExitHandlerMethods: IIPointerExitHandler {
+    #[doc = "`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]
+    fn on_pointer_exit(self, event_data: impl ::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>) -> () {
+        unsafe {
+            let __receiver = <IPointerExitHandler as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(0usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",0usize,__vt.len(), <IPointerExitHandler as::unity2::ClassIdentity> ::NAME,"OnPointerExit",));
-let __inner:extern "C" fn(IPointerExitHandler,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(event_data),__mi)}
-}
-}
+`)",
+                        0usize,
+                        __vt.len(),
+                        <IPointerExitHandler as ::unity::ClassIdentity>::NAME,
+                        "OnPointerExit",
+                    )
+                });
+                let __inner: extern "C" fn(
+                    IPointerExitHandler,
+                    crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+                    ::unity::OptionalMethod,
+                ) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(event_data), __mi)
+            }
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-event_systems-ipointerexithandler")]impl<__T:IIPointerExitHandler>IIPointerExitHandlerMethods for __T{}
+#[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+impl<__T: IIPointerExitHandler> IIPointerExitHandlerMethods for __T {}
 
-#[cfg(feature="unity_engine-event_systems-ipointerexithandler")]impl IPointerExitHandler{pub fn on_pointer_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+impl IPointerExitHandler {
+    pub fn on_pointer_exit_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
 }
 
-#[cfg(feature="unity_engine-event_systems-ipointerexithandler")]impl IPointerExitHandler{#[doc="Direct (non-virtual) call to `IPointerExitHandler`'s own `OnPointerExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn on_pointer_exit(this:impl::core::convert::Into< ::unity2::IlInstance> ,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,)->(){let __mi=Self::on_pointer_exit_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),event_data, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
+impl IPointerExitHandler {
+    #[doc = "Direct (non-virtual) call to `IPointerExitHandler`'s own `OnPointerExit`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn on_pointer_exit(
+        this: impl ::core::convert::Into<::unity::IlInstance>,
+        event_data: crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+    ) -> () {
+        let __mi = Self::on_pointer_exit_method_info();
+        let __inner: extern "C" fn(
+            ::unity::IlInstance,
+            crate::unity_engine::event_systems::pointereventdata::PointerEventData,
+            ::unity::OptionalMethod,
+        ) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), event_data, ::core::option::Option::None)
+    }
 }
 
 #[cfg(feature = "unity_engine-event_systems-ipointerexithandler")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IPointerExitHandler;
-    pub use super::IIPointerExitHandler;
-    pub use super::IIPointerExitHandlerMethods;
+    pub use super::{IIPointerExitHandler, IIPointerExitHandlerMethods, IPointerExitHandler};
 }

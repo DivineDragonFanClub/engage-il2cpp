@@ -2,86 +2,165 @@
 
 #[cfg(feature = "unity_engine-rendering-nointerpminintparameter-types")]
 mod __types {
+    #[allow(unused_imports)] use ::unity::prelude::*;
+
     use super::*;
+    use crate::{
+        system::object::{IObject, Object},
+        unity_engine::rendering::{
+            volumeparameter::{IVolumeParameter, VolumeParameter},
+            volumeparameter_1::{IVolumeParameter_1, VolumeParameter_1},
+        },
+    };
 
-#[allow(unused_imports)]use::unity2::prelude:: * ;
-use crate::system::object::{IObject,Object}
-;
-use crate::unity_engine::rendering::volumeparameter::{IVolumeParameter,VolumeParameter}
-;
-use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,VolumeParameter_1}
-;
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpminintparameter/NoInterpMinIntParameter.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="NoInterpMinIntParameter")]#[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<i32>)]pub struct NoInterpMinIntParameter{#[offset(24)]#[rename(name="min")]pub min:i32,}
-
+    #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/nointerpminintparameter/NoInterpMinIntParameter.md"))]
+    #[::unity::class(namespace = "UnityEngine.Rendering", name = "NoInterpMinIntParameter")]
+    #[parent(crate::unity_engine::rendering::volumeparameter_1::VolumeParameter_1<i32>)]
+    pub struct NoInterpMinIntParameter {
+        #[offset(24)]
+        #[rename(name = "min")]
+        pub min: i32,
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpminintparameter-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-nointerpminintparameter")]pub trait INoInterpMinIntParameterMethods:INoInterpMinIntParameter{#[doc="`get_value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <NoInterpMinIntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+#[cfg(feature = "unity_engine-rendering-nointerpminintparameter")]
+pub trait INoInterpMinIntParameterMethods: INoInterpMinIntParameter {
+    #[doc = "`get_value()` overload"]
+    fn get_value(self) -> i32 {
+        unsafe {
+            let __receiver =
+                <NoInterpMinIntParameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(12usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",12usize,__vt.len(), <NoInterpMinIntParameter as::unity2::ClassIdentity> ::NAME,"get_value",));
-let __inner:extern "C" fn(NoInterpMinIntParameter, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver,__mi)}
-}
-}
-#[doc="`set_value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <NoInterpMinIntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-{let __vt= ::unity2::Cast::get_class(__receiver).raw().get_vtable();
-let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+`)",
+                        12usize,
+                        __vt.len(),
+                        <NoInterpMinIntParameter as ::unity::ClassIdentity>::NAME,
+                        "get_value",
+                    )
+                });
+                let __inner: extern "C" fn(NoInterpMinIntParameter, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, __mi)
+            }
+        }
+    }
+    #[doc = "`set_value(i32)` overload"]
+    fn set_value(self, value: impl ::core::convert::Into<i32>) -> () {
+        unsafe {
+            let __receiver =
+                <NoInterpMinIntParameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            {
+                let __vt = ::unity::Cast::get_class(__receiver).raw().get_vtable();
+                let __vi = *__vt.get(13usize).unwrap_or_else(|| {
+                    panic!(
+                        "unity: virtual slot {}
  out of range (vtable len {}
 ) on the runtime class behind {}
  (method `{}
-`)",13usize,__vt.len(), <NoInterpMinIntParameter as::unity2::ClassIdentity> ::NAME,"set_value",));
-let __inner:extern "C" fn(NoInterpMinIntParameter,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-__inner(__receiver, ::core::convert::Into::into(value),__mi)}
-}
-}
-#[doc="`.ctor(i32, i32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<i32> ,min:impl::core::convert::Into<i32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpMinIntParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac580usize)as*mut u8,();
-(NoInterpMinIntParameter)__receiver,(i32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(min),(bool)::core::convert::Into::into(override_state))}
-}
+`)",
+                        13usize,
+                        __vt.len(),
+                        <NoInterpMinIntParameter as ::unity::ClassIdentity>::NAME,
+                        "set_value",
+                    )
+                });
+                let __inner: extern "C" fn(NoInterpMinIntParameter, i32, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__vi.method_ptr);
+                let __mi: ::unity::OptionalMethod = ::core::option::Option::Some(&*(__vi.method_info as *const ::unity::MethodInfo as *const ()));
+                __inner(__receiver, ::core::convert::Into::into(value), __mi)
+            }
+        }
+    }
+    #[doc = "`.ctor(i32, i32, bool)` overload"]
+    fn ctor(
+        self,
+        value: impl ::core::convert::Into<i32>,
+        min: impl ::core::convert::Into<i32>,
+        override_state: impl ::core::convert::Into<bool>,
+    ) -> () {
+        unsafe {
+            let __receiver =
+                <NoInterpMinIntParameter as ::unity::FromIlInstance>::from_il_instance(<Self as ::unity::SystemObject>::as_instance(self));
+            ::unity::il2cpp_call!((::unity::module_base()+0x30ac580usize)as*mut u8,();
+(NoInterpMinIntParameter)__receiver,(i32)::core::convert::Into::into(value),(i32)::core::convert::Into::into(min),(bool)::core::convert::Into::into(override_state))
+        }
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-nointerpminintparameter")]impl<__T:INoInterpMinIntParameter>INoInterpMinIntParameterMethods for __T{}
+#[cfg(feature = "unity_engine-rendering-nointerpminintparameter")]
+impl<__T: INoInterpMinIntParameter> INoInterpMinIntParameterMethods for __T {}
 
-#[cfg(feature="unity_engine-rendering-nointerpminintparameter")]impl NoInterpMinIntParameter{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature = "unity_engine-rendering-nointerpminintparameter")]
+impl NoInterpMinIntParameter {
+    pub fn get_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[0]
+    }
+
+    pub fn set_value_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[1]
+    }
+
+    pub fn ctor_method_info() -> &'static ::unity::il2cpp::MethodInfo {
+        <Self as ::unity::ClassIdentity>::class().raw().get_methods()[2]
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-nointerpminintparameter")]impl NoInterpMinIntParameter{#[doc="Direct (non-virtual) call to `NoInterpMinIntParameter`'s own `get_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn get_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,)->i32{let __mi=Self::get_value_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(), ::core::option::Option::None)}
-#[doc="Direct (non-virtual) call to `NoInterpMinIntParameter`'s own `set_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]pub unsafe fn set_value(this:impl::core::convert::Into< ::unity2::IlInstance> ,value:i32,)->(){let __mi=Self::set_value_method_info();
-let __inner:extern "C" fn(::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__mi.method_ptr);
-__inner(this.into(),value, ::core::option::Option::None)}
+#[cfg(feature = "unity_engine-rendering-nointerpminintparameter")]
+impl NoInterpMinIntParameter {
+    #[doc = "Direct (non-virtual) call to `NoInterpMinIntParameter`'s own `get_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn get_value(this: impl ::core::convert::Into<::unity::IlInstance>) -> i32 {
+        let __mi = Self::get_value_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, ::unity::OptionalMethod) -> i32 = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), ::core::option::Option::None)
+    }
+
+    #[doc = "Direct (non-virtual) call to `NoInterpMinIntParameter`'s own `set_value`. Bypasses the vtable, so it won't hit an override/patch — use it for base calls."]
+    pub unsafe fn set_value(this: impl ::core::convert::Into<::unity::IlInstance>, value: i32) -> () {
+        let __mi = Self::set_value_method_info();
+        let __inner: extern "C" fn(::unity::IlInstance, i32, ::unity::OptionalMethod) -> () = ::core::mem::transmute(__mi.method_ptr);
+        __inner(this.into(), value, ::core::option::Option::None)
+    }
 }
 
-#[cfg(feature="unity_engine-rendering-nointerpminintparameter")]impl NoInterpMinIntParameter{#[doc="`.ctor(i32, i32, bool)` — overload selector"]pub fn new(value:i32,min:i32,override_state:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature = "unity_engine-rendering-nointerpminintparameter")]
+impl NoInterpMinIntParameter {
+    #[doc = "`.ctor(i32, i32, bool)` — overload selector"]
+    pub fn new(value: i32, min: i32, override_state: bool) -> Self {
+        let this = <Self as ::unity::FromIlInstance>::instantiate().unwrap_or_else(|| {
+            panic!(
+                "{}
 ::{}
- failed to instantiate", ::core::stringify!(NoInterpMinIntParameter), ::core::stringify!(new),));
- <Self as INoInterpMinIntParameterMethods> ::ctor(this,value,min,override_state);
-this}
+ failed to instantiate",
+                ::core::stringify!(NoInterpMinIntParameter),
+                ::core::stringify!(new),
+            )
+        });
+        <Self as INoInterpMinIntParameterMethods>::ctor(this, value, min, override_state);
+        this
+    }
 }
 
 #[cfg(feature = "unity_engine-rendering-nointerpminintparameter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NoInterpMinIntParameter;
-    pub use super::INoInterpMinIntParameter;
-    pub use super::INoInterpMinIntParameterMethods;
-    pub use crate::system::object::IObject;
-    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameter;
-    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1;
-    #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter")] pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
-    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")] pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use super::{INoInterpMinIntParameter, INoInterpMinIntParameterMethods, NoInterpMinIntParameter};
+    #[cfg(feature = "system-object")]
+    pub use crate::system::object::IObjectMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter")]
+    pub use crate::unity_engine::rendering::volumeparameter::IVolumeParameterMethods;
+    #[cfg(feature = "unity_engine-rendering-volumeparameter_1")]
+    pub use crate::unity_engine::rendering::volumeparameter_1::IVolumeParameter_1Methods;
+    pub use crate::{
+        system::object::IObject,
+        unity_engine::rendering::{volumeparameter::IVolumeParameter, volumeparameter_1::IVolumeParameter_1},
+    };
 }
