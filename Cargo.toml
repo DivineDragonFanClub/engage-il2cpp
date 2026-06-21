@@ -5,7 +5,7 @@ edition = "2021"
 include = ["src/**/*", "docs/**/*", "Cargo.toml", "features.json", "README*", "LICENSE*", "CHANGELOG*"]
 
 [dependencies]
-unity2 = { git = "https://github.com/DivineDragonFanClub/unity2" }
+unity2 = { git = "https://github.com/DivineDragonFanClub/unity2", tag = "0.0.1" }
 skyline = "0.6"
 
 [features]
