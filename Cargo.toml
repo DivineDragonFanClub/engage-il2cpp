@@ -1,6 +1,6 @@
 [package]
 name = "engage-il2cpp"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "Auto-generated Fire Emblem Engage IL2CPP type bindings. To be used with unity-nx."
 license = "MPL-2.0"

@@ -437,6 +437,12 @@ mod proc_desc_patch {
     use unity::Array;
 
     use crate::app::procdesc::ProcDesc;
+    #[cfg(all(feature = "app-proc", feature = "app-procdesclabel"))]
+    use ::unity::Cast;
+    #[cfg(all(feature = "app-proc", feature = "app-procdesclabel"))]
+    use crate::app::proc::Proc;
+    #[cfg(all(feature = "app-proc", feature = "app-procdesclabel"))]
+    use crate::app::procdesclabel::{IProcDescLabel, ProcDescLabel};
 
     pub struct ProcDescPatch {
         original: Vec<ProcDesc>,
@@ -462,6 +468,27 @@ mod proc_desc_patch {
                 self.original.splice(pos..pos, descs);
             }
             Array::<ProcDesc>::from_slice(&self.original).expect("ProcDescPatch::finish: ProcDesc array allocation failed")
+        }
+    }
+
+    #[cfg(all(feature = "app-proc", feature = "app-procdesclabel"))]
+    impl ProcDescPatch {
+        fn next_free_label(&self) -> i32 {
+            self.original
+                .iter()
+                .filter_map(|desc| desc.try_cast::<ProcDescLabel>())
+                .map(|label| label.m_label())
+                .max()
+                .map(|highest| highest + 1)
+                .unwrap_or(31)
+        }
+
+        pub fn append_labeled_block(self, body: impl IntoIterator<Item = ProcDesc>) -> (Self, i32) {
+            let label = self.next_free_label();
+            let end = self.original.len();
+            let mut block = std::vec![Proc::label(label)];
+            block.extend(body);
+            (self.insert(end, block), label)
         }
     }
 }
