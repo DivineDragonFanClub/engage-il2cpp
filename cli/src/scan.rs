@@ -111,7 +111,7 @@ impl<'a> PathVisitor<'a> {
             let candidate: String = segments[..n].join("::");
 
             // Matches either the canonical path or the short re-export form code
-            // usually writes (engage_il2cpp::app::Fade). Record the canonical so it
+            // usually writes (engage::app::Fade). Record the canonical so it
             // maps to a feature downstream.
             if let Some((canonical, _)) = self.manifest.resolve_path(&candidate) {
                 let canonical = canonical.to_string();

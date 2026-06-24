@@ -263,7 +263,7 @@ pub fn list_disabled_methods(json: bool) -> Result<()> {
             Err(_) => continue,
         };
 
-        scan_methods_in_file(&raw, entry.path(), &bindings_src, &enabled, &mut entries);
+        scan_methods_in_file(&raw, entry.path(), &bindings_src, &enabled, &manifest.crate_ident(), &mut entries);
     }
 
     entries.sort_by(|a, b| a.method.cmp(&b.method).then_with(|| a.class.cmp(&b.class)));
@@ -331,6 +331,7 @@ fn scan_methods_in_file(
     file: &std::path::Path,
     bindings_src: &std::path::Path,
     enabled: &BTreeSet<String>,
+    crate_ident: &str,
     out: &mut Vec<MethodEntry>,
 ) {
     let namespace = derive_namespace(file, bindings_src);
@@ -388,7 +389,7 @@ fn scan_methods_in_file(
                 out.push(MethodEntry {
                     method,
                     class: class.clone(),
-                    path: format!("engage_il2cpp::{namespace}::{class}"),
+                    path: format!("{crate_ident}::{namespace}::{class}"),
                     feature: feat.clone(),
                     returns,
                     args,

@@ -9,6 +9,8 @@ pub struct Manifest {
     pub schema_version: u32,
     #[serde(rename = "crate")]
     pub crate_name: String,
+    #[serde(default)]
+    pub import: Option<String>,
     #[allow(dead_code)]
     pub version: String,
     pub paths: BTreeMap<String, String>,
@@ -16,9 +18,9 @@ pub struct Manifest {
     #[serde(skip)]
     pub ext_wrappers: BTreeMap<String, Vec<String>>,
     /// Short re-export path -> canonical path. Types live at
-    /// `engage_il2cpp::<ns>::<module>::<Type>` but the generated `<ns>` module
+    /// `engage::<ns>::<module>::<Type>` but the generated `<ns>` module
     /// re-exports them one level up (the `pub use <module>::{Type}` lines in
-    /// app.rs etc), so code usually imports the short `engage_il2cpp::<ns>::<Type>`.
+    /// app.rs etc), so code usually imports the short `engage::<ns>::<Type>`.
     /// This maps that short form back so the scanner recognizes it.
     #[serde(skip)]
     pub reexports: BTreeMap<String, String>,
@@ -50,7 +52,7 @@ impl Manifest {
     }
 
     pub fn crate_ident(&self) -> String {
-        self.crate_name.replace('-', "_")
+        self.import.as_ref().unwrap_or(&self.crate_name).replace('-', "_")
     }
 
     pub fn paths_with_leaf(&self, leaf: &str) -> Vec<(&String, &String)> {
@@ -58,8 +60,8 @@ impl Manifest {
     }
 
     /// Resolve a path as written in code to its (canonical path, gating feature).
-    /// Accepts the canonical path itself (engage_il2cpp::app::fade::Fade) or the
-    /// short re-export form code usually writes (engage_il2cpp::app::Fade), and
+    /// Accepts the canonical path itself (engage::app::fade::Fade) or the
+    /// short re-export form code usually writes (engage::app::Fade), and
     /// always hands back the canonical one so callers agree on a single key.
     /// Returns None if the path names no known engage type. This is the one place
     /// that knows about re-exports, so both the scanner and the prune import check
@@ -97,8 +99,8 @@ impl Manifest {
 }
 
 /// Invert the namespace-root re-exports: for each canonical
-/// `engage_il2cpp::<ns>::<module>::<Type>`, the `<ns>` module re-exports it as
-/// `engage_il2cpp::<ns>::<Type>`, so drop the module segment (second to last) to
+/// `engage::<ns>::<module>::<Type>`, the `<ns>` module re-exports it as
+/// `engage::<ns>::<Type>`, so drop the module segment (second to last) to
 /// get the short form code actually imports. A real `pub use` at one level can't
 /// name two types the same way, so if two canonicals ever collapse to the same
 /// short form we drop it rather than guess.
