@@ -13,7 +13,7 @@ include = ["src/**/*", "docs/**/*", "Cargo.toml", "features.json", "README*", "L
 name = "engage"
 
 [dependencies]
-unity-nx = { version = "0.1.0" }
+unity-nx = { git = "https://github.com/DivineDragonFanClub/unity2", tag = "0.1.0" }
 skyline = "0.6"
 
 [features]
