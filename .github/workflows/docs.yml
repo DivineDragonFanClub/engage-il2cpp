@@ -111,7 +111,7 @@ jobs:
             --no-deps \
             -j 1
       - name: Add redirect
-        run: echo '<meta http-equiv="refresh" content="0;url=engage_il2cpp/index.html">' > target/aarch64-skyline-switch/doc/index.html
+        run: echo '<meta http-equiv="refresh" content="0;url=engage/index.html">' > target/aarch64-skyline-switch/doc/index.html
       - name: Remove lock file
         run: rm target/aarch64-skyline-switch/doc/.lock
       - name: Upload artifact
