@@ -1,6 +1,6 @@
 [package]
 name = "engage-il2cpp"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 description = "Auto-generated Fire Emblem Engage IL2CPP type bindings. To be used with unity-nx."
 license = "MPL-2.0"
@@ -13,7 +13,7 @@ include = ["src/**/*", "docs/**/*", "Cargo.toml", "features.json", "README*", "L
 name = "engage"
 
 [dependencies]
-unity-nx = { git = "https://github.com/DivineDragonFanClub/unity-nx", tag = "0.1.1" }
+unity-nx = { git = "https://github.com/DivineDragonFanClub/unity-nx", tag = "0.1.2" }
 skyline = "0.6"
 
 [features]
